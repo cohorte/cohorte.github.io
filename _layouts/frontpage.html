@@ -1,0 +1,135 @@
+---
+layout: default
+title: COHORTE Project web site
+---
+
+{% include page_header.html %}
+
+<!-- ***************** Splash + nav ******************* -->
+
+<div class="splash">
+  <div class="darkblue-overlay">&nbsp;</div>
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <div class="cohorte-logo">
+          <img src="{{ site.baseurl }}/resources/images/cohorte-logo.png" alt="Cohorte Logo" />
+          <!-- <div class="spiral-logo"><img src="{{ site.baseurl }}/resources/img/scala-spiral-white.png"/></div> -->
+          <!-- <div class="scala-text">Scala</div> -->
+        </div>
+        {% include navbar.html %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="span12">
+        <div class="splash-text ontop">
+          <h2 style="font-weight: 500;">Resilient Component-based Software Framework</h2>
+          <p class="splash-pitch">
+            COHORTE is a platform for developing and rolling out robust and reliable software.
+            Software produced with COHORTE has a high level of robustness and reliability since 
+            its is made up of a range of components and services protected from one another by 
+            isolation containers. This modular architecture guarantees that software cannot be 
+            paralyzed in the event of failure of one of its components.
+          </p>
+          <br/>
+          <a class="splash-btn" href="{{ site.baseurl }}/what-is-cohorte.html">Learn More</a>&nbsp;
+          <a class="splash-btn" href="{{ site.baseurl }}/documentation/getting-started.html">Getting Started</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="splash-btn-darker" href="{{ site.baseurl }}/download/">Download</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ***************** key points ******************* -->
+<div class="bullet-point-box">
+  <div class="bullet-row-1-wrap">
+    <div class="container">
+      <div class="row">
+        <div class="span12 bullet-point">
+          <h2><span>COHORTE in a Nutshell</span></h2>
+          <p class="click">&nbsp;click the boxes below to see COHORTE in action!&nbsp;</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span4 bullet-point" id="key-point-1">
+          <img src="{{ site.baseurl }}/resources/images/key-point-1-icon.png" class="key-point-icon"/>
+          <h3>Service-Oriented Component Applications</h3>
+          <p>Scala runs on the JVM, so Java and Scala stacks can be freely mixed for totally seamless integration.</p>
+        </div>
+        <div class="span4 bullet-point" id="key-point-2">
+          <img src="{{ site.baseurl }}/resources/images/key-point-1-icon.png" class="key-point-icon"/>
+          <h3>Distribution without coding</h3>
+          <p>So the type system doesn’t feel so static. Don’t work for the type system. Let the type system work for you!</p>
+        </div>
+        <div class="span4 bullet-point" id="key-point-3">
+          <img src="{{ site.baseurl }}/resources/images/key-point-1-icon.png" class="key-point-icon"/>
+          <h3>Heterogeneous environments</h3>
+          <p>Use data-parallel operations on collections, use actors for concurrency and distribution, or futures for asynchronous programming.</p>
+        </div>
+      </div>
+      <div class="code-snippet-arrow"></div>
+    </div>
+  </div>
+
+  <div id="code-snippet-row1">
+    <div class="container">
+      <div class="row">
+      </div>
+    </div>
+  </div>
+
+  <div class="bullet-row-2-wrap">
+    <div class="container">
+      <div class="row">
+        <div class="span4 bullet-point" id="key-point-4">
+          <img src="{{ site.baseurl }}/resources/images/key-point-4-icon.png" class="key-point-icon"/>
+          <h3>Dynamic Isolation & resilience</h3>
+          <p>Combine the flexibility of Java-style interfaces with the power of classes. Think principled multiple-inheritance.</p>
+        </div>
+        <div class="span4 bullet-point" id="key-point-5">
+          <img src="{{ site.baseurl }}/resources/images/key-point-5-icon.png" class="key-point-icon"/>
+          <h3>Multi-Language<br/>Programming</h3>
+          <p>Think “switch” on steroids. Match against class hierarchies, sequences, and more.</p>
+        </div>
+        <div class="span4 bullet-point" id="key-point-6">
+          <img src="{{ site.baseurl }}/resources/images/key-point-6-icon.png" class="key-point-icon"/>
+          <h3>Development & Monitoring<br/>Tools</h3>
+          <p>Functions are first-class objects. Compose them with guaranteed type safety. Use them anywhere, pass them to anything.</p>
+        </div>
+      </div>
+      <div class="code-snippet-arrow"></div>
+    </div>
+  </div>
+
+  <div id="code-snippet-row2">
+    <div class="container">
+      <div class="row">
+      </div>
+    </div>
+  </div>
+
+  <!--div class="where-to-learn-more">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <a class="splash-btn" href="{{ site.baseurl }}/what-is-cohorte.html">Learn More</a>
+          <p>or visit the <a class="italicize" href="{{ site.baseurl }}/documentation">COHORTE Documentation</a></p>
+        </div>
+      </div>
+    </div>
+  </div-->
+	  <!-- hidden code-snippet content -->
+	<div id="hidden-key-point-1">{% include bullet-key-point-1.html %}</div>
+	<div id="hidden-key-point-2">{% include bullet-key-point-2.html %}</div>
+	<div id="hidden-key-point-3">{% include bullet-key-point-3.html %}</div>
+	<div id="hidden-key-point-4">{% include bullet-key-point-4.html %}</div>
+	<div id="hidden-key-point-5">{% include bullet-key-point-5.html %}</div>
+	<div id="hidden-key-point-6">{% include bullet-key-point-6.html %}</div>
+</div>
+
+<!-- hidden code-snippet content -->
+<!--
+
+-->
+{% include page_footer.html %}

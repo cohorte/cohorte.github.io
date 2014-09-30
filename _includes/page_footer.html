@@ -1,0 +1,103 @@
+		<div class="footer">
+			<div class="container">
+				<ul>
+					<li><h5>Documentation</h5></li>
+					<li><a href="{{ site.baseurl }}/documentation/getting-started.html">What is COHORTE?</a></li>
+					<li><a href="{{ site.baseurl }}/documentation/getting-started.html">Getting Started</a></li>
+					<li><a href="{{ site.baseurl }}/documentation/tutorials.html">Tutorials</a></li>
+					<li><a href="{{ site.baseurl }}/documentation/demonstrations.html">Demonstrations</a></li>
+					<li><a href="{{ site.baseurl }}/documentation/demonstrations.html">Articles & Publications</a></li>
+					<li><a href="{{ site.baseurl }}/documentation/guide.html">Reference Guide</a></li>
+				</ul>
+				<ul>
+					<li><h5>Download</h5></li>
+					<li><a href="/download/">Stable Release</a></li>
+					<li><a href="/download/{{ site.devscalaversion }}.html">Development Release</a></li>
+				</ul>
+				<ul>
+					<li><h5>Community</h5></li>
+					<li><a href="{{ site.baseurl }}/community/index.html#mailing_lists">Mailing lists</a></li>
+					<li><a href="{{ site.baseurl }}/community/index.html#github">GitHub</a></li>
+				</ul>
+				<ul>
+					<li><h5>Contribute</h5></li>
+					<li><a href="{{ site.baseurl }}/contribute/bug-reporting-guide.html">Report an Issue</a></li>
+					<li><a href="{{ site.baseurl }}/contribute">How to Help</a></li>
+					<li><a href="{{ site.baseurl }}/contribute/hacker-guide.html">Contributor's Guide</a></li>
+				</ul>
+				<ul>
+					<li><h5>COHORTE</h5></li>
+					<li><a href="{{ site.baseurl }}/blog">Blog</a></li>
+					<li><a href="{{ site.baseurl }}/news">News Archive</a></li>
+					<li><a href="{{ site.baseurl }}/license.html">COHORTE License</a></li>
+				</ul>
+				</div>
+				<div class="container">
+				<div class="copyright">
+					<a style="float: left; margin-right: 8px;" href="http://isandlatech.com"><img src="{{ site.baseurl }}/resources/images/isandlatech-logo.png" alt="isandlaTech logo" /></a>
+					<p style="float: left;"><br/>Copyright &copy; 2011-<span class="current-year"></span> isandlaTech SAS. Meylan, France</p>
+				</div>
+				<div class="cohorte-logo-footer">
+					<img src="{{ site.baseurl }}/resources/images/cohorte-logo-footer.png" alt="COHORTE footer logo" />
+				</div>
+			</div> <!-- container -->
+		</div> <!-- footer -->	
+
+		<!-- prettify  js -->
+	    <script src="{{ site.baseurl }}/resources/js/prettify/prettify.js" type="text/javascript" ></script>
+	    <script src="{{ site.baseurl }}/resources/js/prettify/lang-scala.js" type="text/javascript" ></script>
+
+	    <!-- jquery js -->
+	    <script src="{{ site.baseurl }}/resources/js/jquery-1.8.3.min.js" type="text/javascript" ></script>
+	    <script src="{{ site.baseurl }}/resources/js/jquery.stellar.min.js" type="text/javascript" ></script>
+
+	    <!-- modernizr js -->
+	    <script src="{{ site.baseurl }}/resources/js/modernizr-2.6.2-respond-1.1.0.min.js" type="text/javascript" ></script>
+
+	    <!-- retina js -->
+	    <script src="{{ site.baseurl }}/resources/js/retina.js" type="text/javascript" ></script>
+
+	    <!-- backstretch js -->
+	    <script src="{{ site.baseurl }}/resources/js/jquery.backstretch.min.js" type="text/javascript" ></script>
+
+	    <!-- Bootstrap JS -->
+	    <script src="{{ site.baseurl }}/resources/js/bootstrap.min.js" type="text/javascript" ></script>
+
+
+	    {% unless page.layout == 'page' %}
+	    <!-- table of contents JS -->
+	    <script src="{{ site.baseurl }}/resources/js/toc.js" type="text/javascript" ></script>
+	    <script type="text/javascript">
+	      $(document).ready(function(){
+	        $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
+	        function moveScroller() {
+	          if ($(".sidebar").length == 0)
+	            return;
+	          var a = function() {
+	            var topOfScroll = $(window).scrollTop();
+	            var topOfSidebar = $(".sidebar").offset().top;
+	            var sidebarInner = $(".sidebar-inner");
+	            var bottomOfSidebarInner = $(".sidebar-inner").offset().top + $(".sidebar-inner").outerHeight();
+	            var topOfFooter = $(".footer").offset().top - 10;
+	            var footerHeight = $(".footer").outerHeight();
+	            if (topOfScroll > topOfSidebar) {
+	              if (bottomOfSidebarInner > topOfFooter) {
+	                sidebarInner.css({position:"fixed",bottom:footerHeight,top:""});
+	              } else {
+	                sidebarInner.css({position:"fixed",top:"10px",bottom:""});
+	              }
+	            } else {
+	              sidebarInner.css({position:"relative",top:""});
+	            }
+	          };
+	          $(window).scroll(a);a()
+	        }
+	        moveScroller();
+	      })
+	    </script>
+	    {% endunless %}
+
+		<script src="{{ site.baseurl }}/resources/js/cohorte.js" type="text/javascript"></script>
+
+	</body>
+</html>

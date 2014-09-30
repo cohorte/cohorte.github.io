@@ -1,0 +1,152 @@
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Getting Started</h1>
+  </header>
+
+  <article class="post-content">
+    <p>The best way to learn Scala depends on what you know already and the way you prefer to learn things. There is a variety of resources available including <a href="/documentation/books.html">books</a>, tutorials, training courses, presentations, and of course the Scala compiler for practice. Many people find a good combination is to have one of the Scala books at hand and to start right away trying the examples with the Scala Compiler. On the other hand, you may want to get started with a Scala training course or using the material available online.</p>
+
+<p>As your knowledge of Scala grows, you will find there is more advanced material and a very friendly <a href="/community/">Scala community</a> at hand to help you. They all share a passion for Scala and welcome newcomers warmly. Many have written helpful material for programmers new to Scala, will respond to emails asking for help or are sharing neat new techniques, advanced concepts or tools in one of several Scala forums or personal blogs.</p>
+
+<h2 id="scala-for-programming-beginners">Scala for Programming Beginners</h2>
+
+<p>If you are just starting to learn how to code, you will find that a large portion of the material about Scala assumes that you already have some programming experience. There are two valuable resources which we can recommend to programming beginners that will take you directly into the world of Scala:</p>
+
+<ul>
+  <li>The online class <a href="https://www.coursera.org/course/progfun">Functional Programming Principles in Scala</a>, available on coursera. Taught by the creator of Scala, Martin Odersky, this online class takes a somewhat academic approach to teach the fundamentals of functional programming. You will learn a lot of Scala by solving the programming assignments.</li>
+  <li><a href="http://www.kogics.net/sf:kojo">Kojo</a> is an interactive learning environment that uses Scala programming to explore and play with math, art, music, animations and games.</li>
+</ul>
+
+<h2 id="your-first-lines-of-code">Your first lines of code</h2>
+
+<h3 id="the-hello-world-program">The “Hello, world!” Program</h3>
+
+<p>As a first example, we use the standard “Hello, world” program to demonstrate the use of the Scala tools without knowing too much about the language.</p>
+
+<pre><code>object HelloWorld {
+  def main(args: Array[String]) {
+    println("Hello, world!")
+  }
+}
+</code></pre>
+
+<p>The structure of this program should be familiar to Java programmers: it consists of the method <code>main</code> which prints out a friendly greeting to the standard output.</p>
+
+<p>We assume that both the <a href="/download">Scala software</a> and the user environment are set up correctly. For example:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Environment</th>
+      <th style="text-align: left">Variable</th>
+      <th style="text-align: left">Value (example)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Unix</td>
+      <td style="text-align: left"><code>$SCALA_HOME</code></td>
+      <td style="text-align: left"><code>/usr/local/share/scala</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><code>$PATH</code></td>
+      <td style="text-align: left"><code>$PATH:$SCALA_HOME/bin</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Windows</td>
+      <td style="text-align: left"><code>%SCALA_HOME%</code></td>
+      <td style="text-align: left"><code>c:\Progra~1\Scala</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><code>%PATH%</code></td>
+      <td style="text-align: left"><code>%PATH%;%SCALA_HOME%\bin</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="run-it-interactively">Run it interactively!</h3>
+
+<p>The <code>scala</code> command starts an interactive shell where Scala expressions are interpreted interactively.</p>
+
+<pre><code>&gt; scala
+This is a Scala shell.
+Type in expressions to have them evaluated.
+Type :help for more information.
+
+scala&gt; object HelloWorld {
+    |   def main(args: Array[String]) {
+    |     println("Hello, world!")
+    |   }
+    | }
+defined module HelloWorld
+
+scala&gt; HelloWorld.main(null)
+Hello, world!
+
+scala&gt;:q
+&gt;
+</code></pre>
+
+<p>The shortcut <code>:q</code> stands for the internal shell command <code>:quit</code> used to exit the interpreter.</p>
+
+<h3 id="compile-it">Compile it!</h3>
+
+<p>The <code>scalac</code> command compiles one (or more) Scala source file(s) and generates Java bytecode which can be executed on any <a href="http://java.sun.com/docs/books/jvms/">standard JVM</a>. The Scala compiler works similarly to <code>javac</code>, the Java compiler of the <a href="http://java.sun.com/javase/">Java SDK</a>.</p>
+
+<pre><code>&gt; scalac HelloWorld.scala
+</code></pre>
+
+<p>By default <code>scalac</code> generates the class files into the current working directory. You may specify a different output directory using the <code>-d</code> option.</p>
+
+<pre><code>&gt; scalac -d classes HelloWorld.scala
+</code></pre>
+
+<h3 id="execute-it">Execute it!</h3>
+
+<p>The <code>scala</code> command executes the generated bytecode with the appropriate options:</p>
+
+<pre><code>&gt; scala HelloWorld
+</code></pre>
+
+<p><code>scala</code> allows us to specify command options, such as the <code>-classpath</code> (alias <code>-cp</code>) option:</p>
+
+<pre><code>&gt; scala -cp classes HelloWorld
+</code></pre>
+
+<p>The argument of the <code>scala</code> command has to be a top-level object. If that object extends trait <a href="#scala.App"><code>App</code></a>, then all statements contained in that object will be executed; otherwise you have to add a method <code>main</code> which will act as the           entry point of your program.</p>
+
+<p>Here is how the “Hello, world” example looks like using the <code>App</code> trait:</p>
+
+<pre><code>object HelloWorld extends App {
+  println("Hello, world!")
+}
+</code></pre>
+
+<h3 id="script-it">Script it!</h3>
+
+<p>We may also run our example as a shell script or batch command (see the examples in the man pages of the <code>scala</code> command).</p>
+
+<p>The <a href="http://www.gnu.org/software/bash/">bash</a> shell script <code>script.sh</code> containing the following Scala code (and shell preamble)</p>
+
+<pre><code>#!/bin/sh
+exec scala "$0" "$@"
+!#
+object HelloWorld extends App {
+  println("Hello, world!")
+}
+HelloWorld.main(args)
+</code></pre>
+
+<p>can be run directly from the command shell:</p>
+
+<pre><code>&gt; ./script.sh
+</code></pre>
+
+<p><strong>Note</strong>: We assume here that the file <code>script.sh</code> has execute access and the search path for the <code>scala</code> command is specified in the <code>PATH</code> environment variable.</p>
+
+  </article>
+
+</div>
