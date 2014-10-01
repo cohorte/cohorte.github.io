@@ -219,7 +219,8 @@ a:hover {
 
 .splash-btn {
   padding: 0 18px;
-  background: #428bca; /*brighter color: 428bca other 72D0EB*/
+  /*background: #428bca; /*brighter color: 428bca other 72D0EB*/
+  background: #143143;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
