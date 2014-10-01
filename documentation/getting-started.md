@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Getting Started
+comments: true
 ---
 
 [Home](../) > [Documentation](./)

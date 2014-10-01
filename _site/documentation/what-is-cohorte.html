@@ -2,7 +2,7 @@
 <html>
   <head>
 
-    <title>What is COHORTE? | Your awesome title</title>
+    <title>What is COHORTE? | Cohorte Project</title>
     
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
@@ -24,6 +24,12 @@
     <script type="text/javascript" src="//use.typekit.net/abh3wgk.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     
+    <!-- PrettyPhoto -->
+    <!--script src="/resources/js/jquery.js" type="text/javascript" charset="utf-8"></script-->
+    <script src="/resources/js/jquery-1.8.3.min.js" type="text/javascript" ></script>
+    <link rel="stylesheet" href="/resources/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+    <script src="/resources/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+
   </head>
   <body>
 
@@ -81,17 +87,91 @@ The level of reliability of software produced with COHORTE SDK also reduces oper
 
 <p>There are a number of benefits to using COHORTE to build your software applications. The most evident ones are:</p>
 
-<ul>
-  <li><em>Dynamic Component-based Applications</em>: COHORTE provides a framework to construct modularised applications consisting of software components that uses software services provided by other components. This service-based approach allows the dynamic update of the application by adding new components implementing an existing service.</li>
-  <li><em>Distributed Instantiation</em>: Component-based software applications developed with COHORTE are automatically instantiated and their components are automatically wired following a declarative description (in JSON). Components can be instantiated in different distributed nodes and they are connected using a service-based approach. Service invocation from a developer perspective is the same whereas the service provider is located on the local or on the remote machine.</li>
-  <li><em>Dynamic Isolation and resilience</em>: isolating components into sandboxes is a best practice solution to reduce the impact of the crash of parts of an application and hence to ensure the survivability of long-lived software applications. COHORTE guarantees the resilience of such applications by using dynamically calculated isolates (regions) where each one contains a set of components with some degree of resilience rate. </li>
-  <li><em>Interoperability</em>: Software components developed with COHORTE can be built using different programming languages (Java and Python). Furthermore, they can be deployed and instantiated in different sort of machines from small devices (e.g., Raspberry) to powerful servers.</li>
-</ul>
+<div class="row" style="padding-top:25px; padding-bottom:25px;">
+	<div class="span4">
+		<h4>Service-oriented Component-based Applications</h4>
+		<p>COHORTE provides a framework to construct modularised applications consisting of software components that uses software services provided by other components. This approach allows to construct IT applications as mean of a set of components providing and requiring services. </p>
+	</div>
+	<div class="span4">
+		<img src="/resources/images/what-is-cohorte-img1.png" />
+	</div>
+</div>
+<div class="row" style="padding-top:25px; padding-bottom:25px;">
+	<div class="span4">
+		<img src="/resources/images/what-is-cohorte-img2.png" />
+	</div>
+	<div class="span4">
+		<h4>Multi-language programming</h4>
+		<p>Components in a COHORTE system can be implemented using Java or Python programming languages (other languages are under study). COHORTE uses two similar Service-Oriented Component-based frameworks for Java and Python environments. Service provider can be implemented using Python and used by another component implemented in Java.</p>
+	</div>
+</div>
+<div class="row" style="padding-top:25px; padding-bottom:25px;">
+	<div class="span4">
+		<h4>Components Distribution</h4>
+		<p>COHORTE developers provides only implementations for the different components providing or requiring services. At runtime, the concret placement of components in execution nodes is managed by the COHORTE runtime. Two component can work together transparantly even they are located on two seperate machines.</p>
+	</div>
+	<div class="span4">
+		<img src="/resources/images/what-is-cohorte-img4.png" />
+	</div>
+</div>
+<div class="row" style="padding-top:25px; padding-bottom:25px;">
+	<div class="span4">
+		<img src="/resources/images/what-is-cohorte-img3.png" />
+	</div>
+	<div class="span4">
+		<h4>Heterogeneous Environments</h4>
+		<p>COHORTE components can be executed on different kind of devices, from small devices like Raspberry-Pi to big servers whereas having windows, linux, or Max os operating systems.</p>
+	</div>
+</div>
+<div class="row" style="padding-top:25px; padding-bottom:25px;">
+	<div class="span4">
+		<h4>Dynamic Isolation and Resilience</h4>
+		<p>COHORTE automatically prevent and correct component failures by isolating them and relanching them seperatly from others. Users can also define static isolates in which they put components that are guaranteede to be safe.</p>
+	</div>
+	<div class="span4">
+		<img src="/resources/images/what-is-cohorte-img5.png" />
+	</div>
+</div>
+<div class="row" style="padding-top:25px; padding-bottom:25px;">
+	<div class="span4">
+		<img src="/resources/images/what-is-cohorte-img6.png" />
+	</div>
+	<div class="span4">
+		<h4>Development and Monitoring Tools</h4>
+		<p>COHORTE Platform includes a centralized monitoring web interface for all the running nodes. This interface allows to dynamically watch what is happening in the COHORTE system (Nodes, Isolates, and Components updates)</p>
+	</div>
+</div>
 
-<p>If you haven’t yet, try it out! <a href="./">Here are some resources to get
-started</a>.</p>
+<h2 id="convinced">Convinced?</h2>
+
+<p>If COHORTE is what you want for your IT applications, try it out! <a href="./">Here are some resources to get
+started</a>. </p>
+
+<h2 id="about">About</h2>
+
+<p>COHORTE Project is an open source framework hosted on GitHub and sponsored by <a href="http://isandlatech.com">isandlaTech</a>. To help you developping your business applications using COHORTE, feel free to contact isandlaTech support team at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#105;&#115;&#097;&#110;&#100;&#108;&#097;&#116;&#101;&#099;&#104;&#046;&#099;&#111;&#109;">&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#105;&#115;&#097;&#110;&#100;&#108;&#097;&#116;&#101;&#099;&#104;&#046;&#099;&#111;&#109;</a>.</p>
 
 
+            <br/>
+            <br/>
+            <br/>
+            
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                    var disqus_shortname = 'cohorte'; // required: replace example with your forum shortname
+
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                
+                
           </div>
           <div class="sidebar">
             <div class="sidebar-inner">
@@ -104,6 +184,8 @@ started</a>.</p>
     <!-- </div> -->
   </div>
 </div>
+
+
 
 		<div class="footer">
 			<div class="container">
@@ -154,8 +236,7 @@ started</a>.</p>
 	    <script src="/resources/js/prettify/prettify.js" type="text/javascript" ></script>
 	    <script src="/resources/js/prettify/lang-scala.js" type="text/javascript" ></script>
 
-	    <!-- jquery js -->
-	    <script src="/resources/js/jquery-1.8.3.min.js" type="text/javascript" ></script>
+	    <!-- jquery js -->	    
 	    <script src="/resources/js/jquery.stellar.min.js" type="text/javascript" ></script>
 
 	    <!-- modernizr js -->
@@ -205,6 +286,93 @@ started</a>.</p>
 	    
 
 		<script src="/resources/js/cohorte.js" type="text/javascript"></script>
+
+		<!-- initializing PrettyPhoto -->
+
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function(){
+				$("a[rel^='prettyPhoto']").prettyPhoto({
+					animation_speed: 'fast', /* fast/slow/normal */
+					slideshow: 5000, /* false OR interval time in ms */
+					autoplay_slideshow: false, /* true/false */
+					opacity: 0.80, /* Value between 0 and 1 */
+					show_title: true, /* true/false */
+					allow_resize: true, /* Resize the photos bigger than viewport. true/false */
+					default_width: 500,
+					default_height: 344,
+					counter_separator_label: '/', /* The separator for the gallery counter 1 "of" 2 */
+					theme: 'pp_default', /* light_rounded / dark_rounded / light_square / dark_square / facebook */
+					horizontal_padding: 20, /* The padding on each side of the picture */
+					hideflash: false, /* Hides all the flash object on a page, set to TRUE if flash appears over prettyPhoto */
+					wmode: 'opaque', /* Set the flash wmode attribute */
+					autoplay: true, /* Automatically start videos: True/False */
+					modal: false, /* If set to true, only the close button will close the window */
+					deeplinking: true, /* Allow prettyPhoto to update the url to enable deeplinking. */
+					overlay_gallery: true, /* If set to true, a gallery will overlay the fullscreen image on mouse over */
+					keyboard_shortcuts: true, /* Set to false if you open forms inside prettyPhoto */
+					changepicturecallback: function(){}, /* Called everytime an item is shown/changed */
+					callback: function(){}, /* Called when prettyPhoto is closed */
+					ie6_fallback: true,
+					markup: '<div class="pp_pic_holder"> \
+								<div class="ppt">&nbsp;</div> \
+								<div class="pp_top"> \
+									<div class="pp_left"></div> \
+									<div class="pp_middle"></div> \
+									<div class="pp_right"></div> \
+								</div> \
+								<div class="pp_content_container"> \
+									<div class="pp_left"> \
+									<div class="pp_right"> \
+										<div class="pp_content"> \
+											<div class="pp_loaderIcon"></div> \
+											<div class="pp_fade"> \
+												<a href="#" class="pp_expand" title="Expand the image">Expand</a> \
+												<div class="pp_hoverContainer"> \
+													<a class="pp_next" href="#">next</a> \
+													<a class="pp_previous" href="#">previous</a> \
+												</div> \
+												<div id="pp_full_res"></div> \
+												<div class="pp_details"> \
+													<div class="pp_nav"> \
+														<a href="#" class="pp_arrow_previous">Previous</a> \
+														<p class="currentTextHolder">0/0</p> \
+														<a href="#" class="pp_arrow_next">Next</a> \
+													</div> \
+													<p class="pp_description"></p> \
+													{pp_social} \
+													<a class="pp_close" href="#">Close</a> \
+												</div> \
+											</div> \
+										</div> \
+									</div> \
+									</div> \
+								</div> \
+								<div class="pp_bottom"> \
+									<div class="pp_left"></div> \
+									<div class="pp_middle"></div> \
+									<div class="pp_right"></div> \
+								</div> \
+							</div> \
+							<div class="pp_overlay"></div>',
+					gallery_markup: '<div class="pp_gallery"> \
+										<a href="#" class="pp_arrow_previous">Previous</a> \
+										<div> \
+											<ul> \
+												{gallery} \
+											</ul> \
+										</div> \
+										<a href="#" class="pp_arrow_next">Next</a> \
+									</div>',
+					image_markup: '<img id="fullResImage" src="{path}" />',
+					flash_markup: '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="{width}" height="{height}"><param name="wmode" value="{wmode}" /><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="{path}" /><embed src="{path}" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="{width}" height="{height}" wmode="{wmode}"></embed></object>',
+					quicktime_markup: '<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="{height}" width="{width}"><param name="src" value="{path}"><param name="autoplay" value="{autoplay}"><param name="type" value="video/quicktime"><embed src="{path}" height="{height}" width="{width}" autoplay="{autoplay}" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"></embed></object>',
+					iframe_markup: '<iframe src ="{path}" width="{width}" height="{height}" frameborder="no"></iframe>',
+					inline_markup: '<div class="pp_inline">{content}</div>',
+					custom_markup: '',
+					social_tools: '' /* html or false to disable */
+				});
+			});
+		</script>
 
 	</body>
 </html>

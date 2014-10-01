@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Downloads
+comments: true
 ---
 
 ## Stable Releases

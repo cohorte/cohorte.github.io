@@ -40,7 +40,7 @@ title: Learn
     </div> 
     
     <div class="span4 doc-block">
-      <h3><a href="{{ site.baseurl }}/files/archive/nightly/pdfs/CohorteDevelopersGuide.pdf">Developer's Guide [PDF]</a></h3>
+      <h3><a href="{{ site.baseurl }}/documentation/dev-guide.html">Developer's Guide</a></h3>
       <p>COHORTE users and developers guide (technical details and detailed APIs).</p>
     </div> 
   

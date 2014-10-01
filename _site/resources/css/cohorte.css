@@ -632,7 +632,7 @@ a:hover {
   height: 100%;
   float: left;
   display: block;
-  width: 610px;
+  width: 630px;
   background: white;
   padding-top: 24px;
   padding-left: 9999em;
@@ -884,5 +884,36 @@ div#toc ul > li + ul > li { margin-top: 12px; }
   margin-bottom: 10px;
 }
 
-/* ----  --------------------------------------------- */
+/* ---- Pretty Photo (video player) --------------------------------------------- */
+
+/* VIDEOS */
+.video {
+  margin-bottom: 20px;
+}
+
+.video h3 {
+  padding-top: 7px; 
+}
+
+#videogallery img {
+    border: 3px solid #B3D9EF;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0 5px #555555;
+    margin-right: 5px;
+}
+
+.youtubemacroplayimg{
+    background: url("../images/prettyPhoto/SsPlay.png") repeat scroll 0 0 transparent;
+    height: 64px;
+    left: 53px;
+    margin-bottom: -50px;
+    position: relative;
+    top: -96px;
+    width: 64px;
+
+}
+
+.youtubemacroplayimg:hover {
+   background: url("../images/prettyPhoto/SsPlay.png") repeat scroll -64px 0 transparent;
+}
 
