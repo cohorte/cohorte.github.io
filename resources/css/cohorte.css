@@ -20,7 +20,8 @@ html, body {
 }
 
 body {
-  background-color: #073642;
+  /*background-color: #073642;*/
+  background-color: #143143;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
   color: #586E75;
@@ -52,7 +53,8 @@ a:hover {
 }
 
 .bullet-point.span12:hover {
-  background: #073642;
+  /*background: #073642;*/
+  background: #143143;
 }
 
 /* ---- frontpage nav --------------------------------------------- */
@@ -397,7 +399,8 @@ a:hover {
 }
 
 .bullet-point.span12:hover {
-  background: #073642;
+  /*background: #073642;*/
+  background: #143143;
 }
 
 .bullet-point:hover {
@@ -419,7 +422,8 @@ a:hover {
   height: 32px;
   display: inline-block;
   line-height: 35px;
-  background-color: #073642;
+  /*background-color: #073642;*/
+  background-color: #143143;
   padding: 0 10px;
 }
 
