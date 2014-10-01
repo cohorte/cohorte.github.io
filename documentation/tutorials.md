@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Getting Started
+title: Tutorials
 ---
 
 [Home](../) > [Documentation](./)
 
-## Getting Started
+## Tutorials
 
 
 If you haven't yet, try it out! [Here are some resources to get

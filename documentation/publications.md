@@ -1,12 +1,17 @@
 ---
 layout: page
-title: Getting Started
+title: Articles and Scientifique Publications
 ---
 
 [Home](../) > [Documentation](./)
 
-## Getting Started
+## Scientifique Publications
 
+TODO
+
+## Articles
+
+TODO
 
 If you haven't yet, try it out! [Here are some resources to get
 started](./).
