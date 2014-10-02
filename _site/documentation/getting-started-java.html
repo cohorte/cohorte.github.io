@@ -2,7 +2,7 @@
 <html>
   <head>
 
-    <title>Community | Cohorte Project</title>
+    <title>Getting Started Java | Cohorte Project</title>
     
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
@@ -65,7 +65,7 @@
 
 <div class="midbluebar">
   <div class="container">
-    <h1 id="page-title">Community</h1>
+    <h1 id="page-title">Getting Started Java</h1>
   </div>
 </div>
 
@@ -75,43 +75,68 @@
       <!-- <div class="span12"> -->
           <div class="main-page-column">
             
-            <p>Cube Project has several sub-projects hosted on Github at this address: https://github.com/isandlatech/</p>
+            <p><a href="../">Home</a> &gt; <a href="./">Documentation</a> &gt; <a href="./getting-started.html">Getting Started</a></p>
 
-<h2 id="build-tools">Build Tools</h2>
+<h3 id="setup">Setup</h3>
 
-<p>To build the code, install (as well as the programs needed to build Cube on Windows, if that is your development platform)
- * Apache Maven
- * Oracle Java 6 or 7 or OpenJDK
-   These should also be on your PATH; test by executing mvn and javac respectively.</p>
+<p>The first thing we need to do is to set up the development environment. We will be using <a href="http://maven.apache.org">Apache Maven</a>, although you can use whatever build tool you feel confortable using. If you wish to use something else to build this tutorial (such as Ant), you will need to manually account for all the needed dependencies. In <a href="./dev-guide.html">Developer’s Guide</a> page, we detail different possible development environments setup.</p>
 
-<h2 id="getting-the-source-code">Getting the source code</h2>
-<p>The official location for Cube source code is GitHub. You need a git client installed on your system. Some IDEs ship with Git support; this document assumes you are using the command line.</p>
+<p>In the next section, we will use COHORTE maven tools to generate and compile COHORTE components. You need to install Maven and configure it to use our provided tools. Read more about using Maven in the official website <a href="http://maven.apache.org/">http://maven.apache.org/</a>.</p>
 
-<blockquote>
-  <p>git clone https://github.com/isandlatech/cohorte-runtime.git </p>
-</blockquote>
+<p>Add the two blocks of code to the file <code>settings.xml</code> (usually in your Maven <code>conf</code> of <code>$HOME/.m2</code> directory, create it if not present)</p>
 
-<blockquote>
-  <p>git clone https://github.com/isandlatech/cohorte-platform.git </p>
-</blockquote>
+<p>This will have Maven allow you to execute COHORTE plugins:</p>
 
-<p>Git works offline - though you will need to perform your initial builds online so that Maven can download dependencies.</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;settings&gt;</span>
+	<span class="nt">&lt;pluginGroups&gt;</span>
+		<span class="nt">&lt;pluginGroup&gt;</span>org.cohorte.plugins<span class="nt">&lt;/pluginGroup&gt;</span>
+	<span class="nt">&lt;/pluginGroups&gt;</span>
+	...
+<span class="nt">&lt;/settings&gt;</span></code></pre></div>
 
-<h2 id="build-the-sources">Build the sources</h2>
+<p>This will tell your Maven instance where to find the COHORTE repositories:</p>
 
-<p>You need to run the Maven build command on each subproject seperatly. </p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;profile&gt;</span>
+    <span class="nt">&lt;id&gt;</span>Cohorte Org<span class="nt">&lt;/id&gt;</span>
+    <span class="nt">&lt;activation&gt;</span>
+        <span class="nt">&lt;activeByDefault&gt;</span>true<span class="nt">&lt;/activeByDefault&gt;</span>
+    <span class="nt">&lt;/activation&gt;</span>
+    <span class="nt">&lt;repositories&gt;</span>
+        <span class="nt">&lt;repository&gt;</span>
+            <span class="nt">&lt;id&gt;</span>cohorte-releases<span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Cohorte Repository<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;url&gt;</span>http://repo.isandlatech.com/maven/releases/<span class="nt">&lt;/url&gt;</span>
+            <span class="nt">&lt;layout&gt;</span>default<span class="nt">&lt;/layout&gt;</span>
+        <span class="nt">&lt;/repository&gt;</span>
+        <span class="nt">&lt;repository&gt;</span>
+            <span class="nt">&lt;id&gt;</span>cohorte-snapshots<span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Cohorte Snapshot Repository<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;url&gt;</span>http://repo.isandlatech.com/maven/snapshots/<span class="nt">&lt;/url&gt;</span>
+            <span class="nt">&lt;layout&gt;</span>default<span class="nt">&lt;/layout&gt;</span>
+        <span class="nt">&lt;/repository&gt;</span>
+    <span class="nt">&lt;/repositories&gt;</span>
+<span class="nt">&lt;/profile&gt;</span>z</code></pre></div>
 
-<blockquote>
-  <p>mvn clean install </p>
-</blockquote>
+<h3 id="creating-cohorte-project-template">Creating COHORTE project template</h3>
 
-<h2 id="bug-fixing">Bug fixing</h2>
+<p>To create a project, simply type the following command. If this is your first time running this command, Maven downloads the archetype for you.</p>
 
-<p>You can write an “issue” directly in the sub-project’s “issues” tab of GitHub website. Mostly, you can contribute instructions on how to fix a given bug. Or you can directly fix it and send it as a “pull request” on github. </p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">mvn archetype:generate <span class="se">\</span>
+-DarchetypeGroupId<span class="o">=</span>org.cohorte <span class="se">\</span>
+-DarchetypeArtifactId<span class="o">=</span>cohorte-python-archetype <span class="se">\</span>
+-DarchetypeVersion<span class="o">=</span>1.0.0 <span class="se">\</span>
+-DgroupId<span class="o">=</span>org.cohorte.demos <span class="se">\</span>
+-DartifactId<span class="o">=</span>spellchecker <span class="se">\</span></code></pre></div>
 
-<h2 id="future-development-and-enhancement">Future development and enhancement</h2>
-<p>Once you get comfortable with the code, you can start to scratch you own itch and contribute new features. </p>
+<p>This command will generate a project template for a COHORTE project <strong>spellchecker</strong>. It has the following structure:</p>
 
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">+ spellchecker
+--+ src/lib/python
+--+ src/main/python/spellchecker
+--+ src/test/python/tests
+--- pom.xml</code></pre></div>
+
+<p><a href="../">Home</a> &gt; <a href="./">Documentation</a> &gt; <a href="./getting-started.html">Getting Started</a></p>
 
             <br/>
             <br/>

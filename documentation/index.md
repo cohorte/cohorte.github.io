@@ -35,8 +35,8 @@ title: Learn
   </div>
   <div class="row">
     <div class="span4 doc-block">
-      <h3><a href="{{ site.baseurl }}/files/archive/nightly/pdfs/CohorteReferenceGuide.pdf">Reference Guide [PDF]</a></h3>
-      <p>The complete Reference Guide of COHORTE in PDF format for in-depth learning of the platform.</p>
+      <h3><a href="{{ site.baseurl }}/documentation/reference-guide.html">Reference Guide</a></h3>
+      <p>The complete Reference Guide of COHORTE platform.</p>
     </div> 
     
     <div class="span4 doc-block">

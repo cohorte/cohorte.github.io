@@ -7,11 +7,14 @@ title: Developer's Guide
 
 ## Developer's Guide
 
-### Python developers
+### IDE Configuration
 
- * download and install cohorte
-   * direct
-   * using pypi
-   * using maven 
+ * Eclipse
+ * PyCharm
+ * IntelliJ
+ * Netbeans
 
-### Java developers
+### Launch Configuration
+
+ * todo
+

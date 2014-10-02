@@ -17,6 +17,9 @@
 
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900,400italic,700italic' rel='stylesheet' type='text/css'>
 
+    <!-- Syntax highlighter -->
+    <link rel="stylesheet" href="/resources/css/syntax.css" />
+    
     <!-- Custom stylesheet -->
     <link rel="stylesheet" href="/resources/css/cohorte.css" type="text/css" />
 
@@ -76,29 +79,44 @@
 
 <h2 id="getting-started">Getting Started</h2>
 
-<p>If you haven’t yet, try it out! <a href="./">Here are some resources to get
-started</a>.</p>
+<p>Intended for new COHORTE users, this tutorial provides an step-by-step introduction to COHORTE, starting with a simple application using Python or Java programming language. All the resulting code is can be retrieved form <a href="#">spellchecker-demo.zip</a> file, however we encourage you to follow the different steps of this tutorial to build your own fresh COHORTE application.</p>
 
+<h3 id="spellchecker-application">Spellchecker application</h3>
+
+<p>The application to develop in this tutorial concists of three main type of components as shown in the following picture:</p>
+
+<p><img src="/resources/images/getting-started/getting-started-img1.png" alt="SpellChecker Application" /></p>
+
+<p><br /></p>
+
+<ol>
+  <li><strong>Dictionary components</strong>: implementing and providing the <em>Dictionary Service</em>. Each implementation indicates the language of the dictionary as a service property.</li>
+  <li><strong>Spell Checker</strong>: implements the <em>Checker Service</em> which take as input a sentence of words, and by using the <em>Dictionary Service</em> it verifies the existance of misspelled words. It uses the adequate provided <em>Dictionary Service</em>s depending on user language choice. A list of missplened words are returned by this service.</li>
+  <li><strong>Spell Client</strong>: is a simple web interface that shows a form to the final user to test the application. This component uses the <em>Checker Service</em> for the application’s logic part, and it also requires an <em>HTTP Service</em> to publish the web interface and response to the form requests initiated by the user.</li>
+</ol>
+
+<p>The required <em>HTTP Service</em> for the last component <strong>Spell Client</strong> is provided natively by the COHORTE runtime. No need to implement it! The resulting Spell Client should look like this:</p>
+
+<p><img src="/resources/images/getting-started/getting-started-img2.png" alt="SpellChecker Application" /></p>
+
+<p>The important quality of this architecture is the capability to update any component without restarting the global application. This is important for instance to allow adding new <em>Dictionary Service</em>s or updating a new efficient version of the <strong>Spell Checker</strong> component, without stopping the system.</p>
+
+<h3 id="implement-the-different-application-components">Implement the different application components</h3>
+
+<p>To get started, choose first your favorite programming language.</p>
+
+<div class="language-choices">	
+    <a style="left: 0%;" class="language-choice language-choice-python" href="./getting-started-python.html">Python</a>
+	<a style="left: 30%;" class="language-choice language-choice-java" href="./getting-started-java.html">Java</a>
+</div>
+
+<blockquote>
+  <p><strong>Notice</strong> that you can have a COHORTE application with a mixte of Java and Python components!</p>
+</blockquote>
 
             <br/>
             <br/>
             <br/>
-            
-                <div id="disqus_thread"></div>
-                <script type="text/javascript">
-                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-                    var disqus_shortname = 'cohorte'; // required: replace example with your forum shortname
-
-                    /* * * DON'T EDIT BELOW THIS LINE * * */
-                    (function() {
-                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                    })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-                
                 
           </div>
           <div class="sidebar">
