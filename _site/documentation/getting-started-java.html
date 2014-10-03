@@ -77,6 +77,14 @@
             
             <p><a href="../">Home</a> &gt; <a href="./">Documentation</a> &gt; <a href="./getting-started.html">Getting Started</a></p>
 
+<h2 id="cohorte-for-java">COHORTE for Java</h2>
+
+<p>Welcome to COHORTE for Java! With COHORTE, you can build modular and resilient applications using the Java programming language, and take advantage of the many benefits of the COHORTE approach (see <a href="./what-is-cohorte.html">what is COHORTE?</a>).</p>
+
+<p>In this tutorial, we will implement the awesome <strong>spellchecker</strong> application detailed in the <a href="./getting-started.html">getting started</a> page.</p>
+
+<p><img src="/resources/images/getting-started/getting-started-img3.png" alt="SpellChecker Application" /></p>
+
 <h3 id="setup">Setup</h3>
 
 <p>The first thing we need to do is to set up the development environment. We will be using <a href="http://maven.apache.org">Apache Maven</a>, although you can use whatever build tool you feel confortable using. If you wish to use something else to build this tutorial (such as Ant), you will need to manually account for all the needed dependencies. In <a href="./dev-guide.html">Developer’s Guide</a> page, we detail different possible development environments setup.</p>
@@ -123,18 +131,22 @@
 
 <div class="highlight"><pre><code class="language-sh" data-lang="sh">mvn archetype:generate <span class="se">\</span>
 -DarchetypeGroupId<span class="o">=</span>org.cohorte <span class="se">\</span>
--DarchetypeArtifactId<span class="o">=</span>cohorte-python-archetype <span class="se">\</span>
+-DarchetypeArtifactId<span class="o">=</span>cohorte-java-archetype <span class="se">\</span>
 -DarchetypeVersion<span class="o">=</span>1.0.0 <span class="se">\</span>
 -DgroupId<span class="o">=</span>org.cohorte.demos <span class="se">\</span>
 -DartifactId<span class="o">=</span>spellchecker <span class="se">\</span></code></pre></div>
 
-<p>This command will generate a project template for a COHORTE project <strong>spellchecker</strong>. It has the following structure:</p>
+<p>This command will generate a project template for a COHORTE project <strong>spellchecker</strong> which has the following structure:</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh">+ spellchecker
---+ src/lib/python
---+ src/main/python/spellchecker
---+ src/test/python/tests
---- pom.xml</code></pre></div>
+<ul>
+  <li><code>pom.xml</code>: an XML file that contains information about the project and configuration details used by Maven to build the project. </li>
+  <li><code>src/main/java/</code>: this folder contains the java source files of your bundle</li>
+  <li><code>src/test/java/</code>: this folder contains the test classes of your bundle.</li>
+</ul>
+
+<blockquote>
+  <p>Any maven project is identified by it groupId, artifactId, and version number. You find this information in the <code>pom.xml</code>file. Any dependencies to other libraries should be declared also in the <code>pom.xml</code>file. Maven retrieve them automatically when compiling the project.</p>
+</blockquote>
 
 <p><a href="../">Home</a> &gt; <a href="./">Documentation</a> &gt; <a href="./getting-started.html">Getting Started</a></p>
 

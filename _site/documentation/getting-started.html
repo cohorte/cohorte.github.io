@@ -79,11 +79,11 @@
 
 <h2 id="getting-started">Getting Started</h2>
 
-<p>Intended for new COHORTE users, this tutorial provides an step-by-step introduction to COHORTE, starting with a simple application using Python or Java programming language. All the resulting code is can be retrieved form <a href="#">spellchecker-demo.zip</a> file, however we encourage you to follow the different steps of this tutorial to build your own fresh COHORTE application.</p>
+<p>Intended for new COHORTE users, this tutorial provides an step-by-step introduction to COHORTE, starting with a simple application using Python or Java programming language. All the resulting code can be found in <a href="#">spellchecker-demo.zip</a> file, however we encourage you to follow the different steps of this tutorial to build your own fresh COHORTE application.</p>
 
 <h3 id="spellchecker-application">Spellchecker application</h3>
 
-<p>The application to develop in this tutorial concists of three main type of components as shown in the following picture:</p>
+<p>The application to develop in this tutorial provides a web interface in which users can check the spell of their sentences in one or another language. It concists of three main type of components as shown in the following picture:</p>
 
 <p><img src="/resources/images/getting-started/getting-started-img1.png" alt="SpellChecker Application" /></p>
 
@@ -95,11 +95,7 @@
   <li><strong>Spell Client</strong>: is a simple web interface that shows a form to the final user to test the application. This component uses the <em>Checker Service</em> for the application’s logic part, and it also requires an <em>HTTP Service</em> to publish the web interface and response to the form requests initiated by the user.</li>
 </ol>
 
-<p>The required <em>HTTP Service</em> for the last component <strong>Spell Client</strong> is provided natively by the COHORTE runtime. No need to implement it! The resulting Spell Client should look like this:</p>
-
-<p><img src="/resources/images/getting-started/getting-started-img2.png" alt="SpellChecker Application" /></p>
-
-<p>The important quality of this architecture is the capability to update any component without restarting the global application. This is important for instance to allow adding new <em>Dictionary Service</em>s or updating a new efficient version of the <strong>Spell Checker</strong> component, without stopping the system.</p>
+<p>The required <em>HTTP Service</em> for the last component <strong>Spell Client</strong> is provided natively by the COHORTE runtime. No need to implement it! </p>
 
 <h3 id="implement-the-different-application-components">Implement the different application components</h3>
 
@@ -113,6 +109,15 @@
 <blockquote>
   <p><strong>Notice</strong> that you can have a COHORTE application with a mixte of Java and Python components!</p>
 </blockquote>
+
+<p>The resulting Spell Client should look like this:</p>
+
+<p><img src="/resources/images/getting-started/getting-started-img2.png" alt="SpellChecker Application" /></p>
+
+<p>The important quality of this architecture is the capability to update any component without restarting the global application. This is important for instance to allow adding new <em>Dictionary Service</em>s or updating a new efficient version of the <strong>Spell Checker</strong> component, without stopping the system.</p>
+
+<p>Another important quality is the isolation between application components…</p>
+
 
             <br/>
             <br/>

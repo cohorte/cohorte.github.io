@@ -10,16 +10,18 @@ comments: false
 
 Welcome to COHORTE for Python! With COHORTE, you can build modular and resilient applications using the [Python programming language](https://www.python.org), and take advantage of the many benefits of the COHORTE approach (see [what is COHORTE?](./what-is-cohorte.html)).  
 
-In this tutorial, we will implement the awesome **spellchecker** application detailed on the [getting started](./getting-started.html) page.
+In this tutorial, we will implement the awesome **spellchecker** application detailed in the [getting started](./getting-started.html) page.
 
-### Implement the different application components
+![SpellChecker Application]({{ site.baseurl }}/resources/images/getting-started/getting-started-img1.png)
+
+### Implementation
 
 In this section, we will detail how the different components are implemented. For simplicity, we will not use a modern Integrated Developement Environment like eclipse, we rather create simple text files for the different Python code implementing our application components.
 
-> Check the [Developer's Guide](./dev-guide.html) for instructions on how to use your prefered IDE like Eclipse (PyDev) of IDEA (PyCharm).
+> Check the [Developer's Guide](./dev-guide.html) for instructions on how to use your prefered IDE like Eclipse (PyDev) or IDEA (PyCharm).
 
-First, create a directory called `spellchecker`on which you put the different components.
-A COHORTE Component is implemented in python as a simple module with some specific class and method decorators. The following python code `spell_dictionary_EN.py`is the implementation of the **English Dictionary** component.
+First, create a directory called `spellchecker`on which you will put the different components.
+A COHORTE Component is implemented in python as a simple module with some specific class and method decorators. The following python code `spell_dictionary_EN.py` shows the implementation of the **English Dictionary** component.
 
 #### English Dictionary
 [spell_dictionary_EN.py](https://github.com/isandlaTech/cohorte-demos/blob/master/spellchecker/bundles/spellchecker-python/src/main/python/spellchecker/spell_dictionary_EN.py)
@@ -29,34 +31,49 @@ from pelix.ipopo.decorators import ComponentFactory, Property, Provides, \
 
 @ComponentFactory("spell_dictionary_en_factory")
 @Provides("dictionary_service")
-@Property("language","language","EN")
+@Property("_language","language","EN")
 class SpellDictionary(object):
     def __init__(self):
-        self.dictionary = None
-        self.language = None
+        self._dictionary = None
+        self._language = None
 
     @Validate
     def validate(self, context):
-        self.dictionary = {"hello" , "world", "welcome", "to", "cohorte"}
+        self._dictionary = {"hello" , "world", "welcome", "to", "cohorte"}
 
     @Invalidate
     def invalidate(self, context):
-        self.dictionary = None
+        self._dictionary = None
 
     def check_word(self, word):
         word = word.lower().strip()
-        return not word or word in self.dictionary
+        return not word or word in self._dictionary
 
 {% endhighlight %}
 
+We have a simple Python class called `SpellDictionary`. This class is decorated with three different decorators imported from the package `pelix.ipopo`. This package is our underlying component-based framework used in COHORTE (called iPOPO). 
+
+ * `@ComponentFactory` allows COHORTE to consider this class as a *component factory* which is an object used to instantiate $Component*s of the class `SpellDictionary` at runtime. The name given between parenthesis will be used to describe the overall application (see further). 
+
+ * `@Provides` make this component as a service provider for the service given between parenthesis (*dictionary_service*). This service has one method (*check_work*) that any provider should implement. 
+
+ * `@Property` add some contextual properties to the provider implementation of the service. Here in this example, we add the property *language* and set its value `EN`. When another component requires the *dictionary_service*, it can filter the providers depending on this properties (for instance take only dictionary providers for english language).
+
+In addition to this class decorators, we have also two method decorators:
+
+ * `@Validate` lets the COHORTE runtime calls the decorated method when the component instance is lanched and in a valid statee.
+
+ * `@Invalidate` lets the COHORTE runtime calls the decorated method when the component is not valid (dependencies are not resolved for instance).
+
+For more information about iPOPO component-model, check its [wiki website](http://ipopo.coderxpress.net). 
+
 #### Spell Checker
 
-spell_checker.py
+[spell_checker.py](https://github.com/isandlaTech/cohorte-demos/blob/master/spellchecker/bundles/spellchecker-python/src/main/python/spellchecker/spell_checker.py)
 
 {% highlight python %}
 from pelix.ipopo.decorators import ComponentFactory, Provides, \
     Validate, Invalidate, Requires, BindField, UnbindField
-
 import re
 
 @ComponentFactory("spell_checker_factory")
@@ -98,6 +115,13 @@ class SpellChecker(object):
                 and not dictionary.check_word(word)]
 
 {% endhighlight %}
+
+This second component provides *checker_service* service, and it requires *dictionary_service*s. Notice that we have positioned the *aggregate* option to *true* so that all the possible providers of this service are injected in the specified class attribute *_dictionaries*. 
+
+In addition to already explained decorators used in the first component, this second one uses two others:
+
+ * `@BindField`: calls the decorated method when a new provider of the *dictionray_service* is detected at runtime. In this case, we want to get the service property *language* to construct a map of <language/provider> peers. 
+ * `@UnbindField`: calls the decorated method when one provider of the *dictionary_service* in no longer available. We update our internal map in response to this change.
 
 #### Spell Client 
 
@@ -173,6 +197,8 @@ To start running your awesome first COHORTE application, you need to [download C
 {% highlight sh %}
 sh run.sh -t -c
 {% endhighlight %}
+
+> For more setup and startup configurations, please check the [Reference Guide](./reference-guide.html) page.
 
 ### Monitoring
 

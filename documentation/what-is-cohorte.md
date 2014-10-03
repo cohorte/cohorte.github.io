@@ -34,7 +34,7 @@ There are a number of benefits to using COHORTE to build your software applicati
 	</div>
 	<div class="span4">
 		<h4>Multi-language programming</h4>
-		<p>Components in a COHORTE system can be implemented using Java or Python programming languages (other languages are under study). COHORTE uses two similar Service-Oriented Component-based frameworks for Java and Python environments. Service provider can be implemented using Python and used by another component implemented in Java.</p>
+		<p>Components in a COHORTE system can be implemented using your Java or Python programming languages (other languages are under study). You can also wrap C modules within Python components to use legacy C code. In addition, you can dynamically update the C code without any complications.COHORTE uses two similar Service-Oriented Component-based frameworks for Java and Python environments. Service provider can be implemented using Python and used by another component implemented in Java.</p>
 	</div>
 </div>
 <div class="row" style="padding-top:25px; padding-bottom:25px;">
