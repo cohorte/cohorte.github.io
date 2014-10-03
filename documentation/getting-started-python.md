@@ -116,16 +116,19 @@ class SpellChecker(object):
 
 {% endhighlight %}
 
-This second component provides *checker_service* service, and it requires *dictionary_service*s. Notice that we have positioned the *aggregate* option to *true* so that all the possible providers of this service are injected in the specified class attribute *_dictionaries*. 
+This second component provides *checker_service* service, and it requires *dictionary_service*s. Notice that we have set the *aggregate* option of the `@Requires`decorator to *true* so that all the possible providers of the *dictionray_service* service are injected in the specified class attribute *_dictionaries*. 
 
 In addition to already explained decorators used in the first component, this second one uses two others:
 
  * `@BindField`: calls the decorated method when a new provider of the *dictionray_service* is detected at runtime. In this case, we want to get the service property *language* to construct a map of <language/provider> peers. 
- * `@UnbindField`: calls the decorated method when one provider of the *dictionary_service* in no longer available. We update our internal map in response to this change.
+ * `@UnbindField`: calls the decorated method when one provider of the *dictionary_service* in no longer available. We update our internal map in response to this change. 
+
+The *checker_service* implemented by this component has one methdd *check*. It takes a paragraph and a language parameters and uses the found *dictionary_service* providers to check the spell of paragraph's words. This service is used by the next component *Spell Client*.
 
 #### Spell Client 
 
-spell_client.py
+[spell_client.py](https://github.com/isandlaTech/cohorte-demos/blob/master/spellchecker/bundles/spellchecker-python/src/main/python/spellchecker/spell_client.py)
+
 
 {% highlight python %}
 from pelix.ipopo.decorators import ComponentFactory, Provides, Property, \
@@ -190,9 +193,13 @@ class SpellClient(object):
         response.send_content(200, content)
 {% endhighlight %}
 
+This last component implements and provides the *pelix.http.servlet* so that it will be called by the web server when a request arrives. The *HTTP Service* provider (included in COHORTE) call the *do_GET* method of this component. In our example, we return via the response object a valid html page with a form asking the user to put his sentence and choose a language.
+
 ### Startup
 
-To start running your awesome first COHORTE application, you need to [download COHORTE Platform](http://repo.isandlatech.com/) in your local machine. Extract the dowloaded file anywhere in your file system and create the *environment Variable* **$COHORTE_HOME** which has as value the location in which you have extracted COHORTE Platform archive file. Next, you need to launch your application... 
+To start running your awesome first COHORTE application, you need to [download COHORTE Platform](http://repo.isandlatech.com/) in your local machine. Extract the dowloaded file anywhere in your file system and create the *environment Variable* **$COHORTE_HOME** which has as value the location in which you have extracted COHORTE Platform archive file. 
+
+Next, you need to launch your application... 
 
 {% highlight sh %}
 sh run.sh -t -c

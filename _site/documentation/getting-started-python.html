@@ -195,18 +195,20 @@ A COHORTE Component is implemented in python as a simple module with some specif
                 <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">punctuation_marks</span> \
                 <span class="ow">and</span> <span class="ow">not</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">check_word</span><span class="p">(</span><span class="n">word</span><span class="p">)]</span></code></pre></div>
 
-<p>This second component provides <em>checker_service</em> service, and it requires <em>dictionary_service</em>s. Notice that we have positioned the <em>aggregate</em> option to <em>true</em> so that all the possible providers of this service are injected in the specified class attribute <em>_dictionaries</em>. </p>
+<p>This second component provides <em>checker_service</em> service, and it requires <em>dictionary_service</em>s. Notice that we have set the <em>aggregate</em> option of the <code>@Requires</code>decorator to <em>true</em> so that all the possible providers of the <em>dictionray_service</em> service are injected in the specified class attribute <em>_dictionaries</em>. </p>
 
 <p>In addition to already explained decorators used in the first component, this second one uses two others:</p>
 
 <ul>
   <li><code>@BindField</code>: calls the decorated method when a new provider of the <em>dictionray_service</em> is detected at runtime. In this case, we want to get the service property <em>language</em> to construct a map of &lt;language/provider&gt; peers. </li>
-  <li><code>@UnbindField</code>: calls the decorated method when one provider of the <em>dictionary_service</em> in no longer available. We update our internal map in response to this change.</li>
+  <li><code>@UnbindField</code>: calls the decorated method when one provider of the <em>dictionary_service</em> in no longer available. We update our internal map in response to this change. </li>
 </ul>
+
+<p>The <em>checker_service</em> implemented by this component has one methdd <em>check</em>. It takes a paragraph and a language parameters and uses the found <em>dictionary_service</em> providers to check the spell of paragraph’s words. This service is used by the next component <em>Spell Client</em>.</p>
 
 <h4 id="spell-client">Spell Client</h4>
 
-<p>spell_client.py</p>
+<p><a href="https://github.com/isandlaTech/cohorte-demos/blob/master/spellchecker/bundles/spellchecker-python/src/main/python/spellchecker/spell_client.py">spell_client.py</a></p>
 
 <div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">pelix.ipopo.decorators</span> <span class="kn">import</span> <span class="n">ComponentFactory</span><span class="p">,</span> <span class="n">Provides</span><span class="p">,</span> <span class="n">Property</span><span class="p">,</span> \
     <span class="n">Validate</span><span class="p">,</span> <span class="n">Invalidate</span><span class="p">,</span> <span class="n">Requires</span>
@@ -269,9 +271,13 @@ A COHORTE Component is implemented in python as a simple module with some specif
 <span class="s">    &lt;/html&gt;&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result</span><span class="o">=</span><span class="n">result</span><span class="p">)</span>
         <span class="n">response</span><span class="o">.</span><span class="n">send_content</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span></code></pre></div>
 
+<p>This last component implements and provides the <em>pelix.http.servlet</em> so that it will be called by the web server when a request arrives. The <em>HTTP Service</em> provider (included in COHORTE) call the <em>do_GET</em> method of this component. In our example, we return via the response object a valid html page with a form asking the user to put his sentence and choose a language.</p>
+
 <h3 id="startup">Startup</h3>
 
-<p>To start running your awesome first COHORTE application, you need to <a href="http://repo.isandlatech.com/">download COHORTE Platform</a> in your local machine. Extract the dowloaded file anywhere in your file system and create the <em>environment Variable</em> <strong>$COHORTE_HOME</strong> which has as value the location in which you have extracted COHORTE Platform archive file. Next, you need to launch your application… </p>
+<p>To start running your awesome first COHORTE application, you need to <a href="http://repo.isandlatech.com/">download COHORTE Platform</a> in your local machine. Extract the dowloaded file anywhere in your file system and create the <em>environment Variable</em> <strong>$COHORTE_HOME</strong> which has as value the location in which you have extracted COHORTE Platform archive file. </p>
+
+<p>Next, you need to launch your application… </p>
 
 <div class="highlight"><pre><code class="language-sh" data-lang="sh">sh run.sh -t -c</code></pre></div>
 

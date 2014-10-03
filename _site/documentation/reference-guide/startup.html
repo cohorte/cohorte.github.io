@@ -75,38 +75,114 @@
       <!-- <div class="span12"> -->
           <div class="main-page-column">
             
-            <p><a href="../">Home</a> &gt; <a href="./">Documentation</a></p>
+            <p><a href="../">Home</a> &gt; <a href="./">Documentation</a> &gt; <a href="../reference-guide.html">Reference Guide</a></p>
 
-<h2 id="reference-guide">Reference Guide</h2>
+<hr />
 
-<h3 id="at-glance">At Glance</h3>
+<h2 id="startup">Startup</h2>
 
-<div class="menu-choices">	
-    <a style="left: 0%;" class="menu-choice menu-choice-setup" href="./reference-guide/setup.html">Setup</a>
-	<a style="left: 30%;" class="menu-choice menu-choice-component" href="./reference-guide/components.html">Components</a>
-     <a style="left: 60%;" class="menu-choice menu-choice-application" href="./reference-guide/application.html">Application</a> 
-</div>
-<div class="menu-choices">	
-	<a style="left: 0%;" class="menu-choice menu-choice-startup" href="./reference-guide/startup.html">Startup</a>
-      <a style="left: 30%;" class="menu-choice menu-choice-shell" href="./reference-guide/shell.html">Shell</a>
-      <a style="left: 60%;" class="menu-choice menu-choice-monitoring" href="./reference-guide/monitoring.html">Monitoring</a>
-</div>
+<h3 id="startup-configurations">Startup configurations</h3>
 
-<h3 id="detailed-table-of-content">Detailed table of content</h3>
+<h4 id="composition-configuration-file">Composition configuration file</h4>
 
-<ul>
-  <li><a href="./reference-guide/setup.html">Setup</a></li>
-  <li><a href="">Application</a></li>
-  <li><a href="">Startup</a>
-    <ul>
-      <li>Startup configurations</li>
-      <li>Startup options</li>
-    </ul>
-  </li>
-  <li><a href="">Shell commands</a></li>
-  <li><a href="">Monitoring</a></li>
-</ul>
+<p>Talk about <code>autorun_conf.js</code>.</p>
 
+<h4 id="other-configurations">Other configurations</h4>
+
+<p>The following configuration files (located on <code>$COHORTE_HOME/conf</code> folder) are used by COHORTE for the initial configuration of the different internal components. You can override them by creating a file with the same name in your <code>$COHORTE_BASE/conf</code> folder.</p>
+
+<blockquote>
+  <p>Boot configuration files</p>
+</blockquote>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+	<thead>
+	<tr>
+		<th> File               </th><th> Bundles &amp; Components  </th>
+	</tr>
+	</thead>
+	<tbody><tr>
+		<td> <a href="" src="#">boot-common.js</a>        </td><td> Pelix, iPOPO, Shell </td>
+	</tr>
+	<tr>
+		<td> <a href="" src="#">boot-common-py.js</a>     </td><td> Pelix Remote Services, Cohorte Signals </td>
+	</tr>
+	</tbody>
+	</table>
+
+<blockquote>
+  <p>Python Isolates configuration files</p>
+</blockquote>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+	<thead>	
+	<tr>
+		<th> File               </th><th> Bundles &amp; Components  </th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td> <a href="" src="#">python-common-http.js</a> </td><td> HTTP Server </td>
+	</tr>
+	</tbody>
+	</table>
+
+<blockquote>
+  <p>Java Isolates configuration files</p>
+</blockquote>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+	<thead>	
+	<tr>
+		<th> File               </th><th> Bundles &amp; Components  </th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td> <a href="" src="#">java-common.js</a>        </td><td> iPOJO, Shell, Cohorte PyBoot, Isolate Base &amp; Utilities </td>
+	</tr>
+	<tr>
+		<td> <a href="" src="#">java-common-http.js</a>   </td><td> HTTP Server </td>
+	</tr>
+	<tr>
+		<td> <a href="" src="#">java-common-remote.js</a> </td><td> Cohorte Remote Services </td>
+	</tr>
+	<tr>
+		<td> <a href="" src="#">java-common-signals.js</a> </td><td> Cohorte Signals, Signals Discovery </td>
+	</tr>
+	<tr>
+		<td> <a href="" src="#">java-common-ui.js</a>     </td><td> Cohorte UI Admin </td>
+	</tr>
+</tbody></table>
+
+<h3 id="startup-options">Startup options</h3>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+	<thead>
+	<tr>
+		<th> Option </th><th> Description </th>
+	</tr>
+	</thead>
+	<tbody><tr>
+		<td> -h / –help         </td><td> Show help </td>
+	</tr>
+	<tr>
+		<td> -t / –top-composer </td><td> Run in “Top Composer” mode (only one Top Composer should be started) </td>
+	</tr>
+	<tr>
+		<td> -c / –color        </td><td> Colored output (Linux, Mac) </td>
+	</tr>
+	<tr>
+		<td> -d / –debug        </td><td> Debug mode (logs) </td>
+	</tr>
+	<tr>
+		<td> -v / –verbose      </td><td> Verbose mode (logs and outputs) </td>
+	</tr>
+</tbody></table>
+
+<hr />
+
+<p><a href="../">Home</a> &gt; <a href="./">Documentation</a> &gt; <a href="../reference-guide.html">Reference Guide</a></p>
 
             <br/>
             <br/>

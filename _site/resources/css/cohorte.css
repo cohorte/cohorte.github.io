@@ -924,14 +924,14 @@ div#toc ul > li + ul > li { margin-top: 12px; }
 
 /* ----- Getting started --------------------------- */
 
-.language-choices {
+.menu-choices {
   position: relative;
-  /* language-choice height + 2x 2px border = */
+  /* menu-choice height + 2x 2px border = */
   height: 164px;
   margin: 0 0 25px 60px;
 }
 
-.language-choice {
+.menu-choice {
   display: inline-block;
   position: absolute;
   background: #ffffff no-repeat center 25%;
@@ -949,18 +949,42 @@ div#toc ul > li + ul > li { margin-top: 12px; }
   text-decoration: none;
 }
 
-.language-choice:hover {
+.menu-choice:hover {
   border-color: #ddd;
 }
 
-.language-choice.language-choice-selected {
+.menu-choice.menu-choice-selected {
   border-color: #4D90FE;
 }
 
-.language-choice-python {
+.menu-choice-python {
   background-image: url('../images/python-color.png');
 }
 
-.language-choice-java {
+.menu-choice-java {
   background-image: url('../images/java-color.png');
+}
+
+.menu-choice-component {
+  background-image: url('../images/reference-guide/component.png');
+}
+
+.menu-choice-application {
+  background-image: url('../images/reference-guide/application.png');
+}
+
+.menu-choice-setup {
+  background-image: url('../images/reference-guide/setup.png');
+}
+
+.menu-choice-startup {
+  background-image: url('../images/reference-guide/startup.png');
+}
+
+.menu-choice-shell {
+  background-image: url('../images/reference-guide/shell.png');
+}
+
+.menu-choice-monitoring {
+  background-image: url('../images/reference-guide/monitoring.png');
 }

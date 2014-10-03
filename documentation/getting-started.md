@@ -29,10 +29,10 @@ The required *HTTP Service* for the last component **Spell Client** is provided 
 
 To get started, choose first your favorite programming language.
 
-<div class="language-choices">	
-    <a style="left: 0%;" class="language-choice language-choice-python"
+<div class="menu-choices">	
+    <a style="left: 0%;" class="menu-choice menu-choice-python"
       href="./getting-started-python.html">Python</a>
-	<a style="left: 30%;" class="language-choice language-choice-java"
+	<a style="left: 30%;" class="menu-choice menu-choice-java"
       href="./getting-started-java.html">Java</a>
 </div>
 
