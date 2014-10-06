@@ -99,11 +99,53 @@
 
 <h2 id="build-the-sources">Build the sources</h2>
 
+<h3 id="java-code">Java code</h3>
+
+<p>TODO: should use <code>dev</code> branch (except for cohorte-utilities).</p>
+
 <p>You need to run the Maven build command on each subproject seperatly. </p>
 
-<blockquote>
-  <p>mvn clean install </p>
-</blockquote>
+<ol>
+  <li>clone and compile <code>cohorte-org.jabsorb.ng</code>
+    <ul>
+      <li><code>git clone git@github.com:isandlaTech/cohorte-org.jabsorb.ng.git</code></li>
+      <li><code>cd cohorte-org.jabsorb.ng</code></li>
+      <li><code>mvn clean install</code></li>
+    </ul>
+  </li>
+  <li>clone and compile <code>cohorte-remote-services</code>
+    <ul>
+      <li><code>git clone git@github.com:isandlaTech/cohorte-remote-services.git</code></li>
+      <li><code>cd cohorte-org.jabsorb.ng</code></li>
+      <li><code>mvn clean install</code></li>
+    </ul>
+  </li>
+  <li>clone and compile <code>cohorte-herald</code>
+    <ul>
+      <li><code>git clone git@github.com:isandlaTech/cohorte-herald.git</code></li>
+      <li>cd cohorte-herald/java</li>
+      <li><code>mvn clean install</code></li>
+    </ul>
+  </li>
+  <li>clone and compile <code>cohorte-utilities</code>
+    <ul>
+      <li><code>git clone git@github.com:isandlaTech/cohorte-utilities.git</code></li>
+      <li>cd cohorte-utilities</li>
+      <li><code>mvn clean install</code></li>
+    </ul>
+  </li>
+  <li>clone and compile <code>cohorte-runtime</code>
+    <ul>
+      <li><code>git clone git@github.com:isandlaTech/cohorte-runtime.git</code></li>
+      <li>cd cohorte-runtime/java</li>
+      <li><code>mvn clean install</code></li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="python-code">Python code</h3>
+
+<p>TODO</p>
 
 <h2 id="bug-fixing">Bug fixing</h2>
 

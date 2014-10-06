@@ -15,8 +15,19 @@ There are three ways of installing COHORTE on your system:
 
 No prerequisites are needed. The installer will install all the needed artifacts of COHORTE distribution including the Java Virutal Machine (JVM) and Python interpreter.
 
-Go to the [donwloads page](../../downloads) and choose your platform dependent installer to download. 
+Go to the [donwloads page](../../downloads) and choose your platform dependent installer to download and use. 
 
+##### Windows Installer
+
+TODO (exe/msi)
+
+##### Mac OS X Installer
+
+TODO (pkg)
+
+##### Linux Installer
+
+TODO (deb/pkg)
 
 #### 2) Using Python tools 
 
@@ -38,10 +49,12 @@ Depending on your operating system, we give some insights about how install COHO
 1. Donwload the COHORTE distribution adequate to your operating system from [repo.isandatech.com/cohorte](http://repo.isandatech.com/cohorte). For Max OS X you download `cohorte-1.0.0-macosx.tar.gz`.
 2. Extract the distribution archive, i.e. `cohorte-1.0.0-macosx.tar.gz` to the directory you wish to install COHORTE. These instructions assume you chose `/Applications/Cohorte`. The subdirectory `cohorte-1.0.0` will be created from the archive.
 3. Add the `COHORTE_HOME` environment variable. E.g., `export COHORTE_HOME=/Applications/Cohorte/cohorte-1.0.0/home`.
-4. Add `COHORTE_HOME` environment variable to your path, e.g. `export PATH=$COHORTE_HOME:$PATH`.
-5. Run `cohorte --version` to verify that it is correctly installed.
 
 ##### Windows
+
+1. Donwload the COHORTE distribution adequate to your operating system from [repo.isandatech.com/cohorte](http://repo.isandatech.com/cohorte). For Windows platform, download `cohorte-1.0.0-windows.zip`.
+2. Unzip the distribution archive to the directory you wish to install COHORTE. These instructions assume you chose `C:\Program Files\Cohorte`. The subdirectory `cohorte-1.0.0` will be created from the archive.
+3. Add the `COHORTE_HOME` environment variable by opening up the system properties (WinKey + Pause), selecting the "Advanced" tab, and the "Environment Variables" button, then adding the `COHORTE_HOME` variable in the user variables with the value `C:\Program Files\Cohorte\cohorte-1.0.0\home`. Be sure to omit any quotation marks around the path even if it contains spaces. 
 
 ## What is included?
 

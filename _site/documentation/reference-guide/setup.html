@@ -87,7 +87,19 @@
 
 <p>No prerequisites are needed. The installer will install all the needed artifacts of COHORTE distribution including the Java Virutal Machine (JVM) and Python interpreter.</p>
 
-<p>Go to the <a href="../../downloads">donwloads page</a> and choose your platform dependent installer to download. </p>
+<p>Go to the <a href="../../downloads">donwloads page</a> and choose your platform dependent installer to download and use. </p>
+
+<h5 id="windows-installer">Windows Installer</h5>
+
+<p>TODO (exe/msi)</p>
+
+<h5 id="mac-os-x-installer">Mac OS X Installer</h5>
+
+<p>TODO (pkg)</p>
+
+<h5 id="linux-installer">Linux Installer</h5>
+
+<p>TODO (deb/pkg)</p>
 
 <h4 id="using-python-tools">2) Using Python tools</h4>
 
@@ -111,11 +123,15 @@
   <li>Donwload the COHORTE distribution adequate to your operating system from <a href="http://repo.isandatech.com/cohorte">repo.isandatech.com/cohorte</a>. For Max OS X you download <code>cohorte-1.0.0-macosx.tar.gz</code>.</li>
   <li>Extract the distribution archive, i.e. <code>cohorte-1.0.0-macosx.tar.gz</code> to the directory you wish to install COHORTE. These instructions assume you chose <code>/Applications/Cohorte</code>. The subdirectory <code>cohorte-1.0.0</code> will be created from the archive.</li>
   <li>Add the <code>COHORTE_HOME</code> environment variable. E.g., <code>export COHORTE_HOME=/Applications/Cohorte/cohorte-1.0.0/home</code>.</li>
-  <li>Add <code>COHORTE_HOME</code> environment variable to your path, e.g. <code>export PATH=$COHORTE_HOME:$PATH</code>.</li>
-  <li>Run <code>cohorte --version</code> to verify that it is correctly installed.</li>
 </ol>
 
 <h5 id="windows">Windows</h5>
+
+<ol>
+  <li>Donwload the COHORTE distribution adequate to your operating system from <a href="http://repo.isandatech.com/cohorte">repo.isandatech.com/cohorte</a>. For Windows platform, download <code>cohorte-1.0.0-windows.zip</code>.</li>
+  <li>Unzip the distribution archive to the directory you wish to install COHORTE. These instructions assume you chose <code>C:\Program Files\Cohorte</code>. The subdirectory <code>cohorte-1.0.0</code> will be created from the archive.</li>
+  <li>Add the <code>COHORTE_HOME</code> environment variable by opening up the system properties (WinKey + Pause), selecting the “Advanced” tab, and the “Environment Variables” button, then adding the <code>COHORTE_HOME</code> variable in the user variables with the value <code>C:\Program Files\Cohorte\cohorte-1.0.0\home</code>. Be sure to omit any quotation marks around the path even if it contains spaces. </li>
+</ol>
 
 <h2 id="what-is-included">What is included?</h2>
 
