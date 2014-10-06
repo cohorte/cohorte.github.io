@@ -28,23 +28,18 @@ title: Learn
       <h3><a href="{{ site.baseurl }}/documentation/demonstrations.html">Demonstrations</a></h3>
       <p>Get an in-depth overview of COHORTE by following some demonstrations prepared by COHORTE developers.</p>
     </div>
-    <div class="span4 doc-block">
-      <h3><a href="{{ site.baseurl }}/documentation/publications.html">Articles & Publications</a></h3>
-      <p>Scientifique publications around COHORTE and journal articles</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="span4 doc-block">
+   <div class="span4 doc-block">
       <h3><a href="{{ site.baseurl }}/documentation/reference-guide.html">Reference Guide</a></h3>
       <p>The complete Reference Guide of COHORTE platform.</p>
     </div> 
-    
-    <div class="span4 doc-block">
-      <h3><a href="{{ site.baseurl }}/documentation/dev-guide.html">Developer's Guide</a></h3>
-      <p>COHORTE users and developers guide (technical details and detailed APIs).</p>
-    </div> 
-  
+
   </div>
+  <!--div class="row">
+   <div class="span4 doc-block">
+      <h3><a href="{{ site.baseurl }}/documentation/publications.html">Articles & Publications</a></h3>
+      <p>Scientifique publications around COHORTE and journal articles</p>
+    </div>
+  </div-->
 
   
 </div>

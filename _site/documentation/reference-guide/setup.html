@@ -2,7 +2,7 @@
 <html>
   <head>
 
-    <title>Reference Guide | Cohorte Project</title>
+    <title>Reference Guide | Setup | Cohorte Project</title>
     
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
@@ -65,7 +65,7 @@
 
 <div class="midbluebar">
   <div class="container">
-    <h1 id="page-title">Reference Guide</h1>
+    <h1 id="page-title">Reference Guide | Setup</h1>
   </div>
 </div>
 
@@ -75,20 +75,64 @@
       <!-- <div class="span12"> -->
           <div class="main-page-column">
             
-            <p><a href="../">Home</a> &gt; <a href="./">Documentation</a> &gt; <a href="../reference-guide.html">Reference Guide</a></p>
+            <p><a href="../../">Home</a> &gt; <a href="../">Documentation</a> &gt; <a href="../reference-guide.html">Reference Guide</a></p>
 
 <hr />
 
-<h2 id="setup">Setup</h2>
+<h2 id="download-and-install-cohorte-distribution">Download and install COHORTE distribution</h2>
+
+<p>There are three ways of installing COHORTE on your system:</p>
+
+<h4 id="using-installer">1) Using Installer</h4>
+
+<p>No prerequisites are needed. The installer will install all the needed artifacts of COHORTE distribution including the Java Virutal Machine (JVM) and Python interpreter.</p>
+
+<p>Go to the <a href="../../downloads">donwloads page</a> and choose your platform dependent installer to download. </p>
+
+<h4 id="using-python-tools">2) Using Python tools</h4>
+
+<p>If you have Python installed on your machine, you can download and install COHORTE with a simple command line. Depending on your operating system, you can use the following commands:</p>
 
 <ul>
-  <li>Windows</li>
-  <li>Linux</li>
-  <li>Mac OS x</li>
-  <li>Others </li>
+  <li><code>pip install cohorte-macos</code> for Mac OS X platform.</li>
+  <li><code>pip install cohorte-linux</code> for Linux-based platforms.</li>
+  <li><code>pip install cohorte-windows</code> for Windows platforms.</li>
 </ul>
 
-<p>TODO: talk about <code>$COHORTE_HOME</code> and `$COHORTE_BASE</p>
+<p>These assume that you have <code>pip</code> tools installed on your machine. </p>
+
+<h4 id="manual-installation">1) Manual installation</h4>
+
+<p>Depending on your operating system, we give some insights about how install COHORTE distribution using specific platform instructions.</p>
+
+<h5 id="unix-based-operating-systems-linux-solaris-and-max-os-x">Unix-based Operating Systems (Linux, Solaris and Max OS X)</h5>
+
+<ol>
+  <li>Donwload the COHORTE distribution adequate to your operating system from <a href="http://repo.isandatech.com/cohorte">repo.isandatech.com/cohorte</a>. For Max OS X you download <code>cohorte-1.0.0-macosx.tar.gz</code>.</li>
+  <li>Extract the distribution archive, i.e. <code>cohorte-1.0.0-macosx.tar.gz</code> to the directory you wish to install COHORTE. These instructions assume you chose <code>/Applications/Cohorte</code>. The subdirectory <code>cohorte-1.0.0</code> will be created from the archive.</li>
+  <li>Add the <code>COHORTE_HOME</code> environment variable. E.g., <code>export COHORTE_HOME=/Applications/Cohorte/cohorte-1.0.0/home</code>.</li>
+  <li>Add <code>COHORTE_HOME</code> environment variable to your path, e.g. <code>export PATH=$COHORTE_HOME:$PATH</code>.</li>
+  <li>Run <code>cohorte --version</code> to verify that it is correctly installed.</li>
+</ol>
+
+<h5 id="windows">Windows</h5>
+
+<h2 id="what-is-included">What is included?</h2>
+
+<p>COHORTE distribution contains two main folders:</p>
+
+<ul>
+  <li><code>home</code>: the main distribution runtime files.</li>
+  <li><code>base</code>: base distribution used to launch user-specific applications (including his developed and provided components)</li>
+</ul>
+
+<p>The <code>home</code> folder is the main distribution’s directory, it contains all the needed libraries and binaris to run the COHORTE system. In particular, it has the following content:</p>
+
+<ul>
+  <li><code>conf</code></li>
+  <li><code>repo</code></li>
+  <li>…</li>
+</ul>
 
 <hr />
 
