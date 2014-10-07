@@ -2,7 +2,7 @@
 <html>
   <head>
 
-    <title>Reference Guide | Cohorte Project</title>
+    <title>Community | Continuous Integration | Cohorte Project</title>
     
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
@@ -65,7 +65,7 @@
 
 <div class="midbluebar">
   <div class="container">
-    <h1 id="page-title">Reference Guide</h1>
+    <h1 id="page-title">Community | Continuous Integration</h1>
   </div>
 </div>
 
@@ -75,21 +75,161 @@
       <!-- <div class="span12"> -->
           <div class="main-page-column">
             
-            <p><a href="../">Home</a> &gt; <a href="./">Documentation</a> &gt; <a href="../reference-guide.html">Reference Guide</a></p>
+            <p><a href="../">Home</a> &gt; <a href="./">Community</a></p>
 
-<hr />
+<h2 id="continuous-integration">Continuous Integration</h2>
 
-<h2 id="monitoring">Monitoring</h2>
+<h3 id="general-build-process">General Build Process</h3>
 
-<p>TODO: talk about Web Admin</p>
+<p><img src="/resources/images/community/build-process.png" alt="Build Process" /></p>
 
-<hr />
+<ul>
+  <li>
+    <p><strong>(1)</strong> push changes to dev branches in GitHub</p>
+  </li>
+  <li>
+    <p><strong>(2)</strong> night builds of the dev branches</p>
+  </li>
+  <li>
+    <p><strong>(3a)</strong> send rapport email to developers</p>
+  </li>
+  <li>
+    <p><strong>(3b)</strong> update snapshots</p>
+    <ul>
+      <li>deploy java snapshot files to repo.isandlatech.com/maven/snapshots</li>
+      <li>deploy python wheels to repo.isandlatech.com/pypi/dev</li>
+    </ul>
+  </li>
+</ul>
 
-<p><a href="../">Home</a> &gt; <a href="./">Documentation</a> &gt; <a href="../reference-guide.html">Reference Guide</a></p>
+<h3 id="github">GitHub</h3>
+
+<h3 id="isandlatech-repositories">IsandlaTech Repositories</h3>
+
+<h3 id="jenkins">Jenkins</h3>
+
+<h4 id="java-projects">Java Projects</h4>
+
+<p><img src="/resources/images/community/build-pipeline.png" alt="Build Process" /></p>
+
+<p>A trigger is installed on <code>cohorte-utilities</code> (at midnight) to fire the build pipeline of java projects.</p>
+
+<h2 id="current-sprint">Current Sprint</h2>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">DEV-1.0.0
+
+[m] : maven module
+[p] : python module
+(d) : dependency to other cohorte modules
+
+MAIN MODULES
+============
+
+[m] org.cohorte.jabsorb:org.jabsorb.ng:1.1.0-SNAPSHOT (bundle)
+
+[m] org.cohorte.utilities:cohorte-utilities:1.0.0-SNAPSHOT (pom)
+   [m] :org.cohorte.utilities:1.0.0-SNAPSHOT (eclipse-plugin)
+
+[m] org.cohorte.remote:cohorte-remote-services:1.2.0-SNAPSHOT (pom)
+   [m] :org.cohorte.remote.api: (bundle)
+   [m] :org.cohorte.remote.utilities: (bundle)
+      (d) :org.cohorte.remote.api: 
+   [m] :org.cohorte.remote.core: (bundle)
+      (d) :org.cohorte.remote.api:
+      (d) :org.cohorte.remote.utilities:
+   [m] :org.cohorte.remote.dispatcher.servlet: (bundle)  
+      (d) :org.cohorte.remote.api:
+      (d) :org.cohorte.remote.utilities:  
+      (d) org.cohorte.jabsorb:org.jabsorb.ng:1.1.0-SNAPSHOT
+   [m] :org.cohorte.remote.discovery.multicast: (bundle)
+      (d) :org.cohorte.remote.api:
+      (d) :org.cohorte.remote.utilities:
+      (d) :org.cohorte.remote.dispatcher.servlet:
+      (d) org.cohorte.jabsorb:org.jabsorb.ng:1.1.0-SNAPSHOT
+   [m] :org.cohorte.remote.jabsorbrpc: (bundle)
+      (d) :org.cohorte.remote.api:
+      (d) :org.cohorte.remote.utilities:
+      (d) org.cohorte.jabsorb:org.jabsorb.ng:1.1.0-SNAPSHOT
+   
+[m] org.cohorte.herald:cohorte-herald:0.0.2-SNAPSHOT (pom)
+   [m] :org.cohorte.herald.api: (bundle)
+   [m] :org.cohorte.herald.core: (bundle)
+      (d) :org.cohorte.herald.api:
+   [m] :org.cohorte.herald.http: (bundle)
+      (d) :org.cohorte.herald.api:
+      (d) org.cohorte.jabsorb:org.jabsorb.ng:1.1.0-SNAPSHOT
+   [m] :org.cohorte.herald.rpc: (bundle)
+      (d) :org.cohorte.herald.api:
+      (d) org.cohorte.jabsorb:org.jabsorb.ng:1.1.0-SNAPSHOT
+      (d) org.cohorte.remote:org.cohorte.remote.api:1.2.0-SNAPSHOT
+      (d) org.cohorte.remote:org.cohorte.remote.utilities:1.2.0-SNAPSHOT
+
+[m] org.cohorte.runtime:cohorte-java:1.0.0-SNAPSHOT (pom)
+   [m] :org.cohorte.pyboot: (eclipse-plugin)
+   [m] :org.cohorte.pyboot.api: (eclipse-plugin)
+   [m] :org.cohorte.pyboot.config: (eclipse-plugin)
+   [m] :org.cohorte.pyboot.shell.agent: (eclipse-plugin)
+      (d) org.cohorte.herald:org.cohorte.herald.api:0.0.2-SNAPSHOT
+   [m] :org.psem2m.isolates.base: (eclipse-plugin)
+      (d) org.cohorte.utilities:org.cohorte.utilities:1.0.0-SNAPSHOT
+   [m] :org.psem2m.isolates.constants: (eclipse-plugin)
+   [m] :org.cohorte.composer.api:3.0.0-SNAPSHOT (eclipse-plugin)
+   [m] :org.cohorte.composer.isolate:3.0.0-SNAPSHOT (eclipse-plugin) 
+      (d) org.cohorte.remote:org.cohorte.remote.api:1.2.0-SNAPSHOT
+   [m] :org.cohorte.shell.osgi: (eclipse-plugin)
+   [m] :org.cohorte.shell.remote: (eclipse-plugin)
+      (d) org.cohorte.utilities:org.cohorte.utilities:1.0.0-SNAPSHOT
+   [m] :org.psem2m.isolates.loggers: (eclipse-plugin)
+      (d) org.cohorte.utilities:org.cohorte.utilities:1.0.0-SNAPSHOT
+   [m] :org.psem2m.isolates.slave.agent: (eclipse-plugin)
+      (d) org.cohorte.herald:org.cohorte.herald.api:0.0.2-SNAPSHOT
+      (d) org.cohorte.utilities:org.cohorte.utilities:1.0.0-SNAPSHOT
+   [m] :org.psem2m.status.storage: (eclipse-plugin)
+      (d) org.cohorte.utilities:org.cohorte.utilities:1.0.0-SNAPSHOT
+   [m] :org.psem2m.isolates.ui: (eclipse-plugin)
+      (d) org.cohorte.herald:org.cohorte.herald.api:0.0.2-SNAPSHOT
+      (d) org.cohorte.utilities:org.cohorte.utilities:1.0.0-SNAPSHOT
+   [m] :org.psem2m.isolates.ui.admin: (eclipse-plugin)
+      (d) org.cohorte.utilities:org.cohorte.utilities:1.0.0-SNAPSHOT
+
+[p] cohorte:1.0.0.dev
+   (d) iPOPO&gt;=0.5.7
+   (d) Cohorte-Herald&gt;=0.0.2.dev
+
+[m] org.cohorte.platforms:home:1.0.0-SNAPSHOT
+   (d) org.cohorte.runtime:cohorte-java:1.0.0-SNAPSHOT
+   (d) cohorte:1.0.0.dev
+
+3RDPARTY
+========
+
+jpype
+pelix
+jsonrpclib-pelix</code></pre></div>
+
+<h2 id="previous-releases">Previous Releases</h2>
+
+<p>TODO</p>
 
             <br/>
             <br/>
             <br/>
+            
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                    var disqus_shortname = 'cohorte'; // required: replace example with your forum shortname
+
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                
                 
           </div>
           <div class="sidebar">

@@ -29,34 +29,14 @@ TODO: should use `dev` branch (except for cohorte-utilities).
 
 You need to run the Maven build command on each subproject seperatly. 
 
-1. clone and compile `cohorte-org.jabsorb.ng`
-   * `git clone git@github.com:isandlaTech/cohorte-org.jabsorb.ng.git`
-   * `cd cohorte-org.jabsorb.ng`
-   * `mvn clean install`
-
-2. clone and compile `cohorte-remote-services`
-   * `git clone git@github.com:isandlaTech/cohorte-remote-services.git`
-   * `cd cohorte-org.jabsorb.ng`
-   * `mvn clean install`
-
-3. clone and compile `cohorte-herald`
-   * `git clone git@github.com:isandlaTech/cohorte-herald.git`
-   * cd cohorte-herald/java
-   * `mvn clean install`
-
-4. clone and compile `cohorte-utilities`
-   * `git clone git@github.com:isandlaTech/cohorte-utilities.git`
-   * cd cohorte-utilities
-   * `mvn clean install`
-
-5. clone and compile `cohorte-runtime`
-   * `git clone git@github.com:isandlaTech/cohorte-runtime.git`
-   * cd cohorte-runtime/java
-   * `mvn clean install`
 
 ### Python code
 
 TODO
+
+## Continuous Integration
+
+[Learn more about our build process](./ci.html).
 
 ## Bug fixing
 
