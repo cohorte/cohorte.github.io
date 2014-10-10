@@ -15,13 +15,29 @@ You found detailed installation instructions on [this page of the reference guid
 
 ## Night Builds
 
-<ul>
-<li><b><a href="http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141009.151629-2-macosx-distribution.zip">cohorte-1.0.0-20141009.151629-2-macosx-distribution.zip</a></b></li>
-</ul>
 <div id="download_night_builds">
 </div>
 
 ## Additional information
 
 
+<script>
+    function loadLatestSnapshots() {
+        $.getJSON( "http://cohorte.github.io/latest_platforms.json", function( data ) {
+            console.log("refresh snapshots...");
+            frame = "<ul>";
+            for (var i in data['snapshots']) {
+	            frame += '<li>';	            
+	            frame += i[0];
+	            frame += '</li>';
+			}	
+			frame += "</ul>";
+            $('#download_night_builds').html(frame);
+        });
+    }
 
+    $(document).ready(function() {        
+        loadLatestSnapshots();
+    });
+</script>
+</script>
