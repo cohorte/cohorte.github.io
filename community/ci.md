@@ -30,7 +30,7 @@ comments: true
 
 ### Jenkins
 
-#### Java Projects
+Current Jenkins Build Process:
 
 ![Build Process]({{ site.baseurl }}/resources/images/community/build-pipeline.png)
 
