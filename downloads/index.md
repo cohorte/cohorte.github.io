@@ -27,7 +27,7 @@ You found detailed installation instructions on [this page of the reference guid
             console.log("refresh snapshots...");
             frame = "<ul>";
             for (var i in data['snapshots']) {
-            	for (var key in data['snapshots']) {
+            	for (var key in Object.keys(data['snapshots'])) {
             	    frame += '<li>';	            
 	            frame += key;
 	            frame += '</li>';		
@@ -41,5 +41,4 @@ You found detailed installation instructions on [this page of the reference guid
     $(document).ready(function() {        
         loadLatestSnapshots();
     });
-</script>
 </script>
