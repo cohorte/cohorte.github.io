@@ -26,13 +26,8 @@ You found detailed installation instructions on [this page of the reference guid
         $.getJSON( "http://cohorte.github.io/latest_platforms.json", function( data ) {
             console.log("refresh snapshots...");
             frame = "<ul>";
-            for (var i in data['snapshots']) {
-            	for (var key in Object.keys(data['snapshots'])) {
-            	    frame += '<li>';	            
-	            frame += key;
-	            frame += '</li>';		
-            	}
-	    }	
+            frame += "<li><a href='" + data["snapshots"]["cohorte-linux-distribution"]["files"]["zip"] + "'>cohorte-linux-distribution (" + data["snapshots"]["cohorte-linux-distribution"]["version"] + ")</a></li>"
+            	
 	    frame += "</ul>";
             $('#download_night_builds').html(frame);
         });
