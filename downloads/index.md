@@ -27,11 +27,13 @@ You found detailed installation instructions on [this page of the reference guid
             console.log("refresh snapshots...");
             frame = "<ul>";
             for (var i in data['snapshots']) {
-	            frame += '<li>';	            
-	            frame += i[0];
-	            frame += '</li>';
-			}	
-			frame += "</ul>";
+            	for (var key in data['snapshots']) {
+            	    frame += '<li>';	            
+	            frame += key;
+	            frame += '</li>';		
+            	}
+	    }	
+	    frame += "</ul>";
             $('#download_night_builds').html(frame);
         });
     }
