@@ -26,9 +26,9 @@ You found detailed installation instructions on [this page of the reference guid
         $.getJSON( "http://cohorte.github.io/latest_platforms.json", function( data ) {
             console.log("refresh snapshots...");
             frame = "<ul>";
-            frame += "<li><a href='" + data["snapshots"]["cohorte-linux-distribution"]["files"]["zip"] + "'>cohorte-linux-distribution (" + data["snapshots"]["cohorte-linux-distribution"]["version"] + ")</a></li>"
-            frame += "<li><a href='" + data["snapshots"]["cohorte-macosx-distribution"]["files"]["zip"] + "'>cohorte-macosx-distribution (" + data["snapshots"]["cohorte-macosx-distribution"]["version"] + ")</a></li>"
-            frame += "<li><a href='" + data["snapshots"]["cohorte-python-distribution"]["files"]["zip"] + "'>cohorte-python-distribution (" + data["snapshots"]["cohorte-python-distribution"]["version"] + ")</a></li>"
+            frame += "<li><a href='" + data["snapshots"]["cohorte-linux-distribution"]["files"]["tar.gz"] + "'>cohorte-linux-distribution (" + data["snapshots"]["cohorte-linux-distribution"]["version"] + ")</a></li>"
+            frame += "<li><a href='" + data["snapshots"]["cohorte-macosx-distribution"]["files"]["tar.gz"] + "'>cohorte-macosx-distribution (" + data["snapshots"]["cohorte-macosx-distribution"]["version"] + ")</a></li>"
+            frame += "<li><a href='" + data["snapshots"]["cohorte-python-distribution"]["files"]["tar.gz"] + "'>cohorte-python-distribution (" + data["snapshots"]["cohorte-python-distribution"]["version"] + ")</a></li>"
             	
 	    frame += "</ul>";
             $('#download_night_builds').html(frame);
