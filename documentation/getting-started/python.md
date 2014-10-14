@@ -4,7 +4,7 @@ title: Getting Started Python
 comments: false
 ---
 
-[Home](../) > [Documentation](./) > [Getting Started](./getting-started.html)
+[Home](../../) > [Documentation](../) > [Getting Started](../getting-started.html)
 
 ## COHORET for Python
 
@@ -211,4 +211,4 @@ sh run.sh -t -c
 
 ![SpellChecker Application]({{ site.baseurl }}/resources/images/getting-started/getting-started-imgX.png)
 
-[Home](../) > [Documentation](./) > [Getting Started](./getting-started.html)
+[Home](../../) > [Documentation](../) > [Getting Started](../getting-started.html)

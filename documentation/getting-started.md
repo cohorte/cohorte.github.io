@@ -33,9 +33,9 @@ To get started, choose first your favorite programming language.
 
 <div class="menu-choices">	
     <a style="left: 0%;" class="menu-choice menu-choice-python"
-      href="./getting-started-python.html">Python</a>
+      href="./getting-started/python.html">Python</a>
 	<a style="left: 30%;" class="menu-choice menu-choice-java"
-      href="./getting-started-java.html">Java</a>
+      href="./getting-started/java.html">Java</a>
 </div>
 
 > **Notice** that you can have a COHORTE application made of a mixture of Java and Python components!

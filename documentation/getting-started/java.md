@@ -4,7 +4,7 @@ title: Getting Started Java
 comments: false
 ---
 
-[Home](../) > [Documentation](./) > [Getting Started](./getting-started.html)
+[Home](../../) > [Documentation](../) > [Getting Started](../getting-started.html)
 
 ## COHORTE for Java
 
@@ -80,4 +80,4 @@ This command will generate a project template for a COHORTE project **spellcheck
 > Any maven project is identified by it groupId, artifactId, and version number. You find this information in the `pom.xml`file. Any dependencies to other libraries should be declared also in the `pom.xml`file. Maven retrieve them automatically when compiling the project.
 
 
-[Home](../) > [Documentation](./) > [Getting Started](./getting-started.html)
+[Home](../../) > [Documentation](../) > [Getting Started](../getting-started.html)
