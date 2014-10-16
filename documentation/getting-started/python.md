@@ -10,7 +10,7 @@ comments: false
 
 Welcome to COHORTE for Python! With COHORTE, you can build modular and resilient applications using the [Python programming language](https://www.python.org), and take advantage of the many benefits of the COHORTE approach (see [what is COHORTE?](./what-is-cohorte.html)).  
 
-In this tutorial, we will implement the awesome **spellchecker** application detailed in the [getting started](./getting-started.html) page.
+In this tutorial, we will implement the awesome **spellchecker** application detailed in the [getting started](../getting-started.html) page.
 
 ![SpellChecker Application]({{ site.baseurl }}/resources/images/getting-started/getting-started-img1.png)
 
@@ -18,7 +18,7 @@ In this tutorial, we will implement the awesome **spellchecker** application det
 
 In this section, we will detail how the different components are implemented. For simplicity, we will not use a modern Integrated Developement Environment like eclipse, we rather create simple text files for the different Python code implementing our application components.
 
-> Check the [Developer's Guide](./dev-guide.html) for instructions on how to use your prefered IDE like Eclipse (PyDev) or IDEA (PyCharm).
+> Check [this page](../reference-guide/ide.html) for instructions on how to use your prefered IDE like Eclipse (PyDev) or IDEA (PyCharm).
 
 First, create a directory called `spellchecker`on which you will put the different components.
 A COHORTE Component is implemented in python as a simple module with some specific class and method decorators. The following python code `spell_dictionary_EN.py` shows the implementation of the **English Dictionary** component.
@@ -197,7 +197,7 @@ This last component implements and provides the *pelix.http.servlet* so that it 
 
 ### Startup
 
-To start running your awesome first COHORTE application, you need to [download COHORTE Platform](http://repo.isandlatech.com/) in your local machine. Extract the dowloaded file anywhere in your file system and create the *environment Variable* **$COHORTE_HOME** which has as value the location in which you have extracted COHORTE Platform archive file. 
+To start running your awesome first COHORTE application, you need to [download COHORTE Platform](../../downloads) in your local machine. Extract the dowloaded file anywhere in your file system and create the *environment Variable* **$COHORTE_HOME** which has as value the location in which you have extracted COHORTE Platform archive file. 
 
 Next, you need to launch your application... 
 
@@ -205,10 +205,14 @@ Next, you need to launch your application...
 sh run.sh -t -c
 {% endhighlight %}
 
-> For more setup and startup configurations, please check the [Reference Guide](./reference-guide.html) page.
+> For more setup and startup configurations, please check the [Reference Guide](../reference-guide.html) page.
 
 ### Monitoring
 
 ![SpellChecker Application]({{ site.baseurl }}/resources/images/getting-started/getting-started-imgX.png)
 
+<<<<<<< HEAD:documentation/getting-started/python.md
 [Home](../../) > [Documentation](../) > [Getting Started](../getting-started.html)
+=======
+[Home](../../) > [Documentation](../) > [Getting Started](../getting-started.html)
+>>>>>>> 4a61e0d0e7d13f4218e9182ca80008b956e26738:documentation/getting-started/python.md
