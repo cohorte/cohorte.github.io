@@ -15,7 +15,7 @@ title: Reference Guide
 	<a style="left: 30%;" class="menu-choice menu-choice-component"
       href="./reference-guide/components.html">Components</a>
      <a style="left: 60%;" class="menu-choice menu-choice-application"
-      href="./reference-guide/application.html">Applications</a> 
+      href="./reference-guide/applications.html">Applications</a> 
 </div>
 <div class="menu-choices">	
 	<a style="left: 0%;" class="menu-choice menu-choice-startup"

@@ -7,7 +7,5 @@ title: Tutorials
 
 ## Tutorials
 
-
-If you haven't yet, try it out! [Here are some resources to get
-started](./).
-
+ * [Spellcheker Tutorial](./tutorials/spellchecker)
+    <br/>An introductory tutorial for Java and Python developers. It highlights the Service-oriented Component-based approach of the COHORTE platform.

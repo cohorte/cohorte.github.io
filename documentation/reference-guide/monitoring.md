@@ -13,6 +13,18 @@ title: Reference Guide | Monitoring
 
 In this document, we detail the ADMIN RESTful API v1 of COHORTE platform.
 
+
+
+
+
+## Web Admin
+
+![SpellChecker Application]({{ site.baseurl }}/resources/images/getting-started/getting-started-imgX.png)
+
+It uses Admin REST API v1.
+
+
+
 ### API endpoints
 
 <table class="table table-striped table-bordered table-hover table-condensed">
@@ -442,13 +454,6 @@ In this document, we detail the ADMIN RESTful API v1 of COHORTE platform.
 
 
 
-
-
-## Web Admin
-
-![SpellChecker Application]({{ site.baseurl }}/resources/images/getting-started/getting-started-imgX.png)
-
-It uses Admin REST API v1.
 
 <hr/>
 [Home](../) > [Documentation](./) > [Reference Guide](../reference-guide.html)

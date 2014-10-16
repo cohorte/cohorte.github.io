@@ -7,7 +7,7 @@ title: Reference Guide
 
 <hr/>
 
-## Application
+## Applications description
 
 
 TODO: talk about composition (autorun_conf.js)

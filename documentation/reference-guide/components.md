@@ -7,10 +7,23 @@ title: Reference Guide
 
 <hr/>
 
-## Components
+## Component-based development
 
-TODO: talk about ipopo/ipojo 
+### Java support
 
+OSGi/iPOJO
+
+### Python support
+
+Pelix/IPOPO
+
+### C# support
+
+Work in progress
+
+### C/C++ support
+
+Wrapping in iPOPO (Python) or iPOJO (Java) components
 
 
 <hr/>

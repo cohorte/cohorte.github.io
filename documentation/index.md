@@ -14,16 +14,16 @@ title: Learn
       <p>Introduces some of the key concepts and terminology related to COHORTE.</p>
     </div>
     <div class="span4 doc-block">
-      <h3><a href="{{ site.baseurl }}/documentation/getting-started.html">Getting Started</a></h3>
+      <h3><a href="{{ site.baseurl }}/documentation/tutorials">Getting Started Tutorials</a></h3>
       <p>Install COHORTE on your computer and start writing and running some COHORTE components!</p>
     </div>
   </div>
 
   <div class="row">
-    <div class="span4 doc-block">
+    <!--div class="span4 doc-block">
       <h3><a href="{{ site.baseurl }}/documentation/tutorials.html">Tutorials</a></h3>
       <p>COHORTE tutorials for Java and Python programmers.</p>
-    </div>
+    </div-->
     <div class="span4 doc-block">
       <h3><a href="{{ site.baseurl }}/documentation/demonstrations.html">Demonstrations</a></h3>
       <p>Get an in-depth overview of COHORTE by following some demonstrations prepared by COHORTE developers.</p>
