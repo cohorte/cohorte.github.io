@@ -37,6 +37,15 @@ layout: default
             <br/>
             <br/>
             <br/>
+            {% if page.previous_page %}
+            <a href="{{ page.previous_page }}" class="btn float-left" title="Previous page"> Previous </a>
+            {% endif %}
+            {% if page.next_page %}
+            <a href="{{ page.next_page }}" class="btn float-right" title="Next page"> Next </a>
+            {% endif %}
+            <hr/>
+            <br/>
+            <br/>
             {% if page.comments %}
                 <div id="disqus_thread"></div>
                 <script type="text/javascript">
