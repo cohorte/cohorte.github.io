@@ -171,4 +171,4 @@ The different application components can be deployed on different Isolates. This
 ![SpellChecker Application](spellchecker-app-img4.png)
 
 
-[Home](../../) > [Documentation](../) > [Getting Started](../getting-started.html)
+[Home](../../../../) > [Documentation](../../) > [Tutorials](../) > [Spellchecker](./)
