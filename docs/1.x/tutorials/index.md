@@ -7,7 +7,11 @@ next_page: ../setup
 
 [Home](../../../) > [Documentation](../)
 
-> Is your are new to COHORTE, it is strangly recommended to have an idea about [what is COHORTE and what is intended for]({{ site.baseurl }}/docs/1.x/what-is-cohorte), and to know the [key concepts]({{ site.baseurl }}/docs/1.x/key-concepts) of COHORTE system before starting the tutorials.
+<div class="note">
+<p class="note-content">Is your are new to COHORTE, it is strangly recommended to have an idea about <a href="{{ site.baseurl }}/docs/1.x/what-is-cohorte">what is COHORTE and what is intended for</a>, and to know the <a href="{{ site.baseurl }}/docs/1.x/key-concepts">key concepts</a> of COHORTE system before starting the tutorials.
+</p>
+</div>
+
 
 ## Tutorials
 
