@@ -23,7 +23,7 @@ title: Learn
     </div>
 </div-->
 
-Some resource to get started quickly:
+Some resources to get started quickly:
 
 <div class="menu-choices">      
       <a style="left: 0%;" class="menu-choice"
