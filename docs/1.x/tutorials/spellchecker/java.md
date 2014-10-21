@@ -15,7 +15,7 @@ Welcome to COHORTE for Java! With COHORTE, you can build modular and resilient a
 <div class="note">
 <span class="note-title">Note</span>
 <p class="note-content">
-    If you are already familiar with <a href="http://www.osgi.org">OSGi</a>, COHORTE components are a simple <a href="http://felix.apache.org/documentation/subprojects/apache-felix-ipojo.html">Apache Felix iPOJO</a> components. The only thing you should do is to not instantiate your components manually, COHORTE will do it for you and add <a href="{{ site.baseurl }}/docs/1.x/what-is-cohorte">many features</a> to your final application .
+    If you are already familiar with <a href="http://www.osgi.org">OSGi</a>, COHORTE components are a simple <a href="http://felix.apache.org/documentation/subprojects/apache-felix-ipojo.html">Apache Felix iPOJO</a> components. The only thing you should do to be able to run your components in COHORTE is to not instantiate your them manually (using <code>@Instantiate</code> annotation for instance. COHORTE will do it for you and add <a href="{{ site.baseurl }}/docs/1.x/what-is-cohorte">many features</a> to your final application.
 </p>
 </div>
 
@@ -77,26 +77,92 @@ This will tell your Maven instance where to find the COHORTE repositories:
 </profile>z
 {% endhighlight %}
 
-### Creating COHORTE project template
+### Spellchecker Java projects
 
-To create a project, simply type the following command. If this is your first time running this command, Maven downloads the archetype for you.
+In order to implement the spellchecker demo application, we decided to decouple it in different bundles (jars) for more modularity and to be able to dynamically update or replace some parts of the application without stopping the system. These bundles are:
+
+ * `spellchecker-services`
+ * `spellchecker-en-dictionary`
+ * `spellchecker-fr-dictionary`
+ * `spellchecker-checker`
+ * `spellchecker-client`
+
+ In the first bundle `spellchecker-services` we will put only the Java Interfaces for the **Dictionary Service** and **Checker Service** as explained in the picture above. The Services are supposed to not change over time. The other bundles uses or implements this services to ensure the application's functionality. 
+
+ In the following, we will show you how to implement each of this bundles.
+
+#### spellchecker-services
+
+To create a Maven project, simply type the following command (ensure to have Apache Maven installed). 
 
 {% highlight sh %}
-mvn archetype:generate \
--DarchetypeGroupId=org.cohorte \
--DarchetypeArtifactId=cohorte-java-archetype \
--DarchetypeVersion=1.0.0 \
--DgroupId=org.cohorte.demos \
--DartifactId=spellchecker \
+$ cohorte-create-java-project spellchecker spellchecker-services 1.0.0
 {% endhighlight %}
 
-This command will generate a project template for a COHORTE project **spellchecker** which has the following structure:
+The first argument for the `cohorte-create-java-project` command is the **groupId** of your Maven project, the second one is the **artifactId**, and the last one is its **version**.
+
+This command will generate a Maven project template for a COHORTE project **spellchecker-services** which has the following structure:
 
  * `pom.xml`: an XML file that contains information about the project and configuration details used by Maven to build the project. 
- * `src/main/java/`: this folder contains the java source files of your bundle
- * `src/test/java/`: this folder contains the test classes of your bundle.
+ * `src/main/java/mypackage/MyService.java`: this folder contains a Java interface representing a service.
+ * `src/main/java/mypackage/impl/MyComponent.java`: this folder contains a Java class implementing and providing `MyService` service.
     
-> Any maven project is identified by it groupId, artifactId, and version number. You find this information in the `pom.xml`file. Any dependencies to other libraries should be declared also in the `pom.xml`file. Maven retrieve them automatically when compiling the project.
+<div class="note">
+<span class="note-title">Note</span>
+<p class="note-content">
+Any maven project is identified by it groupId, artifactId, and version number. You find this information in the <code>pom.xml</code> file. Any dependencies to other libraries should be declared also in the <code>pom.xml</code> file. Maven retrieve them automatically when compiling the project.
+</p>
+</div>
+
+Open eclipse and import this Maven project (ensure that m2e plugin is installed on your Eclipse IDE - see [this page for more information]( {{ site.baseurl }}/docs/1.X/ide))
+
+![Eclipse-1](spellchecker-app-img5.png)
+
+Refactor your imported project to have the depicted structure on the following picture. You should:
+
+ * remove `mypackage.impl` package as this bundle does not provide implementations (just the service interfaces)
+ * rename `mypackage` to `spellchecker.services`. This package will contain the application's services
+ * rename `MyService.java` to `DictionaryService.java` 
+ * create another interface `CheckerService.java` 
+
+ ![Eclipse-2](spellchecker-app-img6.png)
+
+Update `pom.xml` file to reflect this new structure (remove `<Private-Package/>` element):
+
+{% highlight xml %}
+...
+<Export-Package>
+   spellchecker.services
+</Export-Package>
+...
+{% endhighlight %}
+
+This package will be exported, so that other bundles can use the interfaces and classes within this package at runtime.
+The last thing to do for this first bundle is to write the methods of the two services: **Dictionary Service** and **Checker Service**.
+
+{% highlight java %}
+package spellchecker.services;
+
+public interface DictionaryService {
+    boolean check_word(String word);
+}
+{% endhighlight %}
+
+{% highlight java %}
+package spellchecker.services;
+
+import java.util.List;
+
+public interface CheckerService {
+    List<String> check(String paragraph, String language);
+}
+{% endhighlight %}
+
+
+
+#### spellchecker-en-dictionary
+
+TODO
 
 ### Running your application
 

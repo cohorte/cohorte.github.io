@@ -7,7 +7,7 @@ next_page: ../applications
 
 [Home](../../../) > [Documentation](../)
 
-## Component-based development
+## Component-based development in COHORTE
 
 ### Java support
 

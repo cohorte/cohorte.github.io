@@ -9,6 +9,34 @@ next_page: ../shell
 
 ## Startup
 
+
+### Startup options
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+	<thead>
+	<tr>
+		<th> Option </th><th> Description </th>
+	</tr>
+	</thead>
+	<tbody><tr>
+		<td> -h / –help         </td><td> Show help </td>
+	</tr>
+	<tr>
+		<td> -t / –top-composer </td><td> Run in “Top Composer” mode (only one Top Composer should be started) </td>
+	</tr>
+	<tr>
+		<td> -c / –color        </td><td> Colored output (Linux, Mac) </td>
+	</tr>
+	<tr>
+		<td> -d / –debug        </td><td> Debug mode (logs) </td>
+	</tr>
+	<tr>
+		<td> -v / –verbose      </td><td> Verbose mode (logs and outputs) </td>
+	</tr>
+</tbody></table>
+
+
+
 ### Startup configurations
 
 #### Composition configuration file
@@ -77,32 +105,6 @@ The following configuration files (located on `$COHORTE_HOME/conf` folder) are u
 	</tr>
 </tbody></table>
 
-
-
-### Startup options
-
-<table class="table table-striped table-bordered table-hover table-condensed">
-	<thead>
-	<tr>
-		<th> Option </th><th> Description </th>
-	</tr>
-	</thead>
-	<tbody><tr>
-		<td> -h / –help         </td><td> Show help </td>
-	</tr>
-	<tr>
-		<td> -t / –top-composer </td><td> Run in “Top Composer” mode (only one Top Composer should be started) </td>
-	</tr>
-	<tr>
-		<td> -c / –color        </td><td> Colored output (Linux, Mac) </td>
-	</tr>
-	<tr>
-		<td> -d / –debug        </td><td> Debug mode (logs) </td>
-	</tr>
-	<tr>
-		<td> -v / –verbose      </td><td> Verbose mode (logs and outputs) </td>
-	</tr>
-</tbody></table>
 
 
 
