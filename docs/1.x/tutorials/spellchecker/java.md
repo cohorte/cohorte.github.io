@@ -35,47 +35,7 @@ The required *HTTP Service* for the last component **Spell Client** is provided 
 
 ### Setup
 
-The first thing we need to do is to set up the development environment. We will be using [Apache Maven](http://maven.apache.org), although you can use whatever build tool you feel confortable using. If you wish to use something else to build this tutorial (such as Ant), you will need to manually account for all the needed dependencies. In <a href="{{ site.baseurl }}/docs/1.x/ide">this page</a>, we detail different possible development environments setup.
-
-In the next section, we will use COHORTE maven tools to generate and compile COHORTE components. You need to install Maven and configure it to use our provided tools. Read more about using Maven in the official website [http://maven.apache.org/](http://maven.apache.org/).
-
-Add the two blocks of code to the file `settings.xml` (usually in your Maven `conf` of `$HOME/.m2` directory, create it if not present)
-
-This will have Maven allow you to execute COHORTE plugins:
-
-{% highlight xml %}
-<settings>
-	<pluginGroups>
-		<pluginGroup>org.cohorte.plugins</pluginGroup>
-	</pluginGroups>
-	...
-</settings>
-{% endhighlight %}
-
-This will tell your Maven instance where to find the COHORTE repositories:
-
-{% highlight xml %}
-<profile>
-    <id>Cohorte Org</id>
-    <activation>
-        <activeByDefault>true</activeByDefault>
-    </activation>
-    <repositories>
-        <repository>
-            <id>cohorte-releases</id>
-            <name>Cohorte Repository</name>
-            <url>http://repo.isandlatech.com/maven/releases/</url>
-            <layout>default</layout>
-        </repository>
-        <repository>
-            <id>cohorte-snapshots</id>
-            <name>Cohorte Snapshot Repository</name>
-            <url>http://repo.isandlatech.com/maven/snapshots/</url>
-            <layout>default</layout>
-        </repository>
-    </repositories>
-</profile>z
-{% endhighlight %}
+The first thing we need to do is to set up the development environment. We will be using [Apache Maven](http://maven.apache.org), although you can use whatever build tool you feel confortable using. If you wish to use something else to build this tutorial (such as Ant), you will need to manually account for all the needed dependencies.
 
 ### Spellchecker Java projects
 
@@ -91,26 +51,27 @@ In order to implement the spellchecker demo application, we decided to decouple 
 
  In the following, we will show you how to implement each of this bundles.
 
+<br/>
+
 #### spellchecker-services
 
 To create a Maven project, simply type the following command (ensure to have Apache Maven installed). 
 
-{% highlight sh %}
-$ cohorte-create-java-project spellchecker spellchecker-services 1.0.0
-{% endhighlight %}
+<pre>
+$ <b>cohorte-create-java-project</b> spellchecker spellchecker-services 1.0.0
+</pre>
 
 The first argument for the `cohorte-create-java-project` command is the **groupId** of your Maven project, the second one is the **artifactId**, and the last one is its **version**.
 
-This command will generate a Maven project template for a COHORTE project **spellchecker-services** which has the following structure:
+This command will generate an empty Maven project template for a COHORTE project **spellchecker-services** which has the following structure:
 
  * `pom.xml`: an XML file that contains information about the project and configuration details used by Maven to build the project. 
- * `src/main/java/mypackage/MyService.java`: this folder contains a Java interface representing a service.
- * `src/main/java/mypackage/impl/MyComponent.java`: this folder contains a Java class implementing and providing `MyService` service.
+ * `src/main/java/mypackage/`: this folder will contain Java source code of the bundle.
     
 <div class="note">
 <span class="note-title">Note</span>
 <p class="note-content">
-Any maven project is identified by it groupId, artifactId, and version number. You find this information in the <code>pom.xml</code> file. Any dependencies to other libraries should be declared also in the <code>pom.xml</code> file. Maven retrieve them automatically when compiling the project.
+Any maven project is identified by it groupId, artifactId, and version number. You find this information in the <code>pom.xml</code> file. Any dependencies to other libraries should be declared also in the <code>pom.xml</code> file. Maven retrieves them automatically when compiling the project.
 </p>
 </div>
 
@@ -118,16 +79,11 @@ Open eclipse and import this Maven project (ensure that **m2e plugin** is instal
 
 ![Eclipse-1](spellchecker-app-img5.png)
 
-Refactor your imported project to have the depicted structure on the following picture. You should:
-
- * remove `mypackage.impl` package as this bundle does not provide implementations (just the service interfaces)
- * rename `mypackage` to `spellchecker.services`. This package will contain the application's services
- * rename `MyService.java` to `DictionaryService.java` 
- * create another interface `CheckerService.java` 
+Rename the default package `mypackage` to `spellchecker.services` and add two interfaces `DictionaryService` and `CheckerService`.
 
  ![Eclipse-2](spellchecker-app-img6.png)
 
-Update `pom.xml` file to reflect this new structure (remove `<Private-Package/>` element). The `spellchecker.services` package will be exported, so that other bundles can use the interfaces and classes within this package at runtime. 
+Update `pom.xml` file to reflect this new structure. The `spellchecker.services` package will be exported, so that other bundles can use the interfaces and classes within this package at runtime. 
 
 {% highlight xml %}
 ...
@@ -137,17 +93,20 @@ Update `pom.xml` file to reflect this new structure (remove `<Private-Package/>`
 ...
 {% endhighlight %}
 
-Remove the dependency to `org.apache.felix.ipojo.annotations` as we have no component to be implemented in this bundle. Remove also the `<Private-Package>` element from the configurations.
+Remove the dependency to `org.apache.felix.ipojo.annotations` as we have no component to be implemented in this bundle. 
 
-The last thing to do for this first bundle is to write the methods of the two services: **Dictionary Service** and **Checker Service**.
+The two newly created Java interfaces represent service contracts and they have the following methods:
 
 {% highlight java %}
 package spellchecker.services;
 
 public interface DictionaryService {
     boolean check_word(String word);
+    String getLanguage();
 }
 {% endhighlight %}
+
+The **Dictionary Service** takes a word as a string and returns true if it is found in the dictionary. 
 
 {% highlight java %}
 package spellchecker.services;
@@ -159,7 +118,9 @@ public interface CheckerService {
 }
 {% endhighlight %}
 
-Compile this bundles by right-clicking on the `pom.xml` file, then choose *Run As* and then *Maven install*. Or just type the following command at the top level directory of this bundle:
+The **Checker Service** takes a paragraph as a string and the language on which we want to check the paragraph and returns the list of missplened words according to the selected language.
+
+Compile this bundle by right-clicking on the `pom.xml` file, then choose *Run As* and then *Maven install*. Or just type the following command at the top level directory of this bundle:
 
 {% highlight sh %}
 $ mvn clean install
@@ -169,11 +130,11 @@ $ mvn clean install
 
 #### spellchecker-en-dictionary
 
-To implement the english dictionary provider, you have to follow the same step as before. You first create a new project template as follow:
+To implement the english dictionary provider, you have to follow the same steps as before. You first create a new project template as follow:
 
-{% highlight sh %}
-$ cohorte-create-java-project spellchecker spellchecker-en-dictionary 1.0.0
-{% endhighlight %}
+<pre>
+$ <b>cohorte-create-java-project</b> spellchecker spellchecker-en-dictionary 1.0.0
+</pre>
 
 Start by modifying the `pom.xml` file to include a dependency to `spellchecker-services` bundle.
 
@@ -193,7 +154,7 @@ Start by modifying the `pom.xml` file to include a dependency to `spellchecker-s
   </dependencies>
 {% endhighlight %}
 
-Rename the default package to `spellchecker.dictionaries` and update accordingly the `<Private-Package>...</Private-Package>` element of `pom.xml` file.
+Rename the default package to `spellchecker.dictionaries` and add `<Private-Package>` configuration to your `pom.xml` file to mention that this package is not exported (and hence not visible for other bundles).
 
 {% highlight xml %}
 <Private-Package>
@@ -204,17 +165,15 @@ Rename the default package to `spellchecker.dictionaries` and update accordingly
 </Import-Package>
 {% endhighlight %}
 
-Ensure to remove the `<Export-Package>` configuration as no package is exported by this bundle, and to add `<Import-Package>` configuration to import the **SpellChekcer Services** already specified.
+Ensure to remove the `<Export-Package>` configuration as no package is exported by this bundle, and to add `<Import-Package>` configuration to import the **SpellChekcer Services** already bundled.
 
-Finally, rename `MyComponent.java` class to `EnglishDictionary.java` and implement it as follow:
+Finally, creates a new Java class named `EnglishDictionary.java` in `spellchecker.dictionaries`package and implements it as follow:
 
 {% highlight java %}
 package spellchecker.dictionaries;
 
-import java.util.Arrays;
-import java.util.List;
-import org.apache.felix.ipojo.annotations.Component;
-import org.apache.felix.ipojo.annotations.Provides;
+import java.util.*;
+import org.apache.felix.ipojo.annotations.*;
 import spellchecker.services.DictionaryService;
 
 @Component
@@ -226,12 +185,176 @@ public class EnglishDictionary implements DictionaryService {
         word = word.toLowerCase().trim();
         return this.dictionary.contains(word);
     }
+    public String getlanguage() {       
+        return "EN";
+    }
 }
 {% endhighlight %}
 
+This class is an iPOJO component that provides (implements) the **Dictionary Service** and publish it on the service registry with the service property *language* set to *EN*. This allow consumer filtering/selecting service providers depending on this published service properties.
 
+<div class="note">
+<span class="note-title">Note</span>
+<p class="note-content">
+Have a look at <a href="http://goo.gl/DJ2XiY" target="_blanc">this page</a> for more information about providing services in iPOJO.
+</p>
+</div>
+Compile this second bundle as you have done for the first one.
 
-Remove `mypackage` package and its default created interface.
+Create another bundle project for the **French Dictionary** and change the default implementation to have french words list. Ensure to modify the *language* service property to be *FR*. 
+
+<br/>
+
+#### spellchecker-checker
+
+This component uses the available **Dictionary Service**s and allows clients to check their paragraphs if they have misspelled words.
+
+ * Generate a project template for this bundle using the `cohorte-create-java-project` command:
+
+<pre>
+$ <b>cohorte-create-java-project</b> spellchecker spellchecker-checker 1.0.0
+</pre>
+
+ * Modify the `pom.xml` file to include a dependency to `spellchecker-services` as you have for the previous bundle.
+ * Rename the default package to `spellchecker.checker` and add `<Private-Package>` configuration to your `pom.xml` file to mention that this package is not exported.
+ * Remove the `<Export-Package>` configuration, and add `<Import-Package>` configuration to import the package containing the **SpellChekcer Services** (interfaces) already bundled (see previous steps).
+ * Create the `Checker.java` class and implement it as follow:
+
+ {% highlight java %}
+package spellchecker.checker;
+
+import java.util.*;
+import org.apache.felix.ipojo.annotations.*;
+import spellchecker.services.*;
+
+@Component
+@Provides
+public class Checker implements CheckerService {
+    Map<String, DictionaryService> dictionaries = 
+            new HashMap<String, DictionaryService>();
+    
+    @Bind(aggregate=true)
+    public void bind_dict(DictionaryService dict) {
+        this.dictionaries.put(dict.getLanguage(), dict);
+    }
+    
+    @Unbind
+    public void unbind_dict(DictionaryService dict) {
+        this.dictionaries.remove(dict.getLanguage());
+    }
+    
+    public synchronized List<String> check(String paragraph, String language) {         
+        String[] checked_words = paragraph.split(" ");
+        DictionaryService dict = this.dictionaries.get(language);
+        if (dict != null) {
+            List<String> result = new ArrayList<String>();
+            for (int i=0; i<checked_words.length; i++) {
+                if (dict.check_word(checked_words[i]) == false) {
+                    result.add(checked_words[i]);
+                }
+            }
+            return result;
+        }
+        return null;
+    }
+}
+{% endhighlight %}
+
+Each time a **Dictionary Service** is deployed at runtime, this component is notified via the `@Bind` annotation. In our case, we save all the dictionaries in an internal map for use in the `check` method.
+
+<br/>
+
+#### spellchecker-client
+
+Now its time to implement the last component providing the web interface: `spellchecker-client`.
+
+ * Generate a project template for this bundle using the `cohorte-create-java-project` command:
+
+<pre>
+$ <b>cohorte-create-java-project</b> spellchecker spellchecker-client 1.0.0
+</pre>
+
+ * Modify the `pom.xml` file to include a dependency to `spellchecker-services` as you have done for the previous bundles.
+ * Rename the default package to `spellchecker.client` and add `<Private-Package>` configuration to your `pom.xml` file to mention that this package is not exported.
+ * Remove the `<Export-Package>` configuration, and add `<Import-Package>` configuration to import the package containing the **SpellChekcer Services** (interfaces) already bundled (see previous steps).
+ * Create the `SpellChecker.java` class and implement it as follow:
+
+{% highlight java %}
+package spellchecker.client;
+
+import java.io.IOException;
+import java.util.List;
+import javax.servlet.http.*;
+import javax.servlet.ServletException;
+import org.apache.felix.ipojo.annotations.*;
+import org.osgi.service.http.HttpService;
+import spellchecker.services.CheckerService;
+
+@Component
+public class SpellChecker extends HttpServlet {
+
+    @Requires
+    CheckerService checker;
+    
+    @Requires
+    HttpService httpService;
+    
+    @Bind
+    public void bind_http(HttpService http) {
+        try {
+            httpService.registerServlet("/spellchecker", this, null, null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    @Unbind
+    public void unbind_http(HttpService http) {
+        httpService.unregister("/spellchecker");
+    }
+    
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        String result = "";
+        String paragraph = req.getParameter("paragraph");
+        String language = req.getParameter("language");
+        if (paragraph == null || language == null) {
+            result = "Fill the language and paragraph inputs!";
+        } else {
+            List<String> misspelled_words = this.checker.check(paragraph, language.toUpperCase());
+            if (misspelled_words == null) {
+                result = "Dictionary provider for this language is not installed!";
+            } else {
+                result += "<b>The misspelled words are:</b> ";
+                result += "<span style='color:red;'>";
+                for (String word : misspelled_words) {
+                    result += " " + word;
+                }
+                result += "</span>";
+            }
+        }
+        String html = "";
+        html += "<html><head><title>SpellChecker</title></head><body>";
+        html += "<h2>Spellchecker Demo</h2>";
+        html += "<hr/>";
+        html += "<form action=\"/spellchecker\" method=\"get\" >";
+        html += "Language: <input type=\"radio\" name=\"language\" value=\"EN\">EN";
+        html += "<input type=\"radio\" name=\"language\" value=\"FR\">FR";
+        html += "<input type=\"radio\" name=\"language\" value=\"CN\">CN<br/>";
+        html += "Paragraph: <input type=\"text\" name=\"paragraph\" size=\"50\"/><br/>";
+        html += "<input type=\"submit\" value=\"Check\"/>";
+        html += "</form>";
+        html += "<hr/>";
+        html += result;
+        html += "<hr/>";
+        html += "</body></html>";
+        
+        resp.getWriter().write("Hello World");
+    }
+    
+}
+{% endhighlight %}
 
 ### Running your application
 
