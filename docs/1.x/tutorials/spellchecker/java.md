@@ -114,7 +114,7 @@ Any maven project is identified by it groupId, artifactId, and version number. Y
 </p>
 </div>
 
-Open eclipse and import this Maven project (ensure that m2e plugin is installed on your Eclipse IDE - see [this page for more information]( {{ site.baseurl }}/docs/1.X/ide))
+Open eclipse and import this Maven project (ensure that **m2e plugin** is installed on your Eclipse IDE - see [this page for more information]( {{ site.baseurl }}/docs/1.X/ide))
 
 ![Eclipse-1](spellchecker-app-img5.png)
 
@@ -127,7 +127,7 @@ Refactor your imported project to have the depicted structure on the following p
 
  ![Eclipse-2](spellchecker-app-img6.png)
 
-Update `pom.xml` file to reflect this new structure (remove `<Private-Package/>` element):
+Update `pom.xml` file to reflect this new structure (remove `<Private-Package/>` element). The `spellchecker.services` package will be exported, so that other bundles can use the interfaces and classes within this package at runtime. 
 
 {% highlight xml %}
 ...
@@ -137,7 +137,8 @@ Update `pom.xml` file to reflect this new structure (remove `<Private-Package/>`
 ...
 {% endhighlight %}
 
-This package will be exported, so that other bundles can use the interfaces and classes within this package at runtime.
+Remove the dependency to `org.apache.felix.ipojo.annotations` as we have no component to be implemented in this bundle. Remove also the `<Private-Package>` element from the configurations.
+
 The last thing to do for this first bundle is to write the methods of the two services: **Dictionary Service** and **Checker Service**.
 
 {% highlight java %}
@@ -158,11 +159,79 @@ public interface CheckerService {
 }
 {% endhighlight %}
 
+Compile this bundles by right-clicking on the `pom.xml` file, then choose *Run As* and then *Maven install*. Or just type the following command at the top level directory of this bundle:
 
+{% highlight sh %}
+$ mvn clean install
+{% endhighlight %}
+
+<br/>
 
 #### spellchecker-en-dictionary
 
-TODO
+To implement the english dictionary provider, you have to follow the same step as before. You first create a new project template as follow:
+
+{% highlight sh %}
+$ cohorte-create-java-project spellchecker spellchecker-en-dictionary 1.0.0
+{% endhighlight %}
+
+Start by modifying the `pom.xml` file to include a dependency to `spellchecker-services` bundle.
+
+{% highlight xml %}
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.ipojo.annotations</artifactId>
+      <version>1.12.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>spellchecker</groupId>
+      <artifactId>spellchecker-services</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+  </dependencies>
+{% endhighlight %}
+
+Rename the default package to `spellchecker.dictionaries` and update accordingly the `<Private-Package>...</Private-Package>` element of `pom.xml` file.
+
+{% highlight xml %}
+<Private-Package>
+  spellchecker.dictionaries
+</Private-Package>
+<Import-Package>
+  spellchecker.services
+</Import-Package>
+{% endhighlight %}
+
+Ensure to remove the `<Export-Package>` configuration as no package is exported by this bundle, and to add `<Import-Package>` configuration to import the **SpellChekcer Services** already specified.
+
+Finally, rename `MyComponent.java` class to `EnglishDictionary.java` and implement it as follow:
+
+{% highlight java %}
+package spellchecker.dictionaries;
+
+import java.util.Arrays;
+import java.util.List;
+import org.apache.felix.ipojo.annotations.Component;
+import org.apache.felix.ipojo.annotations.Provides;
+import spellchecker.services.DictionaryService;
+
+@Component
+@Provides
+public class EnglishDictionary implements DictionaryService {
+    List<String> dictionary = 
+            Arrays.asList("hello" , "world", "welcome", "to", "cohorte");
+    public boolean check_word(String word) {        
+        word = word.toLowerCase().trim();
+        return this.dictionary.contains(word);
+    }
+}
+{% endhighlight %}
+
+
+
+Remove `mypackage` package and its default created interface.
 
 ### Running your application
 
