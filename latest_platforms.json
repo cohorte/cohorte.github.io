@@ -1,12 +1,18 @@
 {
   "releases": {},
   "snapshots": {
+    "cohorte-base-distribution": {
+      "files": {
+        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141022.225020-36-base-distribution.zip"
+      },
+      "version": "1.0.0-20141022.225020-36"
+    },
     "cohorte-linux-distribution": {
       "files": {
-        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141021.224931-32-linux-distribution.tar.gz",
-        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141021.224931-32-linux-distribution.zip"
+        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141022.225020-36-linux-distribution.tar.gz",
+        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141022.225020-36-linux-distribution.zip"
       },
-      "version": "1.0.0-20141021.224931-32"
+      "version": "1.0.0-20141022.225020-36"
     },
     "cohorte-macosx-distribution": {
       "files": {
@@ -31,10 +37,10 @@
     },
     "cohorte-python-distribution": {
       "files": {
-        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141021.224254-31-python-distribution.tar.gz",
-        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141021.224254-31-python-distribution.zip"
+        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141022.224349-34-python-distribution.tar.gz",
+        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141022.224349-34-python-distribution.zip"
       },
-      "version": "1.0.0-20141021.224254-31"
+      "version": "1.0.0-20141022.224349-34"
     }
   }
 }
