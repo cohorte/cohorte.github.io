@@ -2,7 +2,7 @@
 layout: page
 title: Spellchecker tutorial
 comments: false
-previous_page: ../
+previous_page: ../getting-started
 next_page: ../temper
 ---
 

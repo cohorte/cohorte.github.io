@@ -373,22 +373,34 @@ The `home` sub-folder contains the main COHORTE runtime libraries and configurat
 {
     "name" : "spellchecker-demo-app",
     "root" : {
-        "name" : "spellchecker-demo",
+        "name" : "spellchecker-java-demo",
         "components" : [ {
-            "name" : "dictionary_en",
-            "factory" : "dictionary_en_factory",
+            /**
+             * EN Dictionary
+             */
+            "name" : "dictionary_en_java",
+            "factory" : "spell_dictionary_en_factory",
             "language" : "java"
         }, {
-            "name" : "dictionary_fr",
-            "factory" : "dictionary_fr_factory",
+            /**
+             * FR Dictionary
+             */
+            "name" : "dictionary_fr_java",
+            "factory" : "spell_dictionary_fr_factory",
             "language" : "java"
         }, {
-            "name" : "checker",
-            "factory" : "checker_factory",
+            /**
+             * Spell Checker
+             */
+            "name" : "spell_checker_java",
+            "factory" : "spell_checker_factory",
             "language" : "java"
         }, {
-            "name" : "spell_client",
-            "factory" : "client_factory",
+            /**
+             * Spell Client
+             */
+            "name" : "spell_client_java",
+            "factory" : "spell_client_factory",
             "language" : "java"
         } ]
     }
