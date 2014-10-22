@@ -17,22 +17,30 @@ next_page: ../spellchecker
 `step1/autorun_conf.js`
 {% highlight json %}
 {
-	"name" : "hello-demo-app-step1",
+	"name" : "hello-demo-app-step2",
 	"root" : {
 		"name" : "hello-demo",
 		"components" : [ {
 			"name" : "hello_components",
 			"factory" : "hello_components_factory",
-			"language" : "python"
+			"language" : "python",
+			"isolate" : "web"
 		}, {
 			"name" : "component_A",
 			"factory" : "component_A_factory",
-			"language" : "python"
+			"language" : "python",
+			"isolate" : "components"
 		}, {
 			"name" : "component_B",
 			"factory" : "component_B_factory",
-			"language" : "python"
-		} ]
+			"language" : "python",
+			"isolate" : "components"
+		}, {
+			"name" : "component_C",
+			"factory" : "component_C_factory",
+			"language" : "python",
+			"isolate" : "components"
+		}  ]
 	}
 }
 {% endhighlight %}
@@ -51,25 +59,34 @@ next_page: ../spellchecker
 			"name" : "hello_components",
 			"factory" : "hello_components_factory",
 			"language" : "python",
+			"isolate" : "web",			
 			"node" : "node1"
 		}, {
 			"name" : "component_A",
 			"factory" : "component_A_factory",
 			"language" : "python",
+			"isolate" : "components",
 			"node" : "node1"
 		}, {
 			"name" : "component_B",
 			"factory" : "component_B_factory",
 			"language" : "python",
+			"isolate" : "components",
+			"node" : "node1"
+		}, {
+			"name" : "component_C",
+			"factory" : "component_C_factory",
+			"language" : "python",
+			"isolate" : "components",
 			"node" : "node2"
-		} ]
+		}  ]
 	}
 }
 {% endhighlight %}
 
 If the two COHORTE nodes are located on the same physical machine, you should override the HTTP service port.
 
-`node2/conf/boot-forker.js
+`node2/conf/boot-forker.js`
 {% highlight json %}
 {
 	"import-files" : [ "boot-forker.js" ],
