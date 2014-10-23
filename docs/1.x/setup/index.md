@@ -17,9 +17,9 @@ Depending on your operating system, we give some insights about how install COHO
 
 ##### Unix-based Operating Systems (Linux, Solaris and Max OS X)
 
-1. Donwload the COHORTE distribution adequate to your operating system from [repo.isandatech.com/cohorte](http://repo.isandatech.com/cohorte). For Max OS X you download `cohorte-1.0.0-macosx.tar.gz`.
-2. Extract the distribution archive, i.e. `cohorte-1.0.0-macosx.tar.gz` to the directory you wish to install COHORTE. These instructions assume you chose `/Applications/Cohorte`. The subdirectory `cohorte-1.0.0` will be created from the archive.
-3. Add the `COHORTE_HOME` environment variable. E.g., `export COHORTE_HOME=/Applications/Cohorte/cohorte-1.0.0/home`.
+1. Donwload the COHORTE distribution adequate to your operating system from [the downloads page]({{ site.baseurl }}/downloads). E.g., for Linux OS you download `cohorte-1.0.0-linux.tar.gz`.
+2. Extract the distribution archive, i.e. `cohorte-1.0.0-linux.tar.gz` to the directory you wish to install COHORTE. These instructions assume you chose `/usr/local/cohorte`. The subdirectory `cohorte-1.0.0` will be created from the archive.
+3. Add the `COHORTE_HOME` environment variable. E.g., `export COHORTE_HOME=/Applications/Cohorte/cohorte-1.0.0/home` (add this line to .bashrc file).
 
 ##### Windows
 
