@@ -13,7 +13,7 @@ next_page: ../spellchecker
 ### Overview
 
  * As a COHORTE user, you need to have Java ( >1.6 ) and Python ( 3 ) installed on your system.
- * Next, you need to download and install COHORTE on your system ([detailed information are given in this page]({{ site.baseurl }}/docs/1.x/setup)).
+ * Next, you need to [download and install COHORTE on your system]({{ site.baseurl }}/docs/1.x/setup).
  * The objective of this getting started tutorial is to get you familiar with the COHORTE concept as quickly as possible. There is no need to start coding at this step. You found other advanced tutorial in the [tutorials section of the documentation page]({{ site.baseurl }}/docs/1.x/tutorials).
  * This getting started tutorial is divised in four steps:
    * **STEP 1**: creating a simple application on one node, but two seperate isolates. 

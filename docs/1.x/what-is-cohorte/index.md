@@ -79,12 +79,12 @@ There are a number of benefits to using COHORTE to build your software applicati
 ## Convinced?
 
 If COHORTE is what you want for your IT applications, try it out! [Here are some resources to get
-started](./). 
+started]({{ site.baseurl }}/docs/1.x/tutorials). 
 
 
 ## About
 
-![Cohorte](cohorte-logo-sm-color.png) Project is an open source framework hosted on GitHub and sponsored by [isandlaTech](http://isandlatech.com). To help you developping your business applications using COHORTE, feel free to contact isandlaTech support team at [contact@isandlatech.com](mailto:contact@isandlatech.com).
+![Cohorte](cohorte-logo-sm-color.png) Project is an open source framework hosted on GitHub and sponsored by [isandlaTech](http://isandlatech.com). To help you developping your business applications using ![Cohorte](cohorte-logo-sm-color.png), feel free to contact isandlaTech's support team at [contact@isandlatech.com](mailto:contact@isandlatech.com).
 
 
 
