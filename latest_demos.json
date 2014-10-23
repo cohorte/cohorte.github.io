@@ -1,0 +1,11 @@
+{
+  "releases": {},
+  "snapshots": {
+    "getting-started-tutorial-distribution": {
+      "files": {
+        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/demos/getting-started-tutorial/1.0.0-SNAPSHOT/getting-started-tutorial-1.0.0-20141023.083017-2-distribution.zip"
+      },
+      "version": "1.0.0-20141023.083017-2"
+    }
+  }
+}
