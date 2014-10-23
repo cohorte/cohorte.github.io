@@ -47,7 +47,7 @@ The following picture depicts the web interface provided by the **hello_componen
 ![Step 1 final result](getting-started-img-3.png)
 
  * In this first step of the tutorial, we want to instantiate only the components **HC** (hello_components), **A** (component_A) and **B** (component_B). In addition, we want to seperate between HC component and the other components providing the HELLO service (which can contain third-party code). COHORTE supports this separation by using **Isolates**. Isolates are a seperate process with all the needed runtime infrastructure allowing the execution of the managed components.
- <br/> The following picture depicts the desired resilient architecture. 
+ <br/><br/>The following picture depicts the desired resilient architecture. If one of the components providing the HELLO service fails, there will be no impact on the HC component! 
 
 ![Step 1](getting-started-img-1.png)
 
@@ -83,24 +83,28 @@ The following picture depicts the web interface provided by the **hello_componen
 $ ./<b>run</b> -t
 </pre>
 
-You will notice some log outputs, when all is Ok, type the `load command to start the application's composition:
+You will notice some log outputs, when all is Ok, type the `load` command to start the application's composition:
 
  <pre>
 $ <b>load</b>
-Started composition: default-application -> b764f5eb-812c-4a2a-83f8-b3effa1e86
+<div style="font-size:70%">
+Started composition: default-application -> b764f5eb-812c-4a2a-83f8-b3effa1e86ce
+</div>
 </pre>
 
- * To test your application (launch the web interface), you need to now on which http port the `web` isolate is listening (as the HC component publish the web page on using the same HTTP server of its isolate container). Type the `http` command to have this information.
+ * To test your application, you need to know on which http port the `web` isolate is listening (as the HC component publish its web page using the same HTTP server as its isolate container). Type the `http` command to have this information.
 
-<pre style="font-size:55%">
+<pre>
 $ <b>http</b>
+<div style="font-size:70%">
 +------------+--------------------------------------+-----------+--------------------------------------+-------+
 |    Name    |                 UID                  | Node Name |               Node UID               | HTTP  |
 +============+======================================+===========+======================================+=======+
 | components | 9fa3c812-64b0-499e-8b65-6ac5fe8bcf02 | my-pc     | 71c96fe6-5ce2-43c9-bafc-6f0905d8cf74 | 63625 |
 +------------+--------------------------------------+-----------+--------------------------------------+-------+
-| web        | ac0dd576-a7fb-4c34-b7ab-b68a810c38bc | my-pc     | 71c96fe6-5ce2-43c9-bafc-6f0905d8cf74 | 63609 |
+| web        | ac0dd576-a7fb-4c34-b7ab-b68a810c38bc | my-pc     | 71c96fe6-5ce2-43c9-bafc-6f0905d8cf74 | <span style="color:red">63609</span> |
 +------------+--------------------------------------+-----------+--------------------------------------+-------+
+</div>
 </pre>
 
 In this case, its `63609`. Launch a web browser with this address to start the web interface: `http://localhost:63609/hello`.
@@ -108,7 +112,7 @@ In this case, its `63609`. Launch a web browser with this address to start the w
 <div class="note">
 <span class="note-title">Note</span>
 <p class="note-content">
-You can fixe the http port to use for your application using configuration files (see <a href="{{ site.baseurl }}/docs/1.x/startup">startup section of the documentation page</a>).
+You can fix the http port to use for your application using configuration files (see <a href="{{ site.baseurl }}/docs/1.x/startup">startup section of the documentation page</a>).
 </p>
 </div>
 
