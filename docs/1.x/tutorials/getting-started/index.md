@@ -116,67 +116,81 @@ You can fix the http port to use for your application using configuration files 
 </p>
 </div>
 
+ * To stop COHORTE, type the `quit` command on the terminal.
 
 ### Step 2
 
+In this second step, we will distribute our components among two nodes (which can be physically distributed on a local network area - or via Internet using an XMPP server).
+
+ * Lets have the same architecture as the first step, and we add a new instance of component_C that should be deployed on a second node. 
+
 ![Step 2](getting-started-img-2.png)
 
-`step2/autorun_conf.js`
+ * Start by creating two nodes:
+
+ <pre>
+$ <b>cohorte-create-node</b> node1 hello-application-step2
+$ <b>cohorte-create-node</b> node2 hello-application-step2
+</pre>
+
+Notice that we have given a second parameter to `cohorte-create-node` command. This parameter set an application ID for the two nodes. We should ensure that all participating nodes have the same application ID. 
+
+ * Copy `hello` package used in the first step into the `repo directories of the two newly created nodes (you can also make symbolic links to avoid having two copies if your nodes are on the same machine).
+ * Update `autorun_conf.js` file located on `node1/conf`:
+
 {% highlight json %}
 {
-	"name" : "hello-demo-app-step2",
+	"name" : "hello-application-step2",
 	"root" : {
-		"name" : "hello-demo",
-		"components" : [ {
-			"name" : "hello_components",
-			"factory" : "hello_components_factory",
-			"language" : "python",
-			"isolate" : "web",			
-			"node" : "node1"
-		}, {
-			"name" : "component_A",
-			"factory" : "component_A_factory",
-			"language" : "python",
-			"isolate" : "components",
-			"node" : "node1"
-		}, {
-			"name" : "component_B",
-			"factory" : "component_B_factory",
-			"language" : "python",
-			"isolate" : "components",
-			"node" : "node1"
-		}, {
-			"name" : "component_C",
-			"factory" : "component_C_factory",
-			"language" : "python",
-			"isolate" : "components",
-			"node" : "node2"
-		}  ]
+		"name" : "hello-application-step2-composition",
+		"components" : [ 
+			{
+				"name" : "hello_components",
+				"factory" : "hello_components_factory",
+				"isolate" : "web",			
+				"node" : "node1"
+			}, {
+				"name" : "component_A",
+				"factory" : "component_A_factory",
+				"isolate" : "components",
+				"node" : "node1"
+			}, {
+				"name" : "component_B",
+				"factory" : "component_B_factory",
+				"isolate" : "components",
+				"node" : "node1"
+			}, {
+				"name" : "component_C",
+				"factory" : "component_C_factory",
+				"isolate" : "components",
+				"node" : "node2"
+			}
+		]
 	}
 }
 {% endhighlight %}
 
-If the two COHORTE nodes are located on the same physical machine, you should override the HTTP service port.
+*  Remove the generated `autorun_conf.js` file located on `node2/conf`. Indeed, `node1` will be considered as **Top Composer**, it will controls the application's composition in all the participating nodes.
 
-`node2/conf/boot-forker.js`
-{% highlight json %}
-{
-	"import-files" : [ "boot-forker.js" ],
+* Go to `node1` directory and start it as a **Top Composer**:
 
-	"composition" : [
-	{
-		"name" : "pelix-http-service",
-		"properties" : {
-			"pelix.http.port" : 9000
-		}
-	}, {
-		"name" : "pelix-remote-shell",
-		"properties" : {
-			"pelix.shell.port" : 9001
-		}
-	} ]
-}
-{% endhighlight %}
+<pre>
+node1$ ./<b>run</b> -t
+</pre>
+
+* When started, type `load` command to start the application's composition (instantiation). 
+* You can test this first part of the application as your `hello_components` component is instantiated in this node (*web isolates*). Follow the same steps as in the first part of this tutorial to find the http port and to launch the web interface. You notice that there is only two components A and B. This is because C component is specified to be instantiated on `node2` which is not yet started.
+
+* In a separate terminal, start `node2` with a different *http* and *remote shell* ports (to avoid conflict with the first node - as they are hosted on the same physical machine):
+
+<pre>
+node2$ ./<b>run</b> 9000 9001
+</pre>
+
+Notice that we have started this node without the `-t` option. It is not a *Top Composer*, but just a participating node.
+
+* Refresh the web interface of `hello_components` component. You will notice that the C component is detected and used by the HC component even it was deployed in a seperate remote node.
+
 
 
 [Home](../../../../) > [Documentation](../../) > [Tutorials](../)
