@@ -34,7 +34,7 @@ This command will create a new directory named `my-pc` containing an executable 
  * Download the bundle of this tutorial's components (no need to implement them in this getting started tutorial). 
 
 <p>
-<div id="download_night_builds"></div> 
+<div id="download_hello_demo_python_snapshot"></div> 
 </p>
 
  * Put the extracted `hello` directory into `my-pc/repo` directory.  
@@ -191,6 +191,62 @@ Notice that we have started this node without the `-t` option. It is not a *Top 
 
 * Refresh the web interface of `hello_components` component. You will notice that the C component is detected and used by the HC component even it was deployed in a seperate remote node.
 
+### Step 3
+
+All the components used until now are implemented in Python (using [iPOPO component-based framework]({{ site.baseurl }}/docs/1.x/components)). We will extend our application by introducing a new component that implements the HELLO service in Java (component_D). 
+
+ * Stop the running nodes of the previous step (use the command `quit`).
+ * Donwload the bundle (jar file) containing the implementation of the D component.
+
+<p>
+<div id="download_hello_demo_java_snapshot"></div> 
+</p>
+
+ * Put the extracted `component_d.jar` file into the `repo` folder of the two nodes (`node1/repo` and `node2/repo`).
+ * Update the `autorun_conf.js` file located on `node1/conf` to add this new component D. It should be instantiated on `node2` in the `components` isolate.
+
+{% highlight json %}
+{
+	"name" : "hello-application-step2",
+	"root" : {
+		"name" : "hello-application-step2-composition",
+		"components" : [ 
+			{
+				"name" : "hello_components",
+				"factory" : "hello_components_factory",
+				"isolate" : "web",			
+				"node" : "node1"
+			}, {
+				"name" : "component_A",
+				"factory" : "component_A_factory",
+				"isolate" : "components",
+				"node" : "node1"
+			}, {
+				"name" : "component_B",
+				"factory" : "component_B_factory",
+				"isolate" : "components",
+				"node" : "node1"
+			}, {
+				"name" : "component_C",
+				"factory" : "component_C_factory",
+				"isolate" : "components",
+				"node" : "node2"
+			}, {
+				"name" : "component_D",
+				"factory" : "component_D_factory",
+				"isolate" : "components",
+				"node" : "node2"
+			}
+		]
+	}
+}
+{% endhighlight %}
+
+ * start the two nodes as explained in the previous step (*node1$ as *Top Composer* and *node2* as a simple node with different http and remote shell ports).
+ * Test the web interface. You will find that the `component_D` which is implemented in Java is also used by the `hello_components` component implemented in Python. 
+ * However, under the hood, COHORTE has created a seperate *components isolate* for this new component ( D ). This is because it is of different nature, it need other runtime infrastructure than the Python components.
+
+![Step 2](getting-started-img-4.png)
 
 
 [Home](../../../../) > [Documentation](../../) > [Tutorials](../)
@@ -199,8 +255,9 @@ Notice that we have started this node without the `-t` option. It is not a *Top 
 <script>
     function loadLatestSnapshots() {
         $.getJSON( "http://cohorte.github.io/latest_demos.json", function( data ) {            
-            frame = "<a class='btn' href='" + data["snapshots"]["getting-started-tutorial-distribution"]["files"]["zip"] + "'>getting-started-tutorial.zip</a>"            
-            $('#download_night_builds').html(frame);
+            frame1 = "<a class='btn' href='" + data["snapshots"]["getting-started-python-distribution"]["files"]["zip"] + "'>hello_components.zip</a>"
+            frame2 = "<a class='btn' href='" + data["snapshots"]["getting-started-java-distribution"]["files"]["zip"] + "'>hello_components_java.zip</a>"            
+            $('#download_hello_demo_python_snapshot').html(frame1);
         });
     }
     $(document).ready(function() {        
