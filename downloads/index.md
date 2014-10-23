@@ -11,7 +11,7 @@ comments: true
 
 For important changes, please consult the [release notes](#).
 
-You found detailed installation instructions on [this page of the reference guide](../documentation/reference-guide/setup.html).
+You found detailed installation instructions on [this page of the reference guide](../docs/1.x/setup).
 
 ## Night Builds
 
