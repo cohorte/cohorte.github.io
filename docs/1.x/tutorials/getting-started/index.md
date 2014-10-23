@@ -242,11 +242,15 @@ All the components used until now are implemented in Python (using [iPOPO compon
 }
 {% endhighlight %}
 
- * start the two nodes as explained in the previous step (*node1$ as *Top Composer* and *node2* as a simple node with different http and remote shell ports).
- * Test the web interface. You will find that the `component_D` which is implemented in Java is also used by the `hello_components` component implemented in Python. 
- * However, under the hood, COHORTE has created a seperate *components isolate* for this new component ( D ). This is because it is of different nature, it need other runtime infrastructure than the Python components.
+ * start the two nodes as explained in the previous step (*node1* as *Top Composer* and *node2* as a simple node with different http and remote shell ports).
+ * Test the web interface. You will find that the `component_D` which is implemented in Java is also used by the `hello_components` component, implemented in Python. 
+ * However, under the hood, COHORTE has created a seperate *components isolate* for this new component ( D ). This is because it is of different nature, it needs other runtime infrastructure than the Python components.
 
 ![Step 2](getting-started-img-4.png)
+
+### Step 4
+
+crash-test! TODO
 
 
 [Home](../../../../) > [Documentation](../../) > [Tutorials](../)
