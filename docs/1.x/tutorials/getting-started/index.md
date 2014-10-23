@@ -32,7 +32,9 @@ This will create a new directory named `my-pc` containing an executable `run` an
 
  * The `repo` directory will contain the components code. For this first getting started tutorial, they are already implemented for you. You have to donwload them and extract the downloaded file in the `repo` directory.
 
-<div id="download_night_builds"/> 
+<p>
+<div id="download_night_builds"></div> 
+</p>
 
  * Next
 
@@ -136,13 +138,11 @@ If the two COHORTE nodes are located on the same physical machine, you should ov
 
 <script>
     function loadLatestSnapshots() {
-        $.getJSON( "http://cohorte.github.io/latest_demos.json", function( data ) {
-            console.log("refresh snapshots...");
+        $.getJSON( "http://cohorte.github.io/latest_demos.json", function( data ) {            
             frame = "<a href='" + data["snapshots"]["getting-started-tutorial-distribution"]["files"]["zip"] + "'>getting-started-tutorial.zip</a>"            
             $('#download_night_builds').html(frame);
         });
     }
-
     $(document).ready(function() {        
         loadLatestSnapshots();
     });
