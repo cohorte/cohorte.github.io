@@ -20,7 +20,7 @@ next_page: ../spellchecker
    * STEP 2: the same application of the first step will be deployed on two distributed nodes without changing the components implementation code.
    * STEP 3: crash-test
 
-### Step 1
+### STEP 1
 
  * Open a new terminal and type the following command on your working directory:
 
@@ -28,15 +28,21 @@ next_page: ../spellchecker
 $ <b>cohorte-create-node</b> my-pc
 </pre>
 
-This will create a new directory named `my-pc` containing an executable `run` and two folders `conf` and `repo`.
+This will create a new directory named `my-pc` containing an executable `run` (which launches the created COHORTE node) and two folders `conf` (contains configuration files) and `repo` (contains components bundles).
 
- * The `repo` directory will contain the components code. For this first getting started tutorial, they are already implemented for you. You have to donwload them and extract the downloaded file in the `repo` directory.
+ * Download the bundle of this tutorial's components (no need to implement them in this getting started tutorial). Put the extracted `hello` directory into `my-pc/repo` directory.  
 
 <p>
 <div id="download_night_builds"></div> 
 </p>
 
- * Next
+ * The `hello` package contains four components:   
+   * **component_A**, **component_B**, and **component_C**: these components implements the HELLO service which has only one method `say_hello`. 
+   * **hello_components**: this component provides a web interface on which the list of discovered components implementing the HELLO_SERVICE are listed (we show the message returned by each component when calling the `say_hello` method).
+
+![Step 1 final result](getting-started-img-3.png)
+
+ * architecture
 
 ![Step 1](getting-started-img-1.png)
 
@@ -139,7 +145,7 @@ If the two COHORTE nodes are located on the same physical machine, you should ov
 <script>
     function loadLatestSnapshots() {
         $.getJSON( "http://cohorte.github.io/latest_demos.json", function( data ) {            
-            frame = "<a href='" + data["snapshots"]["getting-started-tutorial-distribution"]["files"]["zip"] + "'>getting-started-tutorial.zip</a>"            
+            frame = "<a class='btn' href='" + data["snapshots"]["getting-started-tutorial-distribution"]["files"]["zip"] + "'>getting-started-tutorial.zip</a>"            
             $('#download_night_builds').html(frame);
         });
     }
