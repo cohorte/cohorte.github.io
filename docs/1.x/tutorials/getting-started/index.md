@@ -202,7 +202,7 @@ All the components used until now are implemented in Python (using [iPOPO compon
 <div id="download_hello_demo_java_snapshot"></div> 
 </p>
 
- * Put the extracted `component_d.jar` file into the `repo` folder of the two nodes (`node1/repo` and `node2/repo`).
+ * Put the extracted `jar` file into the `repo` folder of the two nodes (`node1/repo` and `node2/repo`). It contains the implementation code of `component_D`.
  * Update the `autorun_conf.js` file located on `node1/conf` to add this new component D. It should be instantiated on `node2` in the `components` isolate.
 
 {% highlight json %}
