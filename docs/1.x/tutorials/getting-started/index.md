@@ -260,8 +260,9 @@ crash-test! TODO
     function loadLatestSnapshots() {
         $.getJSON( "http://cohorte.github.io/latest_demos.json", function( data ) {            
             frame1 = "<a class='btn' href='" + data["snapshots"]["hello-python-distribution"]["files"]["zip"] + "'>hello_components.zip</a>"
-            frame2 = "<a class='btn' href='" + data["snapshots"]["hello"]["files"]["jar"] + "'>hello_components_java.zip</a>"            
+            frame2 = "<a class='btn' href='" + data["snapshots"]["hello"]["files"]["jar"] + "'>hello_component_java.zip</a>"            
             $('#download_hello_demo_python_snapshot').html(frame1);
+            $('#download_hello_demo_java_snapshot').html(frame2);
         });
     }
     $(document).ready(function() {        
