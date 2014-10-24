@@ -10,7 +10,11 @@ next_page: ../temper
 
 ## Spellchecker tutorial
 
-Intended for new COHORTE users, this tutorial provides step-by-step introduction to COHORTE, starting with a simple application using Python or Java programming language. All the resulting code can be found in [spellchecker-demo.zip](#) file, however we encourage you to follow the different steps of this tutorial to build your own fresh COHORTE application.
+This tutorial provides step-by-step introduction to COHORTE, starting with a simple application using Python or Java programming language. All the resulting code can be donwload using the following link, however we encourage you to follow the different steps of this tutorial to build your own fresh COHORTE application.
+
+<p>
+<div id="download_spellchecker_snapshot"></div> 
+</p>
 
 The goal of this first tutorial is to highlight the Service-oriented Component-based approach to construct modular and dynamic software applications. Other features of COHORTE <a href="../../what-is-cohorte">listed here</a>, are explored and explained in <a href="../">other tutorials</a>.
 
@@ -32,3 +36,16 @@ You can have a COHORTE application made of a mixture of Java and Python componen
 
 
 [Home](../../../../) > [Documentation](../../) > [Tutorials](../)
+
+
+<script>
+    function loadLatestSnapshots() {
+        $.getJSON( "http://cohorte.github.io/latest_demos_spellchecker.json", function( data ) {            
+            frame1 = "<a class='btn' href='" + data["snapshots"]["spellchecker-distribution"]["files"]["zip"] + "'>spellchecker.zip</a>"                  
+            $('#download_spellchecker_snapshot').html(frame1);            
+        });
+    }
+    $(document).ready(function() {        
+        loadLatestSnapshots();
+    });
+</script>

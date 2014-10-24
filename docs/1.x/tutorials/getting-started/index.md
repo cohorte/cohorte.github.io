@@ -202,7 +202,7 @@ All the components used until now are implemented in Python (using [iPOPO compon
 <div id="download_hello_demo_java_snapshot"></div> 
 </p>
 
- * Put the extracted `jar` file into the `repo` folder of the two nodes (`node1/repo` and `node2/repo`). It contains the implementation code of `component_D`.
+ * Put the extracted `jar` file into the `repo` folder of the two nodes (`node1/repo` and `node2/repo`). 
  * Update the `autorun_conf.js` file located on `node1/conf` to add this new component D. It should be instantiated on `node2` in the `components` isolate.
 
 {% highlight json %}
@@ -258,7 +258,7 @@ crash-test! TODO
 
 <script>
     function loadLatestSnapshots() {
-        $.getJSON( "http://cohorte.github.io/latest_demos.json", function( data ) {            
+        $.getJSON( "http://cohorte.github.io/latest_demos_hello.json", function( data ) {            
             frame1 = "<a class='btn' href='" + data["snapshots"]["hello-python-distribution"]["files"]["zip"] + "'>hello_components.zip</a>"
             frame2 = "<a class='btn' href='" + data["snapshots"]["hello"]["files"]["jar"] + "'>hello_component_java.zip</a>"            
             $('#download_hello_demo_python_snapshot').html(frame1);
