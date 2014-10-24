@@ -1,0 +1,11 @@
+{
+  "releases": {},
+  "snapshots": {
+    "spellchecker-distribution": {
+      "files": {
+        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/demos/spellchecker/1.0.0-SNAPSHOT/spellchecker-1.0.0-20141024.155635-1-distribution.zip"
+      },
+      "version": "1.0.0-20141024.155635-1"
+    }
+  }
+}
