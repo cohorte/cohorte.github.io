@@ -26,10 +26,10 @@ next_page: ../spellchecker
  * Open a new terminal and type the following command on your working directory:
 
  <pre>
-$ <b>cohorte-create-node</b> my-pc
+$ <b>cohorte-create-node</b> node1
 </pre>
 
-This command will create a new directory named `my-pc` containing an executable `run` (which launches the created COHORTE node) and two folders `conf` (contains configuration files) and `repo` (contains components bundles).
+This command will create a new directory named `node1` containing an executable `run` (which launches the created COHORTE node) and two folders `conf` (contains configuration files) and `repo` (contains components bundles).
 
  * Download the bundle of this tutorial's components (no need to implement them in this getting started tutorial). 
 
@@ -37,10 +37,10 @@ This command will create a new directory named `my-pc` containing an executable 
 <div id="download_hello_demo_python_snapshot"></div> 
 </p>
 
- * Put the extracted `hello` directory into `my-pc/repo` directory.  
-   * The `hello` package contains four components:   
+ * Put the extracted `hello` directory into `node1/repo` directory.  
+   * The `hello` package contains four components (implemented in Python):   
      * **component_A**, **component_B**, and **component_C**: these components implements the HELLO service which has only one method `say_hello`. 
-     * **hello_components**: this component provides a web interface on which the list of discovered components implementing the HELLO service are listed (we show the message returned by each component when calling the `say_hello` method).
+     * **hello_components**: this component provides a web interface on which the list of discovered components implementing the HELLO service are listed (we show the message returned by each component when calling their `say_hello` method).
 
 The following picture depicts the web interface provided by the **hello_components** component and the underlying architecture of the application.
 
@@ -51,7 +51,7 @@ The following picture depicts the web interface provided by the **hello_componen
 
 ![Step 1](getting-started-img-1.png)
 
- * In order to have this deployment plan, you should edit the `my-pc/conf/autorun_conf.js` to specify the set of components that will be instantiated on this node and on which isolate.
+ * In order to have this deployment plan, you should edit the `node1/conf/autorun_conf.js` to specify the set of components that will be instantiated on each isolate.
 
 {% highlight json %}
 {
@@ -60,16 +60,16 @@ The following picture depicts the web interface provided by the **hello_componen
 		"name" : "default-application-composition",
 		"components" : [ 
 			{
-				"name" : "hello_components",
+				"name" : "HC",
 				"factory" : "hello_components_factory",
 				"isolate" : "web"
 			}, {
-				"name" : "component_A",
-				"factory" : "component_A_factory",
+				"name" : "A",
+				"factory" : "component_a_factory",
 				"isolate" : "components"
 			}, {
-				"name" : "component_B",
-				"factory" : "component_B_factory",
+				"name" : "B",
+				"factory" : "component_b_factory",
 				"isolate" : "components"
 			}
 		]
@@ -77,7 +77,7 @@ The following picture depicts the web interface provided by the **hello_componen
 }
 {% endhighlight %}
 
- * **It's done!** all what's you need to do now is to start `my-pc` node as follow:
+ * **It's done!** all what's you need to do now is to start `node1` node as follow:
 
  <pre>
 $ ./<b>run</b> -t
@@ -100,9 +100,9 @@ $ <b>http</b>
 +------------+--------------------------------------+-----------+--------------------------------------+-------+
 |    Name    |                 UID                  | Node Name |               Node UID               | HTTP  |
 +============+======================================+===========+======================================+=======+
-| components | 9fa3c812-64b0-499e-8b65-6ac5fe8bcf02 | my-pc     | 71c96fe6-5ce2-43c9-bafc-6f0905d8cf74 | 63625 |
+| components | 9fa3c812-64b0-499e-8b65-6ac5fe8bcf02 | node1     | 71c96fe6-5ce2-43c9-bafc-6f0905d8cf74 | 63625 |
 +------------+--------------------------------------+-----------+--------------------------------------+-------+
-| web        | ac0dd576-a7fb-4c34-b7ab-b68a810c38bc | my-pc     | 71c96fe6-5ce2-43c9-bafc-6f0905d8cf74 | <span style="color:red">63609</span> |
+| web        | ac0dd576-a7fb-4c34-b7ab-b68a810c38bc | node1     | 71c96fe6-5ce2-43c9-bafc-6f0905d8cf74 | <span style="color:red">63609</span> |
 +------------+--------------------------------------+-----------+--------------------------------------+-------+
 </div>
 </pre>
@@ -124,19 +124,23 @@ In this second step, we will distribute our components among two nodes (which ca
 
  * Lets have the same architecture as the first step, and we add a new instance of component_C that should be deployed on a second node. 
 
+ Here is the new depoyment configuration for this case. 
+
 ![Step 2](getting-started-img-2.png)
 
- * Start by creating two nodes:
+COHORTE will instantiate the HC, A, and B components on Top Composer node. The component C is instantiate on each other node having the name "node2". This node can be located on another machine than the one executing the Top Composer.
+
+In order to discover the nodes belonging to the same application, all the nodes should have the same *application-ID*. The following commands creates two nodes (node1 and node2) with the same *application-ID* `hello-application-step2`:
 
  <pre>
 $ <b>cohorte-create-node</b> node1 hello-application-step2
 $ <b>cohorte-create-node</b> node2 hello-application-step2
 </pre>
 
-Notice that we have given a second parameter to `cohorte-create-node` command. This parameter set an application ID for the two nodes. We should ensure that all participating nodes have the same application ID. 
+
 
  * Copy `hello` package used in the first step into the `repo directories of the two newly created nodes (you can also make symbolic links to avoid having two copies if your nodes are on the same machine).
- * Update `autorun_conf.js` file located on `node1/conf`:
+ * Update `autorun_conf.js` file located on `node1/conf` as follow:
 
 {% highlight json %}
 {
@@ -145,30 +149,34 @@ Notice that we have given a second parameter to `cohorte-create-node` command. T
 		"name" : "hello-application-step2-composition",
 		"components" : [ 
 			{
-				"name" : "hello_components",
+				"name" : "HC",
 				"factory" : "hello_components_factory",
-				"isolate" : "web",			
-				"node" : "node1"
+				"isolate" : "web"
 			}, {
-				"name" : "component_A",
-				"factory" : "component_A_factory",
-				"isolate" : "components",
-				"node" : "node1"
+				"name" : "A",
+				"factory" : "component_a_factory",
+				"isolate" : "components"
 			}, {
-				"name" : "component_B",
-				"factory" : "component_B_factory",
-				"isolate" : "components",
-				"node" : "node1"
+				"name" : "B",
+				"factory" : "component_b_factory",
+				"isolate" : "components"
 			}, {
-				"name" : "component_C",
-				"factory" : "component_C_factory",
-				"isolate" : "components",
+				"name" : "C",
+				"factory" : "component_c_factory",
+				"isolate" : "components2",
 				"node" : "node2"
 			}
 		]
 	}
 }
 {% endhighlight %}
+
+<div class="note">
+<span class="note-title">Note</span>
+<p class="note-content">
+The C component is specified to be in another isolate named "components2", not "components". In the actual version of COHORTE you can not have two different isolates with the same name in two different nodes!
+</p>
+</div>
 
 *  Remove the generated `autorun_conf.js` file located on `node2/conf`. Indeed, `node1` will be considered as **Top Composer**, it will controls the application's composition in all the participating nodes.
 
@@ -202,8 +210,8 @@ All the components used until now are implemented in Python (using [iPOPO compon
 <div id="download_hello_demo_java_snapshot"></div> 
 </p>
 
- * Put the extracted `jar` file into the `repo` folder of the two nodes (`node1/repo` and `node2/repo`). 
- * Update the `autorun_conf.js` file located on `node1/conf` to add this new component D. It should be instantiated on `node2` in the `components` isolate.
+ * Put the extracted `jar` file into the `repo` folder of `node2` node. 
+ * Update the `autorun_conf.js` file located on `node1/conf` to add this new component D. It should be instantiated on `node2`.
 
 {% highlight json %}
 {
@@ -212,29 +220,26 @@ All the components used until now are implemented in Python (using [iPOPO compon
 		"name" : "hello-application-step2-composition",
 		"components" : [ 
 			{
-				"name" : "hello_components",
+				"name" : "HC",
 				"factory" : "hello_components_factory",
-				"isolate" : "web",			
-				"node" : "node1"
+				"isolate" : "web"
 			}, {
-				"name" : "component_A",
+				"name" : "A",
 				"factory" : "component_A_factory",
-				"isolate" : "components",
-				"node" : "node1"
+				"isolate" : "components"
 			}, {
-				"name" : "component_B",
+				"name" : "B",
 				"factory" : "component_B_factory",
-				"isolate" : "components",
-				"node" : "node1"
+				"isolate" : "components"
 			}, {
-				"name" : "component_C",
+				"name" : "C",
 				"factory" : "component_C_factory",
-				"isolate" : "components",
+				"isolate" : "components2",
 				"node" : "node2"
 			}, {
-				"name" : "component_D",
+				"name" : "D",
 				"factory" : "component_D_factory",
-				"isolate" : "components",
+				"isolate" : "components3",
 				"node" : "node2"
 			}
 		]
@@ -242,15 +247,19 @@ All the components used until now are implemented in Python (using [iPOPO compon
 }
 {% endhighlight %}
 
- * start the two nodes as explained in the previous step (*node1* as *Top Composer* and *node2* as a simple node with different http and remote shell ports).
- * Test the web interface. You will find that the `component_D` which is implemented in Java is also used by the `hello_components` component, implemented in Python. 
- * However, under the hood, COHORTE has created a seperate *components isolate* for this new component ( D ). This is because it is of different nature, it needs other runtime infrastructure than the Python components.
-
 ![Step 2](getting-started-img-4.png)
+
+ * As you notice, components C and D should be deployed on two sperate isolates (*components2* and *components3*) as are implemented in two different languages.
+
+ * start the two nodes as explained in the previous step (*node1* as *Top Composer* and *node2* as a simple node with different http and remote shell ports).
+ * Test the web interface. You will find that the **D** component which is implemented in Java is also used by the **HC** component, implemented in Python. 
+
+
 
 ### Step 4
 
-crash-test! TODO
+crash-test! 
+Work in progress.. 
 
 
 [Home](../../../../) > [Documentation](../../) > [Tutorials](../)
