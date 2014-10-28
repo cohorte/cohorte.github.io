@@ -61,15 +61,16 @@ The following XML file represents the XMl equivalent for this deployment and com
 
 {% highlight json %}
 {
-	"name" : "temper-demo",
+	"name" : "temper-app-v1",
 	"root" : {
-		"name" : "temper-demo-composition",
-		"components" : [ {
+		"name" : "temper-app-v1-composition",
+		"components" : [ 
+			{
 			/**
 			 * Python sensor
 			 */
-			"name" : "temper-python-python",
-			"factory" : "demo-temperature-fake-factory",
+			"name" : "PS",
+			"factory" : "python-sensor-factory",
 			"isolate" : "temper.python",
 			"node" : "python-sensor-pc",
 			"properties" : {
@@ -80,25 +81,24 @@ The following XML file represents the XMl equivalent for this deployment and com
 			/**
 			 * Raspberry Pi sensor
 			 */
-			"name" : "temper-python-raspi",
-			"factory" : "demo-temperature-fake-factory",
-			// Force placement
+			"name" : "PS-raspi",
+			"factory" : "python-sensor-factory",
 			"isolate" : "temper.raspi",
 			"node" : "raspberry-pi"
 		}, {
 			/**
 			 * Java sensor
 			 */
-			"name" : "temper-java",
-			"factory" : "java-fake-temp-factory",
+			"name" : "JS",
+			"factory" : "java-sensor-factory",
 			"isolate" : "temper.java",
 			"node" : "java-sensor-pc"
 		}, {
 			/**
 			 * Aggregator component
 			 */
-			"name" : "aggregator",
-			"factory" : "demo-sensor-aggregator-factory",
+			"name" : "A",
+			"factory" : "aggregator-factory",
 			"language" : "python",
 			"isolate" : "aggregation",
 			"node" : "gateway",
@@ -109,27 +109,19 @@ The following XML file represents the XMl equivalent for this deployment and com
 			/**
 			 * Aggregator web UI
 			 */
-			"name" : "aggregator-UI",
-			"factory" : "demo-sensor-aggregator-ui-factory",
+			"name" : "UI",
+			"factory" : "aggregator-ui-factory",
 			"language" : "python",
 			"isolate" : "web.interface",
 			"node" : "gateway",
 			"properties" : {
-				"servlet.path" : "/sensors"
+				"servlet.path" : "/temper"
 			},
 			"wires" : {
 				"_aggregator" : "aggregator"
 			}
-		}, {
-			/**
-			 * Unity component
-			 */
-			"name" : "unity",
-			"factory" : "demo-sensor-unity-factory",
-			"language" : "python",
-			"isolate" : "unity.app",
-			"node" : "datashower"
-		} ]
+		}
+		]
 	}
 }
 {% endhighlight %}
@@ -193,5 +185,7 @@ You will notice new entries in the active devices list of the aggregator web int
 You can also start the `java-sensor-pc` node to test it. Ensure to put another http and shell ports configuration.
 
 To test the `raspberry-pi` node, you should have a real *raspberry-pi* device connected to the local network. 
+
+Notice that you can run copies of java or python sensor nodes in multiple devices without changing anything. 
 
 [Home](../../../../) > [Documentation](../../) > [Tutorials](../)
