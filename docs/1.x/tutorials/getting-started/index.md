@@ -225,20 +225,20 @@ All the components used until now are implemented in Python (using [iPOPO compon
 				"isolate" : "web"
 			}, {
 				"name" : "A",
-				"factory" : "component_A_factory",
+				"factory" : "component_a_factory",
 				"isolate" : "components"
 			}, {
 				"name" : "B",
-				"factory" : "component_B_factory",
+				"factory" : "component_b_factory",
 				"isolate" : "components"
 			}, {
 				"name" : "C",
-				"factory" : "component_C_factory",
+				"factory" : "component_c_factory",
 				"isolate" : "components2",
 				"node" : "node2"
 			}, {
 				"name" : "D",
-				"factory" : "component_D_factory",
+				"factory" : "component_d_factory",
 				"isolate" : "components3",
 				"node" : "node2"
 			}

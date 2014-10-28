@@ -30,6 +30,7 @@ next_page: ../setup
  * [Web Store Tutorial](./store) * * * * 
     <br/>Using COHORTE to construct IT applications with modular and resilient architecture as a first class requirement.
 
+<!--
 
 ## Videos
 
@@ -90,3 +91,4 @@ Take a quick tour of Cohorte Platform and eco-system tools.
         <p>Film réalisé dans le cadre du projet NANOYOU (http://www.nanoyou.eu/fr) </p><br/>
 	</div>
 </div>
+-->
