@@ -23,6 +23,10 @@ Depending on your operating system, we give some insights about how install COHO
 4. Ensure to have the access rights to `$COHORTE_HOME` directory (e.g., `sudo chgrp -R your_login cohorte-1.0.0; chown -R your_login cohorte-1.0.0).
 5. Cloce the actual terminal and open a new one to start using COHORTE.
 
+For Max OS X users, other Python packages should be installed before running COHORTE:
+
+ * pyobjc
+
 ##### Windows
 
 1. Donwload the COHORTE distribution adequate to your operating system from [repo.isandatech.com/cohorte](http://repo.isandatech.com/cohorte). For Windows platform, download `cohorte-1.0.0-windows.zip`.
