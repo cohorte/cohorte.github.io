@@ -3,9 +3,9 @@
   "snapshots": {
     "spellchecker-distribution": {
       "files": {
-        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/demos/spellchecker/1.0.0-SNAPSHOT/spellchecker-1.0.0-20141028.143920-2-distribution.zip"
+        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/demos/spellchecker/1.0.0-SNAPSHOT/spellchecker-1.0.0-20141028.165605-3-distribution.zip"
       },
-      "version": "1.0.0-20141028.143920-2"
+      "version": "1.0.0-20141028.165605-3"
     }
   }
 }
