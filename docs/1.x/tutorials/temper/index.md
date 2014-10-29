@@ -189,3 +189,16 @@ To test the `raspberry-pi` node, you should have a real *raspberry-pi* device co
 Notice that you can run copies of java or python sensor nodes in multiple devices without changing anything. 
 
 [Home](../../../../) > [Documentation](../../) > [Tutorials](../)
+
+
+<script>
+    function loadLatestSnapshots() {
+        $.getJSON( "http://cohorte.github.io/latest_demos_temper.json", function( data ) {            
+            frame1 = "<a class='btn' href='" + data["snapshots"]["temper-distribution"]["files"]["zip"] + "'>temper-distribution.zip</a>";                      
+            $('#download_temper_snapshot').html(frame1);            
+        });
+    }
+    $(document).ready(function() {        
+        loadLatestSnapshots();
+    });
+</script>
