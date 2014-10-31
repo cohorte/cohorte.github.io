@@ -3,16 +3,16 @@
   "snapshots": {
     "cohorte-base-distribution": {
       "files": {
-        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141030.002615-81-base-distribution.zip"
+        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141030.235306-83-base-distribution.zip"
       },
-      "version": "1.0.0-20141030.002615-81"
+      "version": "1.0.0-20141030.235306-83"
     },
     "cohorte-linux-distribution": {
       "files": {
-        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141029.235329-80-linux-distribution.tar.gz",
-        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141029.235329-80-linux-distribution.zip"
+        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141030.235306-83-linux-distribution.tar.gz",
+        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141030.235306-83-linux-distribution.zip"
       },
-      "version": "1.0.0-20141029.235329-80"
+      "version": "1.0.0-20141030.235306-83"
     },
     "cohorte-macosx-distribution": {
       "files": {
@@ -37,10 +37,10 @@
     },
     "cohorte-python-distribution": {
       "files": {
-        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141029.234405-79-python-distribution.tar.gz",
-        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141029.234405-79-python-distribution.zip"
+        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141030.234429-82-python-distribution.tar.gz",
+        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141030.234429-82-python-distribution.zip"
       },
-      "version": "1.0.0-20141029.234405-79"
+      "version": "1.0.0-20141030.234429-82"
     }
   }
 }
