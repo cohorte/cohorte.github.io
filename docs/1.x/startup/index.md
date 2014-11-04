@@ -60,7 +60,7 @@ To start a COHORTE node, you have to use the generated `run` command (this comma
 $ ./run [-h] [-a APPLICATION_ID] [--use-config CONFIG_FILE]
         [--update-config] [--show-config]
         [-b BASE_ABSOLUTE_PATH] [-n NODE_NAME]
-        [--is-top-composer]
+        [--top-composer]
         [--web-admin WEB_ADMIN_PORT]
         [--shell-admin SHELL_ADMIN_PORT]
         [--transport TRANSPORT_MODES]
@@ -101,7 +101,7 @@ We can write the startup configurations in a separate JSON file (see How to use 
 <pre>
   -n NODE_NAME, --node NODE_NAME
                         Node name
-  --is-top-composer     Is this node a top composer?
+  --top-composer        Flag indicating that this node is a Top Composer
   --web-admin WEB_ADMIN_PORT
                         Node web admin port
   --shell-admin SHELL_ADMIN_PORT
@@ -137,7 +137,7 @@ To avoid re-typing the same options each time a node is started, or to share the
 
 	"node": {		
 		"name": "node-rasp",
-		"is-top-composer": true,
+		"top-composer": true,
 		"web-admin": 9001,
 		"shell-admin": 9001		
 	},
