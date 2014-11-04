@@ -62,7 +62,7 @@ Here is the content of the generated `conf/autorun_conf.js`file. You should add 
 }
 {% endhighlight %}
 
-
+Only the node started as Top Composer (see next section) should have this configuration file completed. Other nodes started as simple nodes will ignore this file.
 
 ### Starting nodes
 
