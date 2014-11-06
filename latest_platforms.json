@@ -3,16 +3,16 @@
   "snapshots": {
     "cohorte-base-distribution": {
       "files": {
-        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141105.235614-97-base-distribution.zip"
+        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141106.234759-99-base-distribution.zip"
       },
-      "version": "1.0.0-20141105.235614-97"
+      "version": "1.0.0-20141106.234759-99"
     },
     "cohorte-linux-distribution": {
       "files": {
-        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141105.235614-97-linux-distribution.tar.gz",
-        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141105.235614-97-linux-distribution.zip"
+        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141106.234759-99-linux-distribution.tar.gz",
+        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141106.234759-99-linux-distribution.zip"
       },
-      "version": "1.0.0-20141105.235614-97"
+      "version": "1.0.0-20141106.234759-99"
     },
     "cohorte-macosx-distribution": {
       "files": {
@@ -37,10 +37,10 @@
     },
     "cohorte-python-distribution": {
       "files": {
-        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141105.234344-96-python-distribution.tar.gz",
+        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141106.234435-98-python-distribution.tar.gz",
         "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141105.234344-96-python-distribution.zip"
       },
-      "version": "1.0.0-20141105.234344-96"
+      "version": "1.0.0-20141106.234435-98"
     }
   }
 }
