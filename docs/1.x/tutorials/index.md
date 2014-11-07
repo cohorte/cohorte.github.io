@@ -18,11 +18,23 @@ next_page: ../setup
  * [Getting Started Tutorial](./getting-started)
     <br/>Install and run a COHORTE application in 10 munites.
 
- * [Spellcheker Tutorial](./spellchecker) * *
+ * [Temper Tutorial](./temper) 
+    <br/>Highlighting the multi-language and distribution features of COHORTE in a simple, yet functional temperature monitoring application.
+
+ * [Spellcheker Tutorial](./spellchecker) 
     <br/>An introductory tutorial for Java and Python developers. It highlights the Service-oriented Component-based approach of the COHORTE platform.
 
- * [Temper Tutorial](./temper) * * *
-    <br/>Highlighting the multi-language and distribution features of COHORTE in a simple, yet functional temperature monitoring application.
+## Technical and general articles
+
+* Using Unity 3D in COHORTE - interacting with .NET code via IronPython
+* Writing scalable web applications using COHORTE
+* Dynamic component-based approach for .NET applications
+* Managed OSGi framework  
+* Writting ditributed application using components of different programming languages
+* Write Business logic code, no more technical heavy code
+* Service-oriented vs. messaging middleware approache (the case of COHORTE)
+
+
 
 <!--
 

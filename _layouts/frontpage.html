@@ -23,7 +23,7 @@ title: COHORTE Project web site
     <div class="row">
       <div class="span12">
         <div class="splash-text ontop">
-          <h2 style="font-weight: 500;">Resilient Component-based Software Framework</h2>
+          <h2 style="font-weight: 500;">Resilient Component-based Software Platform</h2>
           <p class="splash-pitch">
             COHORTE is a platform for developing and rolling out robust and reliable software.
             Software produced with COHORTE has a high level of robustness and reliability since 
@@ -48,7 +48,7 @@ title: COHORTE Project web site
       <div class="row">
         <div class="span12 bullet-point">
           <h2><span>COHORTE in a Nutshell</span></h2>
-          <p class="click">&nbsp;click the boxes below to see COHORTE in action!&nbsp;</p>
+          <p class="click">&nbsp;click the boxes below to see more details&nbsp;</p>
         </div>
       </div>
       <div class="row">
@@ -59,7 +59,7 @@ title: COHORTE Project web site
         </div>
         <div class="span4 bullet-point" id="key-point-2">
           <img src="{{ site.baseurl }}/resources/images/key-point-5-icon.png" class="key-point-icon"/>
-          <h3>Multi-Language<br/>Programming</h3>
+          <h3>Multi-Language Programming</h3>
           <p>COHORTE supports both Python and Java. You can develop your application using one of this two languages or a mixture of them.</p>
         </div>
         <div class="span4 bullet-point" id="key-point-3">
@@ -89,13 +89,13 @@ title: COHORTE Project web site
           <p>COHORTE supports multiple deployment environments in local area networks or across Internet. It uses an universla messaging framework to integrate the different parts.</p>
         </div>
         <div class="span4 bullet-point" id="key-point-5">
-          <img src="{{ site.baseurl }}/resources/images/key-point-4-icon.png" class="key-point-icon"/>
+          <img src="{{ site.baseurl }}/resources/images/key-point-4-icon.png" class="key-point-icon"/><br/>
           <h3>Dynamic Isolation & resilience</h3>
           <p>COHORTE applications are able to recover and repair themselves automatically for seamless business continuity.</p>
         </div>                
         <div class="span4 bullet-point" id="key-point-6">
           <img src="{{ site.baseurl }}/resources/images/key-point-6-icon.png" class="key-point-icon"/>
-          <h3>Development & Monitoring<br/>Tools</h3>
+          <h3>Development & Monitoring Tools</h3>
           <p>COHORTE developers can use their prefered IDE. We provide information about how to integrate COHORTE in their development process.</p>
         </div>
       </div>
@@ -130,7 +130,7 @@ title: COHORTE Project web site
 </div>
 
 <!-- ***************** getting started steps ******************* -->
-<!--
+
 <div class="getting-started-box">
   <div class="bullet-row-1-wrap">
     <div class="container">
@@ -140,13 +140,32 @@ title: COHORTE Project web site
           <p class="click">&nbsp;click next and previous buttons to switch between steps&nbsp;</p>
         </div>
       </div>
-      <ol class="getting-started-nav">
-        <li class="active">Architect</li>
-        <li><a href="/static/onboarding/code">Implement</a></li>
-        <li><a href="/static/onboarding/snapshot">Pre-deploy</a></li>
-        <li><a href="/static/onboarding/share">Deploy</a></li>
-        <li><a href="/static/onboarding/share">Monitor</a></li>
-      </ol>
+      <div class="getting-started-container-main">
+        <header class="getting-started-onboarding-header">
+
+          <ol class="getting-started-nav">
+            <li class="active" id="getting-started-step1">Architect</li>
+            <li id="getting-started-step2">Implement</li>
+            <li id="getting-started-step3">Pre-deploy</li>
+            <li id="getting-started-step4">Deploy</li>
+            <li id="getting-started-step5">Run</li>
+          </ol>
+        </header>
+
+        <div id="getting-started-steps-row">
+          <div class="container">
+            <div class="row">
+            </div>
+          </div>
+        </div>
+
+        <div id="hidden-getting-started-step-1">{% include getting-started-step-1.html %}</div>
+        <div id="hidden-getting-started-step-2">{% include getting-started-step-2.html %}</div>
+        <div id="hidden-getting-started-step-3">{% include getting-started-step-3.html %}</div>
+        <div id="hidden-getting-started-step-4">{% include getting-started-step-4.html %}</div>
+        <div id="hidden-getting-started-step-5">{% include getting-started-step-5.html %}</div>
+
+      <div class="container-main">
       <div class="code-snippet-arrow"></div>
     </div>
   </div>
@@ -178,7 +197,7 @@ title: COHORTE Project web site
     </div>
   </div>
 </div>
--->
+
 <!-- news and events -->
 
 

@@ -16,7 +16,7 @@ $(document).ready(function(){
       Math, boxes.map(function() {
           return $(this).height();
     }).get());
-    boxes.height(maxHeight);
+    boxes.height(maxHeight + 20);
   }
   var nutshell = $(".bullet-point").not(".span12");
   makeAllBoxesSameHeight(nutshell);
@@ -24,7 +24,7 @@ $(document).ready(function(){
   // expanding code snippets (front page)
   function expandSnippetAction(snippetID, container) {
     var codeBox = container.find(".row");
-
+    console.log("world")
     function go() {
       var snippet = $(snippetID).html();
 
@@ -54,6 +54,31 @@ $(document).ready(function(){
     return go;
   }
 
+  // expanding code snippets (front page)
+  function expandGettingStartedStep(snippetID, container) {
+    var codeBox = container.find(".row");
+    console.log("hello")
+    function go() {
+      var snippet = $(snippetID).html();
+
+      var codeSnippetInContainer = codeBox.html();
+
+      if (container.is(":hidden")) {
+        codeBox.html(snippet);
+        container.slideDown();
+      } else if (codeSnippetInContainer == snippet) {
+        container.slideUp(function() {
+        });
+      } else {
+        var hgt = $(snippetID).height();
+        codeBox.html(snippet);
+        codeBox.animate({height: hgt}, 400);
+      }
+    }
+    return go;
+  }
+
+
   var row1 = $("#code-snippet-row1");
   var row2 = $("#code-snippet-row2");
 
@@ -64,6 +89,13 @@ $(document).ready(function(){
   $("#key-point-4").click(expandSnippetAction("#hidden-key-point-4", row2));
   $("#key-point-5").click(expandSnippetAction("#hidden-key-point-5", row2));
   $("#key-point-6").click(expandSnippetAction("#hidden-key-point-6", row2));
+
+  var row3 = $("#getting-started-steps-row");
+  $("getting-started-step1").click(expandGettingStartedStep("#hidden-getting-started-step-1", row3));
+  $("getting-started-step2").click(expandGettingStartedStep("#hidden-getting-started-step-2", row3));
+  $("getting-started-step3").click(expandGettingStartedStep("#hidden-getting-started-step-3", row3));
+  $("getting-started-step4").click(expandGettingStartedStep("#hidden-getting-started-step-4", row3));
+  $("getting-started-step5").click(expandGettingStartedStep("#hidden-getting-started-step-5", row3));
 
 
 });

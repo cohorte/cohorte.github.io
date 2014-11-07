@@ -450,7 +450,7 @@ a:hover {
 .bullet-point-box {
   width: 100%;
   min-width:1024px;
-  min-height: 570px;
+  min-height: 650px;
   padding-top: 16px;
   padding-left: 0px;
   padding-right: 0px;
@@ -500,6 +500,7 @@ a:hover {
   color: #3d626b;
   font-weight: normal;
   font-style: italic;
+  text-align: center;
 }
 
 .bullet-point > p.click:before {
@@ -517,25 +518,25 @@ a:hover {
 .bullet-point > h3 {
   text-align: center;
   line-height: normal;
-  font-size: 15pt;
+  font-size: 14pt;
   font-family: 'proxima-nova', sans-serif;
   font-weight: bold;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   color: #fff;
 }
 
 .bullet-point > p {
-  text-align: center;
+  text-align: justify;
   font-family: "museo-slab", serif;
   font-weight: normal;
   margin: 0 15px 15px;
-  font-size: 13pt;
+  font-size: 12pt;
   line-height: 17pt;
   color: #839496;
 }
 
 .key-point-icon {
-  float:left; 
+  /*float:left; */
   padding-top:10px;
   padding-left:5px;
 }
@@ -712,6 +713,103 @@ a:hover {
   font-size: 13pt;
   line-height: 17pt;
   color: #839496;
+}
+
+.getting-started-container-main {
+  font: 16px "Proxima Nova", Gotham, sans-serif;
+  line-height: 23px;
+  color: black;
+  height: 550px;
+}
+
+.getting-started-onboarding-header {
+  border-bottom: 1px solid #ccc;
+  margin: 2em 0;
+  padding: 0 0 2em;
+}
+
+.getting-started-onboarding-header .getting-started-nav {
+  counter-reset: step;
+  list-style: none;
+  margin-top: 2em;
+  padding: 0;
+  text-align: center;
+}
+
+.getting-started-onboarding-header .getting-started-nav ol {
+  margin-bottom: 10px;
+}
+
+.getting-started-onboarding-header .getting-started-nav li {
+  counter-increment: step;
+  display: inline-block;
+  margin: 0 3em;
+  text-align: center;
+}
+
+.getting-started-onboarding-header .getting-started-nav li:before {
+  background: #adadad;
+  border-radius: 1.5em;
+  content: counter(step);
+  color: #fff;
+  display: block;
+  height: 1em;
+  line-height: 1.2em;
+  margin: 0 auto;
+  padding: .25em;
+  width: 1em;
+}
+
+.getting-started-onboarding-header .getting-started-nav li.active:before {
+  background: #22b1e3;
+}
+
+
+#hidden-getting-started-step-2,
+#hidden-getting-started-step-3,
+#hidden-getting-started-step-4,
+#hidden-getting-started-step-5 {
+  display: none;
+}
+
+#getting-started-step1,
+#getting-started-step2,
+#getting-started-step3,
+#getting-started-step4,
+#getting-started-step5 {
+  cursor: pointer;
+  color:#22b1e3;
+}
+
+.getting-started-step-explanation {
+  position: relative;
+  float: right;
+  width: 420px;
+  padding-left: 24px;
+  font-size: 15px;
+  line-height: 1.3em;
+}
+
+.getting-started-step-explanation > h3 {
+  font-family: "museo-slab", serif;
+  font-weight: bolder;
+  /*margin: 0 15px 15px;*/
+  /*font-size: 13pt;*/
+  /*line-height: 17pt;*/
+  color: #222;
+}
+
+.getting-started-step-explanation > p {
+  margin-bottom: 18px;
+}
+
+.getting-started-step-explanation > p > code {
+  background: rgba(88, 110, 117, 0.2);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: solid 1px rgba(88, 110, 117, 0.2);
+  color: rgba(38, 139, 210, 0.8);
 }
 
 /* ---- full-width-pages --------------------------------------------- */

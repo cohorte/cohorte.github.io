@@ -12,16 +12,19 @@ next_page: ../spellchecker
 
 ### Overview
 
- * As a COHORTE user, you need to have Java ( >1.6 ) and Python ( 3 ) installed on your system.
- * Next, you need to [download and install COHORTE on your system]({{ site.baseurl }}/docs/1.x/setup).
- * The objective of this getting started tutorial is to get you familiar with the COHORTE concept as quickly as possible. There is no need to start coding at this step. You found other advanced tutorial in the [tutorials section of the documentation page]({{ site.baseurl }}/docs/1.x/tutorials).
- * This getting started tutorial is divised in four steps:
-   * **STEP 1**: creating a simple application on one node, but two seperate isolates. 
-   * **STEP 2**: using two distributed nodes to host the same application (without changing the components implementation code).
-   * **STEP 3**: using a mixture of Java and Python components.
-   * **STEP 4**: crash-test
+ As a COHORTE user, you need to have Java ( >= 1.6 ) and Python ( >= 3 ) installed on your system. Next, you need to [download and install COHORTE on your system]({{ site.baseurl }}/docs/1.x/setup).
+ 
+ The objective of this getting started tutorial is to get you familiar with the COHORTE concept as quickly as possible. There is no need to start coding at this step. You found other advanced tutorial in the [tutorials section of the documentation page]({{ site.baseurl }}/docs/1.x/tutorials).
+ This getting started tutorial is divised in four steps:
 
-### STEP 1
+ * **[STEP 1](#step1)**: creating a simple application on one node, but two seperate isolates. 
+ * **[STEP 2](#step2)**: using two distributed nodes to host the same application (without changing the components implementation code).
+ * **[STEP 3](#step3)**: using a mixture of Java and Python components.
+ * **[STEP 4](#step4)**: crash-test
+
+<hr/>
+
+### <a name="step1"></a>STEP 1
 
  * Open a new terminal and type the following command on your working directory:
 
@@ -118,7 +121,9 @@ You can fix the http port to use for your application using configuration files 
 
  * To stop COHORTE, type the `quit` command on the terminal.
 
-### Step 2
+<hr/>
+
+### <a name="step2">Step 2
 
 In this second step, we will distribute our components among two nodes (which can be physically distributed on a local network area - or via Internet using an XMPP server).
 
@@ -199,7 +204,9 @@ Notice that we have started this node without the `-t` option. It is not a *Top 
 
 * Refresh the web interface of `hello_components` component. You will notice that the C component is detected and used by the HC component even it was deployed in a seperate remote node.
 
-### Step 3
+<hr/>
+
+### <a name="step3">Step 3
 
 All the components used until now are implemented in Python (using [iPOPO component-based framework]({{ site.baseurl }}/docs/1.x/components)). We will extend our application by introducing a new component that implements the HELLO service in Java (component_D). 
 
@@ -254,9 +261,9 @@ All the components used until now are implemented in Python (using [iPOPO compon
  * start the two nodes as explained in the previous step (*node1* as *Top Composer* and *node2* as a simple node with different http and remote shell ports).
  * Test the web interface. You will find that the **D** component which is implemented in Java is also used by the **HC** component, implemented in Python. 
 
+<hr/>
 
-
-### Step 4
+### <a name="step4">Step 4
 
 crash-test! 
 Work in progress.. 
