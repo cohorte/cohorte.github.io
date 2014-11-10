@@ -79,7 +79,7 @@ $(document).ready(function(){
 
 
   var row1 = $("#code-snippet-row1");
-  var row2 = $("#code-snippet-row2");
+  var row2 = $("#code-snippet-row1");
 
   $("#key-point-1").click(expandSnippetAction("#hidden-key-point-1", row1));
   $("#key-point-2").click(expandSnippetAction("#hidden-key-point-2", row1));
