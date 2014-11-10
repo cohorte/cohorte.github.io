@@ -764,7 +764,7 @@ a:hover {
   background: #22b1e3;
 }
 
-
+#hidden-getting-started-step-1,
 #hidden-getting-started-step-2,
 #hidden-getting-started-step-3,
 #hidden-getting-started-step-4,
@@ -781,18 +781,24 @@ a:hover {
   color:#22b1e3;
 }
 
+.getting-started-step-image {
+  position: relative;
+  float: left;
+  padding-right: 50px;
+}
+
 .getting-started-step-explanation {
   position: relative;
   float: right;
-  width: 420px;
+  width: 320px;
   padding-left: 24px;
   font-size: 15px;
   line-height: 1.3em;
 }
 
 .getting-started-step-explanation > h3 {
-  font-family: "museo-slab", serif;
-  font-weight: bolder;
+  /*font-family: "museo-slab", serif;*/
+  /*font-weight: bolder;*/
   /*margin: 0 15px 15px;*/
   /*font-size: 13pt;*/
   /*line-height: 17pt;*/
