@@ -1,5 +1,5 @@
 ---
-layout: page-full-width
+layout: page
 title: Documentation  - v.1.0
 ---
 
@@ -26,7 +26,7 @@ title: Documentation  - v.1.0
 Some resources to get started quickly:
 
  * [Getting Started Tutorial](./tutorials/getting-started)
-    <br/>Install and run a COHORTE application in 10 munites.
+    <br/>Install and run a COHORTE application in 10 minutes.
 
  * [Temper Tutorial](./tutorials/temper) 
     <br/>Highlighting the multi-language and distribution features of COHORTE in a simple, yet functional temperature monitoring application.
@@ -36,34 +36,37 @@ Some resources to get started quickly:
 
 ## Reference documentation
 
-Detailed documentation about every thing of COHORTE:
-
-<div class="menu-choices">
-    <a style="left: 0%;" class="menu-choice menu-choice-cohorte"
-      href="{{ site.baseurl }}/docs/1.x/what-is-cohorte">What is Cohorte?</a>
-    <a style="left: 20%;" class="menu-choice menu-choice-concepts"
-      href="{{ site.baseurl }}/docs/1.x/key-concepts">Key Concepts</a>
-    <a style="left: 40%;" class="menu-choice menu-choice-setup"
-      href="{{ site.baseurl }}/docs/1.x/setup">Setup</a>
-    <a style="left: 60%;" class="menu-choice menu-choice-component"
-      href="{{ site.baseurl }}/docs/1.x/components">Components</a>
-    <a style="left: 80%;" class="menu-choice menu-choice-application"
-      href="{{ site.baseurl }}/docs/1.x/applications">Applications</a> 
-</div>
-<div class="menu-choices">      
-      <a style="left: 0%;" class="menu-choice menu-choice-startup"
-      href="{{ site.baseurl }}/docs/1.x/startup">Startup</a>
-      <a style="left: 20%;" class="menu-choice menu-choice-shell"
-      href="{{ site.baseurl }}/docs/1.x/shell">Shell</a>
-      <a style="left: 40%;" class="menu-choice menu-choice-monitoring"
-      href="{{ site.baseurl }}/docs/1.x/monitoring">Monitoring</a>
-      <a style="left: 60%;" class="menu-choice menu-choice-ide"
-      href="{{ site.baseurl }}/docs/1.x/ide">IDE</a>      
-</div>
+You can download the full reference documentation as a [ ![PDF]({{ site.baseurl }}/resources/images/pdf.png) PDF]() file or read it in one [ ![PDF]({{ site.baseurl }}/resources/images/html.png) HTML]() file.
 
 <br/>
+<hr/>
 
-You can download the full reference documentation as a ![PDF]({{ site.baseurl }}/resources/images/pdf.png) [PDF]() file.
+<div class="menu-choices">
+    <a style="left: -10%;" class="menu-choice menu-choice-cohorte"
+      href="{{ site.baseurl }}/docs/1.x/what-is-cohorte">What is Cohorte?</a>
+    <a style="left: 19%;" class="menu-choice menu-choice-concepts"
+      href="{{ site.baseurl }}/docs/1.x/key-concepts">Key Concepts</a>
+    <a style="left: 48%;" class="menu-choice menu-choice-setup"
+      href="{{ site.baseurl }}/docs/1.x/setup">Setup</a>
+    <a style="left: 77%;" class="menu-choice menu-choice-component"
+      href="{{ site.baseurl }}/docs/1.x/components">Components</a>    
+</div>
+<div class="menu-choices">      
+      <a style="left: -10%;" class="menu-choice menu-choice-application"
+      href="{{ site.baseurl }}/docs/1.x/compositions">Compositions</a> 
+      <a style="left: 19%;" class="menu-choice menu-choice-startup"
+      href="{{ site.baseurl }}/docs/1.x/startup">Startup</a>
+      <a style="left: 48%;" class="menu-choice menu-choice-shell"
+      href="{{ site.baseurl }}/docs/1.x/shell">Shell</a>
+      <a style="left: 77%;" class="menu-choice menu-choice-monitoring"
+      href="{{ site.baseurl }}/docs/1.x/monitoring">Monitoring</a>      
+</div>
+<div class="menu-choices">            
+      <a style="left: -10%;" class="menu-choice menu-choice-ide"
+      href="{{ site.baseurl }}/docs/1.x/ide">IDE</a>  
+</div>
+
+<hr/>
 
 ## Other resources
 
@@ -72,9 +75,9 @@ COHORTE uses two main existing component models as underlying component-based so
  * [Apache Felix iPOJO](http://felix.apache.org/documentation/subprojects/apache-felix-ipojo.html), a flexible and extensible service component model for Java developed by Clément Escoffier.
  * [Coderxpress iPOPO](https://ipopo.coderxpress.net), a service-oriented component model (SOCM) framework for Python developed by Thomas Calment.
 
- You need also to have a clair idea about the Service-Oriented Computing in general and OSGi specifications in particular.
+ You need also to have a clear idea about the Service-Oriented Computing in general and OSGi specifications in particular.
 
  * [Service-Oriented Architecture](http://en.wikipedia.org/wiki/Service-oriented_architecture): "Service-oriented architecture (SOA) is a software design and software architecture design pattern based on distinct pieces of software providing application functionality as services to other applications. This is known as service-orientation. It is independent of any vendor, product or technology." (from Wikipedia)
- * [OSGi Specification](http://osgi.org): "OSGi technology is a set of specifications that defines a dynamic component system for Java. These specifications reduce software complexity by providing a modular architecture for large-scale distributed systems as well as small, embedded applications." (from OSGi Fondation website)
+ * [OSGi Specification](http://osgi.org): "OSGi technology is a set of specifications that defines a dynamic component system for Java. These specifications reduce software complexity by providing a modular architecture for large-scale distributed systems as well as small, embedded applications." (from OSGi Foundation website)
 
 

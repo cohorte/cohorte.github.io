@@ -7,6 +7,8 @@ next_page: ../components
 
 [Home](../../../) > [Documentation](../)
 
+<div id="one-page-generator-start"></div>
+
 ## Download and install COHORTE distribution
 
 There are several ways of installing COHORTE on your system. In the following, we detail the manual installation (as the installers are not yet available).
@@ -34,7 +36,7 @@ For Max OS X users, other Python packages should be installed before running COH
 3. Add the `COHORTE_HOME` environment variable by opening up the system properties (WinKey + Pause), selecting the "Advanced" tab, and the "Environment Variables" button, then adding the `COHORTE_HOME` variable in the user variables with the value `C:\Program Files\Cohorte\cohorte-1.0.0\home`. Be sure to omit any quotation marks around the path even if it contains spaces. 
 
 
-
+<div id="one-page-generator-end"></div>
 
 
 

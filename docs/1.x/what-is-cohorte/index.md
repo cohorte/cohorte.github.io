@@ -8,6 +8,8 @@ next_page: ../key-concepts
 
 [Home](../../../) > [Documentation](../)
 
+<div id="one-page-generator-start"></div>
+
 ## Solution Overview
 
 COHORTE is a platform for developing and rolling out robust and reliable software.
@@ -92,6 +94,8 @@ There are a number of benefits to using COHORTE to build your software applicati
 		<p>COHORTE Platform includes a centralized monitoring web interface for all the running nodes. This interface allows to dynamically watch what is happening in the COHORTE system (Nodes, Isolates, and Components updates)</p>
 	</div>
 </div>
+
+<div id="one-page-generator-end"></div>
 
 
 ## Convinced?

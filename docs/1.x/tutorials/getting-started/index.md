@@ -17,6 +17,15 @@ next_page: ../spellchecker
  The objective of this getting started tutorial is to get you familiar with the COHORTE concept as quickly as possible. There is no need to start coding at this step. You found other advanced tutorial in the [tutorials section of the documentation page]({{ site.baseurl }}/docs/1.x/tutorials).
  This getting started tutorial is divised in four steps:
 
+The following picture depicts the architecture of the to be developed application. It consists of a web interface provided by a component called `hello_components` which uses the **HELLO Service** to interact with all other components implementing this service (`component_A`, `component_B`, etc) and shows their greeting message in the web interface.
+
+![Architecture](getting-started-img-3.png)
+
+Hello components (implementing the **HELLO Service**) can be implemented using different programming languages (*Java* and *Python*) and can be placed in different remote nodes. Developers have not to worry about this details. COHORTE manages to have all the application components interacts as they where in one place (Using [Remote Services]({{ site.baseurl }}/docs/1.x/components)). 
+
+ * In this first step of the tutorial, we want to instantiate only the components **HC** (hello_components), **A** (component_A) and **B** (component_B). In addition, we want to seperate between HC component and the other components providing the HELLO service (which can contain third-party code). COHORTE supports this separation by using **Isolates**. Isolates are a seperate process with all the needed runtime infrastructure allowing the execution of the managed components.
+ <br/><br/>The following picture depicts the desired resilient architecture. If one of the components providing the HELLO service fails, there will be no impact on the HC component! 
+
 <hr/>
 
  * **[STEP 1](#step1)**: creating a simple application on one node, but two seperate isolates. 
@@ -34,9 +43,13 @@ next_page: ../spellchecker
 $ <b>cohorte-create-node</b> --node node1 --app tuto1
 </pre>
 
-This command will create a new directory named `node1` containing an executable `run` (which launches the created COHORTE node) and two folders `conf` (contains configuration files) and `repo` (contains component bundles).
+This command will create a new directory named `node1` containing an executable `run` (which launches the created COHORTE node) and two folders `conf` (containing configuration files) and `repo` (where user bundles should be placed).
 
- * Download the bundle of this tutorial's components (no need to implement them in this getting started tutorial). 
+![Created node](getting-started-img-5.png)
+
+ * Download the first bundle of this tutorial (no need to implement them in this getting started tutorial). 
+
+<a href="#" class="btn btn-success">Download Hello Python Bundle</a>
 
 <p>
 <div id="download_hello_demo_python_snapshot"></div> 
@@ -47,12 +60,7 @@ This command will create a new directory named `node1` containing an executable 
      * **component_A**, **component_B**, and **component_C**: these components implements the HELLO service which has only one method `say_hello`. 
      * **hello_components**: this component provides a web interface on which the list of discovered components implementing the HELLO service are listed (we show the message returned by each component when calling their `say_hello` method).
 
-The following picture depicts the web interface provided by the **hello_components** component and the underlying architecture of the application.
 
-![Step 1 final result](getting-started-img-3.png)
-
- * In this first step of the tutorial, we want to instantiate only the components **HC** (hello_components), **A** (component_A) and **B** (component_B). In addition, we want to seperate between HC component and the other components providing the HELLO service (which can contain third-party code). COHORTE supports this separation by using **Isolates**. Isolates are a seperate process with all the needed runtime infrastructure allowing the execution of the managed components.
- <br/><br/>The following picture depicts the desired resilient architecture. If one of the components providing the HELLO service fails, there will be no impact on the HC component! 
 
 ![Step 1](getting-started-img-1.png)
 

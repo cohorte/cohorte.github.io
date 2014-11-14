@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Reference Guide
+title: Reference Guide | Startup
 previous_page: ../applications
 next_page: ../shell
 ---
 
 [Home](../../../) > [Documentation](../)
 
-## Startup
+## Startup scripts
 
 COHORTE system is composed of several Nodes. Only one node is specified to be Top Composer. It manages the components distribution among the available participating nodes.
 
@@ -15,7 +15,14 @@ In this chapter, we will detail how to create and start COHORTE nodes using simp
 
 ### Creating nodes
 
-To create a COHORTE node, use the provided `cohorte-create-node` command.
+To create COHORTE node, you have to use the provided `cohorte-create-node` command.
+
+<div class="note">
+<span class="note-title">Note</span>
+<p class="note-content">
+Ensure to have installed COHORTE on your system and that the COHORTE_HOME environment variable is set to the installation path of COHORTE (see <a href="{{ site.baseurl }}/docs/1.x/setup">setup guide</a>).
+</p>
+</div>
 
 #### Usage
 
