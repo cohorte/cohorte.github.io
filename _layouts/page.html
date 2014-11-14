@@ -11,6 +11,9 @@ layout: default
 
 <div class="page-title-style">
   <div class="container">
+    {% if page.parent %}
+      <a href="{{ site.baseurl }}/">home</a> > <a href="../">{{page.parent}}</a>
+    {% endif %}
     <h1 id="page-title">{{ page.title }}</h1>
   </div>
 </div>
@@ -26,18 +29,15 @@ layout: default
             {% endif %}
             {{ content }}
             <br/>
-            <br/>
-            <br/>
             {% if page.previous_page %}
-            <a href="{{ page.previous_page }}" class="btn float-left" title="Previous page"> Previous </a>
+            <!--<a href="{{ page.previous_page }}" class="btn float-left" title="Previous page"> Previous </a>-->
             {% endif %}
             {% if page.next_page %}
-            <a href="{{ page.next_page }}" class="btn float-right" title="Next page"> Next </a>
+            <!--<a href="{{ page.next_page }}" class="btn float-right" title="Next page"> Next </a>-->
             {% endif %}
-            <hr/>
-            <br/>
-            <br/>
+            
             {% if page.comments %}
+                <hr/>
                 <div id="disqus_thread"></div>
                 <script type="text/javascript">
                     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -66,7 +66,15 @@ layout: default
   </div>
 </div>
 
-
+{% if page.parent %}
+<div class="page-bottom-style">
+  <div class="container">
+    <div class="row">
+      <a href="{{ site.baseurl }}/">home</a> > <a href="../">{{page.parent}}</a>    
+    </div>
+  </div>
+</div>
+{% endif %}
 
 
 

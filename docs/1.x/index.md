@@ -36,7 +36,7 @@ Some resources to get started quickly:
 
 ## Reference documentation
 
-You can download the full reference documentation as a [ ![PDF]({{ site.baseurl }}/resources/images/pdf.png) PDF]() file or read it in one [ ![PDF]({{ site.baseurl }}/resources/images/html.png) HTML]() file.
+You can download the full reference documentation as a [ ![PDF]({{ site.baseurl }}/resources/images/pdf.png) PDF](refdoc.html) file or read it in one [ ![PDF]({{ site.baseurl }}/resources/images/html.png) HTML](refdoc.html) file.
 
 <br/>
 <hr/>

@@ -1,24 +1,31 @@
 ---
 layout: page
 title: Downloads
-comments: true
+comments: false
 ---
 
+
+
+You found detailed installation instructions on [this page of the reference guide](../docs/1.x/setup).
+
 ## Stable Releases
+
+* Mac OS X : 
+* Linux : 
+* Windows :
 
 <div id="download_releases">
 </div>
 
-For important changes, please consult the [release notes](#).
+## Pre-Release Versions (1.0.0.pre1)
 
-You found detailed installation instructions on [this page of the reference guide](../docs/1.x/setup).
+* Mac OS X : [cohorte-1.0.0.pre1-macosx-distribution.tar.gz](http://forge.isandlatech.com/cohorte/downloads/1.x/cohorte-1.0.0.pre1-macosx-distribution.tar.gz)
+* Linux : [cohorte-1.0.0.pre1-linux-distribution.tar.gz](http://forge.isandlatech.com/cohorte/downloads/1.x/cohorte-1.0.0.pre1-linux-distribution.tar.gz)
 
 ## Night Builds
 
 <div id="download_night_builds">
 </div>
-
-## Additional information
 
 
 <script>

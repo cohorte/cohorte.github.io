@@ -6,15 +6,11 @@ previous_page: ../
 next_page: ../spellchecker
 ---
 
-[Home](../../../../) > [Documentation](../../) > [Tutorials](../)
-
-## Getting started tutorial
-
-### Overview
+## Overview
 
  As a COHORTE user, you need to have Java ( >= 1.6 ) and Python ( >= 3 ) installed on your system. Next, you need to [download and install COHORTE on your system]({{ site.baseurl }}/docs/1.x/setup).
  
- The objective of this getting started tutorial is to get you familiar with the COHORTE concept as quickly as possible. There is no need to start coding at this step. You found other advanced tutorial in the [tutorials section of the documentation page]({{ site.baseurl }}/docs/1.x/tutorials).
+ The objective of this getting started tutorial is to get you familiar with the COHORTE concept as quickly as possible. There is no need to start coding at this step. You found other advanced tutorial in the [tutorials section of the documentation page]({{ site.baseurl }}/docs/1.x/).
  This getting started tutorial is divised in four steps:
 
 The following picture depicts the architecture of the to be developed application. It consists of a web interface provided by a component called `hello_components` which uses the **HELLO Service** to interact with all other components implementing this service (`component_A`, `component_B`, etc) and shows their greeting message in the web interface.
@@ -35,7 +31,7 @@ Hello components (implementing the **HELLO Service**) can be implemented using d
 
 <hr/>
 
-### <a name="step1"></a>STEP 1
+## <a name="step1"></a>STEP 1
 
  * Open a new terminal and type the following command on your working directory:
 
@@ -126,7 +122,7 @@ You can fix the http port to use for your application using configuration files 
 
 <hr/>
 
-### <a name="step2">STEP 2
+## <a name="step2">STEP 2
 
 In this second step, we will distribute our components among two nodes (which can be physically distributed on a local network area - or via Internet using an XMPP server).
 
@@ -209,7 +205,7 @@ Notice that we have started this node without the `-t` option. It is not a *Top 
 
 <hr/>
 
-### <a name="step3">STEP 3
+## <a name="step3">STEP 3
 
 All the components used until now are implemented in Python (using [iPOPO component-based framework]({{ site.baseurl }}/docs/1.x/components)). We will extend our application by introducing a new component that implements the HELLO service in Java (component_D). 
 
@@ -266,13 +262,10 @@ All the components used until now are implemented in Python (using [iPOPO compon
 
 <hr/>
 
-### <a name="step4">STEP 4
+## <a name="step4">STEP 4
 
 crash-test! 
 Work in progress.. 
-
-
-[Home](../../../../) > [Documentation](../../) > [Tutorials](../)
 
 
 <script>

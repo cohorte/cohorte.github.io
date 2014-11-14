@@ -72,16 +72,15 @@ layout: default
   </div>
 </div>
 
+{% if page.parent %}
 <div class="page-bottom-style">
   <div class="container">
     <div class="row">
-    {% if page.parent %}
-      <a href="{{ site.baseurl }}/">home</a> > <a href="../">{{page.parent}}</a>
-    {% endif %}
+      <a href="{{ site.baseurl }}/">home</a> > <a href="../">{{page.parent}}</a>    
     </div>
   </div>
 </div>
-
+{% endif %}
 
 
 
