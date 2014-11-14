@@ -41,7 +41,7 @@ Hello components (implementing the **HELLO Service**) can be implemented using d
  * Open a new terminal and type the following command on your working directory:
 
 <pre>
-$ <b>cohorte-create-node</b> --node node1 --app-name getting-started
+$ <b>cohorte-create-node</b> --name node1 --app-name getting-started
 </pre>
 
 This command will create a new directory named `node1` containing an executable `run` (which launches the created COHORTE node) and two folders `conf` (containing configuration files) and `repo` (where user bundles should be placed).
@@ -148,7 +148,7 @@ In this step, we will add a new instance of component_C that should be deployed 
 Start first by creating a second COHORTE node named `node2` at the parent level.
 
 <pre>
-$ <b>cohorte-create-node</b> --node node2
+$ <b>cohorte-create-node</b> --name node2
 </pre>
 
 Then, copy the same *hello bundle* located on `node1/repo` into `node2/repo` directory.
@@ -249,11 +249,11 @@ All the components used until now are implemented in Python (using [iPOPO compon
 			}, {
 				"name" : "A",
 				"factory" : "component_a_factory",
-				"isolate" : "components"
+				"isolate" : "components1"
 			}, {
 				"name" : "B",
 				"factory" : "component_b_factory",
-				"isolate" : "components"
+				"isolate" : "components1"
 			}, {
 				"name" : "C",
 				"factory" : "component_c_factory",
@@ -288,13 +288,13 @@ node2$ ./<b>run</b> --app-id getting-started-app-id
 
 Type `http` command in `node1`'s terminal and get the *http* port of the *web* isolate. Then test your application in web browser as done before. You will get something like that :
 
-IMAGE
+![final result](getting-started-img-6.png)
 
 In order to see the runtime architecture of your application, open a new tab in your browser and hit the following address : `http://localhost:9000/admin`
 
 The *Web Admin* utility is opened. You notice the following architecture : 
 
-IMAGE
+<img src="getting-started-img-7.png" class="img-responsive" alt="web admin">
 
 This correspond to this deployment plan :
 
