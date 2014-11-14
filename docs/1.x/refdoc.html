@@ -1,0 +1,3376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="isandlatech">
+    
+    <title>Cohorte Refence Guide v.1.0 | Cohorte Project</title>
+
+    <link rel="icon" type="image/png" href="/resources/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="/resources/favicon.ico">
+
+    <!-- Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=fr" rel=
+    "stylesheet">
+    <link href=
+    "//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic"
+    rel="stylesheet">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/resources/css/cohorte.css" rel="stylesheet">
+
+    <!-- Syntax highlighter -->
+    <link rel="stylesheet" href="/resources/css/syntax.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="/resources/images/cohorte-logo.png"></img></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="/docs/1.x/">Documentation</a></li>
+		      <li><a href="/downloads/">Downloads</a></li>
+		      <li><a href="/community/">Community</a></li>
+		      <li><a href="/news">News</a></li>
+		      <!--li><a href="/contribute/">Contribute</a></li-->
+		      <li>
+		        <a href="http://github.com/isandlatech/" data-toggle="tooltip" data-placement="bottom" title="Source code"><img src="/resources/images/github-logo-black.png" alt="GitHub Logo" /></a>		        
+		      </li>  
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<ul class="nav">          
+        
+</ul>    
+
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+
+<div class="page-title-style">
+  <div class="container">
+    <h1 id="page-title">Cohorte Refence Guide v.1.0</h1>
+  </div>
+</div>
+
+
+<div class="page-container">
+  <div class="container" style="min-height: 540px;">
+    <div class="row">
+      <div class="span12">
+          <div class="main-page-column" style="width: 75%;">
+            
+            <h1>What is COHORTE?</h1>
+en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="isandlatech">
+    
+    <title>What is COHORTE? | Cohorte Project</title>
+
+    <link rel="icon" type="image/png" href="/resources/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="/resources/favicon.ico">
+
+    <!-- Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=fr" rel=
+    "stylesheet">
+    <link href=
+    "//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic"
+    rel="stylesheet">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/resources/css/cohorte.css" rel="stylesheet">
+
+    <!-- Syntax highlighter -->
+    <link rel="stylesheet" href="/resources/css/syntax.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="/resources/images/cohorte-logo.png"></img></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="/docs/1.x/">Documentation</a></li>
+		      <li><a href="/downloads/">Downloads</a></li>
+		      <li><a href="/community/">Community</a></li>
+		      <li><a href="/news">News</a></li>
+		      <!--li><a href="/contribute/">Contribute</a></li-->
+		      <li>
+		        <a href="http://github.com/isandlatech/" data-toggle="tooltip" data-placement="bottom" title="Source code"><img src="/resources/images/github-logo-black.png" alt="GitHub Logo" /></a>		        
+		      </li>  
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<ul class="nav">          
+        
+</ul>    
+
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+
+<div class="page-title-style">
+  <div class="container">
+    <h1 id="page-title">What is COHORTE?</h1>
+  </div>
+</div>
+
+
+<div class="page-container">
+  <div class="container" style="min-height: 540px;">
+    <div class="row">
+      <div class="span12">
+          <div class="main-page-column" style="width: 75%;">
+            
+            <p><a href="../../../">Home</a> &gt; <a href="../">Documentation</a></p>
+
+<div id="one-page-generator-start"></div>
+
+<h2 id="solution-overview">Solution Overview</h2>
+
+<p>COHORTE is a platform for developing and rolling out robust and reliable software.
+Software produced with COHORTE has a high level of robustness and reliability since its is made up of a range of components and services protected from one another by isolation containers. This modular architecture guarantees that software cannot be paralyzed in the event of failure of one of its components and that, for example, 100% of the data communicated is processed.</p>
+
+<p>This modular architecture ensures automatic service recovery after errors and to supply degraded responses in the event of unavailability of a component.
+The platform incorporates a range of tried and tested basic components dramatically reducing specific developments, thereby reducing the cost of projects using them.
+The level of reliability of software produced with COHORTE SDK also reduces operating and maintenance costs for the companies software packages.</p>
+
+<h2 id="goals-and-benefits">Goals and Benefits</h2>
+
+<p>There are a number of benefits to using COHORTE to build your software applications. The most evident ones are:</p>
+
+<div class="row"><br /><br /></div>
+
+<div class="row">
+	<div class="col-md-6">
+		<h3>Service-oriented Component-based Applications</h3>
+		<p>COHORTE provides a framework to construct modularised applications consisting of software components that uses software services provided by other components. This approach allows to construct IT applications as mean of a set of components providing and requiring services. </p>
+	</div>
+	<div class="col-md-6">
+		<img src="what-is-cohorte-img1.png" />
+	</div>
+</div>
+
+<div class="row"><br /><br /></div>
+
+<div class="row">
+	<div class="col-md-6">
+		<img src="what-is-cohorte-img2.png" />
+	</div>
+	<div class="col-md-6">
+		<h3>Multi-language programming</h3>
+		<p>Components in a COHORTE system can be implemented using your Java or Python programming languages (other languages are under study). You can also wrap C modules within Python components to use legacy C code. In addition, you can dynamically update the C code without any complications.COHORTE uses two similar Service-Oriented Component-based frameworks for Java and Python environments. Service provider can be implemented using Python and used by another component implemented in Java.</p>
+	</div>
+</div>
+
+<div class="row"><br /><br /></div>
+
+<div class="row">
+	<div class="col-md-6">
+		<h3>Components Distribution</h3>
+		<p>COHORTE developers provides only implementations for the different components providing or requiring services. At runtime, the concret placement of components in execution nodes is managed by the COHORTE runtime. Two component can work together transparantly even they are located on two seperate machines.</p>
+	</div>
+	<div class="col-md-6">
+		<img src="what-is-cohorte-img4.png" />
+	</div>
+</div>
+
+<div class="row"><br /><br /></div>
+
+<div class="row">
+	<div class="col-md-6">
+		<img src="what-is-cohorte-img3.png" />
+	</div>
+	<div class="col-md-6">
+		<h3>Heterogeneous Environments</h3>
+		<p>COHORTE components can be executed on different kind of devices, from small devices like Raspberry-Pi to big servers whereas having windows, linux, or Max os operating systems.</p>
+	</div>
+</div>
+
+<div class="row"><br /><br /></div>
+
+<div class="row">
+	<div class="col-md-6">
+		<h3>Dynamic Isolation and Resilience</h3>
+		<p>COHORTE automatically prevent and correct component failures by isolating them and relanching them seperatly from others. Users can also define static isolates in which they put components that are guaranteede to be safe.</p>
+	</div>
+	<div class="col-md-6">
+		<img src="what-is-cohorte-img5.png" />
+	</div>
+</div>
+
+<div class="row"><br /><br /></div>
+
+<div class="row">
+	<div class="col-md-6">
+		<img src="what-is-cohorte-img6.png" />
+	</div>
+	<div class="col-md-6">
+		<h3>Development and Monitoring Tools</h3>
+		<p>COHORTE Platform includes a centralized monitoring web interface for all the running nodes. This interface allows to dynamically watch what is happening in the COHORTE system (Nodes, Isolates, and Components updates)</p>
+	</div>
+</div>
+
+<div id="one-page-generator-end"></div>
+
+<h2 id="convinced">Convinced?</h2>
+
+<p>If COHORTE is what you want for your IT applications, try it out! <a href="/docs/1.x/tutorials">Here are some resources to get
+started</a>. </p>
+
+<h2 id="about">About</h2>
+
+<p><img src="cohorte-logo-sm-color.png" alt="Cohorte" /> Project is an open source framework hosted on GitHub and sponsored by <a href="http://isandlatech.com">isandlaTech</a>. To help you developping your business applications using COHORTE, feel free to contact isandlaTech’s support team at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#105;&#115;&#097;&#110;&#100;&#108;&#097;&#116;&#101;&#099;&#104;&#046;&#099;&#111;&#109;">&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#105;&#115;&#097;&#110;&#100;&#108;&#097;&#116;&#101;&#099;&#104;&#046;&#099;&#111;&#109;</a>.</p>
+
+
+            <br/>
+            <br/>
+            <br/>
+            
+            <a href="../" class="btn float-left" title="Previous page"> Previous </a>
+            
+            
+            <a href="../key-concepts" class="btn float-right" title="Next page"> Next </a>
+            
+            <hr/>
+            <br/>
+            <br/>
+                
+          </div>
+          <div class="sidebar">
+            <div class="sidebar-inner">
+              <div class="contents">Contents</div>
+              <div id="toc"></div>
+            </div>
+          </div>
+          <div style="clear:both"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="footer">
+	<div class="container">
+		<ul>
+			<li><h5>Documentation</h5></li>
+			<li><a href="/documentation/what-is-cohorte.html">What is COHORTE?</a></li>
+			<li><a href="/documentation/getting-started.html">Getting Started</a></li>
+			<li><a href="/documentation/tutorials.html">Tutorials</a></li>
+			<li><a href="/documentation/demonstrations.html">Demonstrations</a></li>
+			<li><a href="/documentation/publications.html">Articles & Publications</a></li>
+			<li><a href="/documentation/guide.html">Reference Guide</a></li>
+		</ul>
+		<ul>
+			<li><h5>Downloads</h5></li>
+			<li><a href="/download/">Stable Release</a></li>
+			<li><a href="/download/.html">Development Release</a></li>
+		</ul>
+		<ul>
+			<li><h5>Community</h5></li>
+			<li><a href="/community/index.html#mailing_lists">Mailing lists</a></li>
+			<li><a href="/community/index.html#github">GitHub</a></li>
+		</ul>
+		<ul>
+			<li><h5>COHORTE</h5></li>
+			<li><a href="/blog">Blog</a></li>
+			<li><a href="/news">News Archive</a></li>
+			<li><a href="/license.html">COHORTE License</a></li>
+		</ul>
+		</div>
+		<div class="container">
+		<div class="copyright">
+			<a style="float: left; margin-right: 8px;" href="http://isandlatech.com"><img src="/resources/images/isandlatech-logo-sm-carre.png" alt="isandlaTech logo" /></a>
+			<p style="float: left;"><br/>Copyright &copy; 2011-<span class="current-year"></span> isandla<i>Tech</i> S.A.R.L<br/>3 chemin du vieux chêne. 38240 Meylan, France</p>
+		</div>
+		<div class="cohorte-logo-footer">
+			<span style="font-size:70%; color:#aaa;"><a href="http://isandlatech.com">isandla<i>Tech</i></a> is the principal sponsor of </span><img src="/resources/images/cohorte-logo-footer.png" alt="COHORTE footer logo" />
+		</div>
+	</div> <!-- container -->
+</div> <!-- footer -->
+
+
+    <!-- jQuery -->
+    <script src="/resources/js/2/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/resources/js/2/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+    
+    <!-- table of contents JS -->
+    <script src="/resources/js/toc.js" type="text/javascript" ></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
+        function moveScroller() {
+          if ($(".sidebar").length == 0)
+            return;
+          var a = function() {
+            var topOfScroll = $(window).scrollTop();
+            var topOfSidebar = $(".sidebar").offset().top;
+            var sidebarInner = $(".sidebar-inner");
+            var bottomOfSidebarInner = $(".sidebar-inner").offset().top + $(".sidebar-inner").outerHeight();
+            var topOfFooter = $(".footer").offset().top - 10;
+            var footerHeight = $(".footer").outerHeight();
+            if (topOfScroll > topOfSidebar) {
+              if (bottomOfSidebarInner > topOfFooter) {
+                sidebarInner.css({position:"fixed",bottom:footerHeight,top:""});
+              } else {
+                sidebarInner.css({position:"fixed",top:"10px",bottom:""});
+              }
+            } else {
+              sidebarInner.css({position:"relative",top:""});
+            }
+          };
+          $(window).scroll(a);a()
+        }
+        moveScroller();
+      })
+    </script>
+    
+
+	<script src="/resources/js/2/cohorte.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+<h1>Key Concepts</h1>
+en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="isandlatech">
+    
+    <title>Key Concepts | Cohorte Project</title>
+
+    <link rel="icon" type="image/png" href="/resources/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="/resources/favicon.ico">
+
+    <!-- Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=fr" rel=
+    "stylesheet">
+    <link href=
+    "//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic"
+    rel="stylesheet">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/resources/css/cohorte.css" rel="stylesheet">
+
+    <!-- Syntax highlighter -->
+    <link rel="stylesheet" href="/resources/css/syntax.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="/resources/images/cohorte-logo.png"></img></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="/docs/1.x/">Documentation</a></li>
+		      <li><a href="/downloads/">Downloads</a></li>
+		      <li><a href="/community/">Community</a></li>
+		      <li><a href="/news">News</a></li>
+		      <!--li><a href="/contribute/">Contribute</a></li-->
+		      <li>
+		        <a href="http://github.com/isandlatech/" data-toggle="tooltip" data-placement="bottom" title="Source code"><img src="/resources/images/github-logo-black.png" alt="GitHub Logo" /></a>		        
+		      </li>  
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<ul class="nav">          
+        
+</ul>    
+
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+
+<div class="page-title-style">
+  <div class="container">
+    <h1 id="page-title">Key Concepts</h1>
+  </div>
+</div>
+
+
+<div class="page-container">
+  <div class="container" style="min-height: 540px;">
+    <div class="row">
+      <div class="span12">
+          <div class="main-page-column" style="width: 75%;">
+            
+            <p><a href="../../../">Home</a> &gt; <a href="../">Documentation</a></p>
+
+<h2 id="key-concepts-of-cohorte">Key Concepts of Cohorte</h2>
+
+<p>A COHORTE system is a set of (distributed) Software Components connected together to ensure some functionality. </p>
+
+<p>The following picture illistrates the overall view of COHORTE system. Each elements is detailed hereafter.</p>
+
+<p style="text-align:center;"> 
+<img src="cohorte-concepts.png" />
+</p>
+
+<h4 id="nodes">Nodes</h4>
+
+<p><img src="cohorte-node.png" alt="Cohorte Node" /> Represents a physical device or a virtual machine where a set of Isolates executes.</p>
+
+<h4 id="isolates">Isolates</h4>
+
+<p>An Isolate is a system process executing and managing a set of Components.</p>
+
+<p><img src="cohorte-composites.png" alt="Cohorte Isolates" /> Cohorte and Application Isolates</p>
+
+<p><img src="cohorte-top-isolate.png" alt="Cohoret Top Isolate" /> Top Cohorte Isolate</p>
+
+<h4 id="components">Components</h4>
+
+<p><img src="cohorte-components.png" alt="Cohorte Components" /> Cohorte Components represents a software component providing a service and eventually requiring other services to do ensure some tasks. Components can be implemented using Python or Java programming languages. We support and provide component-based framework for each language.
+Cohorte components implements only business logic, all the distribution and dependencies with other components are managed by COHORTE. </p>
+
+<p>Component Factory is an object that allows the instantiation of components (instances) of the same type.</p>
+
+<h4 id="application">Application</h4>
+
+<p>A Composite is a logical representation of a hierarchical node in a composition graph. It contains a set of components and other composites and it can define configuration properties that will override the ones used in their children components and composites.</p>
+
+<p>An Application is a logical abstract description of the set of components/composites and the possible wires between them.</p>
+
+<h4 id="composers">Composers</h4>
+
+<p>The Composer is a special COHORTE Runtime Component responsible of instantiating the different components of an application. In COHORTE there are different Composer levels:</p>
+
+<ul>
+  <li><em>Top Composer</em>: It loads the composition declarative description and computes the sets of components according to the node they must be instantiated on.</li>
+  <li><em>Node Composer</em>: It calculates the different isolates that must be exist for the local set of components.</li>
+  <li><em>Isolate Composer</em>: It uses framework-specific agents to request the instantiation of the components assigned to its isolate, and looks after their evolution.</li>
+</ul>
+
+
+            <br/>
+            <br/>
+            <br/>
+            
+            <a href="../what-is-cohorte" class="btn float-left" title="Previous page"> Previous </a>
+            
+            
+            <a href="../tutorials" class="btn float-right" title="Next page"> Next </a>
+            
+            <hr/>
+            <br/>
+            <br/>
+                
+          </div>
+          <div class="sidebar">
+            <div class="sidebar-inner">
+              <div class="contents">Contents</div>
+              <div id="toc"></div>
+            </div>
+          </div>
+          <div style="clear:both"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="footer">
+	<div class="container">
+		<ul>
+			<li><h5>Documentation</h5></li>
+			<li><a href="/documentation/what-is-cohorte.html">What is COHORTE?</a></li>
+			<li><a href="/documentation/getting-started.html">Getting Started</a></li>
+			<li><a href="/documentation/tutorials.html">Tutorials</a></li>
+			<li><a href="/documentation/demonstrations.html">Demonstrations</a></li>
+			<li><a href="/documentation/publications.html">Articles & Publications</a></li>
+			<li><a href="/documentation/guide.html">Reference Guide</a></li>
+		</ul>
+		<ul>
+			<li><h5>Downloads</h5></li>
+			<li><a href="/download/">Stable Release</a></li>
+			<li><a href="/download/.html">Development Release</a></li>
+		</ul>
+		<ul>
+			<li><h5>Community</h5></li>
+			<li><a href="/community/index.html#mailing_lists">Mailing lists</a></li>
+			<li><a href="/community/index.html#github">GitHub</a></li>
+		</ul>
+		<ul>
+			<li><h5>COHORTE</h5></li>
+			<li><a href="/blog">Blog</a></li>
+			<li><a href="/news">News Archive</a></li>
+			<li><a href="/license.html">COHORTE License</a></li>
+		</ul>
+		</div>
+		<div class="container">
+		<div class="copyright">
+			<a style="float: left; margin-right: 8px;" href="http://isandlatech.com"><img src="/resources/images/isandlatech-logo-sm-carre.png" alt="isandlaTech logo" /></a>
+			<p style="float: left;"><br/>Copyright &copy; 2011-<span class="current-year"></span> isandla<i>Tech</i> S.A.R.L<br/>3 chemin du vieux chêne. 38240 Meylan, France</p>
+		</div>
+		<div class="cohorte-logo-footer">
+			<span style="font-size:70%; color:#aaa;"><a href="http://isandlatech.com">isandla<i>Tech</i></a> is the principal sponsor of </span><img src="/resources/images/cohorte-logo-footer.png" alt="COHORTE footer logo" />
+		</div>
+	</div> <!-- container -->
+</div> <!-- footer -->
+
+
+    <!-- jQuery -->
+    <script src="/resources/js/2/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/resources/js/2/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+    
+    <!-- table of contents JS -->
+    <script src="/resources/js/toc.js" type="text/javascript" ></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
+        function moveScroller() {
+          if ($(".sidebar").length == 0)
+            return;
+          var a = function() {
+            var topOfScroll = $(window).scrollTop();
+            var topOfSidebar = $(".sidebar").offset().top;
+            var sidebarInner = $(".sidebar-inner");
+            var bottomOfSidebarInner = $(".sidebar-inner").offset().top + $(".sidebar-inner").outerHeight();
+            var topOfFooter = $(".footer").offset().top - 10;
+            var footerHeight = $(".footer").outerHeight();
+            if (topOfScroll > topOfSidebar) {
+              if (bottomOfSidebarInner > topOfFooter) {
+                sidebarInner.css({position:"fixed",bottom:footerHeight,top:""});
+              } else {
+                sidebarInner.css({position:"fixed",top:"10px",bottom:""});
+              }
+            } else {
+              sidebarInner.css({position:"relative",top:""});
+            }
+          };
+          $(window).scroll(a);a()
+        }
+        moveScroller();
+      })
+    </script>
+    
+
+	<script src="/resources/js/2/cohorte.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+<h1>Reference Guide | Components</h1>
+en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="isandlatech">
+    
+    <title>Reference Guide | Components | Cohorte Project</title>
+
+    <link rel="icon" type="image/png" href="/resources/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="/resources/favicon.ico">
+
+    <!-- Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=fr" rel=
+    "stylesheet">
+    <link href=
+    "//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic"
+    rel="stylesheet">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/resources/css/cohorte.css" rel="stylesheet">
+
+    <!-- Syntax highlighter -->
+    <link rel="stylesheet" href="/resources/css/syntax.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="/resources/images/cohorte-logo.png"></img></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="/docs/1.x/">Documentation</a></li>
+		      <li><a href="/downloads/">Downloads</a></li>
+		      <li><a href="/community/">Community</a></li>
+		      <li><a href="/news">News</a></li>
+		      <!--li><a href="/contribute/">Contribute</a></li-->
+		      <li>
+		        <a href="http://github.com/isandlatech/" data-toggle="tooltip" data-placement="bottom" title="Source code"><img src="/resources/images/github-logo-black.png" alt="GitHub Logo" /></a>		        
+		      </li>  
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<ul class="nav">          
+        
+</ul>    
+
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+
+<div class="page-title-style">
+  <div class="container">
+    <h1 id="page-title">Reference Guide | Components</h1>
+  </div>
+</div>
+
+
+<div class="page-container">
+  <div class="container" style="min-height: 540px;">
+    <div class="row">
+      <div class="span12">
+          <div class="main-page-column" style="width: 75%;">
+            
+            <p><a href="../../../">Home</a> &gt; <a href="../">Documentation</a></p>
+
+<h2 id="overview">Overview</h2>
+
+<p>A COHORTE application is composed of a set of components requiring and providing services. These components can be located in one node or dispatched between a set of nodes.</p>
+
+<p>In a classical component-based frameworks, components are instantiated statically at a predefined locations. They are also configured to communicate together before starting the application. This leads to a situation in which a lot of configuration files should be managed (or even to recompile the components if the communication aspects are hard coded).</p>
+
+<p>In contrast, COHORTE Components are instantiated, configured and placed in the right node automatically. There is no need to implement the distribution related aspects like serialization or client/server interaction. Components are seen as black-boxes wired by <em>declared</em> (remote) services. </p>
+
+<p>To understand how COHORTE components could be implemented in different languages and could be distributed in different nodes, the following picture provides some insights about the underlying architecture of COHORTE and its main technologies.</p>
+
+<p><img src="components-img-1.png" alt="Main Modules" /></p>
+
+<h2 id="cohorte-isolates">Cohorte Isolates</h2>
+
+<p>What is ? Service Oriented Runtime</p>
+
+<p>OSGi specification </p>
+
+<p>Java and Python Implementations</p>
+
+<h2 id="service-oriented-component-models-socm">Service Oriented Component Models (SOCM)</h2>
+
+<p>To implement COHORTE <em>managed</em> components, COHORTE supports two main, already existing component-based frameworks : </p>
+
+<ul>
+  <li>Apache Felix iPOJO (Java)</li>
+  <li>Pelix/iPOPO (Python)</li>
+</ul>
+
+<p>If you are already familiar with one of the two frameworks, all whats you have to do in order to get your components managed by COHORTE is to not instantiate them (using <code>@Instantiate</code> annotation or its XML equivalent). COHORTE will instantiate them automatically. To have benefits of Remote Services feature, your services should use primitive types instead of complex user-specific types. Next, you need to write a small description of your application components using the format explained hereafter. </p>
+
+<p><img src="components-img-2.png" alt="Component" /></p>
+
+<h2 id="remote-services">Remote Services</h2>
+
+<p>What is?</p>
+
+<h2 id="herald">Herald</h2>
+
+<p>Multi-platform discovery and transport framework</p>
+
+<p>Supported protocols : </p>
+
+<table class="table table-striped table-condensed">
+<tr><th>Transport</th><th>Discovery</th></tr>
+<tr><td>HTTP</td><td>Multicast</td></tr>
+<tr><td>XMPP</td><td>XMPP rooms (server)</td></tr>
+</table>
+
+<h2 id="supported-socms">Supported SOCMs</h2>
+
+<p>In this section, we will provide a brief introduction to the supported Service Oriented Components Models in COHORTE.</p>
+
+<h3 id="osgi--apache-felix-ipojo">OSGi / Apache Felix iPOJO</h3>
+
+<p>Java</p>
+
+<table class="table table-striped table-condensed">
+<tr><th>Apache Felix iPOJO (Java) </th></tr>
+<tr><td>
+
+
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Component</span><span class="o">(</span><span class="s">&quot;AggregatorFactory&quot;</span><span class="o">)</span>
+<span class="nd">@Provides</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Aggregator</span> <span class="kd">implements</span> <span class="n">ITemperature</span> <span class="o">{</span>
+  <span class="nd">@Requires</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ISensor</span><span class="o">&gt;</span> <span class="n">sensors</span><span class="o">;</span>
+  <span class="nd">@Requires</span> <span class="n">IStore</span> <span class="n">store</span><span class="o">;</span>
+
+  <span class="nd">@Validate</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span>
+  <span class="cm">/* Do something to regulate </span>
+<span class="cm">  temperature depending on room&#39;s </span>
+<span class="cm">  internal temperature. */</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></div>
+
+
+</td></tr>
+</table>
+
+<h3 id="pelix--ipopo">Pelix / iPOPO</h3>
+
+<p>Python</p>
+
+<table class="table table-striped table-condensed">
+<tr><th>Pelix iPOPO (Python) </th></tr>
+<tr><td>
+	
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="nd">@Component</span><span class="p">(</span><span class="s">&quot;AggregatorFactory&quot;</span><span class="p">)</span>
+<span class="nd">@Provides</span><span class="p">(</span><span class="s">&quot;java:/Itemperature&quot;</span><span class="p">)</span>
+<span class="nd">@Requires</span><span class="p">(</span><span class="s">&quot;sensors&quot;</span><span class="p">,</span> <span class="s">&quot;java:/ISensor&quot;</span><span class="p">,</span> <span class="n">aggregate</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nd">@Requires</span><span class="p">(</span><span class="s">&quot;store&quot;</span><span class="p">,</span> <span class="s">&quot;java:/IStore&quot;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Aggregator</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">sensors</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">store</span> <span class="o">=</span> <span class="bp">None</span>
+
+  <span class="nd">@Validate</span> 
+  <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Do something useful to regulate </span>
+<span class="sd">    temperature depending on room&#39;s</span>
+<span class="sd">    internal temperature.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></code></pre></div>
+
+
+</td></tr>
+</table>
+
+<p>Interoperability between Java and Python implementation?</p>
+
+<ul>
+  <li>We should add <code>java:/</code> prefix to required services in Python.</li>
+</ul>
+
+<h3 id="c-c-and-c-support">C, C# and C++ support</h3>
+
+<p>Wrapping in iPOPO (Python) or iPOJO (Java) components</p>
+
+<p><a href="../../../">Home</a> &gt; <a href="../">Documentation</a></p>
+
+            <br/>
+            <br/>
+            <br/>
+            
+            <a href="../setup" class="btn float-left" title="Previous page"> Previous </a>
+            
+            
+            <a href="../applications" class="btn float-right" title="Next page"> Next </a>
+            
+            <hr/>
+            <br/>
+            <br/>
+                
+          </div>
+          <div class="sidebar">
+            <div class="sidebar-inner">
+              <div class="contents">Contents</div>
+              <div id="toc"></div>
+            </div>
+          </div>
+          <div style="clear:both"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="footer">
+	<div class="container">
+		<ul>
+			<li><h5>Documentation</h5></li>
+			<li><a href="/documentation/what-is-cohorte.html">What is COHORTE?</a></li>
+			<li><a href="/documentation/getting-started.html">Getting Started</a></li>
+			<li><a href="/documentation/tutorials.html">Tutorials</a></li>
+			<li><a href="/documentation/demonstrations.html">Demonstrations</a></li>
+			<li><a href="/documentation/publications.html">Articles & Publications</a></li>
+			<li><a href="/documentation/guide.html">Reference Guide</a></li>
+		</ul>
+		<ul>
+			<li><h5>Downloads</h5></li>
+			<li><a href="/download/">Stable Release</a></li>
+			<li><a href="/download/.html">Development Release</a></li>
+		</ul>
+		<ul>
+			<li><h5>Community</h5></li>
+			<li><a href="/community/index.html#mailing_lists">Mailing lists</a></li>
+			<li><a href="/community/index.html#github">GitHub</a></li>
+		</ul>
+		<ul>
+			<li><h5>COHORTE</h5></li>
+			<li><a href="/blog">Blog</a></li>
+			<li><a href="/news">News Archive</a></li>
+			<li><a href="/license.html">COHORTE License</a></li>
+		</ul>
+		</div>
+		<div class="container">
+		<div class="copyright">
+			<a style="float: left; margin-right: 8px;" href="http://isandlatech.com"><img src="/resources/images/isandlatech-logo-sm-carre.png" alt="isandlaTech logo" /></a>
+			<p style="float: left;"><br/>Copyright &copy; 2011-<span class="current-year"></span> isandla<i>Tech</i> S.A.R.L<br/>3 chemin du vieux chêne. 38240 Meylan, France</p>
+		</div>
+		<div class="cohorte-logo-footer">
+			<span style="font-size:70%; color:#aaa;"><a href="http://isandlatech.com">isandla<i>Tech</i></a> is the principal sponsor of </span><img src="/resources/images/cohorte-logo-footer.png" alt="COHORTE footer logo" />
+		</div>
+	</div> <!-- container -->
+</div> <!-- footer -->
+
+
+    <!-- jQuery -->
+    <script src="/resources/js/2/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/resources/js/2/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+    
+    <!-- table of contents JS -->
+    <script src="/resources/js/toc.js" type="text/javascript" ></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
+        function moveScroller() {
+          if ($(".sidebar").length == 0)
+            return;
+          var a = function() {
+            var topOfScroll = $(window).scrollTop();
+            var topOfSidebar = $(".sidebar").offset().top;
+            var sidebarInner = $(".sidebar-inner");
+            var bottomOfSidebarInner = $(".sidebar-inner").offset().top + $(".sidebar-inner").outerHeight();
+            var topOfFooter = $(".footer").offset().top - 10;
+            var footerHeight = $(".footer").outerHeight();
+            if (topOfScroll > topOfSidebar) {
+              if (bottomOfSidebarInner > topOfFooter) {
+                sidebarInner.css({position:"fixed",bottom:footerHeight,top:""});
+              } else {
+                sidebarInner.css({position:"fixed",top:"10px",bottom:""});
+              }
+            } else {
+              sidebarInner.css({position:"relative",top:""});
+            }
+          };
+          $(window).scroll(a);a()
+        }
+        moveScroller();
+      })
+    </script>
+    
+
+	<script src="/resources/js/2/cohorte.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+<h1>Reference Guide | Compositions</h1>
+en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="isandlatech">
+    
+    <title>Reference Guide | Compositions | Cohorte Project</title>
+
+    <link rel="icon" type="image/png" href="/resources/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="/resources/favicon.ico">
+
+    <!-- Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=fr" rel=
+    "stylesheet">
+    <link href=
+    "//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic"
+    rel="stylesheet">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/resources/css/cohorte.css" rel="stylesheet">
+
+    <!-- Syntax highlighter -->
+    <link rel="stylesheet" href="/resources/css/syntax.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="/resources/images/cohorte-logo.png"></img></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="/docs/1.x/">Documentation</a></li>
+		      <li><a href="/downloads/">Downloads</a></li>
+		      <li><a href="/community/">Community</a></li>
+		      <li><a href="/news">News</a></li>
+		      <!--li><a href="/contribute/">Contribute</a></li-->
+		      <li>
+		        <a href="http://github.com/isandlatech/" data-toggle="tooltip" data-placement="bottom" title="Source code"><img src="/resources/images/github-logo-black.png" alt="GitHub Logo" /></a>		        
+		      </li>  
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<ul class="nav">          
+        
+</ul>    
+
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+
+<div class="page-title-style">
+  <div class="container">
+    <h1 id="page-title">Reference Guide | Compositions</h1>
+  </div>
+</div>
+
+
+<div class="page-container">
+  <div class="container" style="min-height: 540px;">
+    <div class="row">
+      <div class="span12">
+          <div class="main-page-column" style="width: 75%;">
+            
+            <p><a href="../../../">Home</a> &gt; <a href="../">Documentation</a></p>
+
+<h2 id="composition-specification">Composition Specification</h2>
+
+<h3 id="composition">Composition</h3>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="err">//</span> <span class="err">Composition&#39;s</span> <span class="err">name</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;composition-name&quot;</span><span class="p">,</span>
+ 
+  <span class="err">//</span> <span class="err">Top</span> <span class="err">composite</span>
+  <span class="nt">&quot;root&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="err">/*</span> <span class="err">see</span> <span class="err">&#39;composite&#39;</span> <span class="err">*/</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<h3 id="composite">Composite</h3>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="err">//</span> <span class="err">Name</span> <span class="err">of</span> <span class="err">composite</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;composite1&quot;</span><span class="p">,</span>
+ 
+  <span class="err">//</span> <span class="err">List</span> <span class="err">of</span> <span class="err">components</span>
+  <span class="nt">&quot;components&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="err">/*</span> <span class="err">see</span> <span class="err">&#39;components&#39;</span> <span class="err">*/</span> <span class="p">],</span>
+ 
+  <span class="err">//</span> <span class="err">List</span> <span class="err">of</span> <span class="err">sub-composites</span>
+  <span class="nt">&quot;composites&quot;</span> <span class="p">:</span> <span class="p">[</span>
+     <span class="p">{</span>
+       <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;subcomposite&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;components&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="err">/*</span> <span class="err">...</span> <span class="err">*/</span> <span class="p">]</span>
+       <span class="err">//</span> <span class="err">this</span> <span class="err">composite</span> <span class="err">hasn&#39;t</span> <span class="err">sub-composites.</span>
+     <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></div>
+
+<h3 id="components">Components</h3>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="err">//</span> <span class="err">Name</span> <span class="err">of</span> <span class="err">the</span> <span class="err">component</span>
+  <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;aggregator-UI&quot;</span><span class="p">,</span>
+  <span class="err">//</span> <span class="err">Name</span> <span class="err">of</span> <span class="err">its</span> <span class="err">Component</span> <span class="err">Factory</span>
+  <span class="nt">&quot;factory&quot;</span> <span class="p">:</span> <span class="s2">&quot;demo-sensor-aggregator-ui-factory&quot;</span><span class="p">,</span>
+  <span class="err">//</span> <span class="err">Indication</span> <span class="err">on</span> <span class="err">the</span> <span class="err">implementation</span> <span class="err">language</span>
+  <span class="nt">&quot;language&quot;</span> <span class="p">:</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span>
+  <span class="err">//</span> <span class="err">Location</span> <span class="err">on</span> <span class="err">a</span> <span class="err">precise</span> <span class="err">isolate</span>
+  <span class="nt">&quot;isolate&quot;</span> <span class="p">:</span> <span class="s2">&quot;aggregator.ui&quot;</span><span class="p">,</span>
+  <span class="err">//</span> <span class="err">Location</span> <span class="err">on</span> <span class="err">a</span> <span class="err">precise</span> <span class="err">node</span>
+  <span class="nt">&quot;node&quot;</span> <span class="p">:</span> <span class="s2">&quot;central&quot;</span>
+  <span class="err">//</span> <span class="err">Initial</span> <span class="err">configuration</span> <span class="err">of</span> <span class="err">the</span> <span class="err">component</span>
+  <span class="s2">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;servlet.path&quot;</span> <span class="p">:</span> <span class="s2">&quot;/sensors&quot;</span>
+  <span class="p">},</span>
+  <span class="err">//</span> <span class="err">Wiring</span> <span class="err">with</span> <span class="err">another</span> <span class="err">component</span> <span class="err">named</span> <span class="err">&#39;aggregtor&#39;</span> 
+  <span class="err">//</span> <span class="err">which</span> <span class="err">can</span> <span class="err">be</span> <span class="err">found</span> <span class="err">in</span> <span class="err">any</span> <span class="err">composite</span> <span class="err">of</span> <span class="err">this</span> <span class="err">composition</span>
+  <span class="nt">&quot;wires&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;_aggregator&quot;</span> <span class="p">:</span> <span class="s2">&quot;aggregator&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;filters&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;_handler&quot;</span><span class="p">:</span> <span class="s2">&quot;(ready=1)&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<h3 id="import-files">import-files</h3>
+
+<p><code>base.js</code></p>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;root&quot;</span><span class="p">:</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;imported&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;top-value&quot;</span><span class="p">:</span> <span class="s2">&quot;top&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;answer&quot;</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span>
+    <span class="err">//</span> <span class="err">Import</span> <span class="err">from</span> <span class="err">another</span> <span class="err">file</span>
+    <span class="nt">&quot;import-files&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;imported.js&quot;</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p><code>imported.js</code></p>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="err">//</span> <span class="err">New</span> <span class="err">property</span>
+  <span class="nt">&quot;hello&quot;</span><span class="p">:</span> <span class="s2">&quot;World&quot;</span><span class="p">,</span>
+  <span class="err">//</span> <span class="err">This</span> <span class="err">value</span> <span class="err">will</span> <span class="err">be</span> <span class="err">overloaded</span> <span class="err">by</span> <span class="err">the</span> <span class="err">high</span> <span class="err">level</span> <span class="err">property&#39;s</span> <span class="err">value</span>
+  <span class="nt">&quot;answer&quot;</span><span class="p">:</span> <span class="mi">51</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Obtained result : </p>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;root&quot;</span><span class="p">:</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;imported&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="err">//</span> <span class="err">Non</span> <span class="err">modified</span> <span class="err">value</span>
+    <span class="nt">&quot;top-value&quot;</span><span class="p">:</span> <span class="s2">&quot;top&quot;</span><span class="p">,</span>
+    <span class="err">//</span> <span class="err">Conserved</span> <span class="err">value</span>
+    <span class="nt">&quot;answer&quot;</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span>
+    <span class="err">//</span> <span class="err">New</span> <span class="err">property</span>
+    <span class="nt">&quot;hello&quot;</span><span class="p">:</span> <span class="s2">&quot;world&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p><a href="../../../">Home</a> &gt; <a href="../">Documentation</a></p>
+
+            <br/>
+            <br/>
+            <br/>
+            
+            <a href="../components" class="btn float-left" title="Previous page"> Previous </a>
+            
+            
+            <a href="../startup" class="btn float-right" title="Next page"> Next </a>
+            
+            <hr/>
+            <br/>
+            <br/>
+                
+          </div>
+          <div class="sidebar">
+            <div class="sidebar-inner">
+              <div class="contents">Contents</div>
+              <div id="toc"></div>
+            </div>
+          </div>
+          <div style="clear:both"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="footer">
+	<div class="container">
+		<ul>
+			<li><h5>Documentation</h5></li>
+			<li><a href="/documentation/what-is-cohorte.html">What is COHORTE?</a></li>
+			<li><a href="/documentation/getting-started.html">Getting Started</a></li>
+			<li><a href="/documentation/tutorials.html">Tutorials</a></li>
+			<li><a href="/documentation/demonstrations.html">Demonstrations</a></li>
+			<li><a href="/documentation/publications.html">Articles & Publications</a></li>
+			<li><a href="/documentation/guide.html">Reference Guide</a></li>
+		</ul>
+		<ul>
+			<li><h5>Downloads</h5></li>
+			<li><a href="/download/">Stable Release</a></li>
+			<li><a href="/download/.html">Development Release</a></li>
+		</ul>
+		<ul>
+			<li><h5>Community</h5></li>
+			<li><a href="/community/index.html#mailing_lists">Mailing lists</a></li>
+			<li><a href="/community/index.html#github">GitHub</a></li>
+		</ul>
+		<ul>
+			<li><h5>COHORTE</h5></li>
+			<li><a href="/blog">Blog</a></li>
+			<li><a href="/news">News Archive</a></li>
+			<li><a href="/license.html">COHORTE License</a></li>
+		</ul>
+		</div>
+		<div class="container">
+		<div class="copyright">
+			<a style="float: left; margin-right: 8px;" href="http://isandlatech.com"><img src="/resources/images/isandlatech-logo-sm-carre.png" alt="isandlaTech logo" /></a>
+			<p style="float: left;"><br/>Copyright &copy; 2011-<span class="current-year"></span> isandla<i>Tech</i> S.A.R.L<br/>3 chemin du vieux chêne. 38240 Meylan, France</p>
+		</div>
+		<div class="cohorte-logo-footer">
+			<span style="font-size:70%; color:#aaa;"><a href="http://isandlatech.com">isandla<i>Tech</i></a> is the principal sponsor of </span><img src="/resources/images/cohorte-logo-footer.png" alt="COHORTE footer logo" />
+		</div>
+	</div> <!-- container -->
+</div> <!-- footer -->
+
+
+    <!-- jQuery -->
+    <script src="/resources/js/2/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/resources/js/2/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+    
+    <!-- table of contents JS -->
+    <script src="/resources/js/toc.js" type="text/javascript" ></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
+        function moveScroller() {
+          if ($(".sidebar").length == 0)
+            return;
+          var a = function() {
+            var topOfScroll = $(window).scrollTop();
+            var topOfSidebar = $(".sidebar").offset().top;
+            var sidebarInner = $(".sidebar-inner");
+            var bottomOfSidebarInner = $(".sidebar-inner").offset().top + $(".sidebar-inner").outerHeight();
+            var topOfFooter = $(".footer").offset().top - 10;
+            var footerHeight = $(".footer").outerHeight();
+            if (topOfScroll > topOfSidebar) {
+              if (bottomOfSidebarInner > topOfFooter) {
+                sidebarInner.css({position:"fixed",bottom:footerHeight,top:""});
+              } else {
+                sidebarInner.css({position:"fixed",top:"10px",bottom:""});
+              }
+            } else {
+              sidebarInner.css({position:"relative",top:""});
+            }
+          };
+          $(window).scroll(a);a()
+        }
+        moveScroller();
+      })
+    </script>
+    
+
+	<script src="/resources/js/2/cohorte.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+<h1>Reference Guide | Startup</h1>
+en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="isandlatech">
+    
+    <title>Reference Guide | Startup | Cohorte Project</title>
+
+    <link rel="icon" type="image/png" href="/resources/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="/resources/favicon.ico">
+
+    <!-- Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=fr" rel=
+    "stylesheet">
+    <link href=
+    "//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic"
+    rel="stylesheet">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/resources/css/cohorte.css" rel="stylesheet">
+
+    <!-- Syntax highlighter -->
+    <link rel="stylesheet" href="/resources/css/syntax.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="/resources/images/cohorte-logo.png"></img></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="/docs/1.x/">Documentation</a></li>
+		      <li><a href="/downloads/">Downloads</a></li>
+		      <li><a href="/community/">Community</a></li>
+		      <li><a href="/news">News</a></li>
+		      <!--li><a href="/contribute/">Contribute</a></li-->
+		      <li>
+		        <a href="http://github.com/isandlatech/" data-toggle="tooltip" data-placement="bottom" title="Source code"><img src="/resources/images/github-logo-black.png" alt="GitHub Logo" /></a>		        
+		      </li>  
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<ul class="nav">          
+        
+</ul>    
+
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+
+<div class="page-title-style">
+  <div class="container">
+    <h1 id="page-title">Reference Guide | Startup</h1>
+  </div>
+</div>
+
+
+<div class="page-container">
+  <div class="container" style="min-height: 540px;">
+    <div class="row">
+      <div class="span12">
+          <div class="main-page-column" style="width: 75%;">
+            
+            <p><a href="../../../">Home</a> &gt; <a href="../">Documentation</a></p>
+
+<h2 id="startup-scripts">Startup scripts</h2>
+
+<p>COHORTE system is composed of several Nodes. Only one node is specified to be Top Composer. It manages the components distribution among the available participating nodes.</p>
+
+<p>In this chapter, we will detail how to create and start COHORTE nodes using simple command lines.</p>
+
+<h3 id="creating-nodes">Creating nodes</h3>
+
+<p>To create COHORTE node, you have to use the provided <code>cohorte-create-node</code> command.</p>
+
+<div class="note">
+<span class="note-title">Note</span>
+<p class="note-content">
+Ensure to have installed COHORTE on your system and that the COHORTE_HOME environment variable is set to the installation path of COHORTE (see <a href="/docs/1.x/setup">setup guide</a>).
+</p>
+</div>
+
+<h4 id="usage">Usage</h4>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./cohorte-create-node <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-n NODE_NAME<span class="o">]</span> <span class="o">[</span>-a APP_NAME<span class="o">]</span></code></pre></div>
+
+<h4 id="options">Options</h4>
+
+<p>This command has the following options :</p>
+
+<pre>
+  -h, --help            show this help message and exit
+
+  -n NODE_NAME, --node NODE_NAME
+                        Name of the node
+  -a APP_NAME, --app-name APP_NAME
+                        application's symbolic name
+</pre>
+
+<h4 id="results">Results</h4>
+
+<p>This command will create a directory containing the following structure:</p>
+
+<p><img src="cohorte-node-directory-structure.png" alt="Cohorte node directory structure" /></p>
+
+<ul>
+  <li><em>node_name</em> correspond to the provided name by the user using the <code>--node</code> option.</li>
+  <li><em>run</em> is the starting script. It will be detail in the next section (Starting nodes)</li>
+  <li><em>repo</em> is a directory where user provided bundles should be placed.</li>
+  <li><em>conf</em> is a directory containing configuration files. Only one configuration file is created initially (autorun_conf.js), other files are generated by <code>run</code> script in this location.</li>
+</ul>
+
+<p>Here is the content of the generated <code>conf/autorun_conf.js</code>file. You should add component descriptions on the indicated zone.</p>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span> 
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;default-application&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;root&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;default-application-composition&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;components&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="err">/*</span> <span class="err">your</span> <span class="err">component</span> <span class="err">descriptions</span> <span class="err">here</span> <span class="err">*/</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Only the node started as Top Composer (see next section) should have this configuration file completed. Other nodes started as simple nodes will ignore this file.</p>
+
+<h3 id="starting-nodes">Starting nodes</h3>
+
+<p>To start a COHORTE node, you have to use the generated <code>run</code> command (this command calls <code>cohorte-start-node</code> internal command).</p>
+
+<h4 id="usage-1">Usage</h4>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./run <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-a APPLICATION_ID<span class="o">]</span> <span class="o">[</span>--use-config CONFIG_FILE<span class="o">]</span>
+        <span class="o">[</span>--update-config<span class="o">]</span> <span class="o">[</span>--show-config<span class="o">]</span>
+        <span class="o">[</span>-b BASE_ABSOLUTE_PATH<span class="o">]</span> <span class="o">[</span>-n NODE_NAME<span class="o">]</span>
+        <span class="o">[</span>--top-composer<span class="o">]</span>
+        <span class="o">[</span>--web-admin WEB_ADMIN_PORT<span class="o">]</span>
+        <span class="o">[</span>--shell-admin SHELL_ADMIN_PORT<span class="o">]</span>
+        <span class="o">[</span>--transport TRANSPORT_MODES<span class="o">]</span>
+        <span class="o">[</span>--xmpp-server XMPP_SERVER<span class="o">]</span>
+        <span class="o">[</span>--xmpp-port XMPP_PORT<span class="o">]</span> <span class="o">[</span>--xmpp-jid XMPP_JID<span class="o">]</span>
+        <span class="o">[</span>--xmpp-password XMPP_PASSWORD<span class="o">]</span></code></pre></div>
+
+<h4 id="options-1">Options</h4>
+
+<p>There are different kind of options depending on the use of the actual node.</p>
+
+<h5 id="mandatory-options">Mandatory options</h5>
+
+<pre>
+  -a APPLICATION_ID, --app-id APPLICATION_ID
+                        Application's ID
+</pre>
+
+<p>All the nodes participating for a given application should have the same <code>application-id</code>. </p>
+
+<h5 id="startup-configuration-options">Startup configuration options</h5>
+
+<pre>
+  --use-config CONFIG_FILE  Configuration file to use for starting cohorte node.
+                        By default the run.js file is used if available
+  --update-config       Update startup configuration file with provided
+                        options
+  --show-config         Show startup configuration file content
+  -b BASE_ABSOLUTE_PATH, --base BASE_ABSOLUTE_PATH
+                        absolute file path of the node's directory
+</pre>
+
+<p>We can write the startup configurations in a separate JSON file (see How to use startup configuration files section). This options will simplify the command options list and allows sharing the same startup configurations between several nodes.</p>
+
+<h5 id="information-about-the-node-to-start">Information about the node to start</h5>
+
+<pre>
+  -n NODE_NAME, --node NODE_NAME
+                        Node name
+  --top-composer        Flag indicating that this node is a Top Composer
+  --web-admin WEB_ADMIN_PORT
+                        Node web admin port
+  --shell-admin SHELL_ADMIN_PORT
+                        Node remote shell port
+</pre>
+
+<p>We can provide a different node name than the already provided when the node is created (by using –node option). One important option of cohorte nodes is the <code>--is-top-composer</code>. If set, the node will be considered as a <strong>Top Composer</strong> (manages all the distribution of components among the available nodes). Users can also provide customised informations such as the http port to use for the <em>web-admin</em> component (see <a href="/docs/1.x/monitoring">monitoring chapter</a>), or the port to use for the remote shell admin component. </p>
+
+<h5 id="information-about-the-transport-protocols-to-use">Information about the transport protocols to use</h5>
+<pre>
+  --transport TRANSPORT_MODES
+                        Transport mode (http and/or xmpp - seperated by comma)
+  --xmpp-server XMPP_SERVER
+                        XMPP server
+  --xmpp-port XMPP_PORT
+                        XMPP server port
+  --xmpp-jid XMPP_JID   XMPP jid
+  --xmpp-password XMPP_PASSWORD
+                        XMPP Room
+</pre>
+
+<p>The <code>--transport</code> option allow the use to choose which transport protocol to use between the actual node and the other nodes participating in the same application. You can provide a common seperated list of the supported protocols (<code>http</code> and <code>xmpp</code> for the moment). Each protocol need additional configuration options that should be provided seperataly using dedicated options (–xmpp-server for instance to mention the XMPP server to use).</p>
+
+<h4 id="how-to-use-startup-configuration-files">How to use startup configuration files</h4>
+
+<p>To avoid re-typing the same options each time a node is started, or to share the same configuration between several nodes, you can provide a <em>startup configuration file</em> which contains such startup configurations. The content of such file is described hereafter. </p>
+
+<blockquote>
+  <p>run.js</p>
+</blockquote>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>	
+	<span class="nt">&quot;application-id&quot;</span><span class="p">:</span> <span class="s2">&quot;ABCDEF&quot;</span><span class="p">,</span>
+
+	<span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="p">{</span>		
+		<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;node-rasp&quot;</span><span class="p">,</span>
+		<span class="nt">&quot;top-composer&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+		<span class="nt">&quot;web-admin&quot;</span><span class="p">:</span> <span class="mi">9001</span><span class="p">,</span>
+		<span class="nt">&quot;shell-admin&quot;</span><span class="p">:</span> <span class="mi">9001</span>		
+	<span class="p">},</span>
+	<span class="nt">&quot;transport&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;xmpp&quot;</span><span class="p">],</span>
+	<span class="nt">&quot;transport-xmpp&quot;</span><span class="p">:</span> <span class="p">{</span>
+		<span class="nt">&quot;xmpp-server&quot;</span><span class="p">:</span> <span class="s2">&quot;charmanson.isandlatech.com&quot;</span><span class="p">,</span>
+		<span class="nt">&quot;xmpp-port&quot;</span><span class="p">:</span> <span class="mi">5222</span><span class="p">,</span>
+		<span class="nt">&quot;xmpp-jid&quot;</span><span class="p">:</span> <span class="s2">&quot;bot@charmanson.isandlatech.com&quot;</span>
+	<span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<ul>
+  <li>To show the content of the startup configuration file :</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./run --show-config</code></pre></div>
+
+<ul>
+  <li>To use other configuration file than the default <em>run.js</em> file :</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./run --use-config other_run_conf.js</code></pre></div>
+
+<ul>
+  <li>Update the startup configuration using command options (–some-configuration should be replaced with a supported options list):</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./run --some-configurations --update-config</code></pre></div>
+
+<p>This will update all the provided options within the startup configuration file. You can use also this option to create the default <em>run.js</em> file with a set of configuration options.</p>
+
+<h3 id="other-advanced-startup-configurations">Other advanced startup configurations</h3>
+
+<p>The following configuration files (located on <code>$COHORTE_HOME/conf</code> folder) are used by COHORTE for the initial configuration of the different internal components. You can override them by creating a file with the same name in your <code>$COHORTE_BASE/conf</code> folder.</p>
+
+<blockquote>
+  <p>Boot configuration files</p>
+</blockquote>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+	<thead>
+	<tr>
+		<th> File               </th><th> Bundles &amp; Components  </th>
+	</tr>
+	</thead>
+	<tbody><tr>
+		<td> <a href="" src="#">boot-common.js</a>        </td><td> Pelix, iPOPO, Shell </td>
+	</tr>
+	<tr>
+		<td> <a href="" src="#">boot-common-py.js</a>     </td><td> Pelix Remote Services, Cohorte Signals </td>
+	</tr>
+	</tbody>
+	</table>
+
+<blockquote>
+  <p>Python Isolates configuration files</p>
+</blockquote>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+	<thead>	
+	<tr>
+		<th> File               </th><th> Bundles &amp; Components  </th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td> <a href="" src="#">python-common-http.js</a> </td><td> HTTP Server </td>
+	</tr>
+	</tbody>
+	</table>
+
+<blockquote>
+  <p>Java Isolates configuration files</p>
+</blockquote>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+	<thead>	
+	<tr>
+		<th> File               </th><th> Bundles &amp; Components  </th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td> <a href="" src="#">java-common.js</a>        </td><td> iPOJO, Shell, Cohorte PyBoot, Isolate Base &amp; Utilities </td>
+	</tr>
+	<tr>
+		<td> <a href="" src="#">java-common-http.js</a>   </td><td> HTTP Server </td>
+	</tr>
+	<tr>
+		<td> <a href="" src="#">java-common-remote.js</a> </td><td> Cohorte Remote Services </td>
+	</tr>	
+	<tr>
+		<td> <a href="" src="#">java-common-ui.js</a>     </td><td> Cohorte UI Admin </td>
+	</tr>
+</tbody></table>
+
+<p><a href="../../../">Home</a> &gt; <a href="../">Documentation</a></p>
+
+            <br/>
+            <br/>
+            <br/>
+            
+            <a href="../applications" class="btn float-left" title="Previous page"> Previous </a>
+            
+            
+            <a href="../shell" class="btn float-right" title="Next page"> Next </a>
+            
+            <hr/>
+            <br/>
+            <br/>
+                
+          </div>
+          <div class="sidebar">
+            <div class="sidebar-inner">
+              <div class="contents">Contents</div>
+              <div id="toc"></div>
+            </div>
+          </div>
+          <div style="clear:both"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="footer">
+	<div class="container">
+		<ul>
+			<li><h5>Documentation</h5></li>
+			<li><a href="/documentation/what-is-cohorte.html">What is COHORTE?</a></li>
+			<li><a href="/documentation/getting-started.html">Getting Started</a></li>
+			<li><a href="/documentation/tutorials.html">Tutorials</a></li>
+			<li><a href="/documentation/demonstrations.html">Demonstrations</a></li>
+			<li><a href="/documentation/publications.html">Articles & Publications</a></li>
+			<li><a href="/documentation/guide.html">Reference Guide</a></li>
+		</ul>
+		<ul>
+			<li><h5>Downloads</h5></li>
+			<li><a href="/download/">Stable Release</a></li>
+			<li><a href="/download/.html">Development Release</a></li>
+		</ul>
+		<ul>
+			<li><h5>Community</h5></li>
+			<li><a href="/community/index.html#mailing_lists">Mailing lists</a></li>
+			<li><a href="/community/index.html#github">GitHub</a></li>
+		</ul>
+		<ul>
+			<li><h5>COHORTE</h5></li>
+			<li><a href="/blog">Blog</a></li>
+			<li><a href="/news">News Archive</a></li>
+			<li><a href="/license.html">COHORTE License</a></li>
+		</ul>
+		</div>
+		<div class="container">
+		<div class="copyright">
+			<a style="float: left; margin-right: 8px;" href="http://isandlatech.com"><img src="/resources/images/isandlatech-logo-sm-carre.png" alt="isandlaTech logo" /></a>
+			<p style="float: left;"><br/>Copyright &copy; 2011-<span class="current-year"></span> isandla<i>Tech</i> S.A.R.L<br/>3 chemin du vieux chêne. 38240 Meylan, France</p>
+		</div>
+		<div class="cohorte-logo-footer">
+			<span style="font-size:70%; color:#aaa;"><a href="http://isandlatech.com">isandla<i>Tech</i></a> is the principal sponsor of </span><img src="/resources/images/cohorte-logo-footer.png" alt="COHORTE footer logo" />
+		</div>
+	</div> <!-- container -->
+</div> <!-- footer -->
+
+
+    <!-- jQuery -->
+    <script src="/resources/js/2/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/resources/js/2/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+    
+    <!-- table of contents JS -->
+    <script src="/resources/js/toc.js" type="text/javascript" ></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
+        function moveScroller() {
+          if ($(".sidebar").length == 0)
+            return;
+          var a = function() {
+            var topOfScroll = $(window).scrollTop();
+            var topOfSidebar = $(".sidebar").offset().top;
+            var sidebarInner = $(".sidebar-inner");
+            var bottomOfSidebarInner = $(".sidebar-inner").offset().top + $(".sidebar-inner").outerHeight();
+            var topOfFooter = $(".footer").offset().top - 10;
+            var footerHeight = $(".footer").outerHeight();
+            if (topOfScroll > topOfSidebar) {
+              if (bottomOfSidebarInner > topOfFooter) {
+                sidebarInner.css({position:"fixed",bottom:footerHeight,top:""});
+              } else {
+                sidebarInner.css({position:"fixed",top:"10px",bottom:""});
+              }
+            } else {
+              sidebarInner.css({position:"relative",top:""});
+            }
+          };
+          $(window).scroll(a);a()
+        }
+        moveScroller();
+      })
+    </script>
+    
+
+	<script src="/resources/js/2/cohorte.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+<h1>Shell</h1>
+en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="isandlatech">
+    
+    <title>Shell | Cohorte Project</title>
+
+    <link rel="icon" type="image/png" href="/resources/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="/resources/favicon.ico">
+
+    <!-- Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=fr" rel=
+    "stylesheet">
+    <link href=
+    "//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic"
+    rel="stylesheet">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/resources/css/cohorte.css" rel="stylesheet">
+
+    <!-- Syntax highlighter -->
+    <link rel="stylesheet" href="/resources/css/syntax.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="/resources/images/cohorte-logo.png"></img></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="/docs/1.x/">Documentation</a></li>
+		      <li><a href="/downloads/">Downloads</a></li>
+		      <li><a href="/community/">Community</a></li>
+		      <li><a href="/news">News</a></li>
+		      <!--li><a href="/contribute/">Contribute</a></li-->
+		      <li>
+		        <a href="http://github.com/isandlatech/" data-toggle="tooltip" data-placement="bottom" title="Source code"><img src="/resources/images/github-logo-black.png" alt="GitHub Logo" /></a>		        
+		      </li>  
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<ul class="nav">          
+        
+</ul>    
+
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+
+<div class="page-title-style">
+  <div class="container">
+    <h1 id="page-title">Shell</h1>
+  </div>
+</div>
+
+
+<div class="page-container">
+  <div class="container" style="min-height: 540px;">
+    <div class="row">
+      <div class="span12">
+          <div class="main-page-column" style="width: 75%;">
+            
+            <p><a href="../../../">Home</a> &gt; <a href="../">Documentation</a></p>
+
+<h2 id="integrated-shell-commands">Integrated shell commands</h2>
+
+<p>COHORTE has an integrated shell to allow users manipulate and monitor the system. Here the list of the provided shell commands and their explanation.</p>
+
+<blockquote>
+  <p>Name space <code>default</code> </p>
+</blockquote>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+	<thead>
+	<tr>
+		<th> Option </th><th> Description </th>
+	</tr>
+	</thead>
+	<tbody><tr>
+		<td>
+<b>?</b> [&lt;command&gt;]
+</td><td>	Prints the available methods and their documentation, or the documentation of the given command.
+</td></tr><tr><td>
+<b>bd</b> &lt;bundle_id&gt;
+</td><td>
+		Prints the details of the bundle with the given ID or name
+</td></tr><tr><td>
+<b>bl</b> [&lt;name&gt;]
+</td><td>
+		Lists the bundles in the framework and their state. Possibility to filter on the bundle name.
+</td></tr><tr><td>
+<b>close</b>
+</td><td>
+		Stops the current shell session (raises a KeyboardInterrupt exception)
+</td></tr><tr><td>
+<b>echo</b> ...
+</td><td>
+		Echoes the given words
+</td></tr><tr><td>
+<b>exit</b>
+</td><td>
+		Stops the current shell session (raises a KeyboardInterrupt exception)
+</td></tr><tr><td>
+<b>help</b> [&lt;command&gt;]
+</td><td>
+		Prints the available methods and their documentation, or the documentation of the given command.
+</td></tr><tr><td>
+<b>install</b> &lt;module_name&gt;
+</td><td>
+		Installs the bundle with the given module name
+</td></tr><tr><td>
+<b>loglevel</b> [&lt;level&gt;] [&lt;name&gt;]
+</td><td>
+		Prints/Changes log level
+</td></tr><tr><td>
+<b>properties</b>
+</td><td>
+		Lists the properties of the framework
+</td></tr><tr><td>
+<b>property</b> &lt;name&gt;
+</td><td>
+		Prints the value of the given property, looking into framework properties then environment variables.
+</td></tr><tr><td>
+<b>quit</b>
+</td><td>
+		Stops the current shell session (raises a KeyboardInterrupt exception)
+</td></tr><tr><td>
+<b>sd</b> &lt;service_id&gt;
+</td><td>
+		Prints the details of the service with the given ID
+</td></tr><tr><td>
+<b>sl</b> [&lt;specification&gt;]
+</td><td>
+		Lists the services in the framework. Possibility to filter on an exact specification.
+</td></tr><tr><td>
+<b>start</b> &lt;bundle_id&gt;
+</td><td>
+		Starts the bundle with the given ID
+</td></tr><tr><td>
+<b>stop</b> &lt;bundle_id&gt;
+</td><td>
+		Stops the bundle with the given ID
+</td></tr><tr><td>
+<b>sysprop</b> &lt;name&gt;
+</td><td>
+		Prints the value of the given environment variable
+</td></tr><tr><td>
+<b>sysprops</b>
+</td><td>
+		Lists the framework process environment variables
+</td></tr><tr><td>
+<b>thread</b> &lt;thread_id&gt;
+</td><td>
+		Prints details about the thread with the given ID (not its name)
+</td></tr><tr><td>
+<b>threads</b>
+</td><td>
+		Lists the active threads and their current code line
+</td></tr><tr><td>
+<b>uninstall</b> &lt;bundle_id&gt;
+</td><td>
+		Uninstalls the bundle with the given ID
+</td></tr><tr><td>
+<b>update</b> &lt;bundle_id&gt;
+</td><td>
+		Updates the bundle with the given ID
+</td></tr>
+</tbody>
+</table>
+
+<blockquote>
+  <p>Name space <code>forker</code></p>
+</blockquote>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+	<thead>
+	<tr>
+		<th> Option </th><th> Description </th>
+	</tr>
+	</thead>
+	<tbody><tr>
+		<td>
+<b>ping</b> [&lt;isolate&gt;]
+</td><td>
+		Checks if the given isolate (name or UID) is alive
+</td></tr><tr><td>
+<b>stop</b> &lt;isolate&gt;
+</td><td>
+		Stops the given isolate (name or UID)
+</td></tr>
+</tbody>
+</table>
+
+<blockquote>
+  <p>Name space <code>herald</code>  </p>
+</blockquote>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+	<thead>
+	<tr>
+		<th> Option </th><th> Description </th>
+	</tr>
+	</thead>
+	<tbody><tr>
+		<td>
+<b>fire</b> &lt;target&gt; &lt;subject&gt; ...
+</td><td>
+		Fires a message to the given peer.
+</td></tr><tr><td>
+<b>fire_group</b> &lt;group&gt; &lt;subject&gt; ...
+</td><td>
+		Fires a message to the given group of peers.
+</td></tr><tr><td>
+<b>forget</b> &lt;uid&gt;
+</td><td>
+		Forgets about the given message
+</td></tr><tr><td>
+<b>local</b>
+</td><td>
+		Prints information about the local peer
+</td></tr><tr><td>
+<b>peers</b>
+</td><td>
+		Lists known peers and their accesses
+</td></tr><tr><td>
+<b>post</b> &lt;target&gt; &lt;subject&gt; ...
+</td><td>
+		Post a message to the given peer.
+</td></tr><tr><td>
+<b>post_group</b> &lt;group&gt; &lt;subject&gt; ...
+</td><td>
+		Post a message to the given group of peers
+</td></tr><tr><td>
+<b>send</b> &lt;target&gt; &lt;subject&gt; ...
+</td><td>
+		Sends a message to the given peer(s). Prints responses in the shell.
+</td></tr>
+</tbody>
+</table>
+
+<blockquote>
+  <p>Name space <code>ipopo</code>  </p>
+</blockquote>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+	<thead>
+	<tr>
+		<th> Option </th><th> Description </th>
+	</tr>
+	</thead>
+	<tbody><tr>
+		<td>
+<b>factories</b> [&lt;name&gt;]
+</td><td>
+		Lists the available iPOPO component factories
+</td></tr><tr><td>
+<b>factory</b> &lt;name&gt;
+</td><td>
+		Prints the details of the given component factory
+</td></tr><tr><td>
+<b>instance</b> &lt;name&gt;
+</td><td>
+		Prints the details of the given component instance
+</td></tr><tr><td>
+<b>instances</b> [&lt;name&gt;]
+</td><td>
+		Lists the active iPOPO component instances
+</td></tr><tr><td>
+<b>instantiate</b> &lt;factory&gt; &lt;name&gt; [&lt;property=value&gt; ...]
+</td><td>
+		Instantiates a component of the given factory with the given name and properties
+</td></tr><tr><td>
+<b>kill</b> &lt;name&gt;
+</td><td>
+		Kills the given component instance
+</td></tr><tr><td>
+<b>waiting</b> [&lt;name&gt;]
+</td><td>
+		Lists the components waiting to be instantiated
+</td></tr>
+</tbody>
+</table>
+
+<blockquote>
+  <p>Name space <code>node</code> </p>
+</blockquote>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+	<thead>
+	<tr>
+		<th> Option </th><th> Description </th>
+	</tr>
+	</thead>
+	<tbody><tr>
+		<td>
+<b>isolates</b> [&lt;node&gt;]
+</td><td>
+		Lists the isolates of the given node, or of all nodes
+</td></tr><tr><td>
+<b>nodes</b>
+</td><td>
+		Lists the nodes visible from this isolate
+</td></tr>
+</tbody>
+</table>
+
+<blockquote>
+  <p>Name space <code>shell</code></p>
+</blockquote>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+	<thead>
+	<tr>
+		<th> Option </th><th> Description </th>
+	</tr>
+	</thead>
+	<tbody><tr>
+		<td>
+<b>pids</b> [&lt;isolate&gt;]
+</td><td>
+		Prints the Process ID of the isolate(s)
+</td></tr><tr><td>
+<b>shells</b> [&lt;isolate&gt;] [&lt;kind&gt;]
+</td><td>
+		Prints the port(s) to access the isolate remote shell(s)
+</td></tr>
+</tbody>
+</table>
+
+<blockquote>
+  <p>Name space <code>top</code> </p>
+</blockquote>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+	<thead>
+	<tr>
+		<th> Option </th><th> Description </th>
+	</tr>
+	</thead>
+	<tbody><tr>
+		<td>
+<b>dist</b> [&lt;filename&gt;=autorun_conf.js] [&lt;base&gt;=conf]
+</td><td>
+		Parses a composition and computes its node distribution
+</td></tr><tr><td>
+<b>dump</b> [&lt;node&gt;]
+</td><td>
+		Dumps the content of status
+</td></tr><tr><td>
+<b>load</b> [&lt;filename&gt;=autorun_conf.js] [&lt;base&gt;=conf]
+</td><td>
+		Instantiates the given composition
+</td></tr><tr><td>
+<b>read</b> [&lt;filename&gt;=autorun_conf.js] [&lt;base&gt;=conf]
+</td><td>
+		Reads a file
+</td></tr><tr><td>
+<b>stop</b> &lt;uid&gt;
+</td><td>
+		Kills the distribution with the given UID
+</td></tr>
+</tbody>
+</table>
+
+<p><a href="../../../">Home</a> &gt; <a href="../">Documentation</a></p>
+
+            <br/>
+            <br/>
+            <br/>
+            
+            <a href="../startup" class="btn float-left" title="Previous page"> Previous </a>
+            
+            
+            <a href="../monitoring" class="btn float-right" title="Next page"> Next </a>
+            
+            <hr/>
+            <br/>
+            <br/>
+                
+          </div>
+          <div class="sidebar">
+            <div class="sidebar-inner">
+              <div class="contents">Contents</div>
+              <div id="toc"></div>
+            </div>
+          </div>
+          <div style="clear:both"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="footer">
+	<div class="container">
+		<ul>
+			<li><h5>Documentation</h5></li>
+			<li><a href="/documentation/what-is-cohorte.html">What is COHORTE?</a></li>
+			<li><a href="/documentation/getting-started.html">Getting Started</a></li>
+			<li><a href="/documentation/tutorials.html">Tutorials</a></li>
+			<li><a href="/documentation/demonstrations.html">Demonstrations</a></li>
+			<li><a href="/documentation/publications.html">Articles & Publications</a></li>
+			<li><a href="/documentation/guide.html">Reference Guide</a></li>
+		</ul>
+		<ul>
+			<li><h5>Downloads</h5></li>
+			<li><a href="/download/">Stable Release</a></li>
+			<li><a href="/download/.html">Development Release</a></li>
+		</ul>
+		<ul>
+			<li><h5>Community</h5></li>
+			<li><a href="/community/index.html#mailing_lists">Mailing lists</a></li>
+			<li><a href="/community/index.html#github">GitHub</a></li>
+		</ul>
+		<ul>
+			<li><h5>COHORTE</h5></li>
+			<li><a href="/blog">Blog</a></li>
+			<li><a href="/news">News Archive</a></li>
+			<li><a href="/license.html">COHORTE License</a></li>
+		</ul>
+		</div>
+		<div class="container">
+		<div class="copyright">
+			<a style="float: left; margin-right: 8px;" href="http://isandlatech.com"><img src="/resources/images/isandlatech-logo-sm-carre.png" alt="isandlaTech logo" /></a>
+			<p style="float: left;"><br/>Copyright &copy; 2011-<span class="current-year"></span> isandla<i>Tech</i> S.A.R.L<br/>3 chemin du vieux chêne. 38240 Meylan, France</p>
+		</div>
+		<div class="cohorte-logo-footer">
+			<span style="font-size:70%; color:#aaa;"><a href="http://isandlatech.com">isandla<i>Tech</i></a> is the principal sponsor of </span><img src="/resources/images/cohorte-logo-footer.png" alt="COHORTE footer logo" />
+		</div>
+	</div> <!-- container -->
+</div> <!-- footer -->
+
+
+    <!-- jQuery -->
+    <script src="/resources/js/2/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/resources/js/2/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+    
+    <!-- table of contents JS -->
+    <script src="/resources/js/toc.js" type="text/javascript" ></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
+        function moveScroller() {
+          if ($(".sidebar").length == 0)
+            return;
+          var a = function() {
+            var topOfScroll = $(window).scrollTop();
+            var topOfSidebar = $(".sidebar").offset().top;
+            var sidebarInner = $(".sidebar-inner");
+            var bottomOfSidebarInner = $(".sidebar-inner").offset().top + $(".sidebar-inner").outerHeight();
+            var topOfFooter = $(".footer").offset().top - 10;
+            var footerHeight = $(".footer").outerHeight();
+            if (topOfScroll > topOfSidebar) {
+              if (bottomOfSidebarInner > topOfFooter) {
+                sidebarInner.css({position:"fixed",bottom:footerHeight,top:""});
+              } else {
+                sidebarInner.css({position:"fixed",top:"10px",bottom:""});
+              }
+            } else {
+              sidebarInner.css({position:"relative",top:""});
+            }
+          };
+          $(window).scroll(a);a()
+        }
+        moveScroller();
+      })
+    </script>
+    
+
+	<script src="/resources/js/2/cohorte.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+<h1>Documentation | Monitoring</h1>
+en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="isandlatech">
+    
+    <title>Documentation | Monitoring | Cohorte Project</title>
+
+    <link rel="icon" type="image/png" href="/resources/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="/resources/favicon.ico">
+
+    <!-- Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=fr" rel=
+    "stylesheet">
+    <link href=
+    "//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic"
+    rel="stylesheet">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/resources/css/cohorte.css" rel="stylesheet">
+
+    <!-- Syntax highlighter -->
+    <link rel="stylesheet" href="/resources/css/syntax.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="/resources/images/cohorte-logo.png"></img></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="/docs/1.x/">Documentation</a></li>
+		      <li><a href="/downloads/">Downloads</a></li>
+		      <li><a href="/community/">Community</a></li>
+		      <li><a href="/news">News</a></li>
+		      <!--li><a href="/contribute/">Contribute</a></li-->
+		      <li>
+		        <a href="http://github.com/isandlatech/" data-toggle="tooltip" data-placement="bottom" title="Source code"><img src="/resources/images/github-logo-black.png" alt="GitHub Logo" /></a>		        
+		      </li>  
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<ul class="nav">          
+        
+</ul>    
+
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+
+<div class="page-title-style">
+  <div class="container">
+    <h1 id="page-title">Documentation | Monitoring</h1>
+  </div>
+</div>
+
+
+<div class="page-container">
+  <div class="container" style="min-height: 540px;">
+    <div class="row">
+      <div class="span12">
+          <div class="main-page-column" style="width: 75%;">
+            
+            <p><a href="../../../">Home</a> &gt; <a href="../">Documentation</a></p>
+
+<h2 id="admin-rest-api-v1">Admin REST API v1</h2>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>In this document, we detail the ADMIN RESTful API v1 of COHORTE platform.</p>
+
+<h2 id="web-admin">Web Admin</h2>
+
+<p><img src="cohorte-webadmin.png" alt="SpellChecker Application" /></p>
+
+<p>It uses Admin REST API v1.</p>
+
+<h3 id="api-endpoints">API endpoints</h3>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+<thead><tr><th>Code</th><th>Action</th></tr></thead>
+<tbody><tr><td>APIV1-001</td><td>
+<a href="#APIV1-001">Get the list of all Nodes</a>
+</td></tr>
+<tr><td>APIV1-002</td><td>
+<a href="#APIV1-002">Get the list of all Isolates</a>
+</td></tr>
+<tr><td>APIV1-003</td><td>
+<a href="#APIV1-003">Get the list of all Components</a>
+</td></tr>
+<tr><td>APIV1-050</td><td>
+<a href="#APIV1-050">Get Node details</a>
+</td></tr>
+<tr><td>APIV1-051</td><td>
+<a href="#APIV1-051">Get Isolate details</a>
+</td></tr>
+<tr><td>APIV1-053</td><td>
+<a href="#APIV1-053">Get Component details</a>
+</td></tr>
+<tr><td>APIV1-100</td><td>
+<a href="#APIV1-100">Get the list of Isolates in one particular Node</a>
+</td></tr>
+<tr><td>APIV1-101</td><td>
+<a href="#APIV1-101">Get the list of Components in one particular Isolate</a>
+</td></tr></tbody>
+</table>
+
+<h3 id="detail-of-rest-apis">Detail of REST APIs</h3>
+
+<p><a name="APIV1-001"></a></p>
+
+<h4 id="apiv1-001--get-the-list-of-all-nodes">APIV1-001 : GET the list of all Nodes</h4>
+
+<ul>
+  <li>URL: <code>http://myhost:port/admin/api/v1/nodes</code></li>
+  <li>Supported request methods: <code>GET</code></li>
+  <li>Response format: <code>json</code></li>
+  <li>Requires authentication?: <code>not required</code></li>
+  <li>Response:</li>
+</ul>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+<thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>meta</td><td>Map</td><td>meta-information about the response</td></tr>
+<tr><td>+ code</td><td>Integer</td><td>Return code</td></tr>
+<tr><td>+ count</td><td>Integer</td><td>Number of results</td></tr>
+<tr><td>nodes</td><td>Array</td><td>Array of information about the nodes</td></tr>
+<tr><td>+ uid</td><td>String</td><td>Node UID</td></tr>
+<tr><td>+ name</td><td>String</td><td>Node Name</td></tr>
+</tbody>
+</table>
+
+<ul>
+  <li>JSON Response Example : </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;nodes&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;uid&quot;</span><span class="p">:</span> <span class="s2">&quot;56e5b100-c8a2-4bd8-a818-30edaf9a8fe9&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;central&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;uid&quot;</span><span class="p">:</span> <span class="s2">&quot;acfd6479-f29f-4bf0-ae4d-acd681e3a531&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;raspberry-pi-1&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span></code></pre></div>
+
+<p><br /></p>
+
+<p><a name="APIV1-002"></a></p>
+
+<h4 id="apiv1-002--get-the-list-of-all-isolates">APIV1-002 : GET the list of all Isolates</h4>
+
+<ul>
+  <li>URL: <code>http://myhost:port/admin/api/v1/isolates</code></li>
+  <li>Supported request methods: <code>GET</code></li>
+  <li>Response format: <code>json</code></li>
+  <li>Requires authentication?: <code>not required</code></li>
+  <li>Response:</li>
+</ul>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+<thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>meta</td><td>Map</td><td>meta-information about the response</td></tr>
+<tr><td>+ code</td><td>Integer</td><td>Return code</td></tr>
+<tr><td>+ lastupdate</td><td>Float</td><td>Last update time of the actual isolates list</td></tr>
+<tr><td>+ count</td><td>Integer</td><td>Number of results</td></tr>
+<tr><td>isolates</td><td>Array</td><td>Array of information about the isolates</td></tr>
+<tr><td>+ uid</td><td>String</td><td>Isolate UID</td></tr>
+<tr><td>+ name</td><td>String</td><td>Isolate Name</td></tr>
+<tr><td>+ node_uid</td><td>String</td><td>Node UID</td></tr>
+<tr><td>+ node_name</td><td>String</td><td>Node Name</td></tr>
+</tbody>
+</table>
+
+<ul>
+  <li>JSON Response Example : </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="nt">&quot;lastupdate&quot;</span><span class="p">:</span> <span class="mf">1411979225.65</span><span class="p">,</span>
+        <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;isolates&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;uid&quot;</span><span class="p">:</span> <span class="s2">&quot;50684926acb4387d0f007ced&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;webadmin-isolate&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;node_uid&quot;</span><span class="p">:</span> <span class="s2">&quot;41110b1d-b510-4e51-9945-a752da04a16d&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;node_name&quot;</span><span class="p">:</span> <span class="s2">&quot;central&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;uid&quot;</span><span class="p">:</span> <span class="s2">&quot;03ff839a-df24-4bdf-b734-9fac1c886c65&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;spellcheck-isolate&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;node_uid&quot;</span><span class="p">:</span> <span class="s2">&quot;41110b1d-b510-4e51-9945-a752da04a16d&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;node_name&quot;</span><span class="p">:</span> <span class="s2">&quot;central&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span></code></pre></div>
+
+<p><br /></p>
+
+<p><a name="APIV1-003"></a></p>
+
+<h4 id="apiv1-003--get-the-list-of-all-components">APIV1-003 : GET the list of all Components</h4>
+
+<ul>
+  <li>URL: <code>http://myhost:port/admin/api/v1/components</code></li>
+  <li>Supported request methods: <code>GET</code></li>
+  <li>Response format: <code>json</code></li>
+  <li>Requires authentication?: <code>not required</code></li>
+  <li>Response:</li>
+</ul>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+<thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>meta</td><td>Map</td><td>meta-information about the response</td></tr>
+<tr><td>+ code</td><td>Integer</td><td>Return code</td></tr>
+<tr><td>+ count</td><td>Integer</td><td>Number of results</td></tr>
+<tr><td>components</td><td>Array</td><td>Array of information about the components</td></tr>
+<tr><td>+ name</td><td>String</td><td>Component name</td></tr>
+<tr><td>+ factory</td><td>String</td><td>Component Factory</td></tr>
+<tr><td>+ language</td><td>String</td><td>Programming language</td></tr>
+<tr><td>+ isolate_uid</td><td>String</td><td>Isolate UID</td></tr>
+<tr><td>+ isolate_name</td><td>String</td><td>Isolate Name</td></tr>
+</tbody>
+</table>
+
+<ul>
+  <li>JSON Response Example : </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;components&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;spell_check_client&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;factory&quot;</span><span class="p">:</span> <span class="s2">&quot;spell_check_client_factory&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isolate_uid&quot;</span><span class="p">:</span> <span class="s2">&quot;03ff839a-df24-4bdf-b734-9fac1c886c65&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isolate_name&quot;</span><span class="p">:</span> <span class="s2">&quot;spellcheck-isolate&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;spell_dictionray_FR&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;factory&quot;</span><span class="p">:</span> <span class="s2">&quot;spell_dictionary_FR_factory&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isolate_uid&quot;</span><span class="p">:</span> <span class="s2">&quot;03ff839a-df24-4bdf-b734-9fac1c886c65&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isolate_name&quot;</span><span class="p">:</span> <span class="s2">&quot;spellcheck-isolate&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span></code></pre></div>
+
+<p><br /></p>
+
+<p><a name="APIV1-050"></a></p>
+
+<h4 id="apiv1-050--get-node-detail">APIV1-050 : GET Node detail</h4>
+
+<ul>
+  <li>URL: <code>http://myhost:port/admin/api/v1/nodes/56e5b100-c8a2-4bd8-a818-30edaf9a8fe9</code></li>
+  <li>Supported request methods: <code>GET</code></li>
+  <li>Response format: <code>json</code></li>
+  <li>Requires authentication?: <code>not required</code></li>
+  <li>Response:</li>
+</ul>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+<thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>meta</td><td>Map</td><td>meta-information about the response</td></tr>
+<tr><td>+ code</td><td>Integer</td><td>Return code</td></tr>
+<tr><td>+ node</td><td>String</td><td>Node UID</td></tr>
+<tr><td>node</td><td>Map</td><td>General informations about the wanted Node</td></tr>
+<tr><td>+ name</td><td>String</td><td>Node name</td></tr>
+<tr><td>+ nbr_isolates</td><td>Integer</td><td>Number of Isolates</td></tr>
+</tbody>
+</table>
+
+<ul>
+  <li>JSON Response Example : </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;41110b1d-b510-4e51-9945-a752da04a16d&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;central&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;nbr_isolates&quot;</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p><br /></p>
+
+<p><a name="APIV1-051"></a></p>
+
+<h4 id="apiv1-051--get-isolate-detail">APIV1-051 : GET Isolate detail</h4>
+
+<ul>
+  <li>URL: <code>http://myhost:port/admin/api/v1/isolates/50684926acb4387d0f007ced</code></li>
+  <li>Supported request methods: <code>GET</code></li>
+  <li>Response format: <code>json</code></li>
+  <li>Requires authentication?: <code>not required</code></li>
+  <li>Response:</li>
+</ul>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+<thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>meta</td><td>Map</td><td>meta-information about the response</td></tr>
+<tr><td>+ code</td><td>Integer</td><td>Return code</td></tr>
+<tr><td>+ isolate</td><td>String</td><td>Isolate UID</td></tr>
+<tr><td>isolate</td><td>Map</td><td>General informations about the wanted Node</td></tr>
+<tr><td>+ name</td><td>String</td><td>Isolate name</td></tr>
+<tr><td>+ type</td><td>String</td><td>Type of this isolate:<br /><ul><li>cohorte-isolate</li><li>app-dynamic-isolate</li></ul></td></tr>
+<tr><td>+ nbr_components</td><td>Integer</td><td>Number of components in this isolate</td></tr>
+<tr><td>+ node_uid</td><td>String</td><td>Isolate's Node UID</td></tr>
+<tr><td>+ node_name</td><td>String</td><td>Isolate's Node name</td></tr>
+</tbody>
+</table>
+
+<ul>
+  <li>JSON Response Example : </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;isolate&quot;</span><span class="p">:</span> <span class="s2">&quot;50684926acb4387d0f007ced&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;isolate&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;webadmin-isolate&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;cohorte-isolate&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;nbr_components&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="nt">&quot;node_uid&quot;</span><span class="p">:</span> <span class="s2">&quot;41110b1d-b510-4e51-9945-a752da04a16d&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;node_name&quot;</span><span class="p">:</span> <span class="s2">&quot;central&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p><br /></p>
+
+<p><a name="APIV1-052"></a></p>
+
+<h4 id="apiv1-052--get-component-detail">APIV1-052 : GET Component detail</h4>
+
+<ul>
+  <li>URL: <code>http://myhost:port/admin/api/v1/components/spell_check_client</code></li>
+  <li>Supported request methods: <code>GET</code></li>
+  <li>Response format: <code>json</code></li>
+  <li>Requires authentication?: <code>not required</code></li>
+  <li>Response:</li>
+</ul>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+<thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>meta</td><td>Map</td><td>meta-information about the response</td></tr>
+<tr><td>+ code</td><td>Integer</td><td>Return code</td></tr>
+<tr><td>+ component</td><td>String</td><td>Component name</td></tr>
+<tr><td>component</td><td>Map</td><td>General informations about the wanted Component</td></tr>
+<tr><td>+ factory</td><td>String</td><td>Component Factory name</td></tr>
+<tr><td>+ language</td><td>String</td><td>Programming language</td></tr>
+<tr><td>+ isolate_uid</td><td>String</td><td>Isolate UID</td></tr>
+<tr><td>+ isolate_name</td><td>String</td><td>Isolate name</td></tr>
+<tr><td>+ bundle_name</td><td>String</td><td>Bundle name</td></tr>
+<tr><td>+ bundle_version</td><td>String</td><td>Bundle version</td></tr>
+<tr><td>+ properties</td><td>Map</td><td>Component properties</td></tr>
+</tbody>
+</table>
+
+<ul>
+  <li>JSON Response Example : </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;component&quot;</span><span class="p">:</span> <span class="s2">&quot;spell_check_client&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;spell_check_client&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;factory&quot;</span><span class="p">:</span> <span class="s2">&quot;spell_check_client_factory&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;isolate_uid&quot;</span><span class="p">:</span> <span class="s2">&quot;03ff839a-df24-4bdf-b734-9fac1c886c65&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;isolate_name&quot;</span><span class="p">:</span> <span class="s2">&quot;spellcheck-isolate&quot;</span>
+        <span class="s2">&quot;bundle_name&quot;</span><span class="p">:</span> <span class="s2">&quot;spellchecker.spell_check&quot;</span>
+        <span class="s2">&quot;bundle_version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span>
+        <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+             <span class="nt">&quot;prop1&quot;</span><span class="p">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;prop2&quot;</span><span class="p">:</span> <span class="s2">&quot;value2&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p><br /></p>
+
+<p><a name="APIV1-100"></a></p>
+
+<h4 id="apiv1-100--get-isolates-of-one-particular-node">APIV1-100 : Get Isolates of one particular Node</h4>
+
+<ul>
+  <li>URL: <code>http://myhost:port/admin/api/v1/nodes/56e5b100-c8a2-4bd8-a818-30edaf9a8fe9/isolates</code></li>
+  <li>Supported request methods: <code>GET</code></li>
+  <li>Response format: <code>json</code></li>
+  <li>Requires authentication?: <code>not required</code></li>
+  <li>Response:</li>
+</ul>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+<thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>meta</td><td>Map</td><td>meta-information about the response</td></tr>
+<tr><td>+ code</td><td>Integer</td><td>Return code</td></tr>
+<tr><td>+ node</td><td>String</td><td>Node name</td></tr>
+<tr><td>+ count</td><td>Integer</td><td>Number of results</td></tr>
+<tr><td>isolates</td><td>Array</td><td>Array of isolates of the wanted Node</td></tr>
+<tr><td>+ uid</td><td>String</td><td>Isolate UID</td></tr>
+<tr><td>+ name</td><td>String</td><td>Isolate name</td></tr>
+</tbody>
+</table>
+
+<ul>
+  <li>JSON Response Example : </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;41110b1d-b510-4e51-9945-a752da04a16d&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;isolates&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;uid&quot;</span><span class="p">:</span> <span class="s2">&quot;50684926acb4387d0f007ced&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;webadmin-isolate&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;uid&quot;</span><span class="p">:</span> <span class="s2">&quot;03ff839a-df24-4bdf-b734-9fac1c886c65&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;spellcheck-isolate&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span></code></pre></div>
+
+<p><br /></p>
+
+<p><a name="APIV1-101"></a></p>
+
+<h4 id="apiv1-101--get-components-of-one-particular-isolate">APIV1-101 : Get Components of one particular Isolate</h4>
+
+<ul>
+  <li>URL: <code>http://myhost:port/admin/api/v1/isolates/50684926acb4387d0f007ced/components</code></li>
+  <li>Supported request methods: <code>GET</code></li>
+  <li>Response format: <code>json</code></li>
+  <li>Requires authentication?: <code>not required</code></li>
+  <li>Response:</li>
+</ul>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+<thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>meta</td><td>Map</td><td>meta-information about the response</td></tr>
+<tr><td>+ code</td><td>Integer</td><td>Return code</td></tr>
+<tr><td>+ isolate</td><td>String</td><td>Isolate UID</td></tr>
+<tr><td>+ count</td><td>Integer</td><td>Number of results</td></tr>
+<tr><td>components</td><td>Array</td><td>Array of components of the wanted Isolate</td></tr>
+<tr><td>+ name</td><td>String</td><td>Component name</td></tr>
+<tr><td>+ factory</td><td>String</td><td>Component Factory name</td></tr>
+<tr><td>+ language</td><td>String</td><td>Component implementation language</td></tr>
+</tbody>
+</table>
+
+<ul>
+  <li>JSON Response Example : </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;isolate&quot;</span><span class="p">:</span> <span class="s2">&quot;50684926acb4387d0f007ced&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;components&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;spell_dictionary_FR&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;factory&quot;</span><span class="p">:</span> <span class="s2">&quot;spell_dictionary_FR_factory&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;python&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;spell_check&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;factory&quot;</span><span class="p">:</span> <span class="s2">&quot;spell_check_factory&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;python&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;spell_client&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;factory&quot;</span><span class="p">:</span> <span class="s2">&quot;spell_client_factory&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;python&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span></code></pre></div>
+
+<p><a href="../../../">Home</a> &gt; <a href="../">Documentation</a></p>
+
+            <br/>
+            <br/>
+            <br/>
+            
+            <a href="../shell" class="btn float-left" title="Previous page"> Previous </a>
+            
+            
+            <a href="../ide" class="btn float-right" title="Next page"> Next </a>
+            
+            <hr/>
+            <br/>
+            <br/>
+                
+          </div>
+          <div class="sidebar">
+            <div class="sidebar-inner">
+              <div class="contents">Contents</div>
+              <div id="toc"></div>
+            </div>
+          </div>
+          <div style="clear:both"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="footer">
+	<div class="container">
+		<ul>
+			<li><h5>Documentation</h5></li>
+			<li><a href="/documentation/what-is-cohorte.html">What is COHORTE?</a></li>
+			<li><a href="/documentation/getting-started.html">Getting Started</a></li>
+			<li><a href="/documentation/tutorials.html">Tutorials</a></li>
+			<li><a href="/documentation/demonstrations.html">Demonstrations</a></li>
+			<li><a href="/documentation/publications.html">Articles & Publications</a></li>
+			<li><a href="/documentation/guide.html">Reference Guide</a></li>
+		</ul>
+		<ul>
+			<li><h5>Downloads</h5></li>
+			<li><a href="/download/">Stable Release</a></li>
+			<li><a href="/download/.html">Development Release</a></li>
+		</ul>
+		<ul>
+			<li><h5>Community</h5></li>
+			<li><a href="/community/index.html#mailing_lists">Mailing lists</a></li>
+			<li><a href="/community/index.html#github">GitHub</a></li>
+		</ul>
+		<ul>
+			<li><h5>COHORTE</h5></li>
+			<li><a href="/blog">Blog</a></li>
+			<li><a href="/news">News Archive</a></li>
+			<li><a href="/license.html">COHORTE License</a></li>
+		</ul>
+		</div>
+		<div class="container">
+		<div class="copyright">
+			<a style="float: left; margin-right: 8px;" href="http://isandlatech.com"><img src="/resources/images/isandlatech-logo-sm-carre.png" alt="isandlaTech logo" /></a>
+			<p style="float: left;"><br/>Copyright &copy; 2011-<span class="current-year"></span> isandla<i>Tech</i> S.A.R.L<br/>3 chemin du vieux chêne. 38240 Meylan, France</p>
+		</div>
+		<div class="cohorte-logo-footer">
+			<span style="font-size:70%; color:#aaa;"><a href="http://isandlatech.com">isandla<i>Tech</i></a> is the principal sponsor of </span><img src="/resources/images/cohorte-logo-footer.png" alt="COHORTE footer logo" />
+		</div>
+	</div> <!-- container -->
+</div> <!-- footer -->
+
+
+    <!-- jQuery -->
+    <script src="/resources/js/2/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/resources/js/2/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+    
+    <!-- table of contents JS -->
+    <script src="/resources/js/toc.js" type="text/javascript" ></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
+        function moveScroller() {
+          if ($(".sidebar").length == 0)
+            return;
+          var a = function() {
+            var topOfScroll = $(window).scrollTop();
+            var topOfSidebar = $(".sidebar").offset().top;
+            var sidebarInner = $(".sidebar-inner");
+            var bottomOfSidebarInner = $(".sidebar-inner").offset().top + $(".sidebar-inner").outerHeight();
+            var topOfFooter = $(".footer").offset().top - 10;
+            var footerHeight = $(".footer").outerHeight();
+            if (topOfScroll > topOfSidebar) {
+              if (bottomOfSidebarInner > topOfFooter) {
+                sidebarInner.css({position:"fixed",bottom:footerHeight,top:""});
+              } else {
+                sidebarInner.css({position:"fixed",top:"10px",bottom:""});
+              }
+            } else {
+              sidebarInner.css({position:"relative",top:""});
+            }
+          };
+          $(window).scroll(a);a()
+        }
+        moveScroller();
+      })
+    </script>
+    
+
+	<script src="/resources/js/2/cohorte.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+<h1>Documentation | IDE</h1>
+en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="isandlatech">
+    
+    <title>Documentation | IDE | Cohorte Project</title>
+
+    <link rel="icon" type="image/png" href="/resources/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="/resources/favicon.ico">
+
+    <!-- Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=fr" rel=
+    "stylesheet">
+    <link href=
+    "//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic"
+    rel="stylesheet">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/resources/css/cohorte.css" rel="stylesheet">
+
+    <!-- Syntax highlighter -->
+    <link rel="stylesheet" href="/resources/css/syntax.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="/resources/images/cohorte-logo.png"></img></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="/docs/1.x/">Documentation</a></li>
+		      <li><a href="/downloads/">Downloads</a></li>
+		      <li><a href="/community/">Community</a></li>
+		      <li><a href="/news">News</a></li>
+		      <!--li><a href="/contribute/">Contribute</a></li-->
+		      <li>
+		        <a href="http://github.com/isandlatech/" data-toggle="tooltip" data-placement="bottom" title="Source code"><img src="/resources/images/github-logo-black.png" alt="GitHub Logo" /></a>		        
+		      </li>  
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<ul class="nav">          
+        
+</ul>    
+
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+
+<div class="page-title-style">
+  <div class="container">
+    <h1 id="page-title">Documentation | IDE</h1>
+  </div>
+</div>
+
+
+<div class="page-container">
+  <div class="container" style="min-height: 540px;">
+    <div class="row">
+      <div class="span12">
+          <div class="main-page-column" style="width: 75%;">
+            
+            <p><a href="../../../">Home</a> &gt; <a href="../">Documentation</a></p>
+
+<h2 id="ide-configuration">IDE Configuration</h2>
+
+<ul>
+  <li>Eclipse (PyDev)</li>
+  <li>IntelliJ (PyCharm)</li>
+</ul>
+
+<p><a href="../../../">Home</a> &gt; <a href="../">Documentation</a></p>
+
+            <br/>
+            <br/>
+            <br/>
+            
+            <a href="../monitoring" class="btn float-left" title="Previous page"> Previous </a>
+            
+            
+            <a href="../" class="btn float-right" title="Next page"> Next </a>
+            
+            <hr/>
+            <br/>
+            <br/>
+                
+          </div>
+          <div class="sidebar">
+            <div class="sidebar-inner">
+              <div class="contents">Contents</div>
+              <div id="toc"></div>
+            </div>
+          </div>
+          <div style="clear:both"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="footer">
+	<div class="container">
+		<ul>
+			<li><h5>Documentation</h5></li>
+			<li><a href="/documentation/what-is-cohorte.html">What is COHORTE?</a></li>
+			<li><a href="/documentation/getting-started.html">Getting Started</a></li>
+			<li><a href="/documentation/tutorials.html">Tutorials</a></li>
+			<li><a href="/documentation/demonstrations.html">Demonstrations</a></li>
+			<li><a href="/documentation/publications.html">Articles & Publications</a></li>
+			<li><a href="/documentation/guide.html">Reference Guide</a></li>
+		</ul>
+		<ul>
+			<li><h5>Downloads</h5></li>
+			<li><a href="/download/">Stable Release</a></li>
+			<li><a href="/download/.html">Development Release</a></li>
+		</ul>
+		<ul>
+			<li><h5>Community</h5></li>
+			<li><a href="/community/index.html#mailing_lists">Mailing lists</a></li>
+			<li><a href="/community/index.html#github">GitHub</a></li>
+		</ul>
+		<ul>
+			<li><h5>COHORTE</h5></li>
+			<li><a href="/blog">Blog</a></li>
+			<li><a href="/news">News Archive</a></li>
+			<li><a href="/license.html">COHORTE License</a></li>
+		</ul>
+		</div>
+		<div class="container">
+		<div class="copyright">
+			<a style="float: left; margin-right: 8px;" href="http://isandlatech.com"><img src="/resources/images/isandlatech-logo-sm-carre.png" alt="isandlaTech logo" /></a>
+			<p style="float: left;"><br/>Copyright &copy; 2011-<span class="current-year"></span> isandla<i>Tech</i> S.A.R.L<br/>3 chemin du vieux chêne. 38240 Meylan, France</p>
+		</div>
+		<div class="cohorte-logo-footer">
+			<span style="font-size:70%; color:#aaa;"><a href="http://isandlatech.com">isandla<i>Tech</i></a> is the principal sponsor of </span><img src="/resources/images/cohorte-logo-footer.png" alt="COHORTE footer logo" />
+		</div>
+	</div> <!-- container -->
+</div> <!-- footer -->
+
+
+    <!-- jQuery -->
+    <script src="/resources/js/2/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/resources/js/2/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+    
+    <!-- table of contents JS -->
+    <script src="/resources/js/toc.js" type="text/javascript" ></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
+        function moveScroller() {
+          if ($(".sidebar").length == 0)
+            return;
+          var a = function() {
+            var topOfScroll = $(window).scrollTop();
+            var topOfSidebar = $(".sidebar").offset().top;
+            var sidebarInner = $(".sidebar-inner");
+            var bottomOfSidebarInner = $(".sidebar-inner").offset().top + $(".sidebar-inner").outerHeight();
+            var topOfFooter = $(".footer").offset().top - 10;
+            var footerHeight = $(".footer").outerHeight();
+            if (topOfScroll > topOfSidebar) {
+              if (bottomOfSidebarInner > topOfFooter) {
+                sidebarInner.css({position:"fixed",bottom:footerHeight,top:""});
+              } else {
+                sidebarInner.css({position:"fixed",top:"10px",bottom:""});
+              }
+            } else {
+              sidebarInner.css({position:"relative",top:""});
+            }
+          };
+          $(window).scroll(a);a()
+        }
+        moveScroller();
+      })
+    </script>
+    
+
+	<script src="/resources/js/2/cohorte.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+
+
+            <br/>
+            <br/>
+            <br/>
+            
+            
+            <hr/>
+            <br/>
+            <br/>
+                
+          </div>
+          <div class="sidebar">
+            <div class="sidebar-inner">
+              <div class="contents">Contents</div>
+              <div id="toc"></div>
+            </div>
+          </div>
+          <div style="clear:both"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="footer">
+	<div class="container">
+		<ul>
+			<li><h5>Documentation</h5></li>
+			<li><a href="/documentation/what-is-cohorte.html">What is COHORTE?</a></li>
+			<li><a href="/documentation/getting-started.html">Getting Started</a></li>
+			<li><a href="/documentation/tutorials.html">Tutorials</a></li>
+			<li><a href="/documentation/demonstrations.html">Demonstrations</a></li>
+			<li><a href="/documentation/publications.html">Articles & Publications</a></li>
+			<li><a href="/documentation/guide.html">Reference Guide</a></li>
+		</ul>
+		<ul>
+			<li><h5>Downloads</h5></li>
+			<li><a href="/download/">Stable Release</a></li>
+			<li><a href="/download/.html">Development Release</a></li>
+		</ul>
+		<ul>
+			<li><h5>Community</h5></li>
+			<li><a href="/community/index.html#mailing_lists">Mailing lists</a></li>
+			<li><a href="/community/index.html#github">GitHub</a></li>
+		</ul>
+		<ul>
+			<li><h5>COHORTE</h5></li>
+			<li><a href="/blog">Blog</a></li>
+			<li><a href="/news">News Archive</a></li>
+			<li><a href="/license.html">COHORTE License</a></li>
+		</ul>
+		</div>
+		<div class="container">
+		<div class="copyright">
+			<a style="float: left; margin-right: 8px;" href="http://isandlatech.com"><img src="/resources/images/isandlatech-logo-sm-carre.png" alt="isandlaTech logo" /></a>
+			<p style="float: left;"><br/>Copyright &copy; 2011-<span class="current-year"></span> isandla<i>Tech</i> S.A.R.L<br/>3 chemin du vieux chêne. 38240 Meylan, France</p>
+		</div>
+		<div class="cohorte-logo-footer">
+			<span style="font-size:70%; color:#aaa;"><a href="http://isandlatech.com">isandla<i>Tech</i></a> is the principal sponsor of </span><img src="/resources/images/cohorte-logo-footer.png" alt="COHORTE footer logo" />
+		</div>
+	</div> <!-- container -->
+</div> <!-- footer -->
+
+
+    <!-- jQuery -->
+    <script src="/resources/js/2/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/resources/js/2/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+    
+    <!-- table of contents JS -->
+    <script src="/resources/js/toc.js" type="text/javascript" ></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
+        function moveScroller() {
+          if ($(".sidebar").length == 0)
+            return;
+          var a = function() {
+            var topOfScroll = $(window).scrollTop();
+            var topOfSidebar = $(".sidebar").offset().top;
+            var sidebarInner = $(".sidebar-inner");
+            var bottomOfSidebarInner = $(".sidebar-inner").offset().top + $(".sidebar-inner").outerHeight();
+            var topOfFooter = $(".footer").offset().top - 10;
+            var footerHeight = $(".footer").outerHeight();
+            if (topOfScroll > topOfSidebar) {
+              if (bottomOfSidebarInner > topOfFooter) {
+                sidebarInner.css({position:"fixed",bottom:footerHeight,top:""});
+              } else {
+                sidebarInner.css({position:"fixed",top:"10px",bottom:""});
+              }
+            } else {
+              sidebarInner.css({position:"relative",top:""});
+            }
+          };
+          $(window).scroll(a);a()
+        }
+        moveScroller();
+      })
+    </script>
+    
+
+	<script src="/resources/js/2/cohorte.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+

@@ -1,11 +1,10 @@
 ---
-layout: page
+layout: docpage
 title: Reference Guide | Startup
+parent: Documentation
 previous_page: ../applications
 next_page: ../shell
 ---
-
-[Home](../../../) > [Documentation](../)
 
 ## Startup scripts
 
@@ -248,8 +247,3 @@ The following configuration files (located on `$COHORTE_HOME/conf` folder) are u
 		<td> <a href src="#">java-common-ui.js</a>     </td><td> Cohorte UI Admin </td>
 	</tr>
 </tbody></table>
-
-
-
-
-[Home](../../../) > [Documentation](../)

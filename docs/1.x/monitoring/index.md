@@ -1,21 +1,16 @@
 ---
-layout: page
+layout: docpage
 title: Documentation | Monitoring
+parent: Documentation
 previous_page: ../shell
 next_page: ../ide
 ---
-
-[Home](../../../) > [Documentation](../)
 
 ## Admin REST API v1
 
 ### Introduction
 
 In this document, we detail the ADMIN RESTful API v1 of COHORTE platform.
-
-
-
-
 
 ## Web Admin
 
@@ -451,10 +446,3 @@ It uses Admin REST API v1.
     ]
 }
 {% endhighlight %}
-
-
-
-
-
-
-[Home](../../../) > [Documentation](../)

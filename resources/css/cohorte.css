@@ -345,8 +345,8 @@ height: 490px;
   background: #777;  /* 002B36 */
   /*text-align: center;*/
   color: #fff;
-  padding-top: 20px;
-  margin-top: -50px;
+  padding-top: 0px;
+  margin-top: -40px;
 }
 
 .copyright {
@@ -430,7 +430,7 @@ height: 490px;
   padding-top: 80px;  
   padding-left: 20px;
   width: 100%;
-  height: 150px;
+  height: 170px;
   background-color: #F6F6F6; /* 72D0EB 5E697A */
 }
 
@@ -441,6 +441,13 @@ height: 490px;
   /*padding-bottom: 40px;*/
 }
 
+.page-bottom-style {
+  padding-top: 0px;  
+  padding-left: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  background-color: #ccc; /* 72D0EB 5E697A */
+}
 
 .main-page-column {
   position: relative;
@@ -462,7 +469,7 @@ height: 490px;
   margin-right: 0px;
   min-height: 540px;
   padding-bottom: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   /*padding-bottom:100%;*/
   /*margin-bottom:-100%;*/
   -moz-box-shadow:    3px 3px 0px rgba(0, 43, 54, 0.06); /*#50B8E1;*/

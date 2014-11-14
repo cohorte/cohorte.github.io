@@ -1,12 +1,10 @@
 ---
-layout: page
+layout: docpage
 title: Shell
+parent: Documentation
 previous_page: ../startup
 next_page: ../monitoring
 ---
-
-[Home](../../../) > [Documentation](../)
-
 
 ## Integrated shell commands
 
@@ -293,7 +291,3 @@ COHORTE has an integrated shell to allow users manipulate and monitor the system
 </td></tr>
 </tbody>
 </table>
-
-
-
-[Home](../../../) > [Documentation](../)

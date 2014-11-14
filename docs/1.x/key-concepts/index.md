@@ -1,12 +1,10 @@
 ---
-layout: page
+layout: docpage
 title: Key Concepts
+parent: Documentation
 previous_page: ../what-is-cohorte
 next_page: ../tutorials
 ---
-
-[Home](../../../) > [Documentation](../)
-
 
 ## Key Concepts of Cohorte 
 
@@ -50,5 +48,4 @@ The Composer is a special COHORTE Runtime Component responsible of instantiating
  * *Top Composer*: It loads the composition declarative description and computes the sets of components according to the node they must be instantiated on.
  * *Node Composer*: It calculates the different isolates that must be exist for the local set of components.
  * *Isolate Composer*: It uses framework-specific agents to request the instantiation of the components assigned to its isolate, and looks after their evolution.
-
 

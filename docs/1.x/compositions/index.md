@@ -1,11 +1,10 @@
 ---
-layout: page
+layout: docpage
 title: Reference Guide | Compositions
+parent: Documentation
 previous_page: ../components
 next_page: ../startup
 ---
-
-[Home](../../../) > [Documentation](../)
 
 ## Composition Specification
 
@@ -114,7 +113,3 @@ Obtained result :
   }
 }
 {% endhighlight %}
-
-
-
-[Home](../../../) > [Documentation](../)

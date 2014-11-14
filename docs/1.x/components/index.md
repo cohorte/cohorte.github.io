@@ -1,11 +1,10 @@
 ---
-layout: page
+layout: docpage
 title: Reference Guide | Components
+parent: Documentation
 previous_page: ../setup
 next_page: ../applications
 ---
-
-[Home](../../../) > [Documentation](../)
 
 ## Overview
 
@@ -124,6 +123,3 @@ Interoperability between Java and Python implementation?
 ### C, C# and C++ support
 
 Wrapping in iPOPO (Python) or iPOJO (Java) components
-
-
-[Home](../../../) > [Documentation](../)
