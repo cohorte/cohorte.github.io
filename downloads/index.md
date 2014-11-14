@@ -13,6 +13,7 @@ You found detailed installation instructions on [this page of the reference guid
 * Mac OS X : 
 * Linux : 
 * Windows :
+* Full Python :
 
 <div id="download_releases">
 </div>
@@ -21,6 +22,7 @@ You found detailed installation instructions on [this page of the reference guid
 
 * Mac OS X : [cohorte-1.0.0.pre1-macosx-distribution.tar.gz](http://forge.isandlatech.com/cohorte/downloads/1.x/cohorte-1.0.0.pre1-macosx-distribution.tar.gz)
 * Linux : [cohorte-1.0.0.pre1-linux-distribution.tar.gz](http://forge.isandlatech.com/cohorte/downloads/1.x/cohorte-1.0.0.pre1-linux-distribution.tar.gz)
+* Full Python : [cohorte-1.0.0.pre1-python-distribution.tar.gz](http://forge.isandlatech.com/cohorte/downloads/1.x/cohorte-1.0.0.pre1-python-distribution.tar.gz) 
 
 ## Night Builds
 
