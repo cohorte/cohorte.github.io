@@ -313,11 +313,9 @@ Work in progress..
 
 <script>
     function loadLatestSnapshots() {
-        $.getJSON( "http://cohorte.github.io/latest_demos_hello.json", function( data ) {            
-            frame1 = "<a class='btn' href='" + data["snapshots"]["hello-python-distribution"]["files"]["zip"] + "'>hello_components.zip</a>"
-            frame2 = "<a class='btn' href='" + data["snapshots"]["hello"]["files"]["jar"] + "'>hello_component_java.zip</a>"            
+        $.getJSON( "http://cohorte.github.io/latest_demos_hello.json", function( data ) {                                 
             $("#download_hello_demo_python_snapshot").attr("href", data["snapshots"]["hello-python-distribution"]["files"]["zip"])
-            $("#download_hello_demo_java_snapshot").attr("href", data["snapshots"]["hello-python-distribution"]["files"]["zip"])            
+            $("#download_hello_demo_java_snapshot").attr("href", data["snapshots"]["hello"]["files"]["jar"])            
         });
     }
     $(document).ready(function() {        
