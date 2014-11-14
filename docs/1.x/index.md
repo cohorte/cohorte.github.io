@@ -1,10 +1,10 @@
 ---
 layout: page-full-width
-title: Learn
+title: Documentation  - v.1.0
 ---
 
 
-## Getting started
+## Getting started tutorials
 
 <!--div class="container">
   <div class="row">
@@ -25,35 +25,39 @@ title: Learn
 
 Some resources to get started quickly:
 
-<div class="menu-choices">      
-      <a style="left: 0%;" class="menu-choice"
-      href="{{ site.baseurl }}/docs/1.x/what-is-cohorte">What is Cohorte?</a>
-      <a style="left: 20%;" class="menu-choice"
-      href="{{ site.baseurl }}/docs/1.x/key-concepts">Key Concepts</a>
-      <a style="left: 40%;" class="menu-choice"
-      href="{{ site.baseurl }}/docs/1.x/tutorials">Tutorials</a>
-</div>
+ * [Getting Started Tutorial](./tutorials/getting-started)
+    <br/>Install and run a COHORTE application in 10 munites.
+
+ * [Temper Tutorial](./tutorials/temper) 
+    <br/>Highlighting the multi-language and distribution features of COHORTE in a simple, yet functional temperature monitoring application.
+
+ * [Spellcheker Tutorial](./tutorials/spellchecker) 
+    <br/>An introductory tutorial for Java and Python developers. It highlights the Service-oriented Component-based approach of the COHORTE platform.
 
 ## Reference documentation
 
 Detailed documentation about every thing of COHORTE:
 
-<div class="menu-choices">  
-    <a style="left: 0%;" class="menu-choice menu-choice-setup"
+<div class="menu-choices">
+    <a style="left: 0%;" class="menu-choice menu-choice-cohorte"
+      href="{{ site.baseurl }}/docs/1.x/what-is-cohorte">What is Cohorte?</a>
+    <a style="left: 20%;" class="menu-choice menu-choice-concepts"
+      href="{{ site.baseurl }}/docs/1.x/key-concepts">Key Concepts</a>
+    <a style="left: 40%;" class="menu-choice menu-choice-setup"
       href="{{ site.baseurl }}/docs/1.x/setup">Setup</a>
-    <a style="left: 20%;" class="menu-choice menu-choice-component"
+    <a style="left: 60%;" class="menu-choice menu-choice-component"
       href="{{ site.baseurl }}/docs/1.x/components">Components</a>
-    <a style="left: 40%;" class="menu-choice menu-choice-application"
+    <a style="left: 80%;" class="menu-choice menu-choice-application"
       href="{{ site.baseurl }}/docs/1.x/applications">Applications</a> 
-    <a style="left: 60%;" class="menu-choice menu-choice-startup"
-      href="{{ site.baseurl }}/docs/1.x/startup">Startup</a>
-    <a style="left: 80%;" class="menu-choice menu-choice-shell"
-      href="{{ site.baseurl }}/docs/1.x/shell">Shell</a>
 </div>
 <div class="menu-choices">      
-      <a style="left: 0%;" class="menu-choice menu-choice-monitoring"
+      <a style="left: 0%;" class="menu-choice menu-choice-startup"
+      href="{{ site.baseurl }}/docs/1.x/startup">Startup</a>
+      <a style="left: 20%;" class="menu-choice menu-choice-shell"
+      href="{{ site.baseurl }}/docs/1.x/shell">Shell</a>
+      <a style="left: 40%;" class="menu-choice menu-choice-monitoring"
       href="{{ site.baseurl }}/docs/1.x/monitoring">Monitoring</a>
-      <a style="left: 20%;" class="menu-choice menu-choice-ide"
+      <a style="left: 60%;" class="menu-choice menu-choice-ide"
       href="{{ site.baseurl }}/docs/1.x/ide">IDE</a>      
 </div>
 

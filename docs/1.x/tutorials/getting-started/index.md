@@ -17,6 +17,8 @@ next_page: ../spellchecker
  The objective of this getting started tutorial is to get you familiar with the COHORTE concept as quickly as possible. There is no need to start coding at this step. You found other advanced tutorial in the [tutorials section of the documentation page]({{ site.baseurl }}/docs/1.x/tutorials).
  This getting started tutorial is divised in four steps:
 
+<hr/>
+
  * **[STEP 1](#step1)**: creating a simple application on one node, but two seperate isolates. 
  * **[STEP 2](#step2)**: using two distributed nodes to host the same application (without changing the components implementation code).
  * **[STEP 3](#step3)**: using a mixture of Java and Python components.
@@ -29,10 +31,10 @@ next_page: ../spellchecker
  * Open a new terminal and type the following command on your working directory:
 
  <pre>
-$ <b>cohorte-create-node</b> node1
+$ <b>cohorte-create-node</b> --node node1 --app tuto1
 </pre>
 
-This command will create a new directory named `node1` containing an executable `run` (which launches the created COHORTE node) and two folders `conf` (contains configuration files) and `repo` (contains components bundles).
+This command will create a new directory named `node1` containing an executable `run` (which launches the created COHORTE node) and two folders `conf` (contains configuration files) and `repo` (contains component bundles).
 
  * Download the bundle of this tutorial's components (no need to implement them in this getting started tutorial). 
 
@@ -58,9 +60,9 @@ The following picture depicts the web interface provided by the **hello_componen
 
 {% highlight json %}
 {
-	"name" : "default-application",
+	"name" : "tuto1",
 	"root" : {
-		"name" : "default-application-composition",
+		"name" : "tuto1-composition",
 		"components" : [ 
 			{
 				"name" : "HC",
@@ -83,8 +85,10 @@ The following picture depicts the web interface provided by the **hello_componen
  * **It's done!** all what's you need to do now is to start `node1` node as follow:
 
  <pre>
-$ ./<b>run</b> -t
+$ ./<b>run</b> --app-id tuto1-application --top-composer
 </pre>
+
+The `--app-id` argument is required for each COHORTE node. If you have more than one node (as we will see further), all the nodes should be started with the same application's identifier. The `--top-composer` option means that this node is executed as a Top Composer. The Top Composer is responsable for calculating the distribution of the application's components.
 
 You will notice some log outputs, when all is Ok, type the `load` command to start the application's composition:
 
