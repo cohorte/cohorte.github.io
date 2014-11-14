@@ -3,23 +3,23 @@
   "snapshots": {
     "cohorte-base-distribution": {
       "files": {
-        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141112.081040-111-base-distribution.zip"
+        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141114.175750-121-base-distribution.zip"
       },
-      "version": "1.0.0-20141112.081040-111"
+      "version": "1.0.0-20141114.175750-121"
     },
     "cohorte-linux-distribution": {
       "files": {
-        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141111.235330-110-linux-distribution.tar.gz",
-        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141111.235330-110-linux-distribution.zip"
+        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141114.175750-121-linux-distribution.tar.gz",
+        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141114.175750-121-linux-distribution.zip"
       },
-      "version": "1.0.0-20141111.235330-110"
+      "version": "1.0.0-20141114.175750-121"
     },
     "cohorte-macosx-distribution": {
       "files": {
-        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141112.081040-111-macosx-distribution.tar.gz",
-        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141112.081040-111-macosx-distribution.zip"
+        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141114.015623-119-macosx-distribution.tar.gz",
+        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141114.015623-119-macosx-distribution.zip"
       },
-      "version": "1.0.0-20141112.081040-111"
+      "version": "1.0.0-20141114.015623-119"
     },
     "cohorte-minimal-base-distribution": {
       "files": {
@@ -37,10 +37,10 @@
     },
     "cohorte-python-distribution": {
       "files": {
-        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141111.234427-109-python-distribution.tar.gz",
-        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141111.234427-109-python-distribution.zip"
+        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141114.175403-120-python-distribution.tar.gz",
+        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20141113.234415-117-python-distribution.zip"
       },
-      "version": "1.0.0-20141111.234427-109"
+      "version": "1.0.0-20141114.175403-120"
     }
   }
 }
