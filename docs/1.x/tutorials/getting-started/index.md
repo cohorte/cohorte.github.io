@@ -45,11 +45,8 @@ This command will create a new directory named `node1` containing an executable 
 
  * Download the first bundle of this tutorial (no need to implement them in this getting started tutorial). 
 
-<a href="#" class="btn btn-success">Download Hello Python Bundle</a>
+<a id="download_hello_demo_python_snapshot" href="#" class="btn btn-success">Download Hello Python Bundle</a>
 
-<p>
-<div id="download_hello_demo_python_snapshot"></div> 
-</p>
 
  * Put the extracted `hello` directory into `node1/repo` directory.  
    * The `hello` package contains four components (implemented in Python):   
@@ -273,8 +270,9 @@ Work in progress..
         $.getJSON( "http://cohorte.github.io/latest_demos_hello.json", function( data ) {            
             frame1 = "<a class='btn' href='" + data["snapshots"]["hello-python-distribution"]["files"]["zip"] + "'>hello_components.zip</a>"
             frame2 = "<a class='btn' href='" + data["snapshots"]["hello"]["files"]["jar"] + "'>hello_component_java.zip</a>"            
-            $('#download_hello_demo_python_snapshot').html(frame1);
-            $('#download_hello_demo_java_snapshot').html(frame2);
+            $("#download_hello_demo_python_snapshot").attr("href", data["snapshots"]["hello-python-distribution"]["files"]["zip"])
+            //$('#download_hello_demo_python_snapshot').html(frame1);
+            //$('#download_hello_demo_java_snapshot').html(frame2);
         });
     }
     $(document).ready(function() {        
