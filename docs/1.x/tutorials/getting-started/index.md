@@ -40,7 +40,7 @@ Hello components (implementing the **HELLO Service**) can be implemented using d
  * Open a new terminal and type the following command on your working directory:
 
  <pre>
-$ <b>cohorte-create-node</b> --node node1 --app tuto1
+$ <b>cohorte-create-node</b> --node node1 --app step1
 </pre>
 
 This command will create a new directory named `node1` containing an executable `run` (which launches the created COHORTE node) and two folders `conf` (containing configuration files) and `repo` (where user bundles should be placed).
@@ -64,13 +64,13 @@ This command will create a new directory named `node1` containing an executable 
 
 ![Step 1](getting-started-img-1.png)
 
- * In order to have this deployment plan, you should edit the `node1/conf/autorun_conf.js` to specify the set of components that will be instantiated on each isolate.
+ * In order to have this deployment plan, you should edit the `node1/conf/composition.js` to specify the set of components that will be instantiated on each isolate.
 
 {% highlight json %}
 {
-	"name" : "tuto1",
+	"name" : "step1",
 	"root" : {
-		"name" : "tuto1-composition",
+		"name" : "step1-composition",
 		"components" : [ 
 			{
 				"name" : "HC",
@@ -97,15 +97,6 @@ $ ./<b>run</b> --app-id tuto1-application --top-composer
 </pre>
 
 The `--app-id` argument is required for each COHORTE node. If you have more than one node (as we will see further), all the nodes should be started with the same application's identifier. The `--top-composer` option means that this node is executed as a Top Composer. The Top Composer is responsable for calculating the distribution of the application's components.
-
-You will notice some log outputs, when all is Ok, type the `load` command to start the application's composition:
-
- <pre>
-$ <b>load</b>
-<div style="font-size:70%">
-Started composition: default-application -> b764f5eb-812c-4a2a-83f8-b3effa1e86ce
-</div>
-</pre>
 
  * To test your application, you need to know on which http port the `web` isolate is listening (as the HC component publish its web page using the same HTTP server as its isolate container). Type the `http` command to have this information.
 
@@ -135,7 +126,7 @@ You can fix the http port to use for your application using configuration files 
 
 <hr/>
 
-### <a name="step2">Step 2
+### <a name="step2">STEP 2
 
 In this second step, we will distribute our components among two nodes (which can be physically distributed on a local network area - or via Internet using an XMPP server).
 
@@ -157,7 +148,7 @@ $ <b>cohorte-create-node</b> node2 hello-application-step2
 
 
  * Copy `hello` package used in the first step into the `repo directories of the two newly created nodes (you can also make symbolic links to avoid having two copies if your nodes are on the same machine).
- * Update `autorun_conf.js` file located on `node1/conf` as follow:
+ * Update `composition.js` file located on `node1/conf` as follow:
 
 {% highlight json %}
 {
@@ -195,7 +186,7 @@ The C component is specified to be in another isolate named "components2", not "
 </p>
 </div>
 
-*  Remove the generated `autorun_conf.js` file located on `node2/conf`. Indeed, `node1` will be considered as **Top Composer**, it will controls the application's composition in all the participating nodes.
+*  Remove the generated `composition.js` file located on `node2/conf`. Indeed, `node1` will be considered as **Top Composer**, it will controls the application's composition in all the participating nodes.
 
 * Go to `node1` directory and start it as a **Top Composer**:
 
@@ -218,7 +209,7 @@ Notice that we have started this node without the `-t` option. It is not a *Top 
 
 <hr/>
 
-### <a name="step3">Step 3
+### <a name="step3">STEP 3
 
 All the components used until now are implemented in Python (using [iPOPO component-based framework]({{ site.baseurl }}/docs/1.x/components)). We will extend our application by introducing a new component that implements the HELLO service in Java (component_D). 
 
@@ -230,7 +221,7 @@ All the components used until now are implemented in Python (using [iPOPO compon
 </p>
 
  * Put the extracted `jar` file into the `repo` folder of `node2` node. 
- * Update the `autorun_conf.js` file located on `node1/conf` to add this new component D. It should be instantiated on `node2`.
+ * Update the `composition.js` file located on `node1/conf` to add this new component D. It should be instantiated on `node2`.
 
 {% highlight json %}
 {
@@ -275,7 +266,7 @@ All the components used until now are implemented in Python (using [iPOPO compon
 
 <hr/>
 
-### <a name="step4">Step 4
+### <a name="step4">STEP 4
 
 crash-test! 
 Work in progress.. 

@@ -25,13 +25,13 @@ title: Documentation  - v.1.0
 
 Some resources to get started quickly:
 
- * [Getting Started Tutorial](./tutorials/getting-started)
+ * [**Getting Started Tutorial**](./tutorials/getting-started)
     <br/>Install and run a COHORTE application in 10 minutes.
 
- * [Temper Tutorial](./tutorials/temper) 
+ * [**Temper Tutorial**](./tutorials/temper) 
     <br/>Highlighting the multi-language and distribution features of COHORTE in a simple, yet functional temperature monitoring application.
 
- * [Spellcheker Tutorial](./tutorials/spellchecker) 
+ * [**Spellcheker Tutorial**](./tutorials/spellchecker) 
     <br/>An introductory tutorial for Java and Python developers. It highlights the Service-oriented Component-based approach of the COHORTE platform.
 
 ## Reference documentation

@@ -19,7 +19,9 @@ In this document, we detail the ADMIN RESTful API v1 of COHORTE platform.
 
 ## Web Admin
 
+
 ![SpellChecker Application](cohorte-webadmin.png)
+
 
 It uses Admin REST API v1.
 
