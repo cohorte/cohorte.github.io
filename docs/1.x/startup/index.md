@@ -37,7 +37,7 @@ This command has the following options :
 <pre>
   -h, --help            show this help message and exit
 
-  -n NODE_NAME, --node NODE_NAME
+  -n NODE_NAME, --name NODE_NAME
                         Name of the node
   -a APP_NAME, --app-name APP_NAME
                         application's symbolic name

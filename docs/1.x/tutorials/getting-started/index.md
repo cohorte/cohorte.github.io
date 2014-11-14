@@ -19,9 +19,6 @@ The following picture depicts the architecture of the to be developed applicatio
 
 Hello components (implementing the **HELLO Service**) can be implemented using different programming languages (*Java* and *Python*) and can be placed in different remote nodes. Developers have not to worry about this details. COHORTE manages to have all the application components interacts as they where in one place (Using [Remote Services]({{ site.baseurl }}/docs/1.x/components)). 
 
- * In this first step of the tutorial, we want to instantiate only the components **HC** (hello_components), **A** (component_A) and **B** (component_B). In addition, we want to seperate between HC component and the other components providing the HELLO service (which can contain third-party code). COHORTE supports this separation by using **Isolates**. Isolates are a seperate process with all the needed runtime infrastructure allowing the execution of the managed components.
- <br/><br/>The following picture depicts the desired resilient architecture. If one of the components providing the HELLO service fails, there will be no impact on the HC component! 
-
 <hr/>
 
  * **[STEP 1](#step1)**: creating a simple application on one node, but two seperate isolates. 
@@ -33,37 +30,49 @@ Hello components (implementing the **HELLO Service**) can be implemented using d
 
 ## <a name="step1"></a>STEP 1
 
+ In this first step of the tutorial, we want to instantiate only the components **HC** (hello_components), **A** (component_A) and **B** (component_B). In addition, we want to seperate between HC component and the other components providing the HELLO service (which can contain third-party code). COHORTE supports this separation by using **Isolates**. Isolates are a seperate process with all the needed runtime infrastructure allowing the execution of the managed components.
+
+ The following picture depicts the desired resilient architecture. If one of the components providing the HELLO service fails, there will be no impact on the HC component! 
+
+![Step 1](getting-started-img-1.png)
+
+### Preparing the execution node
+
  * Open a new terminal and type the following command on your working directory:
 
- <pre>
-$ <b>cohorte-create-node</b> --node node1 --app step1
+<pre>
+$ <b>cohorte-create-node</b> --node node1 --app-name getting-started
 </pre>
 
 This command will create a new directory named `node1` containing an executable `run` (which launches the created COHORTE node) and two folders `conf` (containing configuration files) and `repo` (where user bundles should be placed).
 
 ![Created node](getting-started-img-5.png)
 
- * Download the first bundle of this tutorial (no need to implement them in this getting started tutorial). 
+ * Download the first bundle of this tutorial (no need to implement the components in this getting started tutorial, they are already prepared for you)
+ * Put the extracted `hello` directory into `node1/repo`. 
 
 <a id="download_hello_demo_python_snapshot" href="#" class="btn btn-success">Download Hello Python Bundle</a>
 
+<div class="note">
+<span class="note-title">Information</span>
+<p class="note-content">
+The `hello` package contains four components (implemented in Python): <br/>
+<ul>
+  <li> <b>component_A</b>, <b>component_B</b>, and <b>component_C</b>: these components implements the HELLO service which has only one method <code>say_hello</code>. </li>
+  <li> <b>hello_components</b>: this component provides a web interface on which the list of discovered components implementing the HELLO service are listed (we show the message returned by each component when calling their <code>say_hello</code> method).</li>
+</ul>
+</p>
+</div>
 
- * Put the extracted `hello` directory into `node1/repo` directory.  
-   * The `hello` package contains four components (implemented in Python):   
-     * **component_A**, **component_B**, and **component_C**: these components implements the HELLO service which has only one method `say_hello`. 
-     * **hello_components**: this component provides a web interface on which the list of discovered components implementing the HELLO service are listed (we show the message returned by each component when calling their `say_hello` method).
+### Preparing the deployment plan (composition)
 
-
-
-![Step 1](getting-started-img-1.png)
-
- * In order to have this deployment plan, you should edit the `node1/conf/composition.js` to specify the set of components that will be instantiated on each isolate.
+In order to have this deployment plan corresponding to the resilient architecture detailed before, you should edit the `node1/conf/composition.js` file to specify the set of components that will be instantiated on each isolate.
 
 {% highlight json %}
 {
-	"name" : "step1",
+	"name" : "getting-started",
 	"root" : {
-		"name" : "step1-composition",
+		"name" : "getting-started-composition",
 		"components" : [ 
 			{
 				"name" : "HC",
@@ -83,19 +92,24 @@ This command will create a new directory named `node1` containing an executable 
 }
 {% endhighlight %}
 
- * **It's done!** all what's you need to do now is to start `node1` node as follow:
+**It's done!** all what's you need to do now is starting `node1` to launch your application.
 
+### Starting the node
+
+Change your working directory to `node1` and type : 
  <pre>
-$ ./<b>run</b> --app-id tuto1-application --top-composer
+$ ./<b>run</b> --app-id getting-started-app-id --top-composer true
 </pre>
 
-The `--app-id` argument is required for each COHORTE node. If you have more than one node (as we will see further), all the nodes should be started with the same application's identifier. The `--top-composer` option means that this node is executed as a Top Composer. The Top Composer is responsable for calculating the distribution of the application's components.
+The `--app-id` argument is required for each COHORTE node. If you have more than one node (as we will see further), all the nodes should be started with the same application's identifier. The `--top-composer` option is set to true which means that this node is executed as a Top Composer. The Top Composer is responsable for calculating the distribution of the application components.
 
- * To test your application, you need to know on which http port the `web` isolate is listening (as the HC component publish its web page using the same HTTP server as its isolate container). Type the `http` command to have this information.
+### Testing our Hello Components application
+
+To test your application, you need to know on which http port the `web` isolate is listening (as the HC component publish its web page using the same HTTP server as its isolate container). Type the `http` command to have this information.
 
 <pre>
 $ <b>http</b>
-<div style="font-size:70%">
+<div style="font-size:84%">
 +------------+--------------------------------------+-----------+--------------------------------------+-------+
 |    Name    |                 UID                  | Node Name |               Node UID               | HTTP  |
 +============+======================================+===========+======================================+=======+
@@ -115,7 +129,7 @@ You can fix the http port to use for your application using configuration files 
 </p>
 </div>
 
- * To stop COHORTE, type the `quit` command on the terminal.
+To stop COHORTE, type `quit` command on the terminal.
 
 <hr/>
 
@@ -123,31 +137,40 @@ You can fix the http port to use for your application using configuration files 
 
 In this second step, we will distribute our components among two nodes (which can be physically distributed on a local network area - or via Internet using an XMPP server).
 
- * Lets have the same architecture as the first step, and we add a new instance of component_C that should be deployed on a second node. 
+In this step, we will add a new instance of component_C that should be deployed on a second node (component_C implementation code is already provided on the downloaded Hello Python Bundle). 
 
  Here is the new depoyment configuration for this case. 
 
 ![Step 2](getting-started-img-2.png)
 
-COHORTE will instantiate the HC, A, and B components on Top Composer node. The component C is instantiate on each other node having the name "node2". This node can be located on another machine than the one executing the Top Composer.
+### Preparing the second execution node
 
-In order to discover the nodes belonging to the same application, all the nodes should have the same *application-ID*. The following commands creates two nodes (node1 and node2) with the same *application-ID* `hello-application-step2`:
+Start first by creating a second COHORTE node named `node2` at the parent level.
 
- <pre>
-$ <b>cohorte-create-node</b> node1 hello-application-step2
-$ <b>cohorte-create-node</b> node2 hello-application-step2
+<pre>
+$ <b>cohorte-create-node</b> --node node2
 </pre>
 
+Then, copy the same *hello bundle* located on `node1/repo` into `node2/repo` directory.
 
+<div class="note">
+<span class="note-title">Note</span>
+<p class="note-content">
+In future versions, you will not copy your bundles manually into the <i>repo</i> directory of the participating nodes. This will be done automatically using an internal <i>provisioning</i> module. 
+</p>
+</div>
 
- * Copy `hello` package used in the first step into the `repo directories of the two newly created nodes (you can also make symbolic links to avoid having two copies if your nodes are on the same machine).
- * Update `composition.js` file located on `node1/conf` as follow:
+We will then update our *composition* file to fit this new situation.
+
+### Updating the composition file
+
+Ensure to have stopped the previous execution and update the `composition.js` file located on `node1/conf` as follow : 
 
 {% highlight json %}
 {
-	"name" : "hello-application-step2",
+	"name" : "getting-started",
 	"root" : {
-		"name" : "hello-application-step2-composition",
+		"name" : "getting-started-composition",
 		"components" : [ 
 			{
 				"name" : "HC",
@@ -179,26 +202,23 @@ The C component is specified to be in another isolate named "components2", not "
 </p>
 </div>
 
-*  Remove the generated `composition.js` file located on `node2/conf`. Indeed, `node1` will be considered as **Top Composer**, it will controls the application's composition in all the participating nodes.
+**It's done!** all what's you need to do now is starting `node1` as Top composer and `node2` as simple node (also called Node Composer). 
 
-* Go to `node1` directory and start it as a **Top Composer**:
-
-<pre>
-node1$ ./<b>run</b> -t
-</pre>
-
-* When started, type `load` command to start the application's composition (instantiation). 
-* You can test this first part of the application as your `hello_components` component is instantiated in this node (*web isolates*). Follow the same steps as in the first part of this tutorial to find the http port and to launch the web interface. You notice that there is only two components A and B. This is because C component is specified to be instantiated on `node2` which is not yet started.
-
-* In a separate terminal, start `node2` with a different *http* and *remote shell* ports (to avoid conflict with the first node - as they are hosted on the same physical machine):
+### Starting the nodes
 
 <pre>
-node2$ ./<b>run</b> 9000 9001
+node1$ ./<b>run</b> --app-id getting-started-app-id --top-composer true
 </pre>
 
-Notice that we have started this node without the `-t` option. It is not a *Top Composer*, but just a participating node.
+You can test this first part of the application as your `hello_components` component is instantiated in this node (*web isolates*). Follow the same steps as in the first part of this tutorial to find the http port and to launch the web interface. You notice that there is only two components A and B. This is because C component is specified to be instantiated on `node2` which is not yet started.
 
-* Refresh the web interface of `hello_components` component. You will notice that the C component is detected and used by the HC component even it was deployed in a seperate remote node.
+In a separate terminal, start `node2` as follow :
+
+<pre>
+node2$ ./<b>run</b> --app-id getting-started-app-id
+</pre>
+
+Refresh the web interface of `hello_components` component. You will notice that the C component is detected and used by the HC component even it was deployed in a separate remote node.
 
 <hr/>
 
@@ -209,18 +229,18 @@ All the components used until now are implemented in Python (using [iPOPO compon
  * Stop the running nodes of the previous step (use the command `quit`).
  * Donwload the bundle (jar file) containing the implementation of the D component.
 
-<p>
-<div id="download_hello_demo_java_snapshot"></div> 
-</p>
+<a id="download_hello_demo_java_snapshot" href="#" class="btn btn-success">Download Hello Java Bundle</a>
 
- * Put the extracted `jar` file into the `repo` folder of `node2` node. 
+<br/>
+
+ * Put the extracted `jar` file into `node2/repo` directory. 
  * Update the `composition.js` file located on `node1/conf` to add this new component D. It should be instantiated on `node2`.
 
 {% highlight json %}
 {
-	"name" : "hello-application-step2",
+	"name" : "getting-started",
 	"root" : {
-		"name" : "hello-application-step2-composition",
+		"name" : "getting-started-composition",
 		"components" : [ 
 			{
 				"name" : "HC",
@@ -250,12 +270,38 @@ All the components used until now are implemented in Python (using [iPOPO compon
 }
 {% endhighlight %}
 
+### Starting the nodes
+
+Start the first node with one more argument `--web-admin` in order to visualize the global application's architecture using the *Web Admin* utility.
+
+<pre>
+node1$ ./<b>run</b> --app-id getting-started-app-id --top-composer true --web-admin 9000
+</pre>
+
+Start the second node as done before :
+
+<pre>
+node2$ ./<b>run</b> --app-id getting-started-app-id
+</pre>
+
+### Monitoring the application
+
+Type `http` command in `node1`'s terminal and get the *http* port of the *web* isolate. Then test your application in web browser as done before. You will get something like that :
+
+IMAGE
+
+In order to see the runtime architecture of your application, open a new tab in your browser and hit the following address : `http://localhost:9000/admin`
+
+The *Web Admin* utility is opened. You notice the following architecture : 
+
+IMAGE
+
+This correspond to this deployment plan :
+
 ![Step 2](getting-started-img-4.png)
 
- * As you notice, components C and D should be deployed on two sperate isolates (*components2* and *components3*) as are implemented in two different languages.
+As you notice, components C and D should be deployed on two sperate isolates (*components2* and *components3*) as are implemented in two different languages.
 
- * start the two nodes as explained in the previous step (*node1* as *Top Composer* and *node2* as a simple node with different http and remote shell ports).
- * Test the web interface. You will find that the **D** component which is implemented in Java is also used by the **HC** component, implemented in Python. 
 
 <hr/>
 
@@ -271,8 +317,7 @@ Work in progress..
             frame1 = "<a class='btn' href='" + data["snapshots"]["hello-python-distribution"]["files"]["zip"] + "'>hello_components.zip</a>"
             frame2 = "<a class='btn' href='" + data["snapshots"]["hello"]["files"]["jar"] + "'>hello_component_java.zip</a>"            
             $("#download_hello_demo_python_snapshot").attr("href", data["snapshots"]["hello-python-distribution"]["files"]["zip"])
-            //$('#download_hello_demo_python_snapshot').html(frame1);
-            //$('#download_hello_demo_java_snapshot').html(frame2);
+            $("#download_hello_demo_java_snapshot").attr("href", data["snapshots"]["hello-python-distribution"]["files"]["zip"])            
         });
     }
     $(document).ready(function() {        
