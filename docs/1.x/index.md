@@ -36,11 +36,6 @@ Some resources to get started quickly:
 
 ## Reference documentation
 
-You can download the full reference documentation as a [ ![PDF]({{ site.baseurl }}/resources/images/pdf.png) PDF](refdoc.html) file or read it in one [ ![PDF]({{ site.baseurl }}/resources/images/html.png) HTML](refdoc.html) file.
-
-<br/>
-<hr/>
-
 <div class="menu-choices">
     <a style="left: -10%;" class="menu-choice menu-choice-cohorte"
       href="{{ site.baseurl }}/docs/1.x/what-is-cohorte">What is Cohorte?</a>
@@ -66,7 +61,7 @@ You can download the full reference documentation as a [ ![PDF]({{ site.baseurl 
       href="{{ site.baseurl }}/docs/1.x/ide">IDE</a>  
 </div>
 
-<hr/>
+You can download the full reference documentation as a [ ![PDF]({{ site.baseurl }}/resources/images/pdf.png) PDF](refdoc.html) file or read it in one [ ![PDF]({{ site.baseurl }}/resources/images/html.png) HTML](refdoc.html) file.
 
 ## Other resources
 
