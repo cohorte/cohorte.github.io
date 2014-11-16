@@ -122,13 +122,6 @@ $ <b>http</b>
 
 In this case, its `63609`. Launch a web browser with this address to start the web interface: `http://localhost:63609/hello`.
 
-<div class="note">
-<span class="note-title">Note</span>
-<p class="note-content">
-You can fix the http port to use for your application using configuration files (see <a href="{{ site.baseurl }}/docs/1.x/startup">startup section of the documentation page</a>).
-</p>
-</div>
-
 To stop COHORTE, type `quit` command on the terminal.
 
 <hr/>
@@ -207,7 +200,7 @@ The C component is specified to be in another isolate named "components2", not "
 ### Starting the nodes
 
 <pre>
-node1$ ./<b>run</b> --app-id getting-started-app-id --top-composer true
+node1$ ./<b>run</b> --app-id <span style="color:green">getting-started-app-id</span> --top-composer true
 </pre>
 
 You can test this first part of the application as your `hello_components` component is instantiated in this node (*web isolates*). Follow the same steps as in the first part of this tutorial to find the http port and to launch the web interface. You notice that there is only two components A and B. This is because C component is specified to be instantiated on `node2` which is not yet started.
@@ -215,7 +208,7 @@ You can test this first part of the application as your `hello_components` compo
 In a separate terminal, start `node2` as follow :
 
 <pre>
-node2$ ./<b>run</b> --app-id getting-started-app-id
+node2$ ./<b>run</b> --app-id <span style="color:green">getting-started-app-id</span>
 </pre>
 
 Refresh the web interface of `hello_components` component. You will notice that the C component is detected and used by the HC component even it was deployed in a separate remote node.
@@ -275,13 +268,13 @@ All the components used until now are implemented in Python (using [iPOPO compon
 Start the first node with one more argument `--web-admin` in order to visualize the global application's architecture using the *Web Admin* utility.
 
 <pre>
-node1$ ./<b>run</b> --app-id getting-started-app-id --top-composer true --web-admin 9000
+node1$ ./<b>run</b> --app-id <span style="color:green">getting-started-app-id</span> --top-composer true <span style="color:red">--web-admin 9000</span>
 </pre>
 
 Start the second node as done before :
 
 <pre>
-node2$ ./<b>run</b> --app-id getting-started-app-id
+node2$ ./<b>run</b> --app-id <span style="color:green">getting-started-app-id</span>
 </pre>
 
 ### Monitoring the application
