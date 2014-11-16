@@ -57,23 +57,16 @@
     <script type="text/javascript">
       $(document).ready(function(){
     
-        var level = 3;
+        var toc_exclude = 'h1, h5, h6';
         var toc_numerate = false
-        {% if page.toc_level %}
-        level = {{ page.toc_level }};
+        {% if page.toc_exclude %}
+        toc_exclude = '{{ page.toc_exclude }}';
         {% endif %}
         {% if page.toc_numerate %}
-        toc_numerate = {{ page.toc_numerate }};
+        level = {{ page.toc_numerate }};
         {% endif %}
-        if (level == null) level = 3;
-        if (level == '1')
-          $('#toc').toc({exclude: 'h1, h3, h4, h5, h6', context: '', autoId: true, numerate: toc_numerate});
-        else if (level == '2')
-          $('#toc').toc({exclude: 'h1, h4, h5, h6', context: '', autoId: true, numerate: toc_numerate});
-        else if (level == '3')
-          $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: toc_numerate});
-        else
-          $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: toc_numerate});
+        
+        $('#toc').toc({exclude: toc_exclude, context: '', autoId: true, numerate: toc_numerate});
         
         function moveScroller() {
           if ($(".sidebar").length == 0)

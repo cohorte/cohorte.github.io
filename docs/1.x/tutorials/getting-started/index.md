@@ -3,7 +3,7 @@ layout: docpage
 title: Getting started tutorial
 comments: false
 toc: true
-toc_level: 1
+toc_exclude: h1, h3, h4, h5
 toc_numerate: false
 previous_page: ../
 next_page: ../spellchecker
