@@ -62,8 +62,10 @@ layout: default
           </div>
           <div class="sidebar">
             <div class="sidebar-inner">
+              {% if page.toc %}
               <div class="contents">Contents</div>
               <div id="toc"></div>
+              {% endif %}
             </div>
           </div>
           <div style="clear:both"></div>
@@ -81,7 +83,6 @@ layout: default
   </div>
 </div>
 {% endif %}
-
 
 
 {% include page_footer.html %}

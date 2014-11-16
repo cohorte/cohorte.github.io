@@ -56,8 +56,10 @@ layout: default
           </div>
           <div class="sidebar">
             <div class="sidebar-inner">
+              {% if page.toc %}
               <div class="contents">Contents</div>
               <div id="toc"></div>
+              {% endif %}
             </div>
           </div>
           <div style="clear:both"></div>

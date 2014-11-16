@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: docpage
 title: Downloads
 comments: false
 ---

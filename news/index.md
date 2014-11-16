@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: docpage
 title: News
 ---
 

@@ -1,7 +1,9 @@
 ---
-layout: page
+layout: docpage
 title: Getting started tutorial
 comments: false
+toc: true
+toc_level: 1
 previous_page: ../
 next_page: ../spellchecker
 ---
