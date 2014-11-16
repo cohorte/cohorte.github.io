@@ -3381,23 +3381,16 @@ Cohorte components implements only business logic, all the distribution and depe
     <script type="text/javascript">
       $(document).ready(function(){
     
-        var level = 3;
+        var toc_exclude = 'h1, h5, h6';
         var toc_numerate = false
         
-        level = 1;
+        toc_exclude = 'h2, h3, h4, h5, h6';
         
         
-        toc_numerate = true;
+        level = true;
         
-        if (level == null) level = 3;
-        if (level == '1')
-          $('#toc').toc({exclude: 'h1, h3, h4, h5, h6', context: '', autoId: true, numerate: toc_numerate});
-        else if (level == '2')
-          $('#toc').toc({exclude: 'h1, h4, h5, h6', context: '', autoId: true, numerate: toc_numerate});
-        else if (level == '3')
-          $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: toc_numerate});
-        else
-          $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: toc_numerate});
+        
+        $('#toc').toc({exclude: toc_exclude, context: '', autoId: true, numerate: toc_numerate});
         
         function moveScroller() {
           if ($(".sidebar").length == 0)

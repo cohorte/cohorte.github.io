@@ -63,10 +63,10 @@
         toc_exclude = '{{ page.toc_exclude }}';
         {% endif %}
         {% if page.toc_numerate %}
-        level = {{ page.toc_numerate }};
+        toc_numerate = {{ page.toc_numerate }};
         {% endif %}
         
-        $('#toc').toc({exclude: toc_exclude, context: '', autoId: true, numerate: toc_numerate});
+        $('#toc').toc({exclude: toc_exclude, context: '#toc_magic', autoId: true, numerate: toc_numerate});
         
         function moveScroller() {
           if ($(".sidebar").length == 0)
