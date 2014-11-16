@@ -102,6 +102,10 @@ $(function () {
       <div class="span12">
           <div class="main-page-column" style="width: 75%;">
             
+            
+
+            <div id="docgen-start"></div>
+
             <h1>What is COHORTE?</h1>
 <html>
  <body>
@@ -3293,16 +3297,20 @@ Cohorte components implements only business logic, all the distribution and depe
  </body>
 </html>
 
-            <br/>
+
+            <div id="docgen-end"></div>
             
+            <br/>           
             
             
                 
           </div>
           <div class="sidebar">
             <div class="sidebar-inner">
+              
               <div class="contents">Contents</div>
               <div id="toc"></div>
+              
             </div>
           </div>
           <div style="clear:both"></div>
@@ -3310,8 +3318,6 @@ Cohorte components implements only business logic, all the distribution and depe
     </div>
   </div>
 </div>
-
-
 
 
 
@@ -3370,10 +3376,25 @@ Cohorte components implements only business logic, all the distribution and depe
 
     
     <!-- table of contents JS -->
+    
     <script src="/resources/js/toc.js" type="text/javascript" ></script>
     <script type="text/javascript">
       $(document).ready(function(){
-        $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
+    
+        var level = 3;
+        
+        level = 1;
+        
+        if (level == null) level = 3;
+        if (level == '1')
+          $('#toc').toc({exclude: 'h1, h3, h4, h5, h6', context: '', autoId: true, numerate: false});
+        else if (level == '2')
+          $('#toc').toc({exclude: 'h1, h4, h5, h6', context: '', autoId: true, numerate: false});
+        else if (level == '3')
+          $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
+        else
+          $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
+        
         function moveScroller() {
           if ($(".sidebar").length == 0)
             return;
@@ -3399,6 +3420,7 @@ Cohorte components implements only business logic, all the distribution and depe
         moveScroller();
       })
     </script>
+    
     
 
 	<script src="/resources/js/2/cohorte.js" type="text/javascript"></script>

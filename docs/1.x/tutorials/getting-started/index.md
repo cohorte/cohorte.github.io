@@ -4,6 +4,7 @@ title: Getting started tutorial
 comments: false
 toc: true
 toc_level: 1
+toc_numerate: false
 previous_page: ../
 next_page: ../spellchecker
 ---
