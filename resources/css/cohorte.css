@@ -187,11 +187,11 @@ height: 490px;
   position: absolute;
   z-index: 10;
 
-  left: 950px;    
+  left: auto;    
   right: auto;
   bottom: auto;    
   top: 170px;
-
+  padding-left: 550px;
   padding-top: 5px;
   padding-bottom: 30px;
 
