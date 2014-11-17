@@ -632,7 +632,7 @@ box-shadow: 0 1px 0 0 #444;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 24px 9999em 72px 20px;
+  padding: 24px 1em 72px 20px;
   padding-bottom: 50px;
   position: relative;
   margin-right: -9999em;
@@ -644,8 +644,12 @@ box-shadow: 0 1px 0 0 #444;
 
 .sidebar-inner {
   width: 320px;
-  padding: 30px;
+  padding: 15px;
   padding-top: 78px;
+}
+
+.sidebar-inner ul {
+  padding-left: 15px;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {

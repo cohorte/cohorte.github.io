@@ -1,18 +1,21 @@
 ---
 layout: docpage
-title: Reference Guide | Startup
+title: Startup scripts
 parent: Documentation
+toc: true
+toc_numerate: true
+toc_exclude: h1, h3, h4, h5, h6
 previous_page: ../applications
 next_page: ../shell
 ---
-
-## Startup scripts
 
 COHORTE system is composed of several Nodes. Only one node is specified to be Top Composer. It manages the components distribution among the available participating nodes.
 
 In this chapter, we will detail how to create and start COHORTE nodes using simple command lines.
 
-### Creating nodes
+
+## Creating nodes
+
 
 To create COHORTE node, you have to use the provided `cohorte-create-node` command.
 
@@ -23,14 +26,14 @@ Ensure to have installed COHORTE on your system and that the COHORTE_HOME enviro
 </p>
 </div>
 
-#### Usage
+### Usage
 
 {% highlight bash %}
 $ ./cohorte-create-node [-h] [-n NODE_NAME] [-a APP_NAME]
 {% endhighlight %}
 
 
-#### Options
+### Options
 
 This command has the following options :
 
@@ -43,7 +46,7 @@ This command has the following options :
                         application's symbolic name
 </pre>                      
 
-#### Results
+### Results
 
 This command will create a directory containing the following structure:
 
@@ -70,11 +73,13 @@ Here is the content of the generated `conf/autorun_conf.js`file. You should add 
 
 Only the node started as Top Composer (see next section) should have this configuration file completed. Other nodes started as simple nodes will ignore this file.
 
-### Starting nodes
+
+## Starting nodes
+
 
 To start a COHORTE node, you have to use the generated `run` command (this command calls `cohorte-start-node` internal command).
 
-#### Usage
+### Usage
 {% highlight bash %}
 $ ./run [-h] [-a APPLICATION_ID] [--use-config CONFIG_FILE]
         [--update-config] [--show-config]
@@ -88,11 +93,11 @@ $ ./run [-h] [-a APPLICATION_ID] [--use-config CONFIG_FILE]
         [--xmpp-password XMPP_PASSWORD]
 {% endhighlight %}
 
-#### Options
+### Options
 
 There are different kind of options depending on the use of the actual node.
 
-##### Mandatory options
+#### Mandatory options
 
 <pre>
   -a APPLICATION_ID, --app-id APPLICATION_ID
@@ -101,7 +106,7 @@ There are different kind of options depending on the use of the actual node.
 
 All the nodes participating for a given application should have the same `application-id`. 
 
-##### Startup configuration options
+#### Startup configuration options
 
 <pre>
   --use-config CONFIG_FILE  Configuration file to use for starting cohorte node.
@@ -115,7 +120,7 @@ All the nodes participating for a given application should have the same `applic
 
 We can write the startup configurations in a separate JSON file (see How to use startup configuration files section). This options will simplify the command options list and allows sharing the same startup configurations between several nodes.
 
-##### Information about the node to start
+#### Information about the node to start
 
 <pre>
   -n NODE_NAME, --node NODE_NAME
@@ -129,7 +134,7 @@ We can write the startup configurations in a separate JSON file (see How to use 
 
 We can provide a different node name than the already provided when the node is created (by using --node option). One important option of cohorte nodes is the `--is-top-composer`. If set, the node will be considered as a **Top Composer** (manages all the distribution of components among the available nodes). Users can also provide customised informations such as the http port to use for the *web-admin* component (see [monitoring chapter]({{ site.baseurl }}/docs/1.x/monitoring)), or the port to use for the remote shell admin component. 
 
-#####  Information about the transport protocols to use
+####  Information about the transport protocols to use
 <pre>
   --transport TRANSPORT_MODES
                         Transport mode (http and/or xmpp - seperated by comma)
@@ -144,7 +149,7 @@ We can provide a different node name than the already provided when the node is 
 
 The `--transport` option allow the use to choose which transport protocol to use between the actual node and the other nodes participating in the same application. You can provide a common seperated list of the supported protocols (`http` and `xmpp` for the moment). Each protocol need additional configuration options that should be provided seperataly using dedicated options (--xmpp-server for instance to mention the XMPP server to use).
 
-#### How to use startup configuration files
+### How to use startup configuration files
 
 To avoid re-typing the same options each time a node is started, or to share the same configuration between several nodes, you can provide a *startup configuration file* which contains such startup configurations. The content of such file is described hereafter. 
 

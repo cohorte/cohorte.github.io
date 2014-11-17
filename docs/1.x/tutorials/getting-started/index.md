@@ -22,10 +22,10 @@ Hello components (implementing the **HELLO Service**) can be implemented using d
 
 <hr/>
 
- * **[STEP 1](#step1)**: creating a simple application on one node, but two seperate isolates. 
- * **[STEP 2](#step2)**: using two distributed nodes to host the same application (without changing the components implementation code).
- * **[STEP 3](#step3)**: using a mixture of Java and Python components.
- * **[STEP 4](#step4)**: crash-test
+ * **[STEP 1](#step1)** : creating a simple application on one node, but two seperate isolates. 
+ * **[STEP 2](#step2)** : using two distributed nodes to host the same application (without changing the components implementation code).
+ * **[STEP 3](#step3)** : using a mixture of Java and Python components.
+ * **[STEP 4](#step4)** : crash-test
 
 <hr/>
 

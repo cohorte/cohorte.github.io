@@ -4,6 +4,7 @@ title: Temper tutorial
 comments: false
 toc: true
 toc_exclude: h1, h3, h4, h5, h6
+toc_numerate: true
 parent: documentation
 parent_url: ../../
 previous_page: ../spellchecker
@@ -34,17 +35,17 @@ There are two services:
   * `get_sensors`: retrieves the list of sensors visible in the history.
   * `get_active_sensors`: retrieves the list of active sensors.
 
-### Deployment and runtime constraints
+## Deployment and runtime configuration
 
-Now, its time to handle the deployment of these components. In this use case, we can have different type of execution machines:
+Now, its time to manage the deployment of these components. In this use case, we can have different type of execution machines:
 
-* **Gateway** : any personal computer or integrated homebox that can hosts and runs the *aggregator* component as well as the *web interface* component.
-* **PC with JVM installed** (java-sensor-pc): any personal computer that can hosts and runs  Java sensor components.
-* **PC with Python installed** (python-sensor-pc): any personal computer that can hosts and runs Python sensor components.
-* **Raspberry-Pi** : any Raspberry-Pi device that can hosts and runs Python sensor component.
-* **PC with Unity installed** (datashower): any personal computer that can hosts and runs the *Unity 3D engine*. 
+* **gateway-node** : any personal computer or integrated homebox that can hosts and runs the *aggregator* component as well as the *web interface* component.
+* **java-sensor-node** : any personal computer that can hosts and runs  Java sensor components.
+* **python-sensor-node** : any personal computer that can hosts and runs Python sensor components.
+* **raspberry-node** : any Raspberry-Pi device that can hosts and runs Python sensor component.
+* **datashower-node** : any personal computer that can hosts and runs the *Unity 3D engine*. 
 
-COHORTE provides a [*composition language*]({{ site.baseurl }}/docs/1.x/applications) which helps administrators fixing some rules concerning the deployment and instantiation of application components. 
+COHORTE provides a [*composition language*]({{ site.baseurl }}/docs/1.x/compositions) which helps administrators fixing some rules concerning the deployment and instantiation of application components. 
 
 The following picture depicts the graphical notation of the resulting specification for this use case:
 
@@ -58,22 +59,22 @@ Legend:
 * **UI**: web User Interface
 * **U**: Unity 3D interface 
 
-The following XML file represents the XMl equivalent for this deployment and composition specification:
+The following JSON file (`gateway-node/conf/composition.js`) represents the JSON equivalent for this deployment and composition specification:
 
 {% highlight json %}
 {
-	"name" : "temper-app-v1",
+	"name" : "temper-demo",
 	"root" : {
-		"name" : "temper-app-v1-composition",
+		"name" : "temper-demo-composition",
 		"components" : [ 
-			{
+		{
 			/**
 			 * Python sensor
 			 */
-			"name" : "PS",
+			"name" : "PythonSensor",
 			"factory" : "python-sensor-factory",
 			"isolate" : "temper.python",
-			"node" : "python-sensor-pc",
+			"node" : "python-sensor-node",
 			"properties" : {
 				"temper.value.min" : -5,
 				"temper.value.max" : 45
@@ -82,27 +83,27 @@ The following XML file represents the XMl equivalent for this deployment and com
 			/**
 			 * Raspberry Pi sensor
 			 */
-			"name" : "PS-raspi",
+			"name" : "PythonSensor-raspi",
 			"factory" : "python-sensor-factory",
 			"isolate" : "temper.raspi",
-			"node" : "raspberry-pi"
+			"node" : "raspberry-node"
 		}, {
 			/**
 			 * Java sensor
 			 */
-			"name" : "JS",
+			"name" : "JavaSensor",
 			"factory" : "java-sensor-factory",
 			"isolate" : "temper.java",
-			"node" : "java-sensor-pc"
+			"node" : "java-sensor-node"
 		}, {
 			/**
 			 * Aggregator component
 			 */
-			"name" : "A",
+			"name" : "Aggregator",
 			"factory" : "aggregator-factory",
 			"language" : "python",
 			"isolate" : "aggregation",
-			"node" : "gateway",
+			"node" : "gateway-node",
 			"properties" : {
 				"poll.delta" : 1
 			}
@@ -110,11 +111,11 @@ The following XML file represents the XMl equivalent for this deployment and com
 			/**
 			 * Aggregator web UI
 			 */
-			"name" : "UI",
+			"name" : "UserInterface",
 			"factory" : "aggregator-ui-factory",
 			"language" : "python",
 			"isolate" : "web.interface",
-			"node" : "gateway",
+			"node" : "gateway-node",
 			"properties" : {
 				"servlet.path" : "/temper"
 			},
@@ -127,18 +128,30 @@ The following XML file represents the XMl equivalent for this deployment and com
 }
 {% endhighlight %}
 
-
-### COHORTE Nodes
-
-We have created and prepared the different COHORTE nodes for each of the targeted machines. Each node contains the necessary bundles deployed on the `repo` directory and configuration files on the `conf` directory.
-
-<p>
-<div id="download_temper_snapshot"></div> 
+<div class="note">
+<span class="note-title">Note</span>
+<p class="note-content">
+The Unity 3D component is not specified in this composition specification as it will be deployed as a static isolate (components are instantiated at startup by the isolate, not by the Top Composer).
 </p>
+</div>
 
-As first step, we will execute our temper application in a local network area (LAN). You should have the devices with the listed requirements above. However, you can also test your application in only one machine having all the requirements installed (JVM and Python). The `raspberry-pi` COHORTE node needs a real raspberry-pi device to work properly (some libraries are compiled for ARM platform).
+## COHORTE Nodes
 
-### Execution
+We have created and prepared the different COHORTE nodes for each of the targeted devices. Each node contains the necessary bundles deployed on the `repo` directory and configuration files on the `conf` directory.
+
+<a id="download_temper_snapshot" href="#" class="btn btn-success">Download Temper Nodes</a>
+
+
+
+In the next steps, we will use the nodes to execute our application. For clarity, we will proceed the execution of the temper application following these steps : 
+
+* **STEP1** : in the same machine, we start three COHORTE nodes (*gateway*, *java-sensor-node*, and *python-sensor-node*). We monitor the application's architecture to see the automatically created isolates and their components.   
+* **STEP2** : we start a Raspberry-Pi device containing the *raspberry-pi* COHORTE node. We highlight the dynamic capabilities of COHORTE and its remote-services feature.
+* **STEP3** : at the final step, we start another machine containing the *datashower* COHORET node. We highlight the capability of COHORTE to deal with different components implemented in different languages (here C#).
+
+## STEP 1
+
+The objective of this first step is to show you ... 
 
 #### Temperature Aggregator
 

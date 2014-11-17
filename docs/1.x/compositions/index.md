@@ -1,7 +1,7 @@
 ---
 layout: docpage
-title: Reference Guide | Compositions
-parent: Documentation
+title: Compositions Specification
+parent: documentation
 previous_page: ../components
 next_page: ../startup
 ---
