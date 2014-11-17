@@ -43,11 +43,18 @@
     </div> <!-- container -->
 </div>
 
-    <!-- Script to Activate the Carousel -->
+    <!-- Scripts -->
     <script>
+    /* Activate the Carousel */
     $('.carousel').carousel({
         interval: 5000 //changes the speed
     })
+
+    /* update anchor location */
+    $(window).on("hashchange", function () {
+        window.scrollTo(window.scrollX, window.scrollY - 100);
+    });
+
     </script>
 
     {% unless page.layout == 'page' %}

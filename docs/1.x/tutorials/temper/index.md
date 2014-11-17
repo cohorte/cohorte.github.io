@@ -3,7 +3,7 @@ layout: docpage
 title: Temper tutorial
 comments: false
 toc: true
-toc_exclude: h1, h3, h4, h5, h6
+toc_exclude: h1, h4, h5, h6
 toc_numerate: true
 parent: documentation
 parent_url: ../../
@@ -44,6 +44,7 @@ Now, its time to manage the deployment of these components. In this use case, we
 * **python-sensor-node** : any personal computer that can hosts and runs Python sensor components.
 * **raspberry-node** : any Raspberry-Pi device that can hosts and runs Python sensor component.
 * **datashower-node** : any personal computer that can hosts and runs the *Unity 3D engine*. 
+
 
 COHORTE provides a [*composition language*]({{ site.baseurl }}/docs/1.x/compositions) which helps administrators fixing some rules concerning the deployment and instantiation of application components. 
 
@@ -141,7 +142,11 @@ We have created and prepared the different COHORTE nodes for each of the targete
 
 <a id="download_temper_snapshot" href="#" class="btn btn-success">Download Temper Nodes</a>
 
+Extract the downloaded zip file somewhere in your file system. You can try the different nodes in the same machine or distribute them in different machines.
 
+Ensure to have COHORTE installed on your system. If not the case, refer to the [downloads]({{ site.baseurl }}/downloads) page to get the latest available version and to the [setup documentation]({{ site.baseurl }}/docs/1.x/setup) for installation details. 
+
+## Demonstrations
 
 In the next steps, we will use the nodes to execute our application. For clarity, we will proceed the execution of the temper application following these steps : 
 
@@ -149,13 +154,33 @@ In the next steps, we will use the nodes to execute our application. For clarity
 * **[STEP 2](#step2)** : we start a Raspberry-Pi device containing the *raspberry-pi* COHORTE node. We highlight the dynamic capabilities of COHORTE and its remote-services feature.
 * **[STEP 3](#step3)** : at the final step, we start another machine containing the *datashower* COHORET node. We highlight the capability of COHORTE to deal with different components implemented in different languages (here C#).
 
-## <a name="step1"></a>STEP 1
+<a name="step1"></a>
 
-## <a name="step2"></a>STEP 2
+### Components Isolation and multi-language implementations
 
-## <a name="step3"></a>STEP 3
+At this first step, we highlight the multi-language components implementation supported by COHORTE. In our described application in section 1, the Hello Service is implemented in Python and in Java. In this demonstration we will show you how COHORTE manage to have the same runtime infrastructure for either Java or Python implementations. We see also how COHORTE creates Isolates as described in the *composition specification* (and as responds to runtime crashes). 
+
+At this first step, we will launch three COHORTE nodes :
+
+* **gateway-node** as Top Composer
+* **python-sensor-node** 
+* **java-sensor-node**
+
+![environment1](temper-img-4.png)
+
+<a name="step2"></a>
+
+### Distributed Application
+
+![environment1](temper-img-5.png)
+
+<a name="step3"></a>
+
+### .Net interaction via Unity 3D framework
 
 The objective of this first step is to show you ... 
+
+![environment3](temper-img-3.png)
 
 #### Temperature Aggregator
 
@@ -209,9 +234,8 @@ Notice that you can run copies of java or python sensor nodes in multiple device
 
 <script>
     function loadLatestSnapshots() {
-        $.getJSON( "http://cohorte.github.io/latest_demos_temper.json", function( data ) {            
-            frame1 = "<a class='btn' href='" + data["snapshots"]["temper-distribution"]["files"]["zip"] + "'>temper-distribution.zip</a>";                      
-            $('#download_temper_snapshot').html(frame1);            
+        $.getJSON( "http://cohorte.github.io/latest_demos_temper.json", function( data ) {                                              
+            $("#download_temper_snapshot").attr("href", data["snapshots"]["temper-distribution"]["files"]["zip"])         
         });
     }
     $(document).ready(function() {        
