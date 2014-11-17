@@ -1,20 +1,21 @@
 ---
-layout: page
+layout: docpage
 title: Temper tutorial
 comments: false
+toc: true
+toc_exclude: h1, h3, h4, h5, h6
+parent: documentation
+parent_url: ../../
 previous_page: ../spellchecker
 next_page: ../quiz
 ---
 
-[Home](../../../../) > [Documentation](../../) > [Tutorials](../)
-
-## Temper tutorial
 
 In this tutorial we will have a complete working temperature aggregation application with different type of components and deployment devices.
 
 Let's first talk about the application's architecture.
 
-### Application
+## Application
 
 The *temper* application has a *service-oriented architecture SOA* composed of components and services depicted in the following picture:
 
@@ -187,8 +188,6 @@ You can also start the `java-sensor-pc` node to test it. Ensure to put another h
 To test the `raspberry-pi` node, you should have a real *raspberry-pi* device connected to the local network. 
 
 Notice that you can run copies of java or python sensor nodes in multiple devices without changing anything. 
-
-[Home](../../../../) > [Documentation](../../) > [Tutorials](../)
 
 
 <script>

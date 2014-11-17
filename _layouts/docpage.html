@@ -11,8 +11,9 @@ layout: default
 
 <div class="page-title-style">
   <div class="container">
+    <a href="{{ site.baseurl }}/">home</a> >
     {% if page.parent %}
-      <a href="{{ site.baseurl }}/">home</a> > <a href="../">{{page.parent}}</a>
+       <a href="{{page.parent_url}}">{{page.parent}}</a> 
     {% endif %}
     <h1 id="page-title">{{ page.title }}</h1>
   </div>
