@@ -2,6 +2,8 @@
 layout: docpage
 title: Getting started tutorial
 comments: false
+parent: documentation
+parent_url: ../../
 toc: true
 toc_exclude:  h3, h4, h5
 toc_numerate: true
