@@ -145,11 +145,15 @@ We have created and prepared the different COHORTE nodes for each of the targete
 
 In the next steps, we will use the nodes to execute our application. For clarity, we will proceed the execution of the temper application following these steps : 
 
-* **STEP1** : in the same machine, we start three COHORTE nodes (*gateway*, *java-sensor-node*, and *python-sensor-node*). We monitor the application's architecture to see the automatically created isolates and their components.   
-* **STEP2** : we start a Raspberry-Pi device containing the *raspberry-pi* COHORTE node. We highlight the dynamic capabilities of COHORTE and its remote-services feature.
-* **STEP3** : at the final step, we start another machine containing the *datashower* COHORET node. We highlight the capability of COHORTE to deal with different components implemented in different languages (here C#).
+* **[STEP 1](#step1)** : in the same machine, we start three COHORTE nodes (*gateway*, *java-sensor-node*, and *python-sensor-node*). We monitor the application's architecture to see the automatically created isolates and their components.   
+* **[STEP 2](#step2)** : we start a Raspberry-Pi device containing the *raspberry-pi* COHORTE node. We highlight the dynamic capabilities of COHORTE and its remote-services feature.
+* **[STEP 3](#step3)** : at the final step, we start another machine containing the *datashower* COHORET node. We highlight the capability of COHORTE to deal with different components implemented in different languages (here C#).
 
-## STEP 1
+## <a name="step1"></a>STEP 1
+
+## <a name="step2"></a>STEP 2
+
+## <a name="step3"></a>STEP 3
 
 The objective of this first step is to show you ... 
 

@@ -2,13 +2,16 @@
 layout: docpage
 title: Compositions Specification
 parent: documentation
+toc: true
+toc_numerate: true
+toc_exlude: h1, h4, h5, h6
 previous_page: ../components
 next_page: ../startup
 ---
 
-## Composition Specification
+This specification is used to describe the composition of the final application in term of component that should be instantiated in which isolate of which node.
 
-### Composition
+## Composition
 
 {% highlight json %}
 {
@@ -20,7 +23,7 @@ next_page: ../startup
 }
 {% endhighlight %}
 
-### Composite
+## Composite
 
 {% highlight json %}
 {
@@ -41,7 +44,7 @@ next_page: ../startup
 }
 {% endhighlight %}
 
-### Components
+## Components
 
 {% highlight json %}
 {
@@ -71,7 +74,7 @@ next_page: ../startup
 {% endhighlight %}
 
 
-### import-files
+## import-files
 
 `base.js`
 

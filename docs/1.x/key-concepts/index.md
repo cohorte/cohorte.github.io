@@ -2,6 +2,9 @@
 layout: docpage
 title: Key Concepts
 parent: Documentation
+toc: true
+toc_numerate: true
+toc_exlude: h1, h4, h5, h6
 previous_page: ../what-is-cohorte
 next_page: ../tutorials
 ---

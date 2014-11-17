@@ -56,11 +56,13 @@ Some resources to get started quickly:
       <a style="left: 77%;" class="menu-choice menu-choice-monitoring"
       href="{{ site.baseurl }}/docs/1.x/monitoring">Monitoring</a>      
 </div>
+
+<!-- 
 <div class="menu-choices">            
       <a style="left: -10%;" class="menu-choice menu-choice-ide"
       href="{{ site.baseurl }}/docs/1.x/ide">IDE</a>  
 </div>
-
+-->
 You can download the full reference documentation as a [ ![PDF]({{ site.baseurl }}/resources/images/pdf.png) PDF](refdoc.html) file or read it in one [ ![PDF]({{ site.baseurl }}/resources/images/html.png) HTML](refdoc.html) file.
 
 ## Other resources

@@ -1,7 +1,10 @@
 ---
 layout: docpage
-title: Reference Guide | Components
+title: Cohorte Components
 parent: Documentation
+toc: true
+toc_numerate: true
+toc-exclude: h1, h4, h5, h6
 previous_page: ../setup
 next_page: ../applications
 ---

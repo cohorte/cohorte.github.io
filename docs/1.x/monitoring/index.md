@@ -1,26 +1,22 @@
 ---
 layout: docpage
-title: Documentation | Monitoring
+title: Monitoring
 parent: Documentation
+toc: true
+toc_numerate: true
+toc_exlude: h1, h4, h5, h6
 previous_page: ../shell
 next_page: ../ide
 ---
 
-## Admin REST API v1
 
-### Introduction
-
-In this document, we detail the ADMIN RESTful API v1 of COHORTE platform.
+In this document, we detail the ADMIN RESTful API v1 of COHORTE platform as well as the web admin interface built on the top of this API.
 
 ## Web Admin
 
-
 ![SpellChecker Application](cohorte-webadmin.png)
 
-
-It uses Admin REST API v1.
-
-
+## Admin REST API v1
 
 ### API endpoints
 

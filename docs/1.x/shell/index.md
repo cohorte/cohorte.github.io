@@ -1,16 +1,17 @@
 ---
 layout: docpage
-title: Shell
+title: Integrated Shell commands
 parent: Documentation
+toc: true
+toc_numerate: true
+toc_exlude: h1, h4, h5, h6
 previous_page: ../startup
 next_page: ../monitoring
 ---
 
-## Integrated shell commands
-
 COHORTE has an integrated shell to allow users manipulate and monitor the system. Here the list of the provided shell commands and their explanation.
 
-> Name space `default` 
+## Name space `default` 
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>
@@ -110,7 +111,7 @@ COHORTE has an integrated shell to allow users manipulate and monitor the system
 </tbody>
 </table>
 
-> Name space `forker`
+## Name space `forker`
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>
@@ -131,7 +132,7 @@ COHORTE has an integrated shell to allow users manipulate and monitor the system
 </tbody>
 </table>
 
-> Name space `herald`  
+## Name space `herald`  
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>
@@ -176,7 +177,7 @@ COHORTE has an integrated shell to allow users manipulate and monitor the system
 </tbody>
 </table>
 
-> Name space `ipopo`  
+## Name space `ipopo`  
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>
@@ -217,7 +218,7 @@ COHORTE has an integrated shell to allow users manipulate and monitor the system
 </tbody>
 </table>
 
-> Name space `node` 
+## Name space `node` 
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>
@@ -238,7 +239,7 @@ COHORTE has an integrated shell to allow users manipulate and monitor the system
 </tbody>
 </table>
 
-> Name space `shell`
+## Name space `shell`
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>
@@ -259,7 +260,7 @@ COHORTE has an integrated shell to allow users manipulate and monitor the system
 </tbody>
 </table>
 
-> Name space `top` 
+## Name space `top` 
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>

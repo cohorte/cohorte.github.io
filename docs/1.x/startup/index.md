@@ -81,10 +81,12 @@ To start a COHORTE node, you have to use the generated `run` command (this comma
 
 ### Usage
 {% highlight bash %}
-$ ./run [-h] [-a APPLICATION_ID] [--use-config CONFIG_FILE]
-        [--update-config] [--show-config]
-        [-b BASE_ABSOLUTE_PATH] [-n NODE_NAME]
-        [--top-composer]
+$ ./run [-h] [-a APPLICATION_ID]
+        [--use-config CONFIG_FILE] [--update-config]
+        [--show-config] [-b BASE_ABSOLUTE_PATH]
+        [-n NODE_NAME] [--top-composer IS_TOP_COMPOSER]
+        [--composition-file COMPOSITION_FILE]
+        [--auto-start AUTO_START]
         [--web-admin WEB_ADMIN_PORT]
         [--shell-admin SHELL_ADMIN_PORT]
         [--transport TRANSPORT_MODES]
@@ -125,14 +127,21 @@ We can write the startup configurations in a separate JSON file (see How to use 
 <pre>
   -n NODE_NAME, --node NODE_NAME
                         Node name
-  --top-composer        Flag indicating that this node is a Top Composer
+  --top-composer IS_TOP_COMPOSER
+                        Flag indicating that this node is a Top Composer
+  --composition-file COMPOSITION_FILE
+                        Composition file (by default 'composition.js'). All
+                        composition files should be placed on 'conf' directory
+  --auto-start AUTO_START
+                        Auto-start the composition if this node is a Top
+                        Composer
   --web-admin WEB_ADMIN_PORT
                         Node web admin port
   --shell-admin SHELL_ADMIN_PORT
                         Node remote shell port
 </pre>
 
-We can provide a different node name than the already provided when the node is created (by using --node option). One important option of cohorte nodes is the `--is-top-composer`. If set, the node will be considered as a **Top Composer** (manages all the distribution of components among the available nodes). Users can also provide customised informations such as the http port to use for the *web-admin* component (see [monitoring chapter]({{ site.baseurl }}/docs/1.x/monitoring)), or the port to use for the remote shell admin component. 
+We can provide a different node name than the already provided when the node is created (by using --node option). One important option of cohorte nodes is the `--top-composer`. If set, the node will be considered as a **Top Composer** (manages all the distribution of components among the available nodes). Users can also provide customised informations such as the http port to use for the *web-admin* component (see [monitoring chapter]({{ site.baseurl }}/docs/1.x/monitoring)), or the port to use for the remote shell admin component. 
 
 ####  Information about the transport protocols to use
 <pre>
@@ -189,10 +198,10 @@ $ ./run --use-config other_run_conf.js
 * Update the startup configuration using command options (--some-configuration should be replaced with a supported options list):
 
 {% highlight bash %}
-$ ./run --some-configurations --update-config
+$ ./run --update-config --some-configurations 
 {% endhighlight %}
 
-This will update all the provided options within the startup configuration file. You can use also this option to create the default *run.js* file with a set of configuration options.
+This will update all the provided options within the startup configuration file (run.js). 
 
 ### Other advanced startup configurations
 
