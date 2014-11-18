@@ -150,9 +150,14 @@ Ensure to have COHORTE installed on your system. If not the case, refer to the [
 
 In the next steps, we will use the nodes to execute our application. For clarity, we will proceed the execution of the temper application following these steps : 
 
+<hr/>
+
 * **[STEP 1](#step1)** : in the same machine, we start three COHORTE nodes (*gateway*, *java-sensor-node*, and *python-sensor-node*). We monitor the application's architecture to see the automatically created isolates and their components.   
 * **[STEP 2](#step2)** : we start a Raspberry-Pi device containing the *raspberry-pi* COHORTE node. We highlight the dynamic capabilities of COHORTE and its remote-services feature.
-* **[STEP 3](#step3)** : at the final step, we start another machine containing the *datashower* COHORET node. We highlight the capability of COHORTE to deal with different components implemented in different languages (here C#).
+* **[STEP 3](#step3)** : at this step, we start another machine containing the *datashower* COHORET node. We highlight the capability of COHORTE to deal with different components implemented in different languages (here C#).
+* **[STEP 4](#step4)** : at the final step, we will implement our specific temperature sensor (using Java) and add it to our application. 
+
+<hr/>
 
 <a name="step1"></a>
 
@@ -160,13 +165,57 @@ In the next steps, we will use the nodes to execute our application. For clarity
 
 At this first step, we highlight the multi-language components implementation supported by COHORTE. In our described application in section 1, the Hello Service is implemented in Python and in Java. In this demonstration we will show you how COHORTE manage to have the same runtime infrastructure for either Java or Python implementations. We see also how COHORTE creates Isolates as described in the *composition specification* (and as responds to runtime crashes). 
 
-At this first step, we will launch three COHORTE nodes :
-
-* **gateway-node** as Top Composer
-* **python-sensor-node** 
-* **java-sensor-node**
+At a first step, we try to launch in one machine two temperature sensors implemented in different programming languages (as shown in the following picture). We starts also the aggregation component and the web user interface to check the collected data. 
 
 ![environment1](temper-img-4.png)
+
+To accomplish this requirement and following the composition specification, we need to start these three COHORTE nodes in one machine :
+
+* **gateway-node** (as Top Composer) : instantiates the aggragator and web user interface components
+* **python-sensor-node** : instantiates Python temperature sensor component
+* **java-sensor-node** : instantiates Java temperature sensor component
+
+All the components follow the Service-Oriented Architecture (SOA) detailed in the first section of this chapter. 
+ 
+#### Starting the gateway (aggregator and web interface components)
+
+Go to the downloaded `gateway-node` directory and type the following command to start it as a Top Composer : 
+
+<pre>
+$ ./<b>run</b> --app-id temper --top-composer true 
+</pre>
+
+* `--app-id` is required to identify the current application's execution and so as other COHORTE nodes can join it. 
+* `--top-composer` set the current COHORTE node to be Top Composer. It will be responsible for dispatching the components among the available nodes following the *composition specification* already provided on `gateway-node/conf/composition.js`.
+* This node will also be started using other startup configurations provided in `gateway-node/run.js` file :
+
+{% highlight json %}
+{
+    "node": {                
+        "name": "gateway-node",           
+        "composition-file": "composition.js",
+        "web-admin": 9000,     
+        "shell-admin": 9001
+    },
+    "transport": [
+        "http"
+    ]
+}
+{% endhighlight %}
+
+Accordingly, this node will use HTTP connection mode. The discovery of other COHORTE nodes will be carried out using Multicast over TCP/IP. Communication between nodes will be ensured using TCP/IP sockets. This limits the scope of the participating COHORTE nodes to local network area.
+
+Other important configurations are the `web-admin` and `shell-admin` ports. The letter is used to remotely access the shell of this node (e.g., `nc localhost 9001`), while the former is used to access the Web Admin interface in a web browser using this address : `http://localhost:9000/admin`
+
+WEB ADMIN IMAGE
+
+You notice that there is one one COHORTE node at this time, which contains two **isolates** (*aggregation* and *web.interface*) as specified in the *composition specification*.  
+
+To Open the web interface provided by the "UserInterface" component, click on its isolate (*web.interface*) to see details about it. Locate the `pelix.http.port` property and open up new browser tab to access the "UserInterface" provided interface as follow : `http://localhost:port/temper` (change `port`by the concrete `pelix.http.port` value).
+
+#### Starting temperature sensors
+
+TODO
 
 <a name="step2"></a>
 
@@ -182,55 +231,11 @@ The objective of this first step is to show you ...
 
 ![environment3](temper-img-3.png)
 
-#### Temperature Aggregator
+<a name="step1"></a>
 
-To have a distributed configuration of COHORTE applications, we need to select one node as a **Top Composer**. It will parse the *composition configuration* and push orders to the participating nodes to instantiate the different components. 
+### Implementing a new temperature sensor component
 
-You can create a new Node and start it as a Top Composer, or start any of the provided nodes as a Top Composer (using -t option). 
-
-In the following, we choose the `gateway` node as Top Composer.
-
-<pre>
-gateway$ <b>./run</b> -t
-</pre>
-
-You should start the composition (deployment of components) manually by typing the `load` command.
-
-{% highlight bash %}
-> load
-{% endhighlight %}
-
-We can already test the application by opening a web browser and hiting this address: `http://localhost:port/temper`. You should however put the right *http port* of the `web.interface` isolate executing the web interface (see the *temper-demo* composition picture above). Type `http` command in the terminal to have the list of isolates and their *http ports*.
-
---IMAGE
-
-You notice that there is no input in the history table as no temperature sensor is active.
-
-<div class="note">
-<span class="note-title">Note</span>
-<p class="note-content">
-Ensure to have COHORTE properly <a href="{{ site.baseurl }}/docs/1.x/setup">installed on your devices</a>. You should have $COHORT_HOME environment variable set with the full path to the COHORTE installation folder and $COHORTE_HOME/bin folder is added to your $PATH. 
-</p>
-</div>
-
-#### Temperature Sensors
-
-It's time now to start the temperature sensors. The provided components provides dummy values for simplicity. You can implement your temperature sensor component as detailed at the end of this tutorial.
-
-* Start the `python-sensor-pc` node with a different *http* and *shell* ports configuration:
-
-<pre>
-python-sensor-pc$ <b>./run</b> 38001 38002 
-</pre>
-
-You will notice new entries in the active devices list of the aggregator web interface corresponding to this newly started sensor node (containing a temperature sensor component).
-
-You can also start the `java-sensor-pc` node to test it. Ensure to put another http and shell ports configuration.
-
-To test the `raspberry-pi` node, you should have a real *raspberry-pi* device connected to the local network. 
-
-Notice that you can run copies of java or python sensor nodes in multiple devices without changing anything. 
-
+TODO
 
 <script>
     function loadLatestSnapshots() {
