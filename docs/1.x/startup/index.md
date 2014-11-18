@@ -237,3 +237,10 @@ The `--xmpp-jid` is the same used by the Top Composer and the other nodes.
 
 You can use the two transport protocols in the same time. At runtime, only one is used, if it does not work COHORTE choose the other one.
 
+<div class="note">
+<span class="note-title">Note</span>
+<p class="note-content">
+Herald, the framework used as discovery and transport layer in COHORTE, has a generic architecture allowing it to add more discovery and transport protocols. Other connection modes are under development and will be released in future version of COHORTE.
+</p>
+</div>
+

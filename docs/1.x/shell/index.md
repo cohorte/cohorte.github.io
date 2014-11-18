@@ -11,7 +11,7 @@ next_page: ../monitoring
 
 COHORTE has an integrated shell to allow users manipulate and monitor the system. Here the list of the provided shell commands and their explanation.
 
-## Name space `default` 
+## "default" name space
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>
@@ -111,7 +111,7 @@ COHORTE has an integrated shell to allow users manipulate and monitor the system
 </tbody>
 </table>
 
-## Name space `forker`
+## "forker" name space
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>
@@ -132,7 +132,7 @@ COHORTE has an integrated shell to allow users manipulate and monitor the system
 </tbody>
 </table>
 
-## Name space `herald`  
+## "herald" name space  
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>
@@ -177,7 +177,7 @@ COHORTE has an integrated shell to allow users manipulate and monitor the system
 </tbody>
 </table>
 
-## Name space `ipopo`  
+## "ipopo" name space  
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>
@@ -218,7 +218,7 @@ COHORTE has an integrated shell to allow users manipulate and monitor the system
 </tbody>
 </table>
 
-## Name space `node` 
+## "node" name space 
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>
@@ -239,7 +239,7 @@ COHORTE has an integrated shell to allow users manipulate and monitor the system
 </tbody>
 </table>
 
-## Name space `shell`
+## "shell" name space
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>
@@ -260,7 +260,7 @@ COHORTE has an integrated shell to allow users manipulate and monitor the system
 </tbody>
 </table>
 
-## Name space `top` 
+## "top" name space 
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>

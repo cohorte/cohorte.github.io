@@ -221,6 +221,12 @@ TODO
 
 ### Distributed Application
 
+#### Local Network Area deployment
+
+![local-application](temper-img-6.png)
+
+#### Internet level deployment
+
 ![environment1](temper-img-5.png)
 
 <a name="step3"></a>
