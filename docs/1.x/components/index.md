@@ -123,6 +123,10 @@ Interoperability between Java and Python implementation?
 
 * We should add `java:/` prefix to required services in Python.
 
-### C, C# and C++ support
+### C# support
+
+Partial support using IronPython.
+
+### Other legacy code
 
 Wrapping in iPOPO (Python) or iPOJO (Java) components

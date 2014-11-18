@@ -83,7 +83,14 @@ layout: default
 <div class="page-bottom-style">
   <div class="container">
     <div class="row">
-      <a href="{{ site.baseurl }}/">home</a> > <a href="../">{{page.parent}}</a>    
+      <a href="{{ site.baseurl }}/">home</a> >
+      {% if page.parent %}
+       {% if page.parent_url %}
+       <a href="{{page.parent_url}}">{{page.parent}}</a> 
+       {% else %}
+       <a href="../">{{page.parent}}</a> 
+       {% endif %}
+      {% endif %} 
     </div>
   </div>
 </div>
