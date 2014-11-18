@@ -11,16 +11,17 @@ previous_page: ../
 next_page: ../spellchecker
 ---
 
- As a COHORTE user, you need to have Java ( >= 1.6 ) and Python ( >= 3 ) installed on your system. Next, you need to [download and install COHORTE on your system]({{ site.baseurl }}/docs/1.x/setup).
+ As a COHORTE user, you need to have Java ( >= 1.6 ) and Python ( >= 3 ) installed on your system. Next, you need to [download]({{site.baseurl}}/downloads) and [install]({{ site.baseurl }}/docs/1.x/setup) COHORTE on your system.
  
- The objective of this getting started tutorial is to get you familiar with the COHORTE concept as quickly as possible. There is no need to start coding at this step. You found other advanced tutorial in the [tutorials section of the documentation page]({{ site.baseurl }}/docs/1.x/).
- This getting started tutorial is divised in four steps:
+ The objective of this getting started tutorial is to get you familiar with COHORTE concepts as quickly as possible. There is no need to start coding at this step. You find other advanced tutorial in the tutorials section of the [documentation page]({{ site.baseurl }}/docs/1.x/).
 
-The following picture depicts the architecture of the to be developed application. It consists of a web interface provided by a component called `hello_components` which uses the **HELLO Service** to interact with all other components implementing this service (`component_A`, `component_B`, etc) and shows their greeting message in the web interface.
+The following picture depicts the architecture of the to be developed application. It consists of a web interface provided by a component called `Hello_Components` which uses the **HELLO SERVICE** to interact with all other components implementing this service (`A_component`, `B_component`, etc). 
 
 ![Architecture](getting-started-img-3.png)
 
-Hello components (implementing the **HELLO Service**) can be implemented using different programming languages (*Java* and *Python*) and can be placed in different remote nodes. Developers have not to worry about this details. COHORTE manages to have all the application components interacts as they where in one place (Using [Remote Services]({{ site.baseurl }}/docs/1.x/components)). 
+Hello components (implementing the **HELLO SERVICE**) can be implemented using different programming languages (*Java* and/or *Python*) and can be placed in different remote nodes. Developers have not to worry about this details. COHORTE manages to have all the application components interacts as they where in one place (Using [Remote Services]({{ site.baseurl }}/docs/1.x/components)). 
+
+The remainder of this tutorial is organized in four steps :
 
 <hr/>
 
@@ -31,11 +32,11 @@ Hello components (implementing the **HELLO Service**) can be implemented using d
 
 <hr/>
 
-## <a name="step1"></a>STEP 1
+## <a name="step1"></a>Creating a simple application (one node)
 
- In this first step of the tutorial, we want to instantiate only the components **HC** (hello_components), **A** (component_A) and **B** (component_B). In addition, we want to seperate between HC component and the other components providing the HELLO service (which can contain third-party code). COHORTE supports this separation by using **Isolates**. Isolates are a seperate process with all the needed runtime infrastructure allowing the execution of the managed components.
+ In this first step of the tutorial, we want to instantiate only the components `Hello_Components` (**HC**), `A_component` (**A**) and `B_component` (**B**). In addition, we want to seperate between **HC** component and other components providing HELLO SERVICE (which can contain third-party code). COHORTE supports this separation by using **Isolates**. Isolates are a seperate process with all the needed runtime infrastructure allowing the execution of the managed components.
 
- The following picture depicts the desired resilient architecture. If one of the components providing the HELLO service fails, there will be no impact on the HC component! 
+ The following picture depicts the desired resilient architecture. If one of the components providing the HELLO SERVICE fails, there will be no impact on HC component! 
 
 ![Step 1](getting-started-img-1.png)
 
@@ -61,8 +62,8 @@ This command will create a new directory named `node1` containing an executable 
 <p class="note-content">
 The `hello` package contains four components (implemented in Python): <br/>
 <ul>
-  <li> <b>component_A</b>, <b>component_B</b>, and <b>component_C</b>: these components implements the HELLO service which has only one method <code>say_hello</code>. </li>
-  <li> <b>hello_components</b>: this component provides a web interface on which the list of discovered components implementing the HELLO service are listed (we show the message returned by each component when calling their <code>say_hello</code> method).</li>
+  <li> <b>A_component</b>, <b>B_component</b>, <b>C_component</b> and <b>E_component</b>: these components implements the HELLO SERVICE. <b>E_component</b> contains faulty code to test the self-healing feature of COHORTE (used in the fourth step).</li>
+  <li> <b>Hello_Components</b>: this component provides a web interface on which the list of discovered components implementing the HELLO SERVICE are listed (users can call the <code>say_hello</code> method of each components by clicking on "say hello" link).</li>
 </ul>
 </p>
 </div>
@@ -78,15 +79,15 @@ In order to have this deployment plan corresponding to the resilient architectur
 		"name" : "getting-started-composition",
 		"components" : [ 
 			{
-				"name" : "HC",
+				"name" : "Hello_Components",
 				"factory" : "hello_components_factory",
 				"isolate" : "web"
 			}, {
-				"name" : "A",
+				"name" : "A_component",
 				"factory" : "component_a_factory",
 				"isolate" : "components"
 			}, {
-				"name" : "B",
+				"name" : "B_component",
 				"factory" : "component_b_factory",
 				"isolate" : "components"
 			}
@@ -129,13 +130,13 @@ To stop COHORTE, type `quit` command on the terminal.
 
 <hr/>
 
-## <a name="step2">STEP 2
+## <a name="step2">Distributing the application (two nodes)
 
 In this second step, we will distribute our components among two nodes (which can be physically distributed on a local network area - or via Internet using an XMPP server).
 
-In this step, we will add a new instance of component_C that should be deployed on a second node (component_C implementation code is already provided on the downloaded Hello Python Bundle). 
+In this step, we will add a new instance of C_component that should be deployed on a second node (C_component implementation code is already provided on the downloaded Hello Python Bundle). 
 
- Here is the new depoyment configuration for this case. 
+ Here is the new depoyment configuration (composition) for this case. 
 
 ![Step 2](getting-started-img-2.png)
 
@@ -169,19 +170,19 @@ Ensure to have stopped the previous execution and update the `composition.js` fi
 		"name" : "getting-started-composition",
 		"components" : [ 
 			{
-				"name" : "HC",
+				"name" : "Hello_Components",
 				"factory" : "hello_components_factory",
 				"isolate" : "web"
 			}, {
-				"name" : "A",
+				"name" : "A_component",
 				"factory" : "component_a_factory",
-				"isolate" : "components"
+				"isolate" : "components1"
 			}, {
-				"name" : "B",
+				"name" : "B_component",
 				"factory" : "component_b_factory",
-				"isolate" : "components"
+				"isolate" : "components1"
 			}, {
-				"name" : "C",
+				"name" : "C_component",
 				"factory" : "component_c_factory",
 				"isolate" : "components2",
 				"node" : "node2"
@@ -194,7 +195,7 @@ Ensure to have stopped the previous execution and update the `composition.js` fi
 <div class="note">
 <span class="note-title">Note</span>
 <p class="note-content">
-The C component is specified to be in another isolate named "components2", not "components". In the actual version of COHORTE you can not have two different isolates with the same name in two different nodes!
+The C_component is specified to be in another isolate (named "components2") rather than "components1" isolate containing the first components. In the actual version of COHORTE you can not have two different isolates with the same name in two different nodes!
 </p>
 </div>
 
@@ -214,23 +215,23 @@ In a separate terminal, start `node2` as follow :
 node2$ ./<b>run</b> --app-id <span style="color:green">getting-started-app-id</span>
 </pre>
 
-Refresh the web interface of `hello_components` component. You will notice that the C component is detected and used by the HC component even it was deployed in a separate remote node.
+Refresh the web interface. You will notice that the C component is detected and used by the HC component even if it was deployed in a separate remote node.
 
 <hr/>
 
-## <a name="step3">STEP 3
+## <a name="step3">Using heterogeneous components (Java and Python)
 
-All the components used until now are implemented in Python (using [iPOPO component-based framework]({{ site.baseurl }}/docs/1.x/components)). We will extend our application by introducing a new component that implements the HELLO service in Java (component_D). 
+All the components used until now are implemented in Python. We will extend our application by introducing a new component that implements the HELLO SERVICE in Java (D_component). 
 
  * Stop the running nodes of the previous step (use the command `quit`).
- * Donwload the bundle (jar file) containing the implementation of the D component.
+ * Donwload the bundle (jar file) containing the implementation code of the D component.
 
 <a id="download_hello_demo_java_snapshot" href="#" class="btn btn-success">Download Hello Java Bundle</a>
 
 <br/>
 
  * Put the extracted `jar` file into `node2/repo` directory. 
- * Update the `composition.js` file located on `node1/conf` to add this new component D. It should be instantiated on `node2`.
+ * Update the `composition.js` file located on `node1/conf` to add this new D component. It should be instantiated on `node2`.
 
 {% highlight json %}
 {
@@ -239,24 +240,24 @@ All the components used until now are implemented in Python (using [iPOPO compon
 		"name" : "getting-started-composition",
 		"components" : [ 
 			{
-				"name" : "HC",
+				"name" : "Hello_Components",
 				"factory" : "hello_components_factory",
 				"isolate" : "web"
 			}, {
-				"name" : "A",
+				"name" : "A_component",
 				"factory" : "component_a_factory",
 				"isolate" : "components1"
 			}, {
-				"name" : "B",
+				"name" : "B_component",
 				"factory" : "component_b_factory",
 				"isolate" : "components1"
 			}, {
-				"name" : "C",
+				"name" : "C_component",
 				"factory" : "component_c_factory",
 				"isolate" : "components2",
 				"node" : "node2"
 			}, {
-				"name" : "D",
+				"name" : "D_component",
 				"factory" : "component_d_factory",
 				"isolate" : "components3",
 				"node" : "node2"
@@ -296,15 +297,52 @@ This correspond to this deployment plan :
 
 ![Step 2](getting-started-img-4.png)
 
-As you notice, components C and D should be deployed on two sperate isolates (*components2* and *components3*) as are implemented in two different languages.
+As you notice, C and D components should be deployed on two sperate isolates (*components2* and *components3*) as they are implemented in two different languages.
 
 
 <hr/>
 
-## <a name="step4">STEP 4
+## <a name="step4"> crash-test!
 
-crash-test! 
 Work in progress.. 
+
+{% highlight json %}
+{
+	"name" : "getting-started",
+	"root" : {
+		"name" : "getting-started-composition",
+		"components" : [ 
+			{
+				"name" : "Hello_Components",
+				"factory" : "hello_components_factory",
+				"isolate" : "web"
+			}, {
+				"name" : "A_component",
+				"factory" : "component_a_factory",
+				"isolate" : "components1"
+			}, {
+				"name" : "B_component",
+				"factory" : "component_b_factory",
+				"isolate" : "components1"
+			}, {
+				"name" : "E_component",
+				"factory" : "component_e_factory",
+				"isolate" : "components1"
+			}, {
+				"name" : "C_component",
+				"factory" : "component_c_factory",
+				"isolate" : "components2",
+				"node" : "node2"
+			}, {
+				"name" : "D_component",
+				"factory" : "component_d_factory",
+				"isolate" : "components3",
+				"node" : "node2"
+			}
+		]
+	}
+}
+{% endhighlight %}
 
 
 <script>
