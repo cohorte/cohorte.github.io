@@ -304,7 +304,11 @@ As you notice, C and D components should be deployed on two sperate isolates (*c
 
 ## <a name="step4"> crash-test!
 
-Work in progress.. 
+We introduce a new component **E_component** which has a faulty `say_hello` method implementation. 
+
+**Composition file** :
+
+We should note force the components to be in predefined isolates if we are not sure about their code quality. Indeed, in the composition specification, only the *Hello_Components* component is affected to a predefined isolate *web*. This also allows providing isolate configurations as the HTTP Service port used by its components.
 
 {% highlight json %}
 {
@@ -319,24 +323,22 @@ Work in progress..
 			}, {
 				"name" : "A_component",
 				"factory" : "component_a_factory",
-				"isolate" : "components1"
+				"node" : "node1"
 			}, {
 				"name" : "B_component",
 				"factory" : "component_b_factory",
-				"isolate" : "components1"
+				"node" : "node1"
 			}, {
 				"name" : "E_component",
 				"factory" : "component_e_factory",
-				"isolate" : "components1"
+				"node" : "node1"
 			}, {
 				"name" : "C_component",
-				"factory" : "component_c_factory",
-				"isolate" : "components2",
+				"factory" : "component_c_factory",				
 				"node" : "node2"
 			}, {
 				"name" : "D_component",
 				"factory" : "component_d_factory",
-				"isolate" : "components3",
 				"node" : "node2"
 			}
 		]
@@ -344,6 +346,21 @@ Work in progress..
 }
 {% endhighlight %}
 
+**Initial runtime composition** :
+
+![crash1](getting-started-img-8.png)
+
+**After the first crash** :
+
+Node2 is not affected, it is note showed hereafter.
+
+![crash1](getting-started-img-9.png)
+
+**After the second crash** :
+
+![crash1](getting-started-img-10.png)
+
+The component **E_component** source of problems is isolated from other stable components.
 
 <script>
     function loadLatestSnapshots() {
