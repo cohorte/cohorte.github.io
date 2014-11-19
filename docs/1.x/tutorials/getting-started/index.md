@@ -308,7 +308,7 @@ We introduce a new component **E_component** which has a faulty `say_hello` meth
 
 **Composition file** :
 
-We should note force the components to be in predefined isolates if we are not sure about their code quality. Indeed, in the composition specification, only the *Hello_Components* component is affected to a predefined isolate *web*. This also allows providing isolate configurations as the HTTP Service port used by its components.
+We should note force the components to be in predefined isolates if we are not sure about their code quality. Indeed, in the composition specification, only the *Hello_Components* component is affected to a predefined isolate *web*. This also allows providing isolate configurations (like the HTTP Service port used by its components).
 
 {% highlight json %}
 {
@@ -319,7 +319,7 @@ We should note force the components to be in predefined isolates if we are not s
 			{
 				"name" : "Hello_Components",
 				"factory" : "hello_components_factory",
-				"isolate" : "web"
+				"node" : "node1"
 			}, {
 				"name" : "A_component",
 				"factory" : "component_a_factory",
