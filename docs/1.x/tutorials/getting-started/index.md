@@ -352,7 +352,7 @@ We should note force the components to be in predefined isolates if we are not s
 
 **After the first crash** :
 
-Node2 is not affected, it is note showed hereafter.
+Node2 is not affected, it is not showed hereafter.
 
 ![crash1](getting-started-img-9.png)
 
