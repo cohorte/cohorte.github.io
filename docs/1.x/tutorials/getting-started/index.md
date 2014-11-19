@@ -362,6 +362,27 @@ Node2 is not affected, it is not showed hereafter.
 
 The component **E_component** source of problems is isolated from other stable components.
 
+**Note:**
+
+We can fixe the *web* isolate configuration to not have a different HTTP port each time the *web* isolate is created. To do that, add the following configuration file (`web.js`) to your `node1/conf`directory.
+
+`web.js`
+
+{% highlight json %}
+{
+	"composition" : [ {
+		/*
+		 * Override the HTTP service configuration
+		 */
+		"factory" : "pelix.http.service.basic.factory",
+		"name" : "pelix-http-service",
+		"properties" : {
+			"pelix.http.port" : 9500
+		}
+	} ]
+}
+{% endhighlight %}
+
 <script>
     function loadLatestSnapshots() {
         $.getJSON( "http://cohorte.github.io/latest_demos_hello.json", function( data ) {                                 
