@@ -264,6 +264,9 @@ In this document, we detail the ADMIN RESTful API v1 of COHORTE platform as well
 <tr><td>+ nbr_components</td><td>Integer</td><td>Number of components in this isolate</td></tr>
 <tr><td>+ node_uid</td><td>String</td><td>Isolate's Node UID</td></tr>
 <tr><td>+ node_name</td><td>String</td><td>Isolate's Node name</td></tr>
+<tr><td>+ http_access</td><td>String</td><td>Isolate's HTTP Service access</td></tr>
+<tr><td>+ http_port</td><td>integer</td><td>Isolate's HTTP Service port</td></tr>
+<tr><td>+ shell_port</td><td>integer</td><td>Isolate's Remote shell port</td></tr>
 </tbody>
 </table>
 
@@ -280,7 +283,10 @@ In this document, we detail the ADMIN RESTful API v1 of COHORTE platform as well
         "type": "cohorte-isolate",
         "nbr_components": 3,
         "node_uid": "41110b1d-b510-4e51-9945-a752da04a16d",
-        "node_name": "central"
+        "node_name": "central",
+        "http_access" : "10.130.1.97",
+        "http_port" : 9500,
+        "shell_port" : 9501
     }
 }
 {% endhighlight %}

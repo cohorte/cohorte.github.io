@@ -289,7 +289,7 @@ Type `http` command in `node1`'s terminal and get the *http* port of the *web* i
 
 In order to see the runtime architecture of your application, open a new tab in your browser and hit the following address : `http://localhost:9000/admin`
 
-The *Web Admin* utility is opened. You notice the following architecture : 
+The *Web Admin* utility is opened. You notice the following architecture (Global View tab): 
 
 <img src="getting-started-img-7.png" class="img-responsive" alt="web admin">
 
@@ -355,6 +355,8 @@ We should note force the components to be in predefined isolates if we are not s
 Node2 is not affected, it is not showed hereafter.
 
 ![crash1](getting-started-img-9.png)
+
+Open a new browser tab and access to the Hello_Components web page (you can retrieve the http port on which listen the web servlet using the shell command `http` or using the Web Admin (by clicking on the isolate's name in the dashboard page). 
 
 **After the second crash** :
 
