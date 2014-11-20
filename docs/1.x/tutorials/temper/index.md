@@ -119,9 +119,6 @@ The following JSON file (`gateway-node/conf/composition.js`) represents the JSON
 			"node" : "gateway-node",
 			"properties" : {
 				"servlet.path" : "/temper"
-			},
-			"wires" : {
-				"_aggregator" : "aggregator"
 			}
 		}
 		]
@@ -207,15 +204,32 @@ Accordingly, this node will use HTTP connection mode. The discovery of other COH
 
 Other important configurations are the `web-admin` and `shell-admin` ports. The letter is used to remotely access the shell of this node (e.g., `nc localhost 9001`), while the former is used to access the Web Admin interface in a web browser using this address : `http://localhost:9000/admin`
 
-WEB ADMIN IMAGE
+![webadmin](temper-img-7.png)
 
-You notice that there is one one COHORTE node at this time, which contains two **isolates** (*aggregation* and *web.interface*) as specified in the *composition specification*.  
+You notice that there is one one COHORTE node at this time (**gateway-node**), which contains two *isolates* (**web.interface** and **aggregation**) as specified in the *composition specification*.  
 
-To Open the web interface provided by the "UserInterface" component, click on its isolate (*web.interface*) to see details about it. Locate the `pelix.http.port` property and open up new browser tab to access the "UserInterface" provided interface as follow : `http://localhost:port/temper` (change `port`by the concrete `pelix.http.port` value).
+To Open the web interface provided by the **UserInterface** component, click on its isolate (*web.interface*) to see details about it, the click on the HTTP SERVIC link to open new browser tab referring to the HTTP server of the *web.interface* isolate. You have to add `/temper` to access the **UserInterface** component's provided interface.
+
+![webadmin](temper-img-8.png)
+
 
 #### Starting temperature sensors
 
-TODO
+Will the **aggregator** and the **aggregator web interface** are running, we start now the two Java and Python implemented sensors. 
+
+* Go the `python-sensor-node` and `java-sensor-node` directory in two separate terminals and type the following command for each one (ensure to set the same `--app-id` as the Top Composer started before):
+
+<pre>
+$ ./<b>run</b> --app-id temper  
+</pre>
+
+This command will start the corresponding node and participate to the global application. In particular, the Top Composer started before (and which have the *composition specification file*) will order these nodes to instantiate sensor components corresponding to their nature. Hence, in the **python-sensor-node** we will have an instance of the component **python-sensor-factory** and in the **java-sensor-node** will will have another instance of **java-sensor-factory** component.
+
+![new-composition](temper-img-9.png)
+
+Check the *aggregator web interface*, you will notice new two columns for Python and Java sensors.
+
+All this three COHORTE nodes are located on the same machine. Let now integrate a new node which runs on separate machine located either in the local network aria or somewhere in the Internet.
 
 <a name="step2"></a>
 
