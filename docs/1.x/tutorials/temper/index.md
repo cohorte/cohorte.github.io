@@ -237,25 +237,95 @@ All this three COHORTE nodes are located on the same machine. Let now integrate 
 
 #### Local Network Area deployment
 
+Let's add another different device to our application. In the downloaded zip file, there a pre-prepared COHORTE node called `raspberry-node`. If you have a *Raspberry-Pi* device, install *Cohorte Python distribution* and put this node on it. Otherwise, you can test this node in any other device (including the one you are already working on).
+
 ![local-application](temper-img-6.png)
+
+Go to the `raspberry-node` and start it using the following command :
+
+<pre>
+$ ./<b>run</b> --app-id temper
+</pre>
+
+You will notice its appearance in the Web Admin, as well as on the Aggregator web interface.
 
 #### Internet level deployment
 
+In order to get your application deployed in the Internet level, you should start the Top Composer in XMPP mode. We will use an XMPP server as transport and discovery middleware. 
+
 ![environment1](temper-img-5.png)
+
+* Stop all your running nodes and restart the Top Composer as follow :
+
+<pre>
+$ ./<b>run</b> --app-id temper --top-composer true  --use-config run_xmpp.js
+</pre>
+
+This will run the Top Composer using the two communication modes : HTTP and XMPP as provided on `run_xmpp.js` startup configuration file :
+
+{% highlight json %}
+{
+    "node": {
+        "name": "gateway-node",
+        "top-composer": true,
+        "composition-file": "composition.js",
+        "auto-start": true,
+        "web-admin": 9000,
+        "shell-admin": 9001     
+    },
+    "transport": [
+        "xmpp",
+        "http"
+    ],
+    "transport-xmpp": {
+        "xmpp-port": 5222,
+        "xmpp-password": "Bender",
+        "xmpp-jid": "bot@charmanson.isandlatech.com",
+        "xmpp-server": "charmanson.isandlatech.com"
+    }
+}
+{% endhighlight %}
+
+
+* start again the previous nodes as before, they will use HTTP communication mode as they are located on the local network area. 
+* start a new `raspberry-node` node using the following command : 
+
+<pre>
+$ ./<b>run</b> --app-id temper --node remote_raspberry --using-conf run_xmpp.js
+</pre>
+
+This last node called at runtime `remote_raspberry` could be placed any where the time he has access to the configured XMPP server (see run_xmpp.js).
 
 <a name="step3"></a>
 
 ### .Net interaction via Unity 3D framework
 
-The objective of this first step is to show you ... 
+No its time to add the 3D viewer of our temperature sensors. 
 
 ![environment3](temper-img-3.png)
 
-<a name="step1"></a>
+Download the already implemented viewer corresponds to your platform :
+
+<ul>
+  <li><a href="#">Mac OS X</a></li>
+  <li><a href="#">Linux</a></li>
+  <li><a href="#">Windows</a></li>
+</ul>
+
+The downloaded zip file corresponds to a static COHORTE node. No composition will be ordered from the Top Composer, the local component will be instantiated at startup by the node itself.
+
+At startup, you have to give the application's ID specified for the Top Composer (`temper`) and the 3D viewer will be reflects automatically the detected temperature sensors and their collected last value.
+
+![unity_viewer](temper-img-10.png)
+
+The unity is a .Net application. We have integrated C# components in COHORTE so that will be considered as (remote) services.
+
+
+<a name="step4"></a>
 
 ### Implementing a new temperature sensor component
 
-TODO
+Work in progress..
 
 <script>
     function loadLatestSnapshots() {
