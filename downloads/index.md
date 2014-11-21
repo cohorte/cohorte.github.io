@@ -52,23 +52,24 @@ Not yet released!
 
 <script>
     function loadLatestSnapshots() {
-        $.getJSON( "http://cohorte.github.io/latest_platforms.json", function( data ) {
+        $.getJSON( "http://cohorte.github.io/latest_platforms.json", function( data1 ) {
             console.log("refresh snapshots...");
             frame = "<ul>";
-            frame += "<li><a href='" + data["snapshots"]["cohorte-linux-distribution"]["files"]["tar.gz"] + "'>cohorte-linux-distribution (" + data["snapshots"]["cohorte-linux-distribution"]["version"] + ")</a></li>"
-            frame += "<li><a href='" + data["snapshots"]["cohorte-macosx-distribution"]["files"]["tar.gz"] + "'>cohorte-macosx-distribution (" + data["snapshots"]["cohorte-macosx-distribution"]["version"] + ")</a></li>"
-            frame += "<li><a href='" + data["snapshots"]["cohorte-python-distribution"]["files"]["tar.gz"] + "'>cohorte-python-distribution (" + data["snapshots"]["cohorte-python-distribution"]["version"] + ")</a></li>"
+            frame += "<li><a href='" + data1["snapshots"]["cohorte-linux-distribution"]["files"]["tar.gz"] + "'>cohorte-linux-distribution (" + data1["snapshots"]["cohorte-linux-distribution"]["version"] + ")</a></li>"
+            frame += "<li><a href='" + data1["snapshots"]["cohorte-macosx-distribution"]["files"]["tar.gz"] + "'>cohorte-macosx-distribution (" + data1["snapshots"]["cohorte-macosx-distribution"]["version"] + ")</a></li>"
+            frame += "<li><a href='" + data1["snapshots"]["cohorte-python-distribution"]["files"]["tar.gz"] + "'>cohorte-python-distribution (" + data1["snapshots"]["cohorte-python-distribution"]["version"] + ")</a></li>"
             	
 	    frame += "</ul>";
             $('#download_night_builds').html(frame);
         });
-        
-        $.getJSON( "http://cohorte.github.io/latest_demos_hello.json", function( data ) {                                 
-            $("#download_hello_demo_python_snapshot").attr("href", data["snapshots"]["hello-python-distribution"]["files"]["zip"]);
-            $("#download_hello_demo_java_snapshot").attr("href", data["snapshots"]["hello"]["files"]["jar"]);
+        /*
+        $.getJSON( "http://cohorte.github.io/latest_demos_hello.json", function( data2 ) {                                 
+            $("#download_hello_demo_python_snapshot").attr("href", data2["snapshots"]["hello-python-distribution"]["files"]["zip"]);
+            $("#download_hello_demo_java_snapshot").attr("href", data2["snapshots"]["hello"]["files"]["jar"]);
         });
-        $.getJSON( "http://cohorte.github.io/latest_demos_spellchecker.json", function( data ) {                                 
-            $("#download_spellchecker_snapshot").attr("href", data["snapshots"]["spellchecker-distribution"]["files"]["zip"]);            
+*/
+        $.getJSON( "http://cohorte.github.io/latest_demos_spellchecker.json", function( data4 ) {                                 
+            $("#download_spellchecker_snapshot").attr("href", data4["snapshots"]["spellchecker-distribution"]["files"]["zip"]);            
         });
         /*
         $.getJSON( "http://cohorte.github.io/latest_demos_temper.json", function( data )
