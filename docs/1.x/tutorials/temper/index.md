@@ -152,7 +152,12 @@ In the next steps, we will use the nodes to execute our application. For clarity
 * **[STEP 1](#step1)** : in the same machine, we start three COHORTE nodes (*gateway*, *java-sensor-node*, and *python-sensor-node*). We monitor the application's architecture to see the automatically created isolates and their components.   
 * **[STEP 2](#step2)** : we start a Raspberry-Pi device containing the *raspberry-pi* COHORTE node. We highlight the dynamic capabilities of COHORTE and its remote-services feature.
 * **[STEP 3](#step3)** : at this step, we start another machine containing the *datashower* COHORET node. We highlight the capability of COHORTE to deal with different components implemented in different languages (here C#).
+
+<!-- 
+
 * **[STEP 4](#step4)** : at the final step, we will implement our specific temperature sensor (using Java) and add it to our application. 
+
+-->
 
 <hr/>
 
@@ -320,12 +325,15 @@ At startup, you have to give the application's ID specified for the Top Composer
 
 The unity is a .Net application. We have integrated C# components in COHORTE so that will be considered as (remote) services.
 
+<!--
 
 <a name="step4"></a>
 
 ### Implementing a new temperature sensor component
 
 Work in progress..
+
+-->
 
 <script>
     function loadLatestSnapshots() {
