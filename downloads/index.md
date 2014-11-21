@@ -62,13 +62,16 @@ Not yet released!
 	    frame += "</ul>";
             $('#download_night_builds').html(frame);
         });
+
         $.getJSON( "http://cohorte.github.io/latest_demos_hello.json", function( data ) {                                 
-            $("#download_hello_demo_python_snapshot").attr("href", data["snapshots"]["hello-python-distribution"]["files"]["zip"])
-            $("#download_hello_demo_java_snapshot").attr("href", data["snapshots"]["hello"]["files"]["jar"])            
+            $("#download_hello_demo_python_snapshot").attr("href", data["snapshots"]["hello-python-distribution"]["files"]["zip"]);
+            $("#download_hello_demo_java_snapshot").attr("href", data["snapshots"]["hello"]["files"]["jar"]);
         });
+        
         $.getJSON( "http://cohorte.github.io/latest_demos_temper.json", function( data )
-            $("#download_temper_snapshot").attr("href", data["snapshots"]["temper-distribution"]["files"]["zip"])         
+            $("#download_temper_snapshot").attr("href", data["snapshots"]["temper-distribution"]["files"]["zip"]) ;        
         });
+        
         $.getJSON( "http://cohorte.github.io/latest_demos_spellchecker.json", function( data )                
             $('#download_spellchecker_snapshot').attr("href", data["snapshots"]["spellchecker-distribution"]["files"]["zip"]);            
         });
