@@ -73,7 +73,7 @@ Not yet released!
     }
 
     function update_temper_tutorial_links() {
-        $.getJSON( "http://cohorte.github.io/latest_demos_temper.json", function( data3 )
+        $.getJSON( "http://cohorte.github.io/latest_demos_temper.json", function( data3 ) {
             $("#download_temper_snapshot").attr("href", data3["snapshots"]["temper-distribution"]["files"]["zip"]) ;        
         });
     }
@@ -88,7 +88,7 @@ Not yet released!
     $(document).ready(function() {        
         update_night_build_links();
         update_getting_started_tutorial_links();
-        //update_temper_tutorial_links();
+        update_temper_tutorial_links();
         update_spellchecker_tutorial_links();
     });
 </script>
