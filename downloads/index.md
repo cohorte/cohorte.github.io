@@ -1,6 +1,8 @@
 ---
 layout: docpage
 title: Downloads
+toc: true
+
 comments: false
 ---
 
@@ -31,6 +33,23 @@ Not yet released!
 </div>
 
 
+## Tutorials Resources
+
+<ul>
+  <li>Getting started tutorial bundles (<a href="{{site.baseurl}}/docs/1.x/tutorials/getting-started">read this tutorial here</a>) : <br/>
+      <ul><li><a id="download_hello_demo_python_snapshot" href="#">Download Hello Python Bundle</a></li>
+          <li><a id="download_hello_demo_java_snapshot" href="#">Download Hello Java Bundle</a></li></ul>
+  </li>
+  <li>Temper tutorial nodes (<a href="{{site.baseurl}}/docs/1.x/tutorials/temper">read this tutorial here</a>) : <br/>
+      <ul><li><a id="download_temper_snapshot" href="#">Download Temper Nodes</a></li>
+          <li>Download Temper Unity Viewer - <a href="#">Mac OSX</a> | <a href="#">Linux</a> | <a href="#">Windows</a></li></ul>
+  </li>
+  <li>Spellchecker tutorial sources (<a href="{{site.baseurl}}/docs/1.x/tutorials/spellchecker">read this tutorial here</a>) : <br/>
+      <ul><li><a id="download_spellchecker_snapshot" href="#">Download Spellchecker sources</a></li>
+      </ul>
+  </li>
+</ul>
+
 <script>
     function loadLatestSnapshots() {
         $.getJSON( "http://cohorte.github.io/latest_platforms.json", function( data ) {
@@ -43,6 +62,17 @@ Not yet released!
 	    frame += "</ul>";
             $('#download_night_builds').html(frame);
         });
+        $.getJSON( "http://cohorte.github.io/latest_demos_hello.json", function( data ) {                                 
+            $("#download_hello_demo_python_snapshot").attr("href", data["snapshots"]["hello-python-distribution"]["files"]["zip"])
+            $("#download_hello_demo_java_snapshot").attr("href", data["snapshots"]["hello"]["files"]["jar"])            
+        });
+        $.getJSON( "http://cohorte.github.io/latest_demos_temper.json", function( data )
+            $("#download_temper_snapshot").attr("href", data["snapshots"]["temper-distribution"]["files"]["zip"])         
+        });
+        $.getJSON( "http://cohorte.github.io/latest_demos_spellchecker.json", function( data )                
+            $('#download_spellchecker_snapshot').attr("href", data["snapshots"]["spellchecker-distribution"]["files"]["zip"]);            
+        });
+
     }
 
     $(document).ready(function() {        
