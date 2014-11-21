@@ -71,11 +71,11 @@ Not yet released!
         $.getJSON( "http://cohorte.github.io/latest_demos_temper.json", function( data )
             $("#download_temper_snapshot").attr("href", data["snapshots"]["temper-distribution"]["files"]["zip"]) ;        
         });
-        
+        */
         $.getJSON( "http://cohorte.github.io/latest_demos_spellchecker.json", function( data )                
             $('#download_spellchecker_snapshot').attr("href", data["snapshots"]["spellchecker-distribution"]["files"]["zip"]);            
         });
-        */
+        
     }
 
     $(document).ready(function() {        
