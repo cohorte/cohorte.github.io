@@ -43,7 +43,7 @@ There are a number of benefits to using COHORTE to build your software applicati
 	</div>
 	<div class="col-md-6" >
 		<h3>Multi-language programming</h3>
-		<p>Components in a COHORTE system can be implemented using your Java or Python programming languages (other languages are under study). You can also wrap C modules within Python components to use legacy C code. In addition, you can dynamically update the C code without any complications.COHORTE uses two similar Service-Oriented Component-based frameworks for Java and Python environments. Service provider can be implemented using Python and used by another component implemented in Java.</p>
+		<p>Components in a COHORTE system can be implemented in Java or Python programming languages using Apache Felix iPOJO (Java) and/or isandlatech iPOPO (Python) service-based component-model frameworks. There is also a partial support for .Net components using IronPython component facade (full support for .Net is in the project's roadmap) . You can also wrap other legacy modules implemented in other programming languages by using Python component wrappers. In addition, you can dynamically update the C code without any complications. COHORTE Provides a common implementation for Remotes Services allowing the integration of a mixture of components with zero configuration. Service provider can be implemented using Python and used by another component implemented in Java, and vise versa</p>
 	</div>
 </div>
 
