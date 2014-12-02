@@ -37,6 +37,9 @@ Some resources to get started quickly:
  * [**Spellcheker Tutorial**](./tutorials/spellchecker) 
     <br/>An introductory tutorial for Java and Python developers. It highlights the Service-oriented Component-based approach of the COHORTE platform.
 
+ * [**Arduino LED Tutorial**](./tutorials/arduino-led)
+    <br/>How to use COHORTE to export an Arduino micro-controller as a Service used by other components. 
+
 ## Articles and Presentations
 
 * [COHORTE: Distributed and Reliable Service-Oriented Component-Model Applications](./slides/overview) (slides)
