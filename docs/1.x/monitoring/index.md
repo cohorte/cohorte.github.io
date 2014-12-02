@@ -45,7 +45,17 @@ In this document, we detail the ADMIN RESTful API v1 of COHORTE platform as well
 </td></tr>
 <tr><td>APIV1-101</td><td>
 <a href="#APIV1-101">Get the list of Components in one particular Isolate</a>
-</td></tr></tbody>
+</td></tr>
+<tr><td>APIV1-150</td><td>
+<a href="#APIV1-150">Kill all nodes</a>
+</td></tr>
+<tr><td>APIV1-151</td><td>
+<a href="#APIV1-151">Kill node</a>
+</td></tr>
+<tr><td>APIV1-152</td><td>
+<a href="#APIV1-152">Kill isolate</a>
+</td></tr>
+</tbody>
 </table>
 
 ### Detail of REST APIs
@@ -446,5 +456,112 @@ In this document, we detail the ADMIN RESTful API v1 of COHORTE platform as well
             "language": "python"
         }
     ]
+}
+{% endhighlight %}
+
+<a name="APIV1-150"/>
+
+#### APIV1-150 : Kill all nodes
+
+ * URL: `http://myhost:port/admin/api/v1/nodes/kill`
+ * Supported request methods: `GET`
+ * Response format: `json`
+ * Requires authentication?: `not required`
+ * Response:
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+<thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+<tbody>
+
+</tbody>
+</table>
+
+ * JSON Response Example : 
+
+{% highlight json %}
+{
+    "meta": {
+        "code": 200
+    },
+    "status": {
+        "code": 0,
+        "description": "All nodes successfully destroyed"
+    }
+}
+{% endhighlight %}
+
+<a name="APIV1-151"/>
+
+#### APIV1-151 : Kill node
+
+* URL: `http://myhost:port/admin/api/v1/nodes/56e5b100-c8a2-4bd8-a818-30edaf9a8fe9/kill`
+ * Supported request methods: `GET`
+ * Response format: `json`
+ * Requires authentication?: `not required`
+ * Response:
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+<thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>meta</td><td>Map</td><td>meta-information about the response</td></tr>
+<tr><td>+ code</td><td>Integer</td><td>Return code</td></tr>
+<tr><td>+ node</td><td>String</td><td>Node name</td></tr>
+<tr><td>+ count</td><td>Integer</td><td>Number of results</td></tr>
+<tr><td>isolates</td><td>Array</td><td>Array of isolates of the wanted Node</td></tr>
+<tr><td>+ uid</td><td>String</td><td>Isolate UID</td></tr>
+<tr><td>+ name</td><td>String</td><td>Isolate name</td></tr>
+</tbody>
+</table>
+
+ * JSON Response Example : 
+
+{% highlight json %}
+{
+    "meta": {
+        "node": "56e5b100-c8a2-4bd8-a818-30edaf9a8fe9",
+        "code": 200
+    },
+    "status": {
+        "code": 0,
+        "description": "Node successfully destroyed"
+    }
+}
+{% endhighlight %}
+
+<a name="APIV1-152"/>
+
+#### APIV1-152 : Kill isolate
+
+* URL: `http://myhost:port/admin/api/v1/isolates/41110b1d-b510-4e51-9945-a752da04a16d/kill`
+ * Supported request methods: `GET`
+ * Response format: `json`
+ * Requires authentication?: `not required`
+ * Response:
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+<thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>meta</td><td>Map</td><td>meta-information about the response</td></tr>
+<tr><td>+ code</td><td>Integer</td><td>Return code</td></tr>
+<tr><td>+ node</td><td>String</td><td>Node name</td></tr>
+<tr><td>+ count</td><td>Integer</td><td>Number of results</td></tr>
+<tr><td>isolates</td><td>Array</td><td>Array of isolates of the wanted Node</td></tr>
+<tr><td>+ uid</td><td>String</td><td>Isolate UID</td></tr>
+<tr><td>+ name</td><td>String</td><td>Isolate name</td></tr>
+</tbody>
+</table>
+
+ * JSON Response Example : 
+
+{% highlight json %}
+{
+    "meta": {
+        "isolate": "41110b1d-b510-4e51-9945-a752da04a16d",
+        "code": 200
+    },
+    "status": {
+        "code": 0,
+        "description": "Isolate successfully destroyed"
+    }
 }
 {% endhighlight %}

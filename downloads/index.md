@@ -36,11 +36,15 @@ Not yet released!
 ## Tutorials Resources
 
 <ul>
-  <li>Getting started tutorial bundles (<a href="{{site.baseurl}}/docs/1.x/tutorials/getting-started">read this tutorial here</a>) : <br/>
+  <li>Getting started tutorial (<a href="{{site.baseurl}}/docs/1.x/tutorials/getting-started">read this tutorial here</a>) : <br/>
       <ul><li><a id="download_hello_demo_python_snapshot" href="#">Download Hello Python Bundle</a></li>
           <li><a id="download_hello_demo_java_snapshot" href="#">Download Hello Java Bundle</a></li></ul>
   </li>
-  <li>Temper tutorial nodes (<a href="{{site.baseurl}}/docs/1.x/tutorials/temper">read this tutorial here</a>) : <br/>
+  <li>Robots tutorial (<a href="{{site.baseurl}}/docs/1.x/tutorials/robots">read this tutorial here</a>) : <br/>
+      <ul><li><a id="download_robots_snapshot" href="#">Download Robots Nodes</a></li>
+      </ul>
+  </li>
+  <li>Temper tutorial (<a href="{{site.baseurl}}/docs/1.x/tutorials/temper">read this tutorial here</a>) : <br/>
       <ul><li><a id="download_temper_snapshot" href="#">Download Temper Nodes</a></li>
           <li>Download Temper Unity Viewer - <a href="#">Mac OSX</a> | <a href="#">Linux</a> | <a href="#">Windows</a></li></ul>
   </li>
@@ -69,6 +73,12 @@ Not yet released!
         $.getJSON( "http://cohorte.github.io/latest_demos_hello.json", function( data2 ) {                                 
             $("#download_hello_demo_python_snapshot").attr("href", data2["snapshots"]["hello-python-distribution"]["files"]["zip"]);
             $("#download_hello_demo_java_snapshot").attr("href", data2["snapshots"]["hello"]["files"]["jar"]);
+        });
+    }
+
+    function update_robots_tutorial_links() {
+        $.getJSON( "http://cohorte.github.io/latest_demos_robots.json", function( data3 ) {
+            $("#download_robots_snapshot").attr("href", data3["snapshots"]["robots-distribution"]["files"]["zip"]) ;        
         });
     }
 

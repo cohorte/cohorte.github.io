@@ -28,11 +28,19 @@ Some resources to get started quickly:
  * [**Getting Started Tutorial**](./tutorials/getting-started)
     <br/>Install and run a COHORTE application in 10 minutes.
 
+ * [**Robots Tutorial**](./tutorials/robots) 
+    <br/>Highlighting the multi-language and distribution features of COHORTE in a simple, yet functional temperature monitoring application.
+
  * [**Temper Tutorial**](./tutorials/temper) 
     <br/>Highlighting the multi-language and distribution features of COHORTE in a simple, yet functional temperature monitoring application.
 
  * [**Spellcheker Tutorial**](./tutorials/spellchecker) 
     <br/>An introductory tutorial for Java and Python developers. It highlights the Service-oriented Component-based approach of the COHORTE platform.
+
+## Articles and Presentations
+
+* [COHORTE: Distributed and Reliable Service-Oriented Component-Model Applications](./slides/overview) (slides)
+   <br/>Quick overview of COHORTE Project
 
 ## Reference documentation
 
@@ -64,6 +72,7 @@ Some resources to get started quickly:
 </div>
 -->
 You can download the full reference documentation as a [ ![PDF]({{ site.baseurl }}/resources/images/pdf.png) PDF](refdoc.html) file or read it in one [ ![PDF]({{ site.baseurl }}/resources/images/html.png) HTML](refdoc.html) file.
+
 
 ## Other resources
 
