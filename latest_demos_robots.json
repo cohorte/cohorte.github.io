@@ -3,9 +3,9 @@
   "snapshots": {
     "robots-distribution": {
       "files": {
-        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/demos/robots/1.0.0-SNAPSHOT/robots-1.0.0-20141203.101222-16-distribution.zip"
+        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/demos/robots/1.0.0-SNAPSHOT/robots-1.0.0-20141204.085023-19-distribution.zip"
       },
-      "version": "1.0.0-20141203.101222-16"
+      "version": "1.0.0-20141204.085023-19"
     }
   }
 }
