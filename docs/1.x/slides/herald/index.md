@@ -11,6 +11,6 @@ toc_numerate: true
 
 ## COHORTE Herald : Zero config transport abstraction layer allowing OSGi remote services over the NATs
 
-"Une couche de transport sans configuration autorisant les accès distants aux services OSGi" 
+Une couche de transport sans configuration autorisant les accès distants aux services OSGi
 
-<iframe src="https://docs.google.com/presentation/d/1tRcfBD3Cn8uqYzNsma4bykMwZDMWZxWV8te0iknsxbY/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<iframe src="https://docs.google.com/presentation/d/1tRcfBD3Cn8uqYzNsma4bykMwZDMWZxWV8te0iknsxbY/embed?start=false&loop=false&delayms=60000" frameborder="0" width="900" height="689" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
