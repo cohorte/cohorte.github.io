@@ -13,4 +13,5 @@ toc_numerate: true
 
 "Une couche de transport sans configuration autorisant les accès distants aux services OSGi" 
 
-<iframe src="https://docs.google.com/presentation/d/1cspEV_DBa0B8V0qltF_5D4CRGo8DVs9SdjR0rTsIcXg/embed?start=false&loop=false&delayms=3000" frameborder="0" width="900" height="689" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<iframe src="https://docs.google.com/presentation/d/1tRcfBD3Cn8uqYzNsma4bykMwZDMWZxWV8te0iknsxbY/embed?start=false&loop=false&delayms=3000" frameborder="0" width="900" height="689" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
