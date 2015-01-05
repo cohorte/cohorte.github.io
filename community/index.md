@@ -3,36 +3,39 @@ layout: page
 title: Community
 ---
 
-Cube Project has several sub-projects hosted on Github at this address: https://github.com/isandlatech/
+Cube Project has several sub-projects hosted on Github at this address: [https://github.com/isandlatech/](https://github.com/isandlatech/)
 
 ## Build Tools
 
 To build the code, install (as well as the programs needed to build Cube on Windows, if that is your development platform)
+
  * Apache Maven
  * Oracle Java 6 or 7 or OpenJDK
-   These should also be on your PATH; test by executing mvn and javac respectively.
+
+   These should also be on your PATH; test by executing `mvn` and `javac` respectively.
 
 ## Getting the source code
 The official location for Cube source code is GitHub. You need a git client installed on your system. Some IDEs ship with Git support; this document assumes you are using the command line.
 
-> git clone https://github.com/isandlatech/cohorte-runtime.git 
-
-> git clone https://github.com/isandlatech/cohorte-platform.git 
-
-Git works offline - though you will need to perform your initial builds online so that Maven can download dependencies.
+> git clone https://github.com/isandlaTech/cohorte-platforms
 
 ## Build the sources
 
-### Java code
+You will need to perform your initial builds online so that Maven can download dependencies.
 
-TODO: should use `dev` branch (except for cohorte-utilities).
+Depending on your working platform, you need to specify a pre-defined maven profile adequate to your platform. Here is the supported platforms: 
 
-You need to run the Maven build command on each subproject seperatly. 
+<table class="table">
+<tr><td><b>Profile</b></td><td><b>Description</b></td></tr>
+<tr><td>python</td><td>Compile and generate a COHORET platform distribution with full Python support. This distribution can be used in devices with no JVM installed and where all components are implemented in Python.</td></tr>
+<tr><td>linux</td><td>Compile and generate a COHORET platform distribution for 64 bits linux operating system.This distribution can manage Python and Java components. </td></tr>
+<tr><td>macosx</td><td>Compile and generate a COHORET platform distribution for 64 bits Mac OS X operating system.This distribution can manage Python and Java components. </td></tr>
+</table>
 
+Example of compilation in the Mac OS X operating system.
 
-### Python code
+ * `mvn clean install -P macosx`
 
-TODO
 
 ## Continuous Integration
 
@@ -43,5 +46,5 @@ TODO
 You can write an “issue” directly in the sub-project’s “issues” tab of GitHub website. Mostly, you can contribute instructions on how to fix a given bug. Or you can directly fix it and send it as a “pull request” on github. 
 
 ## Future development and enhancement 
-Once you get comfortable with the code, you can start to scratch you own itch and contribute new features. 
+Once you get comfortable with the code, you can start to scratch your own itch and contribute new features. 
 

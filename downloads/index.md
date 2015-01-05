@@ -19,13 +19,13 @@ Not yet released!
 
 ## Pre-Release Versions (1.0.0.pre1)
 
-<!--
 
-* Mac OS X : [cohorte-1.0.0.pre1-macosx-distribution.tar.gz](http://repo.isandlatech.com/downloads/cohorte/1.x/cohorte-1.0.0.pre1-macosx-distribution.tar.gz) ( [mirror1](http://dachra.com/mirrors/cohorte/1.x/cohorte-1.0.0.pre1-macosx-distribution.tar.gz) )
-* Linux (x86_64) : [cohorte-1.0.0.pre1-linux-distribution.tar.gz](http://repo.isandlatech.com/downloads/cohorte/1.x/cohorte-1.0.0.pre1-linux-distribution.tar.gz) ( [mirror1](http://dachra.com/mirrors/cohorte/1.x/cohorte-1.0.0.pre1-linux-distribution.tar.gz) )
-* Full Python : [cohorte-1.0.0.pre1-python-distribution.tar.gz](http://repo.isandlatech.com/downloads/cohorte/1.x/cohorte-1.0.0.pre1-python-distribution.tar.gz) ( [mirror1](http://dachra.com/mirrors/cohorte/1.x/cohorte-1.0.0.pre1-python-distribution.tar.gz) )
+* Mac OS X (64bits): [cohorte-1.0.0-pre1-macosx-distribution.tar.gz](http://repo.isandlatech.com/downloads/cohorte/1.x/cohorte-1.0.0pre1-macosx-distribution.tar.gz) 
+* Linux (x86_64) : [cohorte-1.0.0-pre1-linux-distribution.tar.gz](http://repo.isandlatech.com/downloads/cohorte/1.x/cohorte-1.0.0-pre1-linux-distribution.tar.gz) 
+* Full Python : [cohorte-1.0.0-pre1-python-distribution.tar.gz](http://repo.isandlatech.com/downloads/cohorte/1.x/cohorte-1.0.0-pre1-python-distribution.tar.gz) 
 
--->
+
+* [Source code](https://github.com/isandlaTech/cohorte-platforms/releases/tag/v1.0.0-pre1)
 
 ## Night Builds
 
