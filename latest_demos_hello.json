@@ -3,9 +3,9 @@
   "snapshots": {
     "hello": {
       "files": {
-        "jar": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/demos/hello/1.0.0-SNAPSHOT/hello-1.0.0-20150113.235617-145.jar"
+        "jar": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/demos/hello/1.0.0-SNAPSHOT/hello-1.0.0-20150114.235735-146.jar"
       },
-      "version": "1.0.0-20150113.235617-145"
+      "version": "1.0.0-20150114.235735-146"
     },
     "hello-python-distribution": {
       "files": {
