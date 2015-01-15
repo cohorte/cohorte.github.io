@@ -82,7 +82,7 @@ You can download the full reference documentation as a [ ![PDF]({{ site.baseurl 
 
 ## Scientific publications
 
-* [A dynamic and service-oriented component model for python long-lived applications](). T. Calmant, J. C. Americo, O. Gattaz, D. Donsez, and K. Gama. In Proceedings of the 15th ACM SIGSOFT Symposium on Component Based Software Engineering, CBSE ’12, pages 35–40, New York, NY, USA, 2012. ACM.
+* [A dynamic and service-oriented component model for python long-lived applications](http://www.isandlatech.com/__FR/pdfs/20120429%20cbse30-calmant.pdf). T. Calmant, J. C. Americo, O. Gattaz, D. Donsez, and K. Gama. In Proceedings of the 15th ACM SIGSOFT Symposium on Component Based Software Engineering, CBSE ’12, pages 35–40, New York, NY, USA, 2012. ACM.
 
 ## Other resources
 
