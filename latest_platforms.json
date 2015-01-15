@@ -9,9 +9,9 @@
     },
     "cohorte-macosx-distribution": {
       "files": {
-        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20150112.083825-113-macosx-distribution.tar.gz"
+        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20150115.235202-120-macosx-distribution.tar.gz"
       },
-      "version": "1.0.0-20150112.083825-113"
+      "version": "1.0.0-20150115.235202-120"
     },
     "cohorte-python-distribution": {
       "files": {
