@@ -80,6 +80,10 @@ Some resources to get started quickly:
 You can download the full reference documentation as a [ ![PDF]({{ site.baseurl }}/resources/images/pdf.png) PDF](refdoc.html) file or read it in one [ ![PDF]({{ site.baseurl }}/resources/images/html.png) HTML](refdoc.html) file.
 
 
+## Scientific publications
+
+* [A dynamic and service-oriented component model for python long-lived applications](). T. Calmant, J. C. Americo, O. Gattaz, D. Donsez, and K. Gama. In Proceedings of the 15th ACM SIGSOFT Symposium on Component Based Software Engineering, CBSE ’12, pages 35–40, New York, NY, USA, 2012. ACM.
+
 ## Other resources
 
 COHORTE uses two main existing component models as underlying component-based software frameworks. If you are not yet familiar with iPOJO (Java programming) or iPOPO (Python programming) we encourage you to have a quick look to their respective web sites:
