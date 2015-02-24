@@ -3,9 +3,9 @@
   "snapshots": {
     "cohorte-linux-distribution": {
       "files": {
-        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20150224.101725-191-linux-distribution.tar.gz"
+        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20150224.161129-194-linux-distribution.tar.gz"
       },
-      "version": "1.0.0-20150224.101725-191"
+      "version": "1.0.0-20150224.161129-194"
     },
     "cohorte-macosx-distribution": {
       "files": {
@@ -15,9 +15,9 @@
     },
     "cohorte-python-distribution": {
       "files": {
-        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20150224.092221-188-python-distribution.tar.gz"
+        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.0-SNAPSHOT/cohorte-1.0.0-20150224.160134-192-python-distribution.tar.gz"
       },
-      "version": "1.0.0-20150224.092221-188"
+      "version": "1.0.0-20150224.160134-192"
     }
   }
 }
