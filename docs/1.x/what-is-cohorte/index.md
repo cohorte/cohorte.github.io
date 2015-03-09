@@ -28,7 +28,7 @@ There are a number of benefits to using COHORTE to build your software applicati
 <div class="row">
 	<div class="col-md-6">
 		<h3>Service-oriented Component-based Applications</h3>
-		<p>COHORTE provides a framework to construct modularised applications consisting of software components that uses software services provided by other components. This approach allows to construct IT applications as mean of a set of components providing and requiring services. </p>
+		<p>COHORTE provides a framework to construct modularised applications consisting of software components that uses software services provided by other components. This approach allows to construct IT applications as mean of a set of components providing and requiring services. COHORET is compliant to OSGi specification.</p>
 	</div>
 	<div class="col-md-6" >
 		<img src="what-is-cohorte-img1.png"/>
@@ -52,7 +52,7 @@ There are a number of benefits to using COHORTE to build your software applicati
 <div class="row">
 	<div class="col-md-6">
 		<h3>Components Distribution</h3>
-		<p>COHORTE developers provides only implementations for the different components providing or requiring services. At runtime, the concret placement of components in execution nodes is managed by the COHORTE runtime. Two component can work together transparantly even they are located on two seperate machines.</p>
+		<p>COHORTE developers provides only implementations for the different components providing or requiring services. At runtime, the concret placement of components in execution nodes is managed by the COHORTE runtime. Two components can work together transparantly even they are located on two seperate machines.</p>
 	</div>
 	<div class="col-md-6" >
 		<img src="what-is-cohorte-img4.png"/>
@@ -76,7 +76,7 @@ There are a number of benefits to using COHORTE to build your software applicati
 <div class="row">
 	<div class="col-md-6">
 		<h3>Dynamic Isolation and Resilience</h3>
-		<p>COHORTE automatically prevent and correct component failures by isolating them and relanching them seperatly from others. Users can also define static isolates in which they put components that are guaranteede to be safe.</p>
+		<p>COHORTE automatically prevent and correct component failures by isolating them and restarting them seperatly from others. Users can also define static isolates in which they put components that are guaranteede to be safe.</p>
 	</div>
 	<div class="col-md-6" >
 		<img src="what-is-cohorte-img5.png"/>
@@ -98,11 +98,12 @@ There are a number of benefits to using COHORTE to build your software applicati
 <div id="one-page-generator-end"></div>
 
 
+<!--
 ## Convinced?
 
 If COHORTE is what you want for your IT applications, try it out! [Here are some resources to get
-started]({{ site.baseurl }}/docs/1.x/tutorials). 
-
+started]({{ site.baseurl }}/docs/1.x). 
+-->
 
 ## About
 

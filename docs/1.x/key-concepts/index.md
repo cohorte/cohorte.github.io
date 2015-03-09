@@ -6,49 +6,52 @@ toc: true
 toc_numerate: true
 toc_exlude: h1, h4, h5, h6
 previous_page: ../what-is-cohorte
-next_page: ../tutorials
+next_page: ../setup
 ---
 
-## Key Concepts of Cohorte 
 
-A COHORTE system is a set of (distributed) Software Components connected together to ensure some functionality. 
+A COHORTE system is a set of (distributed) Software Components connected together using services to ensure some functionality. 
 
-The following picture illistrates the overall view of COHORTE system. Each elements is detailed hereafter.
+In the following sub-section, we detail the main concepts behind COHORET system.
+
+## Dynamic Components
+
+COHORTE Components represents a software component providing a service and eventually requiring other services to do ensure some tasks. Components can be implemented using Python or Java programming languages. We support and provide component-based framework for each language. Cohorte components implements only business logic, all the distribution and dependencies with other components are managed by COHORTE. Components can be deployed and removed dynamically without stopping the system. 
 
 <p style="text-align:center;"> 
-<img src="cohorte-concepts.png"/>
+<img src="key-convepts-img1.png"/>
 </p>
 
-#### Nodes
+Java components are implemented using [Apache Felix iPOJO](http://felix.apache.org/documentation/subprojects/apache-felix-ipojo.html) component-based model.
+Whereas Python components are implemented using [isandlaTech iPOPO](http://ipopo.coderxpress.net/) component-based model. This two component-based service-oriented models uses [OSGi container](http://www.osgi.org) as runtime support. C#, C and other programming languages components could be wrapper in either Java or Python supported dynamic components.
 
-![Cohorte Node](cohorte-node.png) Represents a physical device or a virtual machine where a set of Isolates executes.
+## Isolates
 
-#### Isolates
+In COHORTE, OSGI containers could be created dynamically to host some set of related components. To communicate two remote components, COHORTE provides an implementation of *Remote Services* specification (part of OSGi specification) for Java and Python components. There is no need to provide specific configurations / proxies to get the *Remote Services* work, COHORTE provides *zero-config* approach for connecting remote services (Discovery and Transportation are automatic).
 
-An Isolate is a system process executing and managing a set of Components.
+<p style="text-align:center;"> 
+<img src="key-convepts-img2.png"/>
+</p>
 
-![Cohorte Isolates](cohorte-composites.png) Cohorte and Application Isolates
+COHORTE provides a mechanism to isolate faulty components in a seperate OSGi containers. This is way we refer and call OSGi containers **Isolates**. 
 
-![Cohoret Top Isolate](cohorte-top-isolate.png) Top Cohorte Isolate
 
-#### Components
+## Nodes
 
-![Cohorte Components](cohorte-components.png) Cohorte Components represents a software component providing a service and eventually requiring other services to do ensure some tasks. Components can be implemented using Python or Java programming languages. We support and provide component-based framework for each language.
-Cohorte components implements only business logic, all the distribution and dependencies with other components are managed by COHORTE. 
+COHORTE Isolates are located and managed on **COHORTE Nodes**. Nodes can be created by users using a provided scripts. Each Node can manage (create / monitor / delete) several isolates. COHORTE internal components responsible for managing local isolates and their relation with other remote isolates are located on special purpose Isolate (created at Node's startup and can not host applicative components).
 
-Component Factory is an object that allows the instantiation of components (instances) of the same type.
+<p style="text-align:center;"> 
+<img src="key-convepts-img3.png"/>
+</p>
 
-#### Application
 
-A Composite is a logical representation of a hierarchical node in a composition graph. It contains a set of components and other composites and it can define configuration properties that will override the ones used in their children components and composites.
+## Composers
 
-An Application is a logical abstract description of the set of components/composites and the possible wires between them.
-
-#### Composers
-
-The Composer is a special COHORTE Runtime Component responsible of instantiating the different components of an application. In COHORTE there are different Composer levels:
+The Composer is a special COHORTE Runtime Component responsible of instantiating the different components of an application respecting a composition specification. In COHORTE there are different Composer levels:
 
  * *Top Composer*: It loads the composition declarative description and computes the sets of components according to the node they must be instantiated on.
  * *Node Composer*: It calculates the different isolates that must be exist for the local set of components.
  * *Isolate Composer*: It uses framework-specific agents to request the instantiation of the components assigned to its isolate, and looks after their evolution.
+
+
 

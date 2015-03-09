@@ -13,9 +13,10 @@ next_page: ../spellchecker
 
  As a COHORTE user, you need to have Java ( >= 1.6 ) and Python ( >= 3 ) installed on your system. Next, you need to [download]({{site.baseurl}}/downloads) and [install]({{ site.baseurl }}/docs/1.x/setup) COHORTE on your system.
  
- The objective of this getting started tutorial is to get you familiar with COHORTE concepts as quickly as possible. There is no need to start coding at this step. You find other advanced tutorial in the tutorials section of the [documentation page]({{ site.baseurl }}/docs/1.x/).
+ The objective of this getting started tutorial is to get you familiar with COHORTE concepts as quickly as possible. There is no need to start coding at this step. You find other advanced tutorials in the tutorials section of the [documentation page]({{ site.baseurl }}/docs/1.x/).
 
-The following picture depicts the architecture of the to be developed application. It consists of a web interface provided by a component called `Hello_Components` which uses the **HELLO SERVICE** to interact with all other components implementing this service (`A_component`, `B_component`, etc). 
+The following picture depicts the architecture of the to be developed application. It consists of one component `Hello_Components` which requires a set of other components providing **HELLO SERVICE** (`A_component`, `B_component`, etc). `Hello_Components` component provides a web page that shows the list of available **HELLO SERVICE** providers and allow user to invoke their `say_hello()` and show the returned message on the web page. 
+
 
 ![Architecture](getting-started-img-3.png)
 

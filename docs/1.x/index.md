@@ -4,6 +4,38 @@ title: Documentation  - v.1.0
 ---
 
 
+## Reference documentation
+
+<div class="menu-choices">
+    <a style="left: -10%;" class="menu-choice menu-choice-cohorte"
+      href="{{ site.baseurl }}/docs/1.x/what-is-cohorte">What is Cohorte?</a>
+    <a style="left: 19%;" class="menu-choice menu-choice-concepts"
+      href="{{ site.baseurl }}/docs/1.x/key-concepts">Key Concepts</a>
+    <a style="left: 48%;" class="menu-choice menu-choice-setup"
+      href="{{ site.baseurl }}/docs/1.x/setup">Setup</a>
+    <a style="left: 77%;" class="menu-choice menu-choice-component"
+      href="{{ site.baseurl }}/docs/1.x/components">Components</a>    
+</div>
+<div class="menu-choices">      
+      <a style="left: -10%;" class="menu-choice menu-choice-application"
+      href="{{ site.baseurl }}/docs/1.x/compositions">Compositions</a> 
+      <a style="left: 19%;" class="menu-choice menu-choice-startup"
+      href="{{ site.baseurl }}/docs/1.x/startup">Startup</a>
+      <a style="left: 48%;" class="menu-choice menu-choice-shell"
+      href="{{ site.baseurl }}/docs/1.x/shell">Shell</a>
+      <a style="left: 77%;" class="menu-choice menu-choice-monitoring"
+      href="{{ site.baseurl }}/docs/1.x/monitoring">Monitoring</a>      
+</div>
+
+<!-- 
+<div class="menu-choices">            
+      <a style="left: -10%;" class="menu-choice menu-choice-ide"
+      href="{{ site.baseurl }}/docs/1.x/ide">IDE</a>  
+</div>
+-->
+You can download the full reference documentation as a [ ![PDF]({{ site.baseurl }}/resources/images/pdf.png) PDF](refdoc.html) file or read it in one [ ![PDF]({{ site.baseurl }}/resources/images/html.png) HTML](refdoc.html) file.
+
+
 ## Getting started tutorials
 
 <!--div class="container">
@@ -48,36 +80,6 @@ Some resources to get started quickly:
 * [COHORTE Herald : Zero config transport abstraction layer allowing OSGi remote services over the NATs](./slides/herald) (slides)
    <br/>Overview of COHORTE Herald connectivity layer
 
-## Reference documentation
-
-<div class="menu-choices">
-    <a style="left: -10%;" class="menu-choice menu-choice-cohorte"
-      href="{{ site.baseurl }}/docs/1.x/what-is-cohorte">What is Cohorte?</a>
-    <a style="left: 19%;" class="menu-choice menu-choice-concepts"
-      href="{{ site.baseurl }}/docs/1.x/key-concepts">Key Concepts</a>
-    <a style="left: 48%;" class="menu-choice menu-choice-setup"
-      href="{{ site.baseurl }}/docs/1.x/setup">Setup</a>
-    <a style="left: 77%;" class="menu-choice menu-choice-component"
-      href="{{ site.baseurl }}/docs/1.x/components">Components</a>    
-</div>
-<div class="menu-choices">      
-      <a style="left: -10%;" class="menu-choice menu-choice-application"
-      href="{{ site.baseurl }}/docs/1.x/compositions">Compositions</a> 
-      <a style="left: 19%;" class="menu-choice menu-choice-startup"
-      href="{{ site.baseurl }}/docs/1.x/startup">Startup</a>
-      <a style="left: 48%;" class="menu-choice menu-choice-shell"
-      href="{{ site.baseurl }}/docs/1.x/shell">Shell</a>
-      <a style="left: 77%;" class="menu-choice menu-choice-monitoring"
-      href="{{ site.baseurl }}/docs/1.x/monitoring">Monitoring</a>      
-</div>
-
-<!-- 
-<div class="menu-choices">            
-      <a style="left: -10%;" class="menu-choice menu-choice-ide"
-      href="{{ site.baseurl }}/docs/1.x/ide">IDE</a>  
-</div>
--->
-You can download the full reference documentation as a [ ![PDF]({{ site.baseurl }}/resources/images/pdf.png) PDF](refdoc.html) file or read it in one [ ![PDF]({{ site.baseurl }}/resources/images/html.png) HTML](refdoc.html) file.
 
 
 ## Scientific publications

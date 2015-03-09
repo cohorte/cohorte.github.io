@@ -30,6 +30,24 @@ layout: default
       <div class="span12">
           <div class="main-page-column" style="width: 75%;">
             
+            <div class="row-fluid">
+                <div class="col-md-6">
+                      {% if page.previous_page %}
+                      <a href="{{ page.previous_page }}" class="btn btn-default" title="Previous page"> Previous </a>
+                      {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <div class="pull-right">
+                          {% if page.next_page %}
+                          <a href="{{ page.next_page }}" class="btn btn-default" title="Next page"> Next </a>
+                          {% endif %}
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+
             {% if page.by %}
               <div class="written">Written By: <span class="by">{{ page.by }}</span></div>
             {% endif %}
@@ -40,13 +58,30 @@ layout: default
             </div>
             <div id="docgen-end"></div>
             
-            <br/>           
-            {% if page.previous_page %}
-            <!--<a href="{{ page.previous_page }}" class="btn float-left" title="Previous page"> Previous </a>-->
-            {% endif %}
-            {% if page.next_page %}
-            <!--<a href="{{ page.next_page }}" class="btn float-right" title="Next page"> Next </a>-->
-            {% endif %}
+            <br/>      
+
+            <br/>
+            <br/>
+
+            <div class="row-fluid">
+                <div class="col-md-6">
+                      {% if page.previous_page %}
+                      <a href="{{ page.previous_page }}" class="btn btn-default" title="Previous page"> Previous </a>
+                      {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <div class="pull-right">
+                          {% if page.next_page %}
+                          <a href="{{ page.next_page }}" class="btn btn-default" title="Next page"> Next </a>
+                          {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            
+            
+
+
             {% if page.comments %}
                 <hr/>
                 <div id="disqus_thread"></div>
