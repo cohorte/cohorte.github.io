@@ -103,6 +103,20 @@ $(function () {
       <div class="span12">
           <div class="main-page-column" style="width: 75%;">
             
+            <div class="row-fluid">
+                <div class="col-md-6">
+                      
+                </div>
+                <div class="col-md-6">
+                    <div class="pull-right">
+                          
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+
             
 
             <div id="docgen-start"></div>
@@ -141,7 +155,7 @@ The level of reliability of software produced with COHORTE SDK also reduces oper
       Service-oriented Component-based Applications
      </h3>
      <p>
-      COHORTE provides a framework to construct modularised applications consisting of software components that uses software services provided by other components. This approach allows to construct IT applications as mean of a set of components providing and requiring services.
+      COHORTE provides a framework to construct modularised applications consisting of software components that uses software services provided by other components. This approach allows to construct IT applications as mean of a set of components providing and requiring services. COHORET is compliant to OSGi specification.
      </p>
     </div>
     <div class="col-md-6">
@@ -175,7 +189,7 @@ The level of reliability of software produced with COHORTE SDK also reduces oper
       Components Distribution
      </h3>
      <p>
-      COHORTE developers provides only implementations for the different components providing or requiring services. At runtime, the concret placement of components in execution nodes is managed by the COHORTE runtime. Two component can work together transparantly even they are located on two seperate machines.
+      COHORTE developers provides only implementations for the different components providing or requiring services. At runtime, the concret placement of components in execution nodes is managed by the COHORTE runtime. Two components can work together transparantly even they are located on two seperate machines.
      </p>
     </div>
     <div class="col-md-6">
@@ -209,7 +223,7 @@ The level of reliability of software produced with COHORTE SDK also reduces oper
       Dynamic Isolation and Resilience
      </h3>
      <p>
-      COHORTE automatically prevent and correct component failures by isolating them and relanching them seperatly from others. Users can also define static isolates in which they put components that are guaranteede to be safe.
+      COHORTE automatically prevent and correct component failures by isolating them and restarting them seperatly from others. Users can also define static isolates in which they put components that are guaranteede to be safe.
      </p>
     </div>
     <div class="col-md-6">
@@ -235,17 +249,12 @@ The level of reliability of software produced with COHORTE SDK also reduces oper
    </div>
    <div id="one-page-generator-end">
    </div>
-   <h2 id="convinced">
-    Convinced?
-   </h2>
-   <p>
-    If COHORTE is what you want for your IT applications, try it out!
-    <a href="/docs/1.x/tutorials">
-     Here are some resources to get
-started
-    </a>
-    .
-   </p>
+   <!--
+## Convinced?
+
+If COHORTE is what you want for your IT applications, try it out! [Here are some resources to get
+started](/docs/1.x). 
+-->
    <h2 id="about">
     About
    </h2>
@@ -269,64 +278,83 @@ started
  </head>
  <body>
   <div id="toc_magic">
-   <h2 id="key-concepts-of-cohorte">
-    Key Concepts of Cohorte
+   <p>
+    A COHORTE system is a set of (distributed) Software Components connected together using services to ensure some functionality.
+   </p>
+   <p>
+    In the following sub-section, we detail the main concepts behind COHORET system.
+   </p>
+   <h2 id="dynamic-components">
+    Dynamic Components
    </h2>
    <p>
-    A COHORTE system is a set of (distributed) Software Components connected together to ensure some functionality.
-   </p>
-   <p>
-    The following picture illistrates the overall view of COHORTE system. Each elements is detailed hereafter.
+    COHORTE Components represents a software component providing a service and eventually requiring other services to do ensure some tasks. Components can be implemented using Python or Java programming languages. We support and provide component-based framework for each language. Cohorte components implements only business logic, all the distribution and dependencies with other components are managed by COHORTE. Components can be deployed and removed dynamically without stopping the system.
    </p>
    <p style="text-align:center;">
-    <img src="http://cohorte.github.io/docs/1.x/key-concepts/cohorte-concepts.png"/>
+    <img src="http://cohorte.github.io/docs/1.x/key-concepts/key-convepts-img1.png"/>
    </p>
-   <h4 id="nodes">
-    Nodes
-   </h4>
    <p>
-    <img alt="Cohorte Node" src="http://cohorte.github.io/docs/1.x/key-concepts/cohorte-node.png"/>
-    Represents a physical device or a virtual machine where a set of Isolates executes.
+    Java components are implemented using
+    <a href="http://felix.apache.org/documentation/subprojects/apache-felix-ipojo.html">
+     Apache Felix iPOJO
+    </a>
+    component-based model.
+Whereas Python components are implemented using
+    <a href="http://ipopo.coderxpress.net/">
+     isandlaTech iPOPO
+    </a>
+    component-based model. This two component-based service-oriented models uses
+    <a href="http://www.osgi.org">
+     OSGi container
+    </a>
+    as runtime support. C#, C and other programming languages components could be wrapper in either Java or Python supported dynamic components.
    </p>
-   <h4 id="isolates">
+   <h2 id="isolates">
     Isolates
-   </h4>
+   </h2>
    <p>
-    An Isolate is a system process executing and managing a set of Components.
+    In COHORTE, OSGI containers could be created dynamically to host some set of related components. To communicate two remote components, COHORTE provides an implementation of
+    <em>
+     Remote Services
+    </em>
+    specification (part of OSGi specification) for Java and Python components. There is no need to provide specific configurations / proxies to get the
+    <em>
+     Remote Services
+    </em>
+    work, COHORTE provides
+    <em>
+     zero-config
+    </em>
+    approach for connecting remote services (Discovery and Transportation are automatic).
+   </p>
+   <p style="text-align:center;">
+    <img src="http://cohorte.github.io/docs/1.x/key-concepts/key-convepts-img2.png"/>
    </p>
    <p>
-    <img alt="Cohorte Isolates" src="http://cohorte.github.io/docs/1.x/key-concepts/cohorte-composites.png"/>
-    Cohorte and Application Isolates
+    COHORTE provides a mechanism to isolate faulty components in a seperate OSGi containers. This is way we refer and call OSGi containers
+    <strong>
+     Isolates
+    </strong>
+    .
    </p>
+   <h2 id="nodes">
+    Nodes
+   </h2>
    <p>
-    <img alt="Cohoret Top Isolate" src="http://cohorte.github.io/docs/1.x/key-concepts/cohorte-top-isolate.png"/>
-    Top Cohorte Isolate
+    COHORTE Isolates are located and managed on
+    <strong>
+     COHORTE Nodes
+    </strong>
+    . Nodes can be created by users using a provided scripts. Each Node can manage (create / monitor / delete) several isolates. COHORTE internal components responsible for managing local isolates and their relation with other remote isolates are located on special purpose Isolate (created at Node’s startup and can not host applicative components).
    </p>
-   <h4 id="components">
-    Components
-   </h4>
-   <p>
-    <img alt="Cohorte Components" src="http://cohorte.github.io/docs/1.x/key-concepts/cohorte-components.png"/>
-    Cohorte Components represents a software component providing a service and eventually requiring other services to do ensure some tasks. Components can be implemented using Python or Java programming languages. We support and provide component-based framework for each language.
-Cohorte components implements only business logic, all the distribution and dependencies with other components are managed by COHORTE.
+   <p style="text-align:center;">
+    <img src="http://cohorte.github.io/docs/1.x/key-concepts/key-convepts-img3.png"/>
    </p>
-   <p>
-    Component Factory is an object that allows the instantiation of components (instances) of the same type.
-   </p>
-   <h4 id="application">
-    Application
-   </h4>
-   <p>
-    A Composite is a logical representation of a hierarchical node in a composition graph. It contains a set of components and other composites and it can define configuration properties that will override the ones used in their children components and composites.
-   </p>
-   <p>
-    An Application is a logical abstract description of the set of components/composites and the possible wires between them.
-   </p>
-   <h4 id="composers">
+   <h2 id="composers">
     Composers
-   </h4>
+   </h2>
    <p>
-    The Composer is a special COHORTE Runtime Component responsible of instantiating the different components of an application. In COHORTE there are different Composer levels:
+    The Composer is a special COHORTE Runtime Component responsible of instantiating the different components of an application respecting a composition specification. In COHORTE there are different Composer levels:
    </p>
    <ul>
     <li>
@@ -3744,9 +3772,26 @@ Cohorte components implements only business logic, all the distribution and depe
             </div>
             <div id="docgen-end"></div>
             
-            <br/>           
+            <br/>      
+
+            <br/>
+            <br/>
+
+            <div class="row-fluid">
+                <div class="col-md-6">
+                      
+                </div>
+                <div class="col-md-6">
+                    <div class="pull-right">
+                          
+                    </div>
+                </div>
+            </div>
+
             
             
+
+
                 
           </div>
           <div class="sidebar">
@@ -3803,7 +3848,7 @@ Cohorte components implements only business logic, all the distribution and depe
    <div class="container"> 
       <div class="copyright">
       <a style="float: left; margin-right: 8px;" href="http://isandlatech.com"><img src="/resources/images/isandlatech-logo-sm-carre.png" alt="isandlaTech logo" /></a>
-      <p style="float: left;"><br/>Copyright &copy; 2011-<span class="current-year"></span> isandla<i>Tech</i> S.A.R.L<br/>3 chemin du vieux chêne. 38240 Meylan, France</p>
+      <p style="float: left;"><br/>Copyright &copy; 2011-2015<span class="current-year"></span> isandla<i>Tech</i> SAS<br/>3 chemin du vieux chêne. 38240 Meylan, France</p>
       </div>
       <div class="cohorte-logo-footer">
         <span style="font-size:70%; color:#aaa;"><a href="http://isandlatech.com">isandla<i>Tech</i></a> is the principal sponsor of </span><img src="/resources/images/cohorte-logo-footer.png" alt="COHORTE footer logo" />
