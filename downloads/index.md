@@ -1,7 +1,7 @@
 ---
-layout: docpage
+layout: page
 title: Downloads
-toc: true
+toc: false
 
 comments: false
 ---
@@ -10,9 +10,18 @@ comments: false
 
 You found detailed installation instructions on [this page of the reference guide](../docs/1.x/setup).
 
-## Stable Releases
+## Stable Releases (1.0.0)
 
-Not yet released!
+<div class="menu-choices">
+    <a style="left: -10%;" class="menu-choice menu-choice-python"
+      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-python-distribution.tar.gz">Python 3.4</a>
+    <a style="left: 19%;" class="menu-choice menu-choice-windows"
+      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-windows-distribution.tar.gz">Windows (64 bits)</a>
+    <a style="left: 48%;" class="menu-choice menu-choice-linux"
+      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-linux-distribution.tar.gz">Linux (x86_64)</a>
+    <a style="left: 77%;" class="menu-choice menu-choice-macosx"
+      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-macosx-distribution.tar.gz">Mac OS X</a>    
+</div>
 
 <div id="download_releases">
 </div>

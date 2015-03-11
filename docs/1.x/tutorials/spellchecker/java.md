@@ -1,12 +1,12 @@
 ---
-layout: page
+layout: docpage
 title: Getting Started Java
-comments: false
+comments: true
 previous_page: python.html
 next_page: ./
 ---
 
-[Home](../../../../) > [Documentation](../../) > [Tutorials](../) > [Spellchecker](./)
+[Home](../../../../) > [Documentation](../../) > [Spellchecker](./)
 
 ## COHORTE for Java
 
@@ -441,4 +441,4 @@ The different application components can be deployed on different Isolates. This
 ![SpellChecker Application](spellchecker-app-img4.png)
 
 
-[Home](../../../../) > [Documentation](../../) > [Tutorials](../) > [Spellchecker](./)
+[Home](../../../../) > [Documentation](../../) > [Spellchecker](./)

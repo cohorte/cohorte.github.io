@@ -1,12 +1,12 @@
 ---
-layout: page
+layout: docpage
 title: Getting Started Python
-comments: false
+comments: true
 previous_page: ./
 next_page: java.html
 ---
 
-[Home](../../../../) > [Documentation](../../) > [Tutorials](../) > [Spellchecker](./)
+[Home](../../../../) > [Documentation](../../) > [Spellchecker](./)
 
 ## COHORET for Python
 
@@ -291,4 +291,4 @@ The different application components can be deployed on different Isolates. This
 
 ![SpellChecker Application](spellchecker-app-img4.png)
 
-[Home](../../../../) > [Documentation](../../) > [Tutorials](../) > [Spellchecker](./)
+[Home](../../../../) > [Documentation](../../) > [Spellchecker](./)

@@ -715,6 +715,18 @@ box-shadow: 0 1px 0 0 #444;
   background-image: url('../images/python-color.png');
 }
 
+.menu-choice-windows {
+  background-image: url('../images/windows-logo-color.png');
+}
+
+.menu-choice-linux {
+  background-image: url('../images/linux-logo-color.png');
+}
+
+.menu-choice-macosx {
+  background-image: url('../images/mac-logo-color.png');
+}
+
 .menu-choice-java {
   background-image: url('../images/java-color.png');
 }

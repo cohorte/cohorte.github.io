@@ -1,22 +1,20 @@
 ---
-layout: page
-title: Spellchecker tutorial
-comments: false
-previous_page: ../getting-started
-next_page: ../temper
+layout: docpage
+title: Spellchecker Tutorial
+comments: true
+parent: documentation
+parent_url: ../../
+previous_page: ../temper
+next_page: ../arduino-led
 ---
-
-[Home](../../../../) > [Documentation](../../) > [Tutorials](../)
-
-## Spellchecker tutorial
 
 This tutorial provides step-by-step introduction to COHORTE, starting with a simple application using Python or Java programming language. All the resulting code can be donwload using the following link, however we encourage you to follow the different steps of this tutorial to build your own fresh COHORTE application.
 
 <p>
-<div id="download_spellchecker_snapshot"></div> 
+<a id="download_spellchecker_snapshot" href="#" class="btn btn-success">Download Robots Nodes</a>
 </p>
 
-The goal of this first tutorial is to highlight the Service-oriented Component-based approach to construct modular and dynamic software applications. Other features of COHORTE <a href="../../what-is-cohorte">listed here</a>, are explored and explained in <a href="../">other tutorials</a>.
+The goal of this first tutorial is to highlight the Service-oriented Component-based approach to construct modular and dynamic software applications. 
 
 To get started, choose first your preferend programming language:
 
@@ -35,14 +33,11 @@ You can have a COHORTE application made of a mixture of Java and Python componen
 </div>
 
 
-[Home](../../../../) > [Documentation](../../) > [Tutorials](../)
-
 
 <script>
     function loadLatestSnapshots() {
         $.getJSON( "http://cohorte.github.io/latest_demos_spellchecker.json", function( data ) {            
-            frame1 = "<a class='btn' href='" + data["snapshots"]["spellchecker-distribution"]["files"]["zip"] + "'>spellchecker.zip</a>"                  
-            $('#download_spellchecker_snapshot').html(frame1);            
+            $("#download_spellchecker_snapshot").attr("href", data["snapshots"]["spellchecker-distribution"]["files"]["zip"])                     
         });
     }
     $(document).ready(function() {        

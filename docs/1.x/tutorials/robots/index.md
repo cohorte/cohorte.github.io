@@ -1,12 +1,14 @@
 ---
 layout: docpage
-title: Robots tutorial
-comments: false
+title: Robots Tutorial
+comments: true
 toc: true
 toc_exclude: h1, h4, h5, h6
 toc_numerate: true
 parent: documentation
 parent_url: ../../
+previous_page: ../hello
+next_page: ../temper
 ---
 
 The objective of this demonstration is to show you how using Cohorte in your project increase the time-to-market intervals by focusing on business logic to implement, not distributed systems problems.

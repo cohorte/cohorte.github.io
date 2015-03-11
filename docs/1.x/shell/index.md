@@ -11,7 +11,48 @@ next_page: ../monitoring
 
 COHORTE has an integrated shell to allow users manipulate and monitor the system. Here the list of the provided shell commands and their explanation.
 
-## "default" name space
+
+## Manage COHORTE Platform
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+	<thead>
+	<tr>
+		<th> Option </th><th> Description </th>
+	</tr>
+	</thead>
+	<tbody><tr><td>
+<b>nodes</b>
+</td><td>
+		Lists the nodes visible from this isolate
+</td></tr><tr><td>
+<b>isolates</b> [&lt;node&gt;]
+</td><td>
+		Lists the isolates of the given node, or of all nodes
+</td></tr><tr>
+		<td>
+<b>ping</b> [&lt;isolate&gt;]
+</td><td>
+		Checks if the given isolate (name or UID) is alive
+</td></tr><tr><td>
+<b>forker:stop</b> &lt;isolate&gt;
+</td><td>
+		Stops the given isolate (name or UID)
+</td></tr><tr><td>
+<b>shutdown</b> 
+</td><td>
+		Shutdown all the platform (all the nodes)
+</td></tr>
+</tbody>
+</table>
+
+
+
+
+## Other advanced commands
+
+These commands are categorized by namespace.
+
+### "default" name space
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>
@@ -111,28 +152,8 @@ COHORTE has an integrated shell to allow users manipulate and monitor the system
 </tbody>
 </table>
 
-## "forker" name space
 
-<table class="table table-striped table-bordered table-hover table-condensed">
-	<thead>
-	<tr>
-		<th> Option </th><th> Description </th>
-	</tr>
-	</thead>
-	<tbody><tr>
-		<td>
-<b>ping</b> [&lt;isolate&gt;]
-</td><td>
-		Checks if the given isolate (name or UID) is alive
-</td></tr><tr><td>
-<b>stop</b> &lt;isolate&gt;
-</td><td>
-		Stops the given isolate (name or UID)
-</td></tr>
-</tbody>
-</table>
-
-## "herald" name space  
+### "herald" name space (COHORTE messaging layer)
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>
@@ -177,7 +198,7 @@ COHORTE has an integrated shell to allow users manipulate and monitor the system
 </tbody>
 </table>
 
-## "ipopo" name space  
+### "ipopo" name space (Service-Oriented Component Model)
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>
@@ -218,28 +239,9 @@ COHORTE has an integrated shell to allow users manipulate and monitor the system
 </tbody>
 </table>
 
-## "node" name space 
 
-<table class="table table-striped table-bordered table-hover table-condensed">
-	<thead>
-	<tr>
-		<th> Option </th><th> Description </th>
-	</tr>
-	</thead>
-	<tbody><tr>
-		<td>
-<b>isolates</b> [&lt;node&gt;]
-</td><td>
-		Lists the isolates of the given node, or of all nodes
-</td></tr><tr><td>
-<b>nodes</b>
-</td><td>
-		Lists the nodes visible from this isolate
-</td></tr>
-</tbody>
-</table>
 
-## "shell" name space
+### "shell" name space
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>
@@ -260,7 +262,7 @@ COHORTE has an integrated shell to allow users manipulate and monitor the system
 </tbody>
 </table>
 
-## "top" name space 
+### "top" name space 
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 	<thead>

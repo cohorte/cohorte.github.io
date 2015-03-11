@@ -7,6 +7,8 @@ toc_exclude: h1, h4, h5, h6
 toc_numerate: true
 parent: documentation
 parent_url: ../../
+previous_page: ../spellchecker
+next_page: ../../
 ---
 
 The objective of this demonstration is to show you how control an Arduino UNO using COHORTE. In particular, we will export the functionality provided by the Arduino as a Service and then use this service as a representative component of the Arduino. This avoid as to implement low level routines to control the Arduino and allow a seamless integration with other application components (using remote services).

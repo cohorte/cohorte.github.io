@@ -1,7 +1,7 @@
 ---
 layout: docpage
 title: Compositions Specification
-parent: documentation
+parent: Documentation
 toc: true
 toc_numerate: true
 toc_exlude: h1, h4, h5, h6
@@ -113,6 +113,46 @@ Obtained result :
     "answer": 42,
     // New property
     "hello": "world"
+  }
+}
+{% endhighlight %}
+
+
+## Complete example
+
+{% highlight json %}
+{
+  "name" : "hello-world",
+  "root" : {
+    "name" : "hello-worldd-composition",
+    "components" : [ 
+      {
+        "name" : "Hello_Components",
+        "factory" : "hello_components_factory",
+        "node" : "node1",
+        "isolate": "web"
+      }, {
+        "name" : "A_component",
+        "factory" : "component_a_factory",
+        "node" : "node1"
+      }, {
+        "name" : "B_component",
+        "factory" : "component_b_factory",
+        "node" : "node1"
+      }, {
+        "name" : "E_component",
+        "factory" : "component_e_factory",
+        "node" : "node1"
+      }, {
+        "name" : "C_component",
+        "factory" : "component_c_factory",        
+        "node" : "node2"
+      }, {
+        "name" : "D_component",
+        "factory" : "component_d_factory",
+        "node" : "node2"
+      }
+    ]
   }
 }
 {% endhighlight %}

@@ -57,8 +57,8 @@ You can download the full reference documentation as a [ ![PDF]({{ site.baseurl 
 
 Some resources to get started quickly:
 
- * [**Getting Started Tutorial**](./tutorials/getting-started)
-    <br/>Install and run a COHORTE application in 10 minutes.
+ * [**Hello World Tutorial**](./tutorials/hello)
+    <br/>Small Hello World introductory tutorial.
 
  * [**Robots Tutorial**](./tutorials/robots) 
     <br/>Highlighting the multi-language and distribution features of COHORTE in a simple, yet functional temperature monitoring application.
@@ -78,7 +78,9 @@ Some resources to get started quickly:
    <br/>Quick overview of COHORTE Project
 
 * [COHORTE Herald : Zero config transport abstraction layer allowing OSGi remote services over the NATs](./slides/herald) (slides)
+   <br/><img src="doc-img1.png"/>
    <br/>Overview of COHORTE Herald connectivity layer
+
 
 
 

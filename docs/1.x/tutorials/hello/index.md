@@ -1,14 +1,14 @@
 ---
 layout: docpage
-title: Getting started tutorial
-comments: false
+title: Hello World Tutorial
+comments: true
 parent: documentation
 parent_url: ../../
 toc: true
 toc_exclude:  h3, h4, h5
 toc_numerate: true
-previous_page: ../
-next_page: ../spellchecker
+previous_page: ../../
+next_page: ../robots
 ---
 
  As a COHORTE user, you need to have Java ( >= 1.6 ) and Python ( >= 3 ) installed on your system. Next, you need to [download]({{site.baseurl}}/downloads) and [install]({{ site.baseurl }}/docs/1.x/setup) COHORTE on your system.
@@ -46,7 +46,7 @@ The remainder of this tutorial is organized in four steps :
  * Open a new terminal and type the following command on your working directory:
 
 <pre>
-$ <b>cohorte-create-node</b> --name node1 --app-name getting-started
+$ <b>cohorte-create-node</b> --name node1 --app-name hello-world
 </pre>
 
 This command will create a new directory named `node1` containing an executable `run` (which launches the created COHORTE node) and two folders `conf` (containing configuration files) and `repo` (where user bundles should be placed).
@@ -56,15 +56,15 @@ This command will create a new directory named `node1` containing an executable 
  * Download the first bundle of this tutorial (no need to implement the components in this getting started tutorial, they are already prepared for you)
  * Put the extracted `hello` directory into `node1/repo`. 
 
-<a id="download_hello_demo_python_snapshot" href="#" class="btn btn-success">Download Hello Python Bundle</a>
+<a id="download_hello_demo_python_snapshot" href="http://repo.isandlatech.com/maven/releases/org/cohorte/demos/hello/1.0.0/hello-1.0.0-python-distribution.zip" class="btn btn-success">Download Hello Python Bundle</a>
 
 <div class="note">
 <span class="note-title">Information</span>
 <p class="note-content">
-The `hello` package contains four components (implemented in Python): <br/>
+The `hello` package contains the following components (implemented in Python): <br/>
 <ul>
-  <li> <b>A_component</b>, <b>B_component</b>, <b>C_component</b> and <b>E_component</b>: these components implements the HELLO SERVICE. <b>E_component</b> contains faulty code to test the self-healing feature of COHORTE (used in the fourth step).</li>
-  <li> <b>Hello_Components</b>: this component provides a web interface on which the list of discovered components implementing the HELLO SERVICE are listed (users can call the <code>say_hello</code> method of each components by clicking on "say hello" link).</li>
+  <li> <b>A_component</b>, <b>B_component</b>, <b>C_component</b> and <b>E_component</b>: these components implements the HELLO SERVICE. <b>E_component</b> contains faulty code to test the self-healing feature of COHORTE (used in the fourth step of this tutorial).</li>
+  <li> <b>Hello_Components</b>: this component provides a web interface on which the list of discovered components implementing the HELLO SERVICE are listed (users can call the <code>say_hello</code> method of each component by clicking on "say hello" link).</li>
 </ul>
 </p>
 </div>
@@ -75,9 +75,9 @@ In order to have this deployment plan corresponding to the resilient architectur
 
 {% highlight json %}
 {
-	"name" : "getting-started",
+	"name" : "hello-world",
 	"root" : {
-		"name" : "getting-started-composition",
+		"name" : "hello-world-composition",
 		"components" : [ 
 			{
 				"name" : "Hello_Components",
@@ -103,7 +103,7 @@ In order to have this deployment plan corresponding to the resilient architectur
 
 Change your working directory to `node1` and type : 
  <pre>
-$ ./<b>run</b> --app-id getting-started-app-id --top-composer true
+$ ./<b>run</b> --app-id <span style="color:green">my_hello_app</span> --top-composer true
 </pre>
 
 The `--app-id` argument is required for each COHORTE node. If you have more than one node (as we will see further), all the nodes should be started with the same application's identifier. The `--top-composer` option is set to true which means that this node is executed as a Top Composer. The Top Composer is responsable for calculating the distribution of the application components.
@@ -127,7 +127,9 @@ $ <b>http</b>
 
 In this case, its `63609`. Launch a web browser with this address to start the web interface: `http://localhost:63609/hello`.
 
-To stop COHORTE, type `quit` command on the terminal.
+![Created node](getting-started-img-11.png)
+
+To stop COHORTE (all running nodes), type `shutdown` command on the terminal.
 
 <hr/>
 
@@ -166,9 +168,9 @@ Ensure to have stopped the previous execution and update the `composition.js` fi
 
 {% highlight json %}
 {
-	"name" : "getting-started",
+	"name" : "hello-world",
 	"root" : {
-		"name" : "getting-started-composition",
+		"name" : "hello-world-composition",
 		"components" : [ 
 			{
 				"name" : "Hello_Components",
@@ -205,7 +207,7 @@ The C_component is specified to be in another isolate (named "components2") rath
 ### Starting the nodes
 
 <pre>
-node1$ ./<b>run</b> --app-id <span style="color:green">getting-started-app-id</span> --top-composer true
+node1$ ./<b>run</b> --app-id <span style="color:green">my_hello_app</span> --top-composer true
 </pre>
 
 You can test this first part of the application as your `hello_components` component is instantiated in this node (*web isolates*). Follow the same steps as in the first part of this tutorial to find the http port and to launch the web interface. You notice that there is only two components A and B. This is because C component is specified to be instantiated on `node2` which is not yet started.
@@ -213,32 +215,34 @@ You can test this first part of the application as your `hello_components` compo
 In a separate terminal, start `node2` as follow :
 
 <pre>
-node2$ ./<b>run</b> --app-id <span style="color:green">getting-started-app-id</span>
+node2$ ./<b>run</b> --app-id <span style="color:green">my_hello_app</span>
 </pre>
 
-Refresh the web interface. You will notice that the C component is detected and used by the HC component even if it was deployed in a separate remote node.
+Open the web interface as explained in the first step. You will notice that the C component is detected and used by the HC component even if it was deployed in a separate remote node.
+
+Try also to stop the second node `node2` (type `quit` on it terminal window). Refresh the web interface, you will notice the departure of `C_component`.
 
 <hr/>
 
 ## <a name="step3">Using heterogeneous components (Java and Python)
 
-All the components used until now are implemented in Python. We will extend our application by introducing a new component that implements the HELLO SERVICE in Java (D_component). 
+All the components used until now are implemented in Python. We will extend our application by introducing a new component that implements the HELLO SERVICE in Java (`D_component). 
 
  * Stop the running nodes of the previous step (use the command `quit`).
  * Donwload the bundle (jar file) containing the implementation code of the D component.
 
-<a id="download_hello_demo_java_snapshot" href="#" class="btn btn-success">Download Hello Java Bundle</a>
+<a id="download_hello_demo_java_snapshot" href="http://repo.isandlatech.com/maven/releases/org/cohorte/demos/hello/1.0.0/hello-1.0.0.jar" class="btn btn-success">Download Hello Java Bundle</a>
 
 <br/>
 
- * Put the extracted `jar` file into `node2/repo` directory. 
- * Update the `composition.js` file located on `node1/conf` to add this new D component. It should be instantiated on `node2`.
+ * Put the downloaded file `hello-1.0.0.jar` into `node2/repo` directory. 
+ * Update the `composition.js` file located on `node1/conf` to add this new `D_component`. It should be instantiated on `node2`.
 
 {% highlight json %}
 {
-	"name" : "getting-started",
+	"name" : "hello-world",
 	"root" : {
-		"name" : "getting-started-composition",
+		"name" : "hello-world-composition",
 		"components" : [ 
 			{
 				"name" : "Hello_Components",
@@ -273,14 +277,16 @@ All the components used until now are implemented in Python. We will extend our 
 Start the first node with one more argument `--web-admin` in order to visualize the global application's architecture using the *Web Admin* utility.
 
 <pre>
-node1$ ./<b>run</b> --app-id <span style="color:green">getting-started-app-id</span> --top-composer true <span style="color:red">--web-admin 9000</span>
+node1$ ./<b>run</b> --app-id <span style="color:green">my_hello_app</span> --top-composer true <span style="color:red">--web-admin 9000 --interpreter python3</span>
 </pre>
 
 Start the second node as done before :
 
 <pre>
-node2$ ./<b>run</b> --app-id <span style="color:green">getting-started-app-id</span>
+node2$ ./<b>run</b> --app-id <span style="color:green">my_hello_app</span> <span style="color:red">--interpreter python3</span>
 </pre>
+
+Ensure to have Python 3.4 installed on your system. If Python 2 is also installed in the same machine, you should specify `python3` as interpreter when starting COHORTE nodes.
 
 ### Monitoring the application
 
@@ -313,14 +319,15 @@ We should note force the components to be in predefined isolates if we are not s
 
 {% highlight json %}
 {
-	"name" : "getting-started",
+	"name" : "hello-world",
 	"root" : {
-		"name" : "getting-started-composition",
+		"name" : "hello-world-composition",
 		"components" : [ 
 			{
 				"name" : "Hello_Components",
 				"factory" : "hello_components_factory",
-				"node" : "node1"
+				"node" : "node1",				
+				"isolate": "web"
 			}, {
 				"name" : "A_component",
 				"factory" : "component_a_factory",
@@ -385,6 +392,7 @@ We can fixe the *web* isolate configuration to not have a different HTTP port ea
 }
 {% endhighlight %}
 
+<!--
 <script>
     function loadLatestSnapshots() {
         $.getJSON( "http://cohorte.github.io/latest_demos_hello.json", function( data ) {                                 
@@ -396,3 +404,4 @@ We can fixe the *web* isolate configuration to not have a different HTTP port ea
         loadLatestSnapshots();
     });
 </script>
+-->

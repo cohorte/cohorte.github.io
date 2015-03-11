@@ -6,7 +6,7 @@ toc: true
 toc_numerate: true
 toc_exlude: h1, h4, h5, h6
 previous_page: ../shell
-next_page: ../ide
+next_page: ../
 ---
 
 

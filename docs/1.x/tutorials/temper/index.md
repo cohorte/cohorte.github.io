@@ -1,14 +1,14 @@
 ---
 layout: docpage
 title: Temper tutorial
-comments: false
+comments: true
 toc: true
 toc_exclude: h1, h4, h5, h6
 toc_numerate: true
 parent: documentation
 parent_url: ../../
-previous_page: ../spellchecker
-next_page: ../quiz
+previous_page: ../robots
+next_page: ../spellchecker
 ---
 
 
