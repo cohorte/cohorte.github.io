@@ -61,8 +61,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li><a href="/docs/1.x/">Documentation</a></li>
-		      <li><a href="/downloads/">Downloads</a></li>
+            <li><a href="/downloads/">Downloads</a></li>
+              <li><a href="/docs/1.x/">Documentation</a></li>		      
 		      <li><a href="/community/">Community</a></li>
 		      <li><a href="/news">News</a></li>
 		      <!--li><a href="/contribute/">Contribute</a></li-->
@@ -457,6 +457,31 @@ Whereas Python components are implemented using
    </h3>
    <ol>
     <li>
+     Prior to install Cohorte, you should have
+     <a href="http://www.python.org">
+      Python 3.4
+     </a>
+     installed on your machine. You have also to install
+     <a href="http://sourceforge.net/projects/pywin32/">
+      Pywin32
+     </a>
+     adequat to your operating system.
+    </li>
+    <li>
+     Set
+     <code>
+      PYTHON_HOME
+     </code>
+     environment variable to target your installed Python distribution.
+    </li>
+    <li>
+     Set
+     <code>
+      PYTHON_INTERPRETER=%PYTHON_HOME%\python.exe
+     </code>
+     environment variable to target your python interpreter executable.
+    </li>
+    <li>
      Unzip the distribution archive to the directory you wish to install COHORTE. These instructions assume you chose
      <code>
       C:\Program Files\Cohorte
@@ -482,12 +507,23 @@ Whereas Python components are implemented using
      </code>
      . Be sure to omit any quotation marks around the path even if it contains spaces.
     </li>
+    <li>
+     Add
+     <code>
+      %COHORTE_HOME%\bin
+     </code>
+     to the system’s
+     <code>
+      PATH
+     </code>
+     environment variable.
+    </li>
    </ol>
    <h2 id="using-installers">
     Using Installers
    </h2>
    <p>
-    Work in progress…
+    Not yet available.
    </p>
   </div>
  </body>
@@ -504,7 +540,7 @@ Whereas Python components are implemented using
     A COHORTE application is composed of a set of components requiring and providing services. These components can be located in one node or dispatched between a set of nodes.
    </p>
    <p>
-    In a classical component-based frameworks, components are instantiated statically at a predefined locations. They are also configured to communicate together before starting the application. This leads to a situation in which a lot of configuration files should be managed (or even to recompile the components if the communication aspects are hard coded).
+    In a classical component-based frameworks, components are instantiated statically at a predefined locations. They are also configured to communicate together before starting the application. This leads to a situation in which a lot of configuration files should be managed or to recompile the components if the communication aspects are hard coded.
    </p>
    <p>
     In contrast, COHORTE Components are instantiated, configured and placed in the right node automatically. There is no need to implement the distribution related aspects like serialization or client/server interaction. Components are seen as black-boxes wired by
@@ -513,24 +549,21 @@ Whereas Python components are implemented using
     </em>
     (remote) services.
    </p>
-   <p>
-    To understand how COHORTE components could be implemented in different languages and could be distributed in different nodes, the following picture provides some insights about the underlying architecture of COHORTE and its main technologies.
-   </p>
-   <p>
-    <img alt="Main Modules" src="http://cohorte.github.io/docs/1.x/components/components-img-1.png"/>
-   </p>
-   <h2 id="cohorte-isolates">
-    Cohorte Isolates
-   </h2>
-   <p>
-    What is ? Service Oriented Runtime
-   </p>
-   <p>
-    OSGi specification
-   </p>
-   <p>
-    Java and Python Implementations
-   </p>
+   <!-- 
+
+To understand how COHORTE components could be implemented in different languages and could be distributed in different nodes, the following picture provides some insights about the underlying architecture of COHORTE and its main technologies.
+
+![Main Modules](components-img-1.png)
+
+## Cohorte Isolates
+
+What is ? Service Oriented Runtime
+
+OSGi specification 
+
+Java and Python Implementations
+
+-->
    <h2 id="service-oriented-component-models-socm">
     Service Oriented Component Models (SOCM)
    </h2>
@@ -597,7 +630,7 @@ Whereas Python components are implemented using
        XMPP
       </td>
       <td>
-       XMPP rooms (server)
+       XMPP server
       </td>
      </tr>
     </tbody>
@@ -824,6 +857,45 @@ Whereas Python components are implemented using
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
    </div>
+   <h2 id="complete-example">
+    Complete example
+   </h2>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"hello-world"</span><span class="p">,</span>
+  <span class="nt">"root"</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"hello-worldd-composition"</span><span class="p">,</span>
+    <span class="nt">"components"</span> <span class="p">:</span> <span class="p">[</span> 
+      <span class="p">{</span>
+        <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"Hello_Components"</span><span class="p">,</span>
+        <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"hello_components_factory"</span><span class="p">,</span>
+        <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"node1"</span><span class="p">,</span>
+        <span class="nt">"isolate"</span><span class="p">:</span> <span class="s2">"web"</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"A_component"</span><span class="p">,</span>
+        <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"component_a_factory"</span><span class="p">,</span>
+        <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"node1"</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"B_component"</span><span class="p">,</span>
+        <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"component_b_factory"</span><span class="p">,</span>
+        <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"node1"</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"E_component"</span><span class="p">,</span>
+        <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"component_e_factory"</span><span class="p">,</span>
+        <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"node1"</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"C_component"</span><span class="p">,</span>
+        <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"component_c_factory"</span><span class="p">,</span>        
+        <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"node2"</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"D_component"</span><span class="p">,</span>
+        <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"component_d_factory"</span><span class="p">,</span>
+        <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"node2"</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+   </div>
   </div>
  </body>
 </html><h1>Startup scripts</h1>
@@ -895,7 +967,7 @@ Whereas Python components are implemented using
      </em>
      correspond to the provided name by the user using the
      <code>
-      --node
+      --name
      </code>
      option.
     </li>
@@ -915,7 +987,7 @@ Whereas Python components are implemented using
      <em>
       conf
      </em>
-     is a directory containing configuration files. Only one configuration file is created initially (autorun_conf.js), other files are generated by
+     is a directory containing configuration files. Only one configuration file is created initially (composition.js), other files are generated by
      <code>
       run
      </code>
@@ -948,7 +1020,12 @@ Whereas Python components are implemented using
     Only the node started as Top Composer (see next section) should have this configuration file completed. Other nodes started as simple nodes will ignore this file.
    </p>
    <div class="note">
-    when puting --app &gt; generate composition.js
+    <span class="note-title">
+     Note
+    </span>
+    <p class="note-content">
+     composition.js template is generated only when the --app-name option is set.
+    </p>
    </div>
    <h2 id="starting-nodes">
     Starting nodes
@@ -978,8 +1055,8 @@ Whereas Python components are implemented using
         <span class="o">[</span>--shell-admin SHELL_ADMIN_PORT<span class="o">]</span>
         <span class="o">[</span>--transport TRANSPORT_MODES<span class="o">]</span>
         <span class="o">[</span>--xmpp-server XMPP_SERVER<span class="o">]</span>
-        <span class="o">[</span>--xmpp-port XMPP_PORT<span class="o">]</span> <span class="o">[</span>--xmpp-jid XMPP_JID<span class="o">]</span>
-        <span class="o">[</span>--xmpp-password XMPP_PASSWORD<span class="o">]</span></code></pre>
+        <span class="o">[</span>--xmpp-port XMPP_PORT<span class="o">]</span>
+        <span class="o">[</span>--http-ipv HTTP_IPV<span class="o">]</span></code></pre>
    </div>
    <h3 id="options-1">
     Options
@@ -996,7 +1073,7 @@ Whereas Python components are implemented using
    <p>
     All the nodes participating for a given application should have the same
     <code>
-     application-id
+     APPLICATION_ID
     </code>
     .
    </p>
@@ -1060,9 +1137,8 @@ Whereas Python components are implemented using
                         XMPP server
   --xmpp-port XMPP_PORT
                         XMPP server port
-  --xmpp-jid XMPP_JID   XMPP jid
-  --xmpp-password XMPP_PASSWORD
-                        XMPP Room
+  --http-ipv HTTP_IPV
+                        HTTP IP version to use (when transport mode is http)
 </pre>
    <p>
     The
@@ -1107,8 +1183,7 @@ Whereas Python components are implemented using
 	<span class="nt">"transport"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"xmpp"</span><span class="p">],</span>
 	<span class="nt">"transport-xmpp"</span><span class="p">:</span> <span class="p">{</span>
 		<span class="nt">"xmpp-server"</span><span class="p">:</span> <span class="s2">"charmanson.isandlatech.com"</span><span class="p">,</span>
-		<span class="nt">"xmpp-port"</span><span class="p">:</span> <span class="mi">5222</span><span class="p">,</span>
-		<span class="nt">"xmpp-jid"</span><span class="p">:</span> <span class="s2">"bot@charmanson.isandlatech.com"</span>
+		<span class="nt">"xmpp-port"</span><span class="p">:</span> <span class="mi">5222</span>
 	<span class="p">}</span>
 <span class="p">}</span></code></pre>
    </div>
@@ -1164,27 +1239,20 @@ Whereas Python components are implemented using
    <div class="highlight">
     <pre><code class="language-bash" data-lang="bash">./run --app-id myapplication --transport xmpp <span class="se">\</span>
 --xmpp-server server_url <span class="se">\</span>
---xmpp-port <span class="m">5222</span> <span class="se">\</span>
---xmpp-jid jid <span class="se">\</span>
---xmpp-pass password <span class="se">\</span></code></pre>
+--xmpp-port <span class="m">5222</span> <span class="se">\</span></code></pre>
    </div>
    <p>
-    For the other COHORTE nodes, you don’t need the
-    <code>
-     --xmpp-pass
-    </code>
-    . However, the XMPP server should accept
+    The XMPP server should accept
     <strong>
-     anonymous
+     <code>
+      anonymous
+     </code>
     </strong>
-    connections.
-   </p>
-   <p>
-    The
-    <code>
-     --xmpp-jid
-    </code>
-    is the same used by the Top Composer and the other nodes.
+    connections and
+    <strong>
+     `multi-user chat
+    </strong>
+    .
    </p>
    <h3 id="using-httpxmpp">
     Using HTTP/XMPP
@@ -1211,9 +1279,85 @@ Whereas Python components are implemented using
    <p>
     COHORTE has an integrated shell to allow users manipulate and monitor the system. Here the list of the provided shell commands and their explanation.
    </p>
-   <h2 id="default-name-space">
-    “default” name space
+   <h2 id="manage-cohorte-platform">
+    Manage COHORTE Platform
    </h2>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Option
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       <b>
+        nodes
+       </b>
+      </td>
+      <td>
+       Lists the nodes visible from this isolate
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        isolates
+       </b>
+       [&lt;node&gt;]
+      </td>
+      <td>
+       Lists the isolates of the given node, or of all nodes
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        ping
+       </b>
+       [&lt;isolate&gt;]
+      </td>
+      <td>
+       Checks if the given isolate (name or UID) is alive
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        forker:stop
+       </b>
+       &lt;isolate&gt;
+      </td>
+      <td>
+       Stops the given isolate (name or UID)
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        shutdown
+       </b>
+      </td>
+      <td>
+       Shutdown all the platform (all the nodes)
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <h2 id="other-advanced-commands">
+    Other advanced commands
+   </h2>
+   <p>
+    These commands are categorized by namespace.
+   </p>
+   <h3 id="default-name-space">
+    “default” name space
+   </h3>
    <table class="table table-striped table-bordered table-hover table-condensed">
     <thead>
      <tr>
@@ -1464,48 +1608,9 @@ Whereas Python components are implemented using
      </tr>
     </tbody>
    </table>
-   <h2 id="forker-name-space">
-    “forker” name space
-   </h2>
-   <table class="table table-striped table-bordered table-hover table-condensed">
-    <thead>
-     <tr>
-      <th>
-       Option
-      </th>
-      <th>
-       Description
-      </th>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td>
-       <b>
-        ping
-       </b>
-       [&lt;isolate&gt;]
-      </td>
-      <td>
-       Checks if the given isolate (name or UID) is alive
-      </td>
-     </tr>
-     <tr>
-      <td>
-       <b>
-        stop
-       </b>
-       &lt;isolate&gt;
-      </td>
-      <td>
-       Stops the given isolate (name or UID)
-      </td>
-     </tr>
-    </tbody>
-   </table>
-   <h2 id="herald-name-space">
-    “herald” name space
-   </h2>
+   <h3 id="herald-name-space-cohorte-messaging-layer">
+    “herald” name space (COHORTE messaging layer)
+   </h3>
    <table class="table table-striped table-bordered table-hover table-condensed">
     <thead>
      <tr>
@@ -1606,9 +1711,9 @@ Whereas Python components are implemented using
      </tr>
     </tbody>
    </table>
-   <h2 id="ipopo-name-space">
-    “ipopo” name space
-   </h2>
+   <h3 id="ipopo-name-space-service-oriented-component-model">
+    “ipopo” name space (Service-Oriented Component Model)
+   </h3>
    <table class="table table-striped table-bordered table-hover table-condensed">
     <thead>
      <tr>
@@ -1700,47 +1805,9 @@ Whereas Python components are implemented using
      </tr>
     </tbody>
    </table>
-   <h2 id="node-name-space">
-    “node” name space
-   </h2>
-   <table class="table table-striped table-bordered table-hover table-condensed">
-    <thead>
-     <tr>
-      <th>
-       Option
-      </th>
-      <th>
-       Description
-      </th>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td>
-       <b>
-        isolates
-       </b>
-       [&lt;node&gt;]
-      </td>
-      <td>
-       Lists the isolates of the given node, or of all nodes
-      </td>
-     </tr>
-     <tr>
-      <td>
-       <b>
-        nodes
-       </b>
-      </td>
-      <td>
-       Lists the nodes visible from this isolate
-      </td>
-     </tr>
-    </tbody>
-   </table>
-   <h2 id="shell-name-space">
+   <h3 id="shell-name-space">
     “shell” name space
-   </h2>
+   </h3>
    <table class="table table-striped table-bordered table-hover table-condensed">
     <thead>
      <tr>
@@ -1777,9 +1844,9 @@ Whereas Python components are implemented using
      </tr>
     </tbody>
    </table>
-   <h2 id="top-name-space">
+   <h3 id="top-name-space">
     “top” name space
-   </h2>
+   </h3>
    <table class="table table-striped table-bordered table-hover table-condensed">
     <thead>
      <tr>
@@ -3788,7 +3855,8 @@ Whereas Python components are implemented using
                 </div>
             </div>
 
-            
+            <br/>
+            <br/>
             
 
 
