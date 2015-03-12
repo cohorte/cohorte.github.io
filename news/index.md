@@ -1,6 +1,8 @@
 ---
-layout: docpage
+layout: page
 title: News
 ---
 
-No news!
+{% for post in site.posts %}
+  * {{ post.date | date_to_string }} &raquo; [ {{ post.title }} ]({{ post.url }})
+{% endfor %}
