@@ -14,7 +14,7 @@ You found detailed installation instructions on [this page of the reference guid
 
 <div class="menu-choices">
     <a style="left: -10%;" class="menu-choice menu-choice-python"
-      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-python-distribution.tar.gz">Python 3.4</a>
+      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-python-distribution.tar.gz">Python (2.7+ 3.2+)</a>
     <a style="left: 19%;" class="menu-choice menu-choice-windows"
       href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-windows-distribution.tar.gz">Windows (64 bits)</a>
     <a style="left: 48%;" class="menu-choice menu-choice-linux"

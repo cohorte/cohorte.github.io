@@ -228,7 +228,7 @@ Try also to stop the second node `node2` (type `quit` on it terminal window). Re
 
 All the components used until now are implemented in Python. We will extend our application by introducing a new component that implements the HELLO SERVICE in Java (`D_component). 
 
- * Stop the running nodes of the previous step (use the command `quit`).
+ * Stop the running nodes of the previous step (use `shutdown` command - or stop node seperatly using `quit`command on each one).
  * Donwload the bundle (jar file) containing the implementation code of the D component.
 
 <a id="download_hello_demo_java_snapshot" href="http://repo.isandlatech.com/maven/releases/org/cohorte/demos/hello/1.0.0/hello-1.0.0.jar" class="btn btn-success">Download Hello Java Bundle</a>
