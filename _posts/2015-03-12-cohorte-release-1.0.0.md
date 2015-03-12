@@ -5,6 +5,8 @@ toc: false
 comments: false
 ---
 
+18 / 12 / 2014
+
 
 It's pleasure to annouce that Cohorte Platform 1.0.0 has been released. This stable release implements the major features of Cohorte project and fixes various issues since the last pre-release 1.0.0-pre1. 
 

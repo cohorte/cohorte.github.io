@@ -74,11 +74,11 @@ Some resources to get started quickly:
 
 ## Articles and Presentations
 
-* [COHORTE: Distributed and Reliable Service-Oriented Component-Model Applications](./slides/overview) (slides)
+* [COHORTE: Distributed and Reliable Service-Oriented Component-Model Applications]({{ site.baseurl }}/slides/overview) (slides)
    <br/>Quick overview of COHORTE Project
 
-* [COHORTE Herald : Zero config transport abstraction layer allowing OSGi remote services over the NATs](./slides/herald) (slides)
-   <br/><img src="doc-img1.png"/>
+* [COHORTE Herald : Zero config transport abstraction layer allowing OSGi remote services over the NATs]({{ site.baseurl }}/slides/herald) (slides)
+   <br/><img src="{{ site.baseurl }}/slides/herald/eclipse-day-lyon-2014.png"/>
    <br/>Overview of COHORTE Herald connectivity layer
 
 
