@@ -364,7 +364,11 @@ height: 490px;
 }
 
 .case-studies-container-main {  
-  height: 560px;
+  height: 520px;
+}
+
+.case-stadies-body {
+ height: 279px; 
 }
 
 .panel {
