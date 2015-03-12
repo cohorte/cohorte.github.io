@@ -8,23 +8,23 @@ comments: false
 
 
 
-You found detailed installation instructions on [this page of the reference guide](../docs/1.x/setup).
-
 ## Stable Releases (1.0.0)
 
 <div class="menu-choices">
     <a style="left: -10%;" class="menu-choice menu-choice-python"
-      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-python-distribution.tar.gz">Python (2.7+ 3.2+)</a>
+      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-python-distribution.tar.gz" data-toggle="tooltip" data-placement="bottom" title="Cohorte Distribution for full Python distributed component-based applications. It can be used in any operating system having Python 2.7+ or 3.2+ installed.">Python (2.7+ 3.2+)</a>
     <a style="left: 19%;" class="menu-choice menu-choice-windows"
-      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-windows-distribution.tar.gz">Windows (64 bits)</a>
+      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-windows-distribution.tar.gz" data-toggle="tooltip" data-placement="bottom" title="Cohorte Distribution for Windows 64 bits (XP, Vista, 8, 2008 Server, 2012 server). It requires Java JRE 1.7+ and Python 3.4+">Windows (64 bits)</a>
     <a style="left: 48%;" class="menu-choice menu-choice-linux"
-      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-linux-distribution.tar.gz">Linux (x86_64)</a>
+      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-linux-distribution.tar.gz" data-toggle="tooltip" data-placement="bottom" title="Cohorte Distribution for Linux-based Operating Systems. It requires Java JRE 1.7+ and Python 3.4+">Linux (x86_64)</a>
     <a style="left: 77%;" class="menu-choice menu-choice-macosx"
-      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-macosx-distribution.tar.gz">Mac OS X</a>    
+      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-macosx-distribution.tar.gz" data-toggle="tooltip" data-placement="bottom" title="Cohorte Distribution for Mac OS X Operating System. It requires Java JRE 1.7+ and Python 3.4+">Mac OS X</a>    
 </div>
 
 <div id="download_releases">
 </div>
+
+You found detailed installation instructions on [this page of the reference guide](../docs/1.x/setup).
 
 ## Pre-Release Versions (1.0.0.pre1)
 
