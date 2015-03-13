@@ -25,24 +25,24 @@ In this white paper, we show you how COHORTE could be used in the Internet of Th
  * Provides Remotes Services between components (Java or Python) with zero configurations (*Administrators are happy* :) ).
  * Supports multi-gateway deployement for more scalability and fine grain control.
 
-## COHORTE's added values
+## Value added of COHORTE
 
  * **Security** : 
    * communication between gateways is secured
-   * we can not integrate other gateways if we have not the APPLICATION's ID! 
+   * we can not integrate other gateways if we have not the same APPLICATION's ID! 
 
  * **Efficiency** :
-   * Zero Config : no need for complicated configurations to get gateways (and components) working together
-   * Local data processing : data is processed in the gateway of local devices not in centralised server (incremental processing)
-   * Scalability : multiple gateways in local internet area, or over Internet (including cloud hosted gateways - nodes)
+   * *Zero Config* : no need for complicated configurations to get gateways (and components) working together
+   * *Local data processing* : data is processed in the gateway of local devices not in centralised server (incremental processing)
+   * *Scalability* : multiple gateways in local internet area, or over Internet (including cloud hosted gateways - nodes)
 
  * **Continuity of service** : 
-   * Resilience : If one component fails in a gateway, COHORTE tries to isolate it in a separate container (a.k.a isolat) to ensure continuty of service and simplify developers' task to identify faulty components and by then replace them.
-   * Dynamic adaptability : components can be updated dynamically without stopping the system.
+   * *Resilience* : If one component fails in a gateway, COHORTE tries to isolate it in a separate container (a.k.a isolat) to ensure continuty of service and simplify developers' task to identify faulty components and by then replace them.
+   * *Dynamic adaptability* : components can be updated dynamically without stopping the system.
 
- * **Development Simplicity** :
-   * Service-oriented Components approach : COHORTE application is composed of a set of distributed service-oriented components. The global architecture could be established and documented easly. Components are black boxes, no need for developers to implement complex tasks like using remote services (a.k.a calling remote methods).
-   * Faster time to market : service-oriented components (drivers, transformers, aggregators, etc) can be capitalised and reused in other projects.
+ * **Ease if Development** :
+   * *Service-oriented Components approach* : COHORTE application is composed of a set of distributed service-oriented components. The global architecture could be established and documented easly. Components are black boxes, no need for developers to implement complex tasks like using remote services (a.k.a calling remote methods).
+   * *Faster time to market* : service-oriented components (drivers, transformers, aggregators, etc) can be capitalised and reused in other projects.
 
 ## Where to start
 
