@@ -40,7 +40,7 @@ In this white paper, we show you how COHORTE could be used in the Internet of Th
    * *Resilience* : If one component fails in a gateway, COHORTE tries to isolate it in a separate container (a.k.a isolat) to ensure continuty of service and simplify developers' task to identify faulty components and by then replace them.
    * *Dynamic adaptability* : components can be updated dynamically without stopping the system.
 
- * **Ease if Development** :
+ * **Ease of Development** :
    * *Service-oriented Components approach* : COHORTE application is composed of a set of distributed service-oriented components. The global architecture could be established and documented easly. Components are black boxes, no need for developers to implement complex tasks like using remote services (a.k.a calling remote methods).
    * *Faster time to market* : service-oriented components (drivers, transformers, aggregators, etc) can be capitalised and reused in other projects.
 
