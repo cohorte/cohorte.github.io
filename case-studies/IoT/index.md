@@ -1,11 +1,14 @@
 ---
 layout: page
 title: Internet of Things
-toc: false
+toc: true
+toc_numerate: true
+toc_exlude: h1, h4, h5, h6
 
-comments: false
+comments: true
 ---
 
+In this white paper, we show you how COHORTE could be used in the Internet of Things area with high added values.
 
 ## Vision
 
@@ -16,7 +19,40 @@ comments: false
 <br/>
 <br/>
 
- * Based on an implementation of OSGi specification for Java and Python programming languages.
- * IoT application is seen as a set of Service Components (Architects are happy :) )
- * Provides Remotes Services between components (Java or Python) with zero configuration (Administrators are happy :) ).
- * Supports multi-gateway deployement for more scalability and grain control.
+
+ * IoT application is seen as a set of Service-oriented Components (*Architects are happy* :) )
+ * Based on an implementation of OSGi specification for Java and Python programming languages (*Developers are happy* :) ).
+ * Provides Remotes Services between components (Java or Python) with zero configurations (*Administrators are happy* :) ).
+ * Supports multi-gateway deployement for more scalability and fine grain control.
+
+## COHORTE's added values
+
+ * **Security** : 
+   * communication between gateways is secured
+   * we can not integrate other gateways if we have not the APPLICATION's ID! 
+
+ * **Efficiency** :
+   * Zero Config : no need for complicated configurations to get gateways (and components) working together
+   * Dynamic adaptation to changes 
+   * Scalability : multiple gateways in local internet area, or over Internet (including cloud hosted gateways - nodes)
+
+ * **Continuity of service** : 
+   * Resilience : If one component breaks down in a gateway, COHORTE tries to isolate it in a separate container (or isolat) to ensure continuty of service and simplify developers to identify faulty components and by then replace them.
+
+ * **Development Simplicity** :
+   * Service-oriented Components approach : COHORTE application is composed of a set of distributed service-oriented components. The global architecture could be established and documented easly. Components are black boxes, no need for developers to implement complex tasks like using remote services (a.k.a calling remote methods).
+
+## Where to start
+
+Read the following documentation pages to have a first idea about the project :
+
+ * [Key Concepts]({{ site.baseurl }}/docs/1.x/key-concepts) 
+
+
+Try the following tutorials :
+
+ * [Temper tutorial]({{ site.baseurl }}/docs/1.x/tutorials/temper) : Highlighting the multi-language and distribution features of COHORTE in a simple, yet functional distributed temperature monitoring application.
+
+ * [Arduino LED tutorial]({{ site.baseurl }}/docs/1.x/tutorials/arduino-led) : How to use COHORTE to export an Arduino micro-controller as a Service used by other components.
+
+ * [Robots tutorial]({{ site.baseurl }}/docs/1.x/tutorials/robots) : How to use COHORTE to build Robots application.

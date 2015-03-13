@@ -27,7 +27,15 @@ layout: default
             {% if page.by %}
               <div class="written">Written By: <span class="by">{{ page.by }}</span></div>
             {% endif %}
+            
+
+            <div id="docgen-start"></div>
+            <div id="toc_magic">
             {{ content }}
+            </div>
+            <div id="docgen-end"></div>
+            
+
             <br/>
             {% if page.previous_page %}
             <!--<a href="{{ page.previous_page }}" class="btn float-left" title="Previous page"> Previous </a>-->
@@ -72,7 +80,14 @@ layout: default
 <div class="page-bottom-style">
   <div class="container">
     <div class="row">
-      <a href="{{ site.baseurl }}/">home</a> > <a href="../">{{page.parent}}</a>    
+      <a href="{{ site.baseurl }}/">home</a> >
+      {% if page.parent %}
+       {% if page.parent_url %}
+       <a href="{{page.parent_url}}">{{page.parent}}</a> 
+       {% else %}
+       <a href="../">{{page.parent}}</a> 
+       {% endif %}
+      {% endif %} 
     </div>
   </div>
 </div>
