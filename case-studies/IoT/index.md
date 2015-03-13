@@ -33,7 +33,7 @@ In this white paper, we show you how COHORTE could be used in the Internet of Th
 
  * **Efficiency** :
    * Zero Config : no need for complicated configurations to get gateways (and components) working together
-   * Dynamic adaptation to changes 
+   * Local data processing : data is processed in the gateway of local devices not in centralised server (incremental processing)
    * Scalability : multiple gateways in local internet area, or over Internet (including cloud hosted gateways - nodes)
 
  * **Continuity of service** : 
