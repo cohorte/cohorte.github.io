@@ -37,7 +37,7 @@ In this white paper, we show you how COHORTE could be used in the Internet of Th
    * Scalability : multiple gateways in local internet area, or over Internet (including cloud hosted gateways - nodes)
 
  * **Continuity of service** : 
-   * Resilience : If one component breaks down in a gateway, COHORTE tries to isolate it in a separate container (or isolat) to ensure continuty of service and simplify developers to identify faulty components and by then replace them.
+   * Resilience : If one component fails in a gateway, COHORTE tries to isolate it in a separate container (a.k.a isolat) to ensure continuty of service and simplify developers' task to identify faulty components and by then replace them.
    * Dynamic adaptability : components can be updated dynamically without stopping the system.
 
  * **Development Simplicity** :
