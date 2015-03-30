@@ -15,7 +15,7 @@ The objective of this demonstration is to show you how control an Arduino UNO us
 
 You can download the provided COHORTE node using the following link :
 
-<a id="download_arduino_led_snapshot" href="#" class="btn btn-success">Download Arduino LED Demo</a>
+<a id="download_arduino_led_snapshot" href="led-raspberry-only.zip" class="btn btn-success">Download Arduino LED Demo</a>
 
 ## Application
 
@@ -28,6 +28,8 @@ You can download the provided COHORTE node using the following link :
 ## Code
 
 ### Arduino code
+
+Open Arduino Studio and past the following code.
 
 {% highlight c %}
 int led = 13;
@@ -56,31 +58,51 @@ void loop() {
 }
 {% endhighlight %}
 
+Connect the Arduino UNO with your computer, and choose the right port in the menu :
+
+![ex1](arduino-led-img5.png)
+
+Compile and send the code to the Arduino UNO :
+
+![ex2](arduino-led-img6.png)
+
 ### Raspberry code
 
-#### LED_WRAPPER
+The downloaded demo bundle contains the following files :
+
+#### repo/led_uno_wrapper/led_uno_wrapper.py
 
 {% highlight python %}
-from pelix.ipopo.decorators import ComponentFactory, Provides, Validate, Invalidate
+from pelix.ipopo.decorators import ComponentFactory, Provides, Validate, Invalidate, Property
+from pelix.ipopo import constants
 
 import serial
 
-@ComponentFactory("led_wrapper_factory")
-@Provides("led.service")
-class LedWrapper(object):
+@ComponentFactory("led_uno_wrapper_factory")
+@Property("_name", "led.name", constants.IPOPO_INSTANCE_NAME)
+@Property("_serial_port", "serial.port", '/dev/tty.usbmodem1d1131')
+@Provides("java:/led.services.LedService")
+class LedUnoWrapper(object):
 
     def __init__(self):
+        self._name = "led"
         self._state = "off"
+        self._serial_port = None
         self._serial = None
         
     @Validate    
     def start(self, context):
-        self._serial = serial.Serial('/dev/tty.usbmodem1d1131', 9600, timeout=5)
+        self._serial = serial.Serial(self._serial_port, 9600, timeout=5)
+        #self.on()
 
     @Invalidate    
     def stop(self, context):
         self._serial.close()
         self._serial = None
+        #self.off()
+
+    def get_name(self):
+        return self._name
 
     def get_state(self):
         return self._state
@@ -88,17 +110,21 @@ class LedWrapper(object):
     def on(self):             
         if self._serial.isOpen():
             self._serial.write("on")
-            self._state = "on"            
+            self._state = "on"
 
     def off(self):        
         if self._serial.isOpen():
             self._serial.write("off")
             self._state = "off"
+
+    # Java API compliance
+    getName = get_name
+    getState = get_state
 {% endhighlight %}
 
-You have to change the provided serial port `/dev/tty.usbmodem1d1131` into the concrete port used by your Arduino.
+The concrete port used by your Arduino is provided as component proprty (see composition file).
 
-#### VIEWER
+#### repo/web_viewer/viewer.py
 
 {% highlight python %}
 from pelix.ipopo.decorators import ComponentFactory, Provides, Requires, Property
@@ -109,36 +135,86 @@ import json
 
 @ComponentFactory("led_viewer_factory")
 @Provides('pelix.http.servlet')
-@Requires("_led", "led.service", optional=True)
+@Requires("_leds", "java:/led.services.LedService", optional=True, aggregate=True)
 @Property('_path', 'pelix.http.path', "/leds")
 @Property('_reject', pelix.remote.PROP_EXPORT_REJECT, ['pelix.http.servlet'])
 class Viewer(object):
 
     def __init__(self):
-        self._path = None
-        self._led = None        
+        self._path = None     
+        self._leds = []
+        self._leds_map = {}      
 
-    def get_led(self):
-        if self._led:
-            return {"state": self._led.get_state()}
-        else:
-            return {"state": "unknown"}
+    def get_led(self, led):
+        result = {}        
+        if led in self._leds_map:
+            result["name"] = led
+            state = self._leds_map[led]["svc"].get_state()
+            result["state"] = state
+            return result
+        else:    
+            return {"name": "unknown", "state": "unknown"}
 
-    def send_action(self, action):
-        if self._led:
+    def get_leds(self):
+        result = {"leds": []}
+        for led in self._leds_map:            
+            state = self._leds_map[led]["svc"].get_state()            
+            result["leds"].append({"name": led, "state": state})         
+        return result
+
+    def send_action(self, led, action):
+        result = {}
+        _led = self._leds_map[led]
+        if _led:
+            result["name"] = led
             if action == "on":
-                self._led.on()
+                self._leds_map[led]["svc"].on()
+                result["state"] = "on"
             elif action == "off":
-                self._led.off()
-        return self.get_led()
+                self._leds_map[led]["svc"].off()
+                result["state"] = "off"
+        return result
 
     # we have omitted the remaining code handling HTTP requests for clarity    
+{% endhighlight %}
+
+<br/>
+
+#### conf/composition.js
+
+Update the "serial.port" propery and put the concret serial over usb port used between the raspberry and the arduino UNO.
+
+{% highlight json %}
+{
+    "name": "raspberry-app",
+    "root": {
+        "name": "raspberry-app-composition",
+        "components": [
+            {
+                "name" : "led-uno-wrapper",
+                "factory" : "led_uno_wrapper_factory",
+                "properties" : {
+                    "led.name" : "my-led",
+                    "serial.port" : "/dev/ttyACM0"
+                },
+                "isolate" : "devices" 
+            },
+            {
+                "name" : "led-viewer",
+                "factory" : "led_viewer_factory",
+                "isolate" : "ui"
+            }
+        ]
+    }
+}
 {% endhighlight %}
 
 
 ## Running
 
-* Ensure to have COHORTE [installed]({{site.baseurl}}/docs/1.x/setup) in your system (raspberry).
+* Connect the Arduino UNO with the Raspberry.
+
+* Ensure to have COHORTE [installed]({{site.baseurl}}/docs/1.x/setup) in your Raspberry system (choose Python-distribution from the download page).
 
 * Go to `led-gateway` folder of the downloaded zip file and launch COHORTE node: 
 
@@ -164,7 +240,7 @@ You can control now the LED of the Arduino using the ON/OFF button of the web in
 * You can add an intermediate component that controls a set of LEDs (or Arduinos). This depends on your needs for one specific scenario. Thanks to COHORTE your Arduino is seen as a service which can be consumed locally or remotely with no supplemental efforts. 
 
 
-
+<!--
 <script>
     function loadLatestSnapshots() {
         $.getJSON( "http://cohorte.github.io/latest_demos_led.json", function( data ) {                                              
@@ -175,3 +251,4 @@ You can control now the LED of the Arduino using the ON/OFF button of the web in
         loadLatestSnapshots();
     });
 </script>
+-->
