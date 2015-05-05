@@ -1,0 +1,13 @@
+{
+  "cohorte-macosx-distribution": 
+  {
+    "version"  : "1.0.0",
+    "stage"    : "release",
+    "timestamp": "20150420-134156",
+    "changelog": "http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-changelog.txt",
+    "files"    : 
+    {
+      "tar.gz" : "http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-macosx-distribution.tar.gz"
+    }
+  } 
+}
