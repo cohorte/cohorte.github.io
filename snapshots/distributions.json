@@ -7,7 +7,7 @@
     "changelog": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.1-SNAPSHOT/cohorte-1.0.1-20150504.144310-10-macosx-distribution-version.js",
     "files"    : 
     {
-      "tar.gz" : "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.1-SNAPSHOT/cohorte-1.0.1-20150504.144310-10-macosx-distribution.tar.gz"
+      "tar.gz" : "file:///Users/debbabi/tmp/cohorte-1.0.1-20150504.144310-10-macosx-distribution.tar.gz"
     }
   } 
 }
