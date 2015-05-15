@@ -3,15 +3,15 @@
   "snapshots": {
     "hello": {
       "files": {
-        "jar": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/demos/hello/1.0.1-SNAPSHOT/hello-1.0.0-20150511.070256-257.jar"
+        "jar": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/demos/hello/1.0.1-SNAPSHOT/hello-1.0.0-20150515.085458-258.jar"
       },
-      "version": "1.0.0-20150511.070256-257"
+      "version": "1.0.0-20150515.085458-258"
     },
     "hello-python-distribution": {
       "files": {
-        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/demos/hello/1.0.1-SNAPSHOT/hello-1.0.0-20150511.070256-257-python-distribution.zip"
+        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/demos/hello/1.0.1-SNAPSHOT/hello-1.0.0-20150515.085458-258-python-distribution.zip"
       },
-      "version": "1.0.0-20150511.070256-257"
+      "version": "1.0.0-20150515.085458-258"
     }
   }
 }

@@ -3,9 +3,9 @@
   "snapshots": {
     "cohorte-linux-distribution": {
       "files": {
-        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.1-SNAPSHOT/cohorte-1.0.1-20150511.065932-11-linux-distribution.tar.gz"
+        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.1-SNAPSHOT/cohorte-1.0.1-20150515.085057-12-linux-distribution.tar.gz"
       },
-      "version": "1.0.1-20150511.065932-11"
+      "version": "1.0.1-20150515.085057-12"
     },
     "cohorte-macosx-distribution": {
       "files": {
