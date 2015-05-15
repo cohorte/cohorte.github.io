@@ -9,5 +9,27 @@
     {
       "tar.gz" : "file:///Users/debbabi/tmp/cohorte-1.0.1-20150504.144310-10-macosx-distribution.tar.gz"
     }
+  },
+  "cohorte-linux-distribution": 
+  {
+    "version"  : "1.0.1",
+    "stage"    : "dev",
+    "timestamp": "20150511-085825",
+    "changelog": "",
+    "files"    : 
+    {
+      "tar.gz" : "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.1-SNAPSHOT/cohorte-1.0.1-20150511.065932-11-linux-distribution.tar.gz"
+    }
+  },
+  "cohorte-python-distribution": 
+  {
+    "version"  : "1.0.1",
+    "stage"    : "dev",
+    "timestamp": "20150511-085824",
+    "changelog": "",
+    "files"    : 
+    {
+      "tar.gz" : "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.1-SNAPSHOT/cohorte-1.0.1-20150511.065930-11-python-distribution.tar.gz"
+    }
   } 
 }
