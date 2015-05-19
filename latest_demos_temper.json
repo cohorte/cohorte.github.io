@@ -3,9 +3,9 @@
   "snapshots": {
     "temper-distribution": {
       "files": {
-        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/demos/temper/1.0.1-SNAPSHOT/temper-1.0.0-20150515.123318-256-distribution.zip"
+        "zip": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/demos/temper/1.0.1-SNAPSHOT/temper-1.0.0-20150519.073232-257-distribution.zip"
       },
-      "version": "1.0.0-20150515.123318-256"
+      "version": "1.0.0-20150519.073232-257"
     }
   }
 }
