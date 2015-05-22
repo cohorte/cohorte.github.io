@@ -15,9 +15,9 @@
     },
     "cohorte-python-distribution": {
       "files": {
-        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.1-SNAPSHOT/cohorte-1.0.1-20150519.072929-16-python-distribution.tar.gz"
+        "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.1-SNAPSHOT/cohorte-1.0.1-20150522.132504-19-python-distribution.tar.gz"
       },
-      "version": "1.0.1-20150519.072929-16"
+      "version": "1.0.1-20150522.132504-19"
     },
     "cohorte-windows-distribution": {
       "files": {
