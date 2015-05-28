@@ -81,6 +81,10 @@ Some resources to get started quickly:
    <br/><img src="{{ site.baseurl }}/slides/herald/eclipse-day-lyon-2014.png"/>
    <br/>Overview of COHORTE Herald connectivity layer
 
+* [COHORTE Cloud and LEDs demo : The deployment af a COHORTE application as an IBM Bluemix service]({{ site.baseurl }}/slides/cloud-demo) (slides)
+   <br/><img src="{{ site.baseurl }}/slides/cloud-demo/LogoiBMBluemixSmall.png"/>
+   <br/>Demonstration of a COHORTE application deployed as an IBM Bluemix service  
+
 
 
 
