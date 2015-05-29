@@ -67,12 +67,13 @@ You found detailed installation instructions on [this page of the reference guid
 
 <script>
     function update_night_build_links() {
-        $.getJSON( "http://cohorte.github.io/latest_platforms.json", function( data1 ) {
+        $.getJSON( "http://cohorte.github.io/latests/distributions_dev.json", function( data1 ) {
             console.log("refresh snapshots...");
-            frame = "<ul>";
-            frame += "<li><a href='" + data1["snapshots"]["cohorte-linux-distribution"]["files"]["tar.gz"] + "'>cohorte-linux-distribution (" + data1["snapshots"]["cohorte-linux-distribution"]["version"] + ")</a></li>"
-            frame += "<li><a href='" + data1["snapshots"]["cohorte-macosx-distribution"]["files"]["tar.gz"] + "'>cohorte-macosx-distribution (" + data1["snapshots"]["cohorte-macosx-distribution"]["version"] + ")</a></li>"
-            frame += "<li><a href='" + data1["snapshots"]["cohorte-python-distribution"]["files"]["tar.gz"] + "'>cohorte-python-distribution (" + data1["snapshots"]["cohorte-python-distribution"]["version"] + ")</a></li>"
+            frame = "<a href='"+data1["cohorte-python-distribution"]["changelog"]+"'>CHANGELOG</a><br/>"
+            frame += "<ul>";
+            frame += "<li><a href='" + data1["cohorte-linux-distribution"]["files"]["tar.gz"] + "'>cohorte-linux-distribution (" + data1["cohorte-linux-distribution"]["version"] +"-"+data1["cohorte-linux-distribution"]["timestamp"] + ")</a></li>"
+            frame += "<li><a href='" + data1["cohorte-macosx-distribution"]["files"]["tar.gz"] + "'>cohorte-macosx-distribution (" + data1["cohorte-macosx-distribution"]["version"] +"-"+data1["cohorte-macosx-distribution"]["timestamp"] + ")</a></li>"
+            frame += "<li><a href='" + data1["cohorte-python-distribution"]["files"]["tar.gz"] + "'>cohorte-python-distribution (" + data1["cohorte-python-distribution"]["version"] +"-"+data1["cohorte-python-distribution"]["timestamp"] + ")</a></li>"
             	
 	          frame += "</ul>";
             $('#download_night_builds').html(frame);
