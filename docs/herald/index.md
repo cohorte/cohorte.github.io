@@ -158,7 +158,7 @@ TODO
 TODO
 
 
-## Extensing Herald
+## Extending Herald
 
 * How to implement a new discovery protocol?
 * How to implement a new transport protocol?
