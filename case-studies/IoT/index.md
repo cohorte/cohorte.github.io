@@ -20,10 +20,16 @@ In this white paper, we show you how COHORTE could be used in the Internet of Th
 <br/>
 
 
- * IoT application is seen as a set of Service-oriented Components (*Architects are happy* :) )
- * Based on an implementation of OSGi specification for Java and Python programming languages (*Developers are happy* :) ).
- * Provides Remotes Services between components (Java or Python) with zero configurations (*Administrators are happy* :) ).
- * Supports multi-gateway deployement for more scalability and fine grain control.
+ * `Architects are happy`
+   * IoT application is seen as a set of Service-oriented Components from devices to cloud.
+
+ * `Developers are happy`
+   * Cohorte is based on an implementation of OSGi specification for Java and Python programming languages.
+   * They implement business code, not distribution and life-cyle management tasks.
+
+ * `Operators are happy`
+   * Cohorte provides Remotes Services between components (Java or Python) with zero configurations.
+   * It supports multi-gateway deployement for more scalability and fine grain control.
 
 ## Value added of COHORTE
 
