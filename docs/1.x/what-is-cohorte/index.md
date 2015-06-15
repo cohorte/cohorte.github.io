@@ -52,7 +52,7 @@ There are a number of benefits to using COHORTE to build your software applicati
 <div class="row">
 	<div class="col-md-6">
 		<h3>Components Distribution</h3>
-		<p>COHORTE developers provides only implementations for the different components providing or requiring services. At runtime, the concret placement of components in execution nodes is managed by the COHORTE runtime. Two components can work together transparantly even they are located on two seperate machines.</p>
+		<p>COHORTE developers provide only implementations for the different components providing or requiring services. At runtime, the concrete placement of components in execution nodes is managed by the COHORTE runtime. Two components can work together transparantly even they are located on two seperate machines.</p>
 	</div>
 	<div class="col-md-6" >
 		<img src="what-is-cohorte-img4.png"/>
@@ -67,7 +67,7 @@ There are a number of benefits to using COHORTE to build your software applicati
 	</div>
 	<div class="col-md-6" >
 		<h3>Heterogeneous Environments</h3>
-		<p>COHORTE components can be executed on different kind of devices, from small devices like Raspberry-Pi to big servers whereas having windows, linux, or Max os operating systems.</p>
+		<p>COHORTE components can be executed on different kind of devices, from small devices like Raspberry-Pi to big servers whereas having windows, linux, or Mac OS operating systems.</p>
 	</div>
 </div>
 
@@ -76,7 +76,7 @@ There are a number of benefits to using COHORTE to build your software applicati
 <div class="row">
 	<div class="col-md-6">
 		<h3>Dynamic Isolation and Resilience</h3>
-		<p>COHORTE automatically prevent and correct component failures by isolating them and restarting them seperatly from others. Users can also define static isolates in which they put components that are guaranteede to be safe.</p>
+		<p>COHORTE automatically prevents and corrects component failures by isolating them and restarting them seperatly from others. Users can also define static isolates in which they put components that are guaranteed to be safe.</p>
 	</div>
 	<div class="col-md-6" >
 		<img src="what-is-cohorte-img5.png"/>
