@@ -136,20 +136,20 @@ $ ./<b>run</b> --app-id temper --top-composer true
 
 Accordingly, this node will use HTTP connection mode. The discovery of other COHORTE nodes will be carried out using Multicast over TCP/IP. Communication between nodes will be ensured using TCP/IP sockets. This limits the scope of the participating COHORTE nodes to local network area.
 
-Other important configurations are the `web-admin` and `shell-admin` ports. The letter is used to remotely access the shell of this node (e.g., `nc localhost 9001`), while the former is used to access the Web Admin interface in a web browser using this address : `http://localhost:9000/admin`
+Other important configurations are the `web-admin` and `shell-admin` ports. The latter is used to remotely access the shell of this node (e.g., `nc localhost 9001`), while the former is used to access the Web Admin interface in a web browser using this address : `http://localhost:9000/admin`
 
 ![webadmin](temper-img-7.png)
 
-You notice that there is one one COHORTE node at this time (**gateway-node**), which contains two *isolates* (**web.interface** and **aggregation**) as specified in the *composition specification*.  
+You notice that there is only one COHORTE node at this time (**gateway-node**), which contains two *isolates* (**web.interface** and **aggregation**) as specified in the *composition specification*.  
 
-To Open the web interface provided by the **UserInterface** component, click on its isolate (*web.interface*) to see details about it, the click on the HTTP SERVIC link to open new browser tab referring to the HTTP server of the *web.interface* isolate. You have to add `/temper` to access the **UserInterface** component's provided interface.
+To Open the web interface provided by the **UserInterface** component, click on its isolate (*web.interface*) to see details about it, then click on the HTTP SERVICE link to open new browser tab referring to the HTTP server of the *web.interface* isolate. You have to add `/temper` to access the **UserInterface** component's provided interface.
 
 ![webadmin](temper-img-8.png)
 
 
 #### Starting temperature sensors
 
-Will the **aggregator** and the **aggregator web interface** are running, we start now the two Java and Python implemented sensors. 
+While the **aggregator** and the **aggregator web interface** are running, we start now the two Java and Python implemented sensors. 
 
 * Go the `python-sensor-node` and `java-sensor-node` directory in two separate terminals and type the following command for each one (ensure to set the same `--app-id` as the Top Composer started before):
 
@@ -163,7 +163,7 @@ This command will start the corresponding node and participate to the global app
 
 Check the *aggregator web interface*, you will notice new two columns for Python and Java sensors.
 
-All this three COHORTE nodes are located on the same machine. Let now integrate a new node which runs on separate machine located either in the local network aria or somewhere in the Internet.
+All this three COHORTE nodes are located on the same machine. Let now integrate a new node which runs on separate machine located either in the local network area or somewhere in the Internet.
 
 <a name="step2"></a>
 
@@ -171,7 +171,7 @@ All this three COHORTE nodes are located on the same machine. Let now integrate 
 
 #### Local Network Area deployment
 
-Let's add another different device to our application. In the downloaded zip file, there a pre-prepared COHORTE node called `raspberry-node`. If you have a *Raspberry-Pi* device, install *Cohorte Python distribution* and put this node on it. Otherwise, you can test this node in any other device (including the one you are already working on).
+Let's add another different device to our application. In the downloaded zip file, there is a pre-prepared COHORTE node called `raspberry-node`. If you have a *Raspberry-Pi* device, install *Cohorte Python distribution* and put this node on it. Otherwise, you can test this node in any other device (including the one you are already working on).
 
 ![local-application](temper-img-6.png)
 
@@ -225,7 +225,7 @@ This will run the Top Composer using the two communication modes : HTTP and XMPP
 * start a new `raspberry-node` node using the following command : 
 
 <pre>
-$ ./<b>run</b> --app-id temper --node remote_raspberry --using-conf run_xmpp.js
+$ ./<b>run</b> --app-id temper --node remote_raspberry --use-config run_xmpp.js
 </pre>
 
 This last node called at runtime `remote_raspberry` could be placed any where the time he has access to the configured XMPP server (see run_xmpp.js).
@@ -234,7 +234,7 @@ This last node called at runtime `remote_raspberry` could be placed any where th
 
 ### .Net interaction via Unity 3D framework
 
-No its time to add the 3D viewer of our temperature sensors. 
+Now it's time to add the 3D viewer of our temperature sensors. 
 
 ![environment3](temper-img-3.png)
 
@@ -248,7 +248,7 @@ Download the already implemented viewer corresponds to your platform :
 
 The downloaded zip file corresponds to a static COHORTE node. No composition will be ordered from the Top Composer, the local component will be instantiated at startup by the node itself.
 
-At startup, you have to give the application's ID specified for the Top Composer (`temper`) and the 3D viewer will be reflects automatically the detected temperature sensors and their collected last value.
+At startup, you have to give the application's ID specified for the Top Composer (`temper`) and the 3D viewer will reflect automatically the detected temperature sensors and their collected last value.
 
 ![unity_viewer](temper-img-10.png)
 
