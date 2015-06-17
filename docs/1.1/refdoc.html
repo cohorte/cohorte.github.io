@@ -1,0 +1,4001 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="isandlatech">
+    
+    <title>Cohorte Refence Guide v.1.0 | Cohorte Project</title>
+
+    <link rel="icon" type="image/png" href="/resources/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="/resources/favicon.ico">
+
+    <!-- Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=fr" rel=
+    "stylesheet">
+    <link href=
+    "//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic"
+    rel="stylesheet">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/resources/css/cohorte.css" rel="stylesheet">
+
+    <!-- Syntax highlighter -->
+    <link rel="stylesheet" href="/resources/css/syntax.css" />
+
+    <!-- jQuery -->
+    <script src="/resources/js/2/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/resources/js/2/bootstrap.min.js"></script>    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="/resources/images/cohorte-logo.png"></img></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+            <li><a href="/downloads/">Downloads</a></li>
+              <li><a href="/docs/1.x/">Documentation</a></li>		      
+		      <li><a href="/community/">Community</a></li>
+		      <li><a href="/news">News</a></li>
+		      <!--li><a href="/contribute/">Contribute</a></li-->
+		      <li>
+		        <a href="http://github.com/isandlatech/" data-toggle="tooltip" data-placement="bottom" title="Source code"><img src="/resources/images/github-logo-black.png" alt="GitHub Logo" /></a>		        
+		      </li>  
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<ul class="nav">          
+        
+</ul>    
+
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+
+<div class="page-title-style">
+  <div class="container">
+    <a href="/">home</a> >
+    
+    <h1 id="page-title">Cohorte Refence Guide v.1.0</h1>
+  </div>
+</div>
+
+
+<div class="page-container">
+  <div class="container" style="min-height: 540px;">
+    <div class="row">
+      <div class="span12">
+          <div class="main-page-column" style="width: 75%;">
+            
+            <div class="row-fluid">
+                <div class="col-md-6">
+                      
+                </div>
+                <div class="col-md-6">
+                    <div class="pull-right">
+                          
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+
+            
+
+            <div id="docgen-start"></div>
+            <div id="toc_magic">
+            <h1>What is COHORTE?</h1>
+<html>
+ <head>
+ </head>
+ <body>
+  <div id="toc_magic">
+   <h2 id="solution-overview">
+    Solution Overview
+   </h2>
+   <p>
+    COHORTE is a platform for developing and rolling out robust and reliable software.
+Software produced with COHORTE has a high level of robustness and reliability since its is made up of a range of components and services protected from one another by isolation containers. This modular architecture guarantees that software cannot be paralyzed in the event of failure of one of its components and that, for example, 100% of the data communicated is processed.
+   </p>
+   <p>
+    This modular architecture ensures automatic service recovery after errors and to supply degraded responses in the event of unavailability of a component.
+The platform incorporates a range of tried and tested basic components dramatically reducing specific developments, thereby reducing the cost of projects using them.
+The level of reliability of software produced with COHORTE SDK also reduces operating and maintenance costs for the companies software packages.
+   </p>
+   <h2 id="goals-and-benefits">
+    Goals and Benefits
+   </h2>
+   <p>
+    There are a number of benefits to using COHORTE to build your software applications. The most evident ones are:
+   </p>
+   <div class="row">
+    <br/>
+    <br/>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>
+      Service-oriented Component-based Applications
+     </h3>
+     <p>
+      COHORTE provides a framework to construct modularised applications consisting of software components that uses software services provided by other components. This approach allows to construct IT applications as mean of a set of components providing and requiring services. COHORET is compliant to OSGi specification.
+     </p>
+    </div>
+    <div class="col-md-6">
+     <img src="http://cohorte.github.io/docs/1.x/what-is-cohorte/what-is-cohorte-img1.png"/>
+    </div>
+   </div>
+   <div class="row">
+    <br/>
+    <br/>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <img src="http://cohorte.github.io/docs/1.x/what-is-cohorte/what-is-cohorte-img2.png"/>
+    </div>
+    <div class="col-md-6">
+     <h3>
+      Multi-language programming
+     </h3>
+     <p>
+      Components in a COHORTE system can be implemented in Java or Python programming languages using Apache Felix iPOJO (Java) and/or isandlatech iPOPO (Python) service-based component-model frameworks. There is also a partial support for .Net components using IronPython component facade (full support for .Net is in the project's roadmap) . You can also wrap other legacy modules implemented in other programming languages by using Python component wrappers. In addition, you can dynamically update the C code without any complications. COHORTE Provides a common implementation for Remotes Services allowing the integration of a mixture of components with zero configuration. Service provider can be implemented using Python and used by another component implemented in Java, and vise versa
+     </p>
+    </div>
+   </div>
+   <div class="row">
+    <br/>
+    <br/>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>
+      Components Distribution
+     </h3>
+     <p>
+      COHORTE developers provide only implementations for the different components providing or requiring services. At runtime, the concrete placement of components in execution nodes is managed by the COHORTE runtime. Two components can work together transparantly even they are located on two seperate machines.
+     </p>
+    </div>
+    <div class="col-md-6">
+     <img src="http://cohorte.github.io/docs/1.x/what-is-cohorte/what-is-cohorte-img4.png"/>
+    </div>
+   </div>
+   <div class="row">
+    <br/>
+    <br/>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <img src="http://cohorte.github.io/docs/1.x/what-is-cohorte/what-is-cohorte-img3.png"/>
+    </div>
+    <div class="col-md-6">
+     <h3>
+      Heterogeneous Environments
+     </h3>
+     <p>
+      COHORTE components can be executed on different kind of devices, from small devices like Raspberry-Pi to big servers whereas having windows, linux, or Mac OS operating systems.
+     </p>
+    </div>
+   </div>
+   <div class="row">
+    <br/>
+    <br/>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>
+      Dynamic Isolation and Resilience
+     </h3>
+     <p>
+      COHORTE automatically prevents and corrects component failures by isolating them and restarting them seperatly from others. Users can also define static isolates in which they put components that are guaranteed to be safe.
+     </p>
+    </div>
+    <div class="col-md-6">
+     <img src="http://cohorte.github.io/docs/1.x/what-is-cohorte/what-is-cohorte-img5.png"/>
+    </div>
+   </div>
+   <div class="row">
+    <br/>
+    <br/>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <img src="http://cohorte.github.io/docs/1.x/what-is-cohorte/what-is-cohorte-img6.png"/>
+    </div>
+    <div class="col-md-6">
+     <h3>
+      Development and Monitoring Tools
+     </h3>
+     <p>
+      COHORTE Platform includes a centralized monitoring web interface for all the running nodes. This interface allows to dynamically watch what is happening in the COHORTE system (Nodes, Isolates, and Components updates)
+     </p>
+    </div>
+   </div>
+   <div id="one-page-generator-end">
+   </div>
+   <!--
+## Convinced?
+
+If COHORTE is what you want for your IT applications, try it out! [Here are some resources to get
+started](/docs/1.x). 
+-->
+   <h2 id="about">
+    About
+   </h2>
+   <p>
+    <img alt="Cohorte" src="http://cohorte.github.io/docs/1.x/what-is-cohorte/cohorte-logo-sm-color.png"/>
+    Project is an open source framework hosted on GitHub and sponsored by
+    <a href="http://isandlatech.com">
+     isandlaTech
+    </a>
+    . To help you developping your business applications using COHORTE, feel free to contact isandlaTech’s support team at
+    <a href="mailto:contact@isandlatech.com">
+     contact@isandlatech.com
+    </a>
+    .
+   </p>
+  </div>
+ </body>
+</html><h1>Key Concepts</h1>
+<html>
+ <head>
+ </head>
+ <body>
+  <div id="toc_magic">
+   <p>
+    A COHORTE system is a set of (distributed) Software Components connected together using services to ensure some functionality.
+   </p>
+   <p>
+    In the following sub-section, we detail the main concepts behind COHORET system.
+   </p>
+   <h2 id="dynamic-components">
+    Dynamic Components
+   </h2>
+   <p>
+    COHORTE Components represents a software component providing a service and eventually requiring other services to do ensure some tasks. Components can be implemented using Python or Java programming languages. We support and provide component-based framework for each language. Cohorte components implements only business logic, all the distribution and dependencies with other components are managed by COHORTE. Components can be deployed and removed dynamically without stopping the system.
+   </p>
+   <p style="text-align:center;">
+    <img src="http://cohorte.github.io/docs/1.x/key-concepts/key-convepts-img1.png"/>
+   </p>
+   <p>
+    Java components are implemented using
+    <a href="http://felix.apache.org/documentation/subprojects/apache-felix-ipojo.html">
+     Apache Felix iPOJO
+    </a>
+    component-based model.
+Whereas Python components are implemented using
+    <a href="http://ipopo.coderxpress.net/">
+     isandlaTech iPOPO
+    </a>
+    component-based model. This two component-based service-oriented models uses
+    <a href="http://www.osgi.org">
+     OSGi container
+    </a>
+    as runtime support. C#, C and other programming languages components could be wrapper in either Java or Python supported dynamic components.
+   </p>
+   <h2 id="isolates">
+    Isolates
+   </h2>
+   <p>
+    In COHORTE, OSGI containers could be created dynamically to host some set of related components. To communicate two remote components, COHORTE provides an implementation of
+    <em>
+     Remote Services
+    </em>
+    specification (part of OSGi specification) for Java and Python components. There is no need to provide specific configurations / proxies to get the
+    <em>
+     Remote Services
+    </em>
+    work, COHORTE provides
+    <em>
+     zero-config
+    </em>
+    approach for connecting remote services (Discovery and Transportation are automatic).
+   </p>
+   <p style="text-align:center;">
+    <img src="http://cohorte.github.io/docs/1.x/key-concepts/key-convepts-img2.png"/>
+   </p>
+   <p>
+    COHORTE provides a mechanism to isolate faulty components in a seperate OSGi containers. This is way we refer and call OSGi containers
+    <strong>
+     Isolates
+    </strong>
+    .
+   </p>
+   <h2 id="nodes">
+    Nodes
+   </h2>
+   <p>
+    COHORTE Isolates are located and managed on
+    <strong>
+     COHORTE Nodes
+    </strong>
+    . Nodes can be created by users using a provided scripts. Each Node can manage (create / monitor / delete) several isolates. COHORTE internal components responsible for managing local isolates and their relation with other remote isolates are located on special purpose Isolate (created at Node’s startup and can not host applicative components).
+   </p>
+   <p style="text-align:center;">
+    <img src="http://cohorte.github.io/docs/1.x/key-concepts/key-convepts-img3.png"/>
+   </p>
+   <h2 id="composers">
+    Composers
+   </h2>
+   <p>
+    The Composer is a special COHORTE Runtime Component responsible of instantiating the different components of an application respecting a composition specification. In COHORTE there are different Composer levels:
+   </p>
+   <ul>
+    <li>
+     <em>
+      Top Composer
+     </em>
+     : It loads the composition declarative description and computes the sets of components according to the node they must be instantiated on.
+    </li>
+    <li>
+     <em>
+      Node Composer
+     </em>
+     : It calculates the different isolates that must be exist for the local set of components.
+    </li>
+    <li>
+     <em>
+      Isolate Composer
+     </em>
+     : It uses framework-specific agents to request the instantiation of the components assigned to its isolate, and looks after their evolution.
+    </li>
+   </ul>
+  </div>
+ </body>
+</html><h1>Download and install COHORTE distribution</h1>
+<html>
+ <head>
+ </head>
+ <body>
+  <div id="toc_magic">
+   <p>
+    There are several ways of installing COHORTE on your system. In the following, we detail the manual installation (as the installers are not yet available).
+   </p>
+   <h2 id="manual-installation">
+    Manual installation
+   </h2>
+   <p>
+    Depending on your operating system, we give some insights about how install COHORTE distribution using specific platform instructions.
+   </p>
+   <ul>
+    <li>
+     Donwload the COHORTE distribution adequate to your operating system from the
+     <a href="/downloads">
+      downloads page
+     </a>
+     . E.g., for Linux OS you download
+     <code>
+      cohorte-1.0.0-linux-distribution.tar.gz
+     </code>
+     .
+    </li>
+   </ul>
+   <h3 id="unix-based-operating-systems-linux-solaris-and-max-os-x">
+    Unix-based Operating Systems (Linux, Solaris and Max OS X)
+   </h3>
+   <ol>
+    <li>
+     Extract the distribution archive, i.e.
+     <code>
+      cohorte-1.0.0-linux-distribution.tar.gz
+     </code>
+     to the directory you wish to install COHORTE. These instructions assume you chose
+     <code>
+      /opt/isandlatech/cohorte
+     </code>
+     . The subdirectory
+     <code>
+      cohorte-1.0.0
+     </code>
+     will be created from the archive.
+    </li>
+    <li>
+     Go to the
+     <code>
+      cohorte-1.0.0
+     </code>
+     directory and launch
+     <code>
+      setup.sh
+     </code>
+     command. This will export
+     <code>
+      COHORTE_HOME
+     </code>
+     environment variable (and add it to your home directory’s
+     <code>
+      .bashrc
+     </code>
+     file).
+    </li>
+    <li>
+     Ensure to have the access rights to
+     <code>
+      $COHORTE_HOME
+     </code>
+     directory (e.g., `sudo chgrp -R your_login cohorte-1.0.0; chown -R your_login cohorte-1.0.0).
+    </li>
+   </ol>
+   <h3 id="windows">
+    Windows
+   </h3>
+   <ol>
+    <li>
+     Prior to install Cohorte, you should have
+     <a href="http://www.python.org">
+      Python 3.4
+     </a>
+     installed on your machine. You have also to install
+     <a href="http://sourceforge.net/projects/pywin32/">
+      Pywin32
+     </a>
+     adequat to your operating system.
+    </li>
+    <li>
+     Set
+     <code>
+      PYTHON_HOME
+     </code>
+     environment variable to target your installed Python distribution.
+    </li>
+    <li>
+     Set
+     <code>
+      PYTHON_INTERPRETER=%PYTHON_HOME%\python.exe
+     </code>
+     environment variable to target your python interpreter executable.
+    </li>
+    <li>
+     Unzip the distribution archive to the directory you wish to install COHORTE. These instructions assume you chose
+     <code>
+      C:\Program Files\Cohorte
+     </code>
+     . The subdirectory
+     <code>
+      cohorte-1.0.0
+     </code>
+     will be created from the archive.
+    </li>
+    <li>
+     Add the
+     <code>
+      COHORTE_HOME
+     </code>
+     environment variable by opening up the system properties (WinKey + Pause), selecting the “Advanced” tab, and the “Environment Variables” button, then adding the
+     <code>
+      COHORTE_HOME
+     </code>
+     variable in the user variables with the value
+     <code>
+      C:\Program Files\Cohorte\cohorte-1.0.0\home
+     </code>
+     . Be sure to omit any quotation marks around the path even if it contains spaces.
+    </li>
+    <li>
+     Add
+     <code>
+      %COHORTE_HOME%\bin
+     </code>
+     to the system’s
+     <code>
+      PATH
+     </code>
+     environment variable.
+    </li>
+   </ol>
+   <h2 id="using-installers">
+    Using Installers
+   </h2>
+   <p>
+    Not yet available.
+   </p>
+  </div>
+ </body>
+</html><h1>Cohorte Components</h1>
+<html>
+ <head>
+ </head>
+ <body>
+  <div id="toc_magic">
+   <h2 id="overview">
+    Overview
+   </h2>
+   <p>
+    A COHORTE application is composed of a set of components requiring and providing services. These components can be located in one node or dispatched between a set of nodes.
+   </p>
+   <p>
+    In a classical component-based frameworks, components are instantiated statically at a predefined locations. They are also configured to communicate together before starting the application. This leads to a situation in which a lot of configuration files should be managed or to recompile the components if the communication aspects are hard coded.
+   </p>
+   <p>
+    In contrast, COHORTE Components are instantiated, configured and placed in the right node automatically. There is no need to implement the distribution related aspects like serialization or client/server interaction. Components are seen as black-boxes wired by
+    <em>
+     declared
+    </em>
+    (remote) services.
+   </p>
+   <!-- 
+
+To understand how COHORTE components could be implemented in different languages and could be distributed in different nodes, the following picture provides some insights about the underlying architecture of COHORTE and its main technologies.
+
+![Main Modules](components-img-1.png)
+
+## Cohorte Isolates
+
+What is ? Service Oriented Runtime
+
+OSGi specification 
+
+Java and Python Implementations
+
+-->
+   <h2 id="service-oriented-component-models-socm">
+    Service Oriented Component Models (SOCM)
+   </h2>
+   <p>
+    To implement COHORTE
+    <em>
+     managed
+    </em>
+    components, COHORTE supports two main, already existing component-based frameworks :
+   </p>
+   <ul>
+    <li>
+     Apache Felix iPOJO (Java)
+    </li>
+    <li>
+     Pelix/iPOPO (Python)
+    </li>
+   </ul>
+   <p>
+    If you are already familiar with one of the two frameworks, all whats you have to do in order to get your components managed by COHORTE is to not instantiate them (using
+    <code>
+     @Instantiate
+    </code>
+    annotation or its XML equivalent). COHORTE will instantiate them automatically. To have benefits of Remote Services feature, your services should use primitive types instead of complex user-specific types. Next, you need to write a small description of your application components using the format explained hereafter.
+   </p>
+   <p>
+    <img alt="Component" src="http://cohorte.github.io/docs/1.x/components/components-img-2.png"/>
+   </p>
+   <h2 id="remote-services">
+    Remote Services
+   </h2>
+   <p>
+    What is?
+   </p>
+   <h2 id="herald">
+    Herald
+   </h2>
+   <p>
+    Multi-platform discovery and transport framework
+   </p>
+   <p>
+    Supported protocols :
+   </p>
+   <table class="table table-striped table-condensed">
+    <tbody>
+     <tr>
+      <th>
+       Transport
+      </th>
+      <th>
+       Discovery
+      </th>
+     </tr>
+     <tr>
+      <td>
+       HTTP
+      </td>
+      <td>
+       Multicast
+      </td>
+     </tr>
+     <tr>
+      <td>
+       XMPP
+      </td>
+      <td>
+       XMPP server
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <h2 id="supported-socms">
+    Supported SOCMs
+   </h2>
+   <p>
+    In this section, we will provide a brief introduction to the supported Service Oriented Components Models in COHORTE.
+   </p>
+   <h3 id="osgi--apache-felix-ipojo">
+    OSGi / Apache Felix iPOJO
+   </h3>
+   <p>
+    Java
+   </p>
+   <table class="table table-striped table-condensed">
+    <tbody>
+     <tr>
+      <th>
+       Apache Felix iPOJO (Java)
+      </th>
+     </tr>
+     <tr>
+      <td>
+       <div class="highlight">
+        <pre><code class="language-java" data-lang="java"><span class="nd">@Component</span><span class="o">(</span><span class="s">"AggregatorFactory"</span><span class="o">)</span>
+<span class="nd">@Provides</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Aggregator</span> <span class="kd">implements</span> <span class="n">ITemperature</span> <span class="o">{</span>
+  <span class="nd">@Requires</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ISensor</span><span class="o">&gt;</span> <span class="n">sensors</span><span class="o">;</span>
+  <span class="nd">@Requires</span> <span class="n">IStore</span> <span class="n">store</span><span class="o">;</span>
+
+  <span class="nd">@Validate</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span>
+  <span class="cm">/* Do something to regulate </span>
+<span class="cm">  temperature depending on room's </span>
+<span class="cm">  internal temperature. */</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre>
+       </div>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <h3 id="pelix--ipopo">
+    Pelix / iPOPO
+   </h3>
+   <p>
+    Python
+   </p>
+   <table class="table table-striped table-condensed">
+    <tbody>
+     <tr>
+      <th>
+       Pelix iPOPO (Python)
+      </th>
+     </tr>
+     <tr>
+      <td>
+       <div class="highlight">
+        <pre><code class="language-python" data-lang="python"><span class="nd">@Component</span><span class="p">(</span><span class="s">"AggregatorFactory"</span><span class="p">)</span>
+<span class="nd">@Provides</span><span class="p">(</span><span class="s">"java:/Itemperature"</span><span class="p">)</span>
+<span class="nd">@Requires</span><span class="p">(</span><span class="s">"sensors"</span><span class="p">,</span> <span class="s">"java:/ISensor"</span><span class="p">,</span> <span class="n">aggregate</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nd">@Requires</span><span class="p">(</span><span class="s">"store"</span><span class="p">,</span> <span class="s">"java:/IStore"</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Aggregator</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">sensors</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">store</span> <span class="o">=</span> <span class="bp">None</span>
+
+  <span class="nd">@Validate</span> 
+  <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+    <span class="sd">"""</span>
+<span class="sd">    Do something useful to regulate </span>
+<span class="sd">    temperature depending on room's</span>
+<span class="sd">    internal temperature.</span>
+<span class="sd">    """</span>
+    <span class="k">pass</span></code></pre>
+       </div>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <p>
+    Interoperability between Java and Python implementation?
+   </p>
+   <ul>
+    <li>
+     We should add
+     <code>
+      java:/
+     </code>
+     prefix to required services in Python.
+    </li>
+   </ul>
+   <h3 id="c-support">
+    C# support
+   </h3>
+   <p>
+    Partial support using IronPython.
+   </p>
+   <h3 id="other-legacy-code">
+    Other legacy code
+   </h3>
+   <p>
+    Wrapping in iPOPO (Python) or iPOJO (Java) components
+   </p>
+  </div>
+ </body>
+</html><h1>Compositions Specification</h1>
+<html>
+ <head>
+ </head>
+ <body>
+  <div id="toc_magic">
+   <p>
+    This specification is used to describe the composition of the final application in term of component that should be instantiated in which isolate of which node.
+   </p>
+   <h2 id="composition">
+    Composition
+   </h2>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="err">//</span> <span class="err">Composition's</span> <span class="err">name</span>
+  <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"composition-name"</span><span class="p">,</span>
+ 
+  <span class="err">//</span> <span class="err">Top</span> <span class="err">composite</span>
+  <span class="nt">"root"</span><span class="p">:</span> <span class="p">{</span> <span class="err">/*</span> <span class="err">see</span> <span class="err">'composite'</span> <span class="err">*/</span> <span class="p">}</span>
+<span class="p">}</span></code></pre>
+   </div>
+   <h2 id="composite">
+    Composite
+   </h2>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="err">//</span> <span class="err">Name</span> <span class="err">of</span> <span class="err">composite</span>
+  <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"composite1"</span><span class="p">,</span>
+ 
+  <span class="err">//</span> <span class="err">List</span> <span class="err">of</span> <span class="err">components</span>
+  <span class="nt">"components"</span> <span class="p">:</span> <span class="p">[</span> <span class="err">/*</span> <span class="err">see</span> <span class="err">'components'</span> <span class="err">*/</span> <span class="p">],</span>
+ 
+  <span class="err">//</span> <span class="err">List</span> <span class="err">of</span> <span class="err">sub-composites</span>
+  <span class="nt">"composites"</span> <span class="p">:</span> <span class="p">[</span>
+     <span class="p">{</span>
+       <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"subcomposite"</span><span class="p">,</span>
+       <span class="nt">"components"</span> <span class="p">:</span> <span class="p">[</span> <span class="err">/*</span> <span class="err">...</span> <span class="err">*/</span> <span class="p">]</span>
+       <span class="err">//</span> <span class="err">this</span> <span class="err">composite</span> <span class="err">hasn't</span> <span class="err">sub-composites.</span>
+     <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+   </div>
+   <h2 id="components">
+    Components
+   </h2>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="err">//</span> <span class="err">Name</span> <span class="err">of</span> <span class="err">the</span> <span class="err">component</span>
+  <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"aggregator-UI"</span><span class="p">,</span>
+  <span class="err">//</span> <span class="err">Name</span> <span class="err">of</span> <span class="err">its</span> <span class="err">Component</span> <span class="err">Factory</span>
+  <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"demo-sensor-aggregator-ui-factory"</span><span class="p">,</span>
+  <span class="err">//</span> <span class="err">Indication</span> <span class="err">on</span> <span class="err">the</span> <span class="err">implementation</span> <span class="err">language</span>
+  <span class="nt">"language"</span> <span class="p">:</span> <span class="s2">"python"</span><span class="p">,</span>
+  <span class="err">//</span> <span class="err">Location</span> <span class="err">on</span> <span class="err">a</span> <span class="err">precise</span> <span class="err">isolate</span>
+  <span class="nt">"isolate"</span> <span class="p">:</span> <span class="s2">"aggregator.ui"</span><span class="p">,</span>
+  <span class="err">//</span> <span class="err">Location</span> <span class="err">on</span> <span class="err">a</span> <span class="err">precise</span> <span class="err">node</span>
+  <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"central"</span>
+  <span class="err">//</span> <span class="err">Initial</span> <span class="err">configuration</span> <span class="err">of</span> <span class="err">the</span> <span class="err">component</span>
+  <span class="s2">"properties"</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"servlet.path"</span> <span class="p">:</span> <span class="s2">"/sensors"</span>
+  <span class="p">},</span>
+  <span class="err">//</span> <span class="err">Wiring</span> <span class="err">with</span> <span class="err">another</span> <span class="err">component</span> <span class="err">named</span> <span class="err">'aggregtor'</span> 
+  <span class="err">//</span> <span class="err">which</span> <span class="err">can</span> <span class="err">be</span> <span class="err">found</span> <span class="err">in</span> <span class="err">any</span> <span class="err">composite</span> <span class="err">of</span> <span class="err">this</span> <span class="err">composition</span>
+  <span class="nt">"wires"</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"_aggregator"</span> <span class="p">:</span> <span class="s2">"aggregator"</span>
+  <span class="p">},</span>
+  <span class="nt">"filters"</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"_handler"</span><span class="p">:</span> <span class="s2">"(ready=1)"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+   </div>
+   <h2 id="import-files">
+    import-files
+   </h2>
+   <p>
+    <code>
+     base.js
+    </code>
+   </p>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">"root"</span><span class="p">:</span> <span class="s2">"root"</span><span class="p">,</span>
+  <span class="nt">"imported"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"top-value"</span><span class="p">:</span> <span class="s2">"top"</span><span class="p">,</span>
+    <span class="nt">"answer"</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span>
+    <span class="err">//</span> <span class="err">Import</span> <span class="err">from</span> <span class="err">another</span> <span class="err">file</span>
+    <span class="nt">"import-files"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"imported.js"</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+   </div>
+   <p>
+    <code>
+     imported.js
+    </code>
+   </p>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="err">//</span> <span class="err">New</span> <span class="err">property</span>
+  <span class="nt">"hello"</span><span class="p">:</span> <span class="s2">"World"</span><span class="p">,</span>
+  <span class="err">//</span> <span class="err">This</span> <span class="err">value</span> <span class="err">will</span> <span class="err">be</span> <span class="err">overloaded</span> <span class="err">by</span> <span class="err">the</span> <span class="err">high</span> <span class="err">level</span> <span class="err">property's</span> <span class="err">value</span>
+  <span class="nt">"answer"</span><span class="p">:</span> <span class="mi">51</span>
+<span class="p">}</span></code></pre>
+   </div>
+   <p>
+    Obtained result :
+   </p>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">"root"</span><span class="p">:</span> <span class="s2">"root"</span><span class="p">,</span>
+  <span class="nt">"imported"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="err">//</span> <span class="err">Non</span> <span class="err">modified</span> <span class="err">value</span>
+    <span class="nt">"top-value"</span><span class="p">:</span> <span class="s2">"top"</span><span class="p">,</span>
+    <span class="err">//</span> <span class="err">Conserved</span> <span class="err">value</span>
+    <span class="nt">"answer"</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span>
+    <span class="err">//</span> <span class="err">New</span> <span class="err">property</span>
+    <span class="nt">"hello"</span><span class="p">:</span> <span class="s2">"world"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+   </div>
+   <h2 id="complete-example">
+    Complete example
+   </h2>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"hello-world"</span><span class="p">,</span>
+  <span class="nt">"root"</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"hello-worldd-composition"</span><span class="p">,</span>
+    <span class="nt">"components"</span> <span class="p">:</span> <span class="p">[</span> 
+      <span class="p">{</span>
+        <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"Hello_Components"</span><span class="p">,</span>
+        <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"hello_components_factory"</span><span class="p">,</span>
+        <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"node1"</span><span class="p">,</span>
+        <span class="nt">"isolate"</span><span class="p">:</span> <span class="s2">"web"</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"A_component"</span><span class="p">,</span>
+        <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"component_a_factory"</span><span class="p">,</span>
+        <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"node1"</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"B_component"</span><span class="p">,</span>
+        <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"component_b_factory"</span><span class="p">,</span>
+        <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"node1"</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"E_component"</span><span class="p">,</span>
+        <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"component_e_factory"</span><span class="p">,</span>
+        <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"node1"</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"C_component"</span><span class="p">,</span>
+        <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"component_c_factory"</span><span class="p">,</span>        
+        <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"node2"</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"D_component"</span><span class="p">,</span>
+        <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"component_d_factory"</span><span class="p">,</span>
+        <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"node2"</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+   </div>
+  </div>
+ </body>
+</html><h1>Startup scripts</h1>
+<html>
+ <head>
+ </head>
+ <body>
+  <div id="toc_magic">
+   <p>
+    COHORTE system is composed of several Nodes. Only one node is specified to be Top Composer. It manages the components distribution among the available participating nodes.
+   </p>
+   <p>
+    In this chapter, we will detail how to create and start COHORTE nodes using simple command lines.
+   </p>
+   <h2 id="creating-nodes">
+    Creating nodes
+   </h2>
+   <p>
+    To create COHORTE node, you have to use the provided
+    <code>
+     cohorte-create-node
+    </code>
+    command.
+   </p>
+   <div class="note">
+    <span class="note-title">
+     Note
+    </span>
+    <p class="note-content">
+     Ensure to have installed COHORTE on your system and that the COHORTE_HOME environment variable is set to the installation path of COHORTE (see
+     <a href="/docs/1.x/setup">
+      setup guide
+     </a>
+     ).
+    </p>
+   </div>
+   <h3 id="usage">
+    Usage
+   </h3>
+   <div class="highlight">
+    <pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./cohorte-create-node <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-n NODE_NAME<span class="o">]</span> <span class="o">[</span>-a APP_NAME<span class="o">]</span></code></pre>
+   </div>
+   <h3 id="options">
+    Options
+   </h3>
+   <p>
+    This command has the following options :
+   </p>
+   <pre>  -h, --help            show this help message and exit
+
+  -n NODE_NAME, --name NODE_NAME
+                        Name of the node
+  -a APP_NAME, --app-name APP_NAME
+                        application's symbolic name
+</pre>
+   <h3 id="results">
+    Results
+   </h3>
+   <p>
+    This command will create a directory containing the following structure:
+   </p>
+   <p>
+    <img alt="Cohorte node directory structure" src="http://cohorte.github.io/docs/1.x/startup/cohorte-node-directory-structure.png"/>
+   </p>
+   <ul>
+    <li>
+     <em>
+      node_name
+     </em>
+     correspond to the provided name by the user using the
+     <code>
+      --name
+     </code>
+     option.
+    </li>
+    <li>
+     <em>
+      run
+     </em>
+     is the starting script. It will be detail in the next section (Starting nodes)
+    </li>
+    <li>
+     <em>
+      repo
+     </em>
+     is a directory where user provided bundles should be placed.
+    </li>
+    <li>
+     <em>
+      conf
+     </em>
+     is a directory containing configuration files. Only one configuration file is created initially (composition.js), other files are generated by
+     <code>
+      run
+     </code>
+     script in this location.
+    </li>
+   </ul>
+   <p>
+    Here is the content of the generated
+    <code>
+     conf/composition.js
+    </code>
+    file. You should add component descriptions on the indicated zone (see
+    <a href="/docs/1.x/compositions">
+     Composition Specification
+    </a>
+    ).
+   </p>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span> 
+  <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"default-application"</span><span class="p">,</span>
+  <span class="nt">"root"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"default-application-composition"</span><span class="p">,</span>
+    <span class="nt">"components"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="err">/*</span> <span class="err">your</span> <span class="err">component</span> <span class="err">descriptions</span> <span class="err">here</span> <span class="err">*/</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+   </div>
+   <p>
+    Only the node started as Top Composer (see next section) should have this configuration file completed. Other nodes started as simple nodes will ignore this file.
+   </p>
+   <div class="note">
+    <span class="note-title">
+     Note
+    </span>
+    <p class="note-content">
+     composition.js template is generated only when the --app-name option is set.
+    </p>
+   </div>
+   <h2 id="starting-nodes">
+    Starting nodes
+   </h2>
+   <p>
+    To start a COHORTE node, you have to use the generated
+    <code>
+     run
+    </code>
+    command (this command calls
+    <code>
+     cohorte-start-node
+    </code>
+    internal command).
+   </p>
+   <h3 id="usage-1">
+    Usage
+   </h3>
+   <div class="highlight">
+    <pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./run <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-a APPLICATION_ID<span class="o">]</span>
+        <span class="o">[</span>--use-config CONFIG_FILE<span class="o">]</span> <span class="o">[</span>--update-config<span class="o">]</span>
+        <span class="o">[</span>--show-config<span class="o">]</span> <span class="o">[</span>-b BASE_ABSOLUTE_PATH<span class="o">]</span>
+        <span class="o">[</span>-n NODE_NAME<span class="o">]</span> <span class="o">[</span>--top-composer IS_TOP_COMPOSER<span class="o">]</span>
+        <span class="o">[</span>--composition-file COMPOSITION_FILE<span class="o">]</span>
+        <span class="o">[</span>--auto-start AUTO_START<span class="o">]</span>
+        <span class="o">[</span>--web-admin WEB_ADMIN_PORT<span class="o">]</span>
+        <span class="o">[</span>--shell-admin SHELL_ADMIN_PORT<span class="o">]</span>
+        <span class="o">[</span>--transport TRANSPORT_MODES<span class="o">]</span>
+        <span class="o">[</span>--xmpp-server XMPP_SERVER<span class="o">]</span>
+        <span class="o">[</span>--xmpp-port XMPP_PORT<span class="o">]</span>
+        <span class="o">[</span>--http-ipv HTTP_IPV<span class="o">]</span></code></pre>
+   </div>
+   <h3 id="options-1">
+    Options
+   </h3>
+   <p>
+    There are different kind of options depending on the use of the actual node.
+   </p>
+   <h4 id="mandatory-options">
+    Mandatory options
+   </h4>
+   <pre>  -a APPLICATION_ID, --app-id APPLICATION_ID
+                        Application's ID
+</pre>
+   <p>
+    All the nodes participating for a given application should have the same
+    <code>
+     APPLICATION_ID
+    </code>
+    .
+   </p>
+   <h4 id="startup-configuration-options">
+    Startup configuration options
+   </h4>
+   <pre>  --use-config CONFIG_FILE  Configuration file to use for starting cohorte node.
+                        By default the run.js file is used if available
+  --update-config       Update startup configuration file with provided
+                        options
+  --show-config         Show startup configuration file content
+  -b BASE_ABSOLUTE_PATH, --base BASE_ABSOLUTE_PATH
+                        absolute file path of the node's directory
+</pre>
+   <p>
+    We can write the startup configurations in a separate JSON file (see How to use startup configuration files section). This options will simplify the command options list and allows sharing the same startup configurations between several nodes.
+   </p>
+   <h4 id="information-about-the-node-to-start">
+    Information about the node to start
+   </h4>
+   <pre>  -n NODE_NAME, --node NODE_NAME
+                        Node name
+  --top-composer IS_TOP_COMPOSER
+                        Flag indicating that this node is a Top Composer
+  --composition-file COMPOSITION_FILE
+                        Composition file (by default 'composition.js'). All
+                        composition files should be placed on 'conf' directory
+  --auto-start AUTO_START
+                        Auto-start the composition if this node is a Top
+                        Composer
+  --web-admin WEB_ADMIN_PORT
+                        Node web admin port
+  --shell-admin SHELL_ADMIN_PORT
+                        Node remote shell port
+</pre>
+   <p>
+    We can provide a different node name than the already provided when the node is created (by using –node option). One important option of cohorte nodes is the
+    <code>
+     --top-composer
+    </code>
+    . If set, the node will be considered as a
+    <strong>
+     Top Composer
+    </strong>
+    (manages all the distribution of components among the available nodes). Users can also provide customised informations such as the http port to use for the
+    <em>
+     web-admin
+    </em>
+    component (see
+    <a href="/docs/1.x/monitoring">
+     monitoring chapter
+    </a>
+    ), or the port to use for the remote shell admin component.
+   </p>
+   <h4 id="information-about-the-transport-protocols-to-use">
+    Information about the transport protocols to use
+   </h4>
+   <pre>  --transport TRANSPORT_MODES
+                        Transport mode (http and/or xmpp - seperated by comma)
+  --xmpp-server XMPP_SERVER
+                        XMPP server
+  --xmpp-port XMPP_PORT
+                        XMPP server port
+  --http-ipv HTTP_IPV
+                        HTTP IP version to use (when transport mode is http)
+</pre>
+   <p>
+    The
+    <code>
+     --transport
+    </code>
+    option allow the use to choose which transport protocol to use between the actual node and the other nodes participating in the same application. You can provide a common seperated list of the supported protocols (
+    <code>
+     http
+    </code>
+    and
+    <code>
+     xmpp
+    </code>
+    for the moment). Each protocol need additional configuration options that should be provided seperataly using dedicated options (–xmpp-server for instance to mention the XMPP server to use).
+   </p>
+   <h3 id="how-to-use-startup-configuration-files">
+    How to use startup configuration files
+   </h3>
+   <p>
+    To avoid re-typing the same options each time a node is started, or to share the same configuration between several nodes, you can provide a
+    <em>
+     startup configuration file
+    </em>
+    which contains such startup configurations. The content of such file is described hereafter.
+   </p>
+   <blockquote>
+    <p>
+     run.js
+    </p>
+   </blockquote>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>	
+	<span class="nt">"application-id"</span><span class="p">:</span> <span class="s2">"ABCDEF"</span><span class="p">,</span>
+
+	<span class="nt">"node"</span><span class="p">:</span> <span class="p">{</span>		
+		<span class="nt">"name"</span><span class="p">:</span> <span class="s2">"node-rasp"</span><span class="p">,</span>
+		<span class="nt">"top-composer"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+		<span class="nt">"web-admin"</span><span class="p">:</span> <span class="mi">9001</span><span class="p">,</span>
+		<span class="nt">"shell-admin"</span><span class="p">:</span> <span class="mi">9001</span>		
+	<span class="p">},</span>
+	<span class="nt">"transport"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"xmpp"</span><span class="p">],</span>
+	<span class="nt">"transport-xmpp"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="nt">"xmpp-server"</span><span class="p">:</span> <span class="s2">"charmanson.isandlatech.com"</span><span class="p">,</span>
+		<span class="nt">"xmpp-port"</span><span class="p">:</span> <span class="mi">5222</span>
+	<span class="p">}</span>
+<span class="p">}</span></code></pre>
+   </div>
+   <ul>
+    <li>
+     To show the content of the startup configuration file :
+    </li>
+   </ul>
+   <div class="highlight">
+    <pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./run --show-config</code></pre>
+   </div>
+   <ul>
+    <li>
+     To use other configuration file than the default
+     <em>
+      run.js
+     </em>
+     file :
+    </li>
+   </ul>
+   <div class="highlight">
+    <pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./run --use-config other_run_conf.js</code></pre>
+   </div>
+   <ul>
+    <li>
+     Update the startup configuration using command options (–some-configuration should be replaced with a supported options list):
+    </li>
+   </ul>
+   <div class="highlight">
+    <pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./run --update-config --some-configurations</code></pre>
+   </div>
+   <p>
+    This will update all the provided options within the startup configuration file (run.js).
+   </p>
+   <h2 id="connection-modes">
+    Connection modes
+   </h2>
+   <h3 id="using-http">
+    Using HTTP
+   </h3>
+   <div class="highlight">
+    <pre><code class="language-bash" data-lang="bash">./run --app-id myapplication --transport http</code></pre>
+   </div>
+   <p>
+    The discovery is done using TCP multi-caste feature. This limits the scope of the discovered COHORET nodes to only available at a local network area LAN. To deploy you COHORTE nodes at the Internet level, you should use XMPP mode.
+   </p>
+   <h3 id="using-xmpp">
+    Using XMPP
+   </h3>
+   <p>
+    You need to start the Top Composer with the following configurations :
+   </p>
+   <div class="highlight">
+    <pre><code class="language-bash" data-lang="bash">./run --app-id myapplication --transport xmpp <span class="se">\</span>
+--xmpp-server server_url <span class="se">\</span>
+--xmpp-port <span class="m">5222</span> <span class="se">\</span></code></pre>
+   </div>
+   <p>
+    The XMPP server should accept
+    <strong>
+     <code>
+      anonymous
+     </code>
+    </strong>
+    connections and
+    <strong>
+     `multi-user chat
+    </strong>
+    .
+   </p>
+   <h3 id="using-httpxmpp">
+    Using HTTP/XMPP
+   </h3>
+   <p>
+    You can use the two transport protocols in the same time. At runtime, only one is used, if it does not work COHORTE choose the other one.
+   </p>
+   <div class="note">
+    <span class="note-title">
+     Note
+    </span>
+    <p class="note-content">
+     Herald, the framework used as discovery and transport layer in COHORTE, has a generic architecture allowing it to add more discovery and transport protocols. Other connection modes are under development and will be released in future version of COHORTE.
+    </p>
+   </div>
+  </div>
+ </body>
+</html><h1>Integrated Shell commands</h1>
+<html>
+ <head>
+ </head>
+ <body>
+  <div id="toc_magic">
+   <p>
+    COHORTE has an integrated shell to allow users manipulate and monitor the system. Here the list of the provided shell commands and their explanation.
+   </p>
+   <h2 id="manage-cohorte-platform">
+    Manage COHORTE Platform
+   </h2>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Option
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       <b>
+        nodes
+       </b>
+      </td>
+      <td>
+       Lists the nodes visible from this isolate
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        isolates
+       </b>
+       [&lt;node&gt;]
+      </td>
+      <td>
+       Lists the isolates of the given node, or of all nodes
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        ping
+       </b>
+       [&lt;isolate&gt;]
+      </td>
+      <td>
+       Checks if the given isolate (name or UID) is alive
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        forker:stop
+       </b>
+       &lt;isolate&gt;
+      </td>
+      <td>
+       Stops the given isolate (name or UID)
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        shutdown
+       </b>
+      </td>
+      <td>
+       Shutdown all the platform (all the nodes)
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <h2 id="other-advanced-commands">
+    Other advanced commands
+   </h2>
+   <p>
+    These commands are categorized by namespace.
+   </p>
+   <h3 id="default-name-space">
+    “default” name space
+   </h3>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Option
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       <b>
+        ?
+       </b>
+       [&lt;command&gt;]
+      </td>
+      <td>
+       Prints the available methods and their documentation, or the documentation of the given command.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        bd
+       </b>
+       &lt;bundle_id&gt;
+      </td>
+      <td>
+       Prints the details of the bundle with the given ID or name
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        bl
+       </b>
+       [&lt;name&gt;]
+      </td>
+      <td>
+       Lists the bundles in the framework and their state. Possibility to filter on the bundle name.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        close
+       </b>
+      </td>
+      <td>
+       Stops the current shell session (raises a KeyboardInterrupt exception)
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        echo
+       </b>
+       ...
+      </td>
+      <td>
+       Echoes the given words
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        exit
+       </b>
+      </td>
+      <td>
+       Stops the current shell session (raises a KeyboardInterrupt exception)
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        help
+       </b>
+       [&lt;command&gt;]
+      </td>
+      <td>
+       Prints the available methods and their documentation, or the documentation of the given command.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        install
+       </b>
+       &lt;module_name&gt;
+      </td>
+      <td>
+       Installs the bundle with the given module name
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        loglevel
+       </b>
+       [&lt;level&gt;] [&lt;name&gt;]
+      </td>
+      <td>
+       Prints/Changes log level
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        properties
+       </b>
+      </td>
+      <td>
+       Lists the properties of the framework
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        property
+       </b>
+       &lt;name&gt;
+      </td>
+      <td>
+       Prints the value of the given property, looking into framework properties then environment variables.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        quit
+       </b>
+      </td>
+      <td>
+       Stops the current shell session (raises a KeyboardInterrupt exception)
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        sd
+       </b>
+       &lt;service_id&gt;
+      </td>
+      <td>
+       Prints the details of the service with the given ID
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        sl
+       </b>
+       [&lt;specification&gt;]
+      </td>
+      <td>
+       Lists the services in the framework. Possibility to filter on an exact specification.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        start
+       </b>
+       &lt;bundle_id&gt;
+      </td>
+      <td>
+       Starts the bundle with the given ID
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        stop
+       </b>
+       &lt;bundle_id&gt;
+      </td>
+      <td>
+       Stops the bundle with the given ID
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        sysprop
+       </b>
+       &lt;name&gt;
+      </td>
+      <td>
+       Prints the value of the given environment variable
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        sysprops
+       </b>
+      </td>
+      <td>
+       Lists the framework process environment variables
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        thread
+       </b>
+       &lt;thread_id&gt;
+      </td>
+      <td>
+       Prints details about the thread with the given ID (not its name)
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        threads
+       </b>
+      </td>
+      <td>
+       Lists the active threads and their current code line
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        uninstall
+       </b>
+       &lt;bundle_id&gt;
+      </td>
+      <td>
+       Uninstalls the bundle with the given ID
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        update
+       </b>
+       &lt;bundle_id&gt;
+      </td>
+      <td>
+       Updates the bundle with the given ID
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <h3 id="herald-name-space-cohorte-messaging-layer">
+    “herald” name space (COHORTE messaging layer)
+   </h3>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Option
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       <b>
+        fire
+       </b>
+       &lt;target&gt; &lt;subject&gt; ...
+      </td>
+      <td>
+       Fires a message to the given peer.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        fire_group
+       </b>
+       &lt;group&gt; &lt;subject&gt; ...
+      </td>
+      <td>
+       Fires a message to the given group of peers.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        forget
+       </b>
+       &lt;uid&gt;
+      </td>
+      <td>
+       Forgets about the given message
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        local
+       </b>
+      </td>
+      <td>
+       Prints information about the local peer
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        peers
+       </b>
+      </td>
+      <td>
+       Lists known peers and their accesses
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        post
+       </b>
+       &lt;target&gt; &lt;subject&gt; ...
+      </td>
+      <td>
+       Post a message to the given peer.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        post_group
+       </b>
+       &lt;group&gt; &lt;subject&gt; ...
+      </td>
+      <td>
+       Post a message to the given group of peers
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        send
+       </b>
+       &lt;target&gt; &lt;subject&gt; ...
+      </td>
+      <td>
+       Sends a message to the given peer(s). Prints responses in the shell.
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <h3 id="ipopo-name-space-service-oriented-component-model">
+    “ipopo” name space (Service-Oriented Component Model)
+   </h3>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Option
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       <b>
+        factories
+       </b>
+       [&lt;name&gt;]
+      </td>
+      <td>
+       Lists the available iPOPO component factories
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        factory
+       </b>
+       &lt;name&gt;
+      </td>
+      <td>
+       Prints the details of the given component factory
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        instance
+       </b>
+       &lt;name&gt;
+      </td>
+      <td>
+       Prints the details of the given component instance
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        instances
+       </b>
+       [&lt;name&gt;]
+      </td>
+      <td>
+       Lists the active iPOPO component instances
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        instantiate
+       </b>
+       &lt;factory&gt; &lt;name&gt; [&lt;property=value&gt; ...]
+      </td>
+      <td>
+       Instantiates a component of the given factory with the given name and properties
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        kill
+       </b>
+       &lt;name&gt;
+      </td>
+      <td>
+       Kills the given component instance
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        waiting
+       </b>
+       [&lt;name&gt;]
+      </td>
+      <td>
+       Lists the components waiting to be instantiated
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <h3 id="shell-name-space">
+    “shell” name space
+   </h3>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Option
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       <b>
+        pids
+       </b>
+       [&lt;isolate&gt;]
+      </td>
+      <td>
+       Prints the Process ID of the isolate(s)
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        shells
+       </b>
+       [&lt;isolate&gt;] [&lt;kind&gt;]
+      </td>
+      <td>
+       Prints the port(s) to access the isolate remote shell(s)
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <h3 id="top-name-space">
+    “top” name space
+   </h3>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Option
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       <b>
+        dist
+       </b>
+       [&lt;filename&gt;=autorun_conf.js] [&lt;base&gt;=conf]
+      </td>
+      <td>
+       Parses a composition and computes its node distribution
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        dump
+       </b>
+       [&lt;node&gt;]
+      </td>
+      <td>
+       Dumps the content of status
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        load
+       </b>
+       [&lt;filename&gt;=autorun_conf.js] [&lt;base&gt;=conf]
+      </td>
+      <td>
+       Instantiates the given composition
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        read
+       </b>
+       [&lt;filename&gt;=autorun_conf.js] [&lt;base&gt;=conf]
+      </td>
+      <td>
+       Reads a file
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <b>
+        stop
+       </b>
+       &lt;uid&gt;
+      </td>
+      <td>
+       Kills the distribution with the given UID
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+ </body>
+</html><h1>Monitoring</h1>
+<html>
+ <head>
+ </head>
+ <body>
+  <div id="toc_magic">
+   <p>
+    In this document, we detail the ADMIN RESTful API v1 of COHORTE platform as well as the web admin interface built on the top of this API.
+   </p>
+   <h2 id="web-admin">
+    Web Admin
+   </h2>
+   <p>
+    <img alt="SpellChecker Application" src="http://cohorte.github.io/docs/1.x/monitoring/cohorte-webadmin.png"/>
+   </p>
+   <h2 id="admin-rest-api-v1">
+    Admin REST API v1
+   </h2>
+   <h3 id="api-endpoints">
+    API endpoints
+   </h3>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Code
+      </th>
+      <th>
+       Action
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       APIV1-001
+      </td>
+      <td>
+       <a href="#APIV1-001">
+        Get the list of all Nodes
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       APIV1-002
+      </td>
+      <td>
+       <a href="#APIV1-002">
+        Get the list of all Isolates
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       APIV1-003
+      </td>
+      <td>
+       <a href="#APIV1-003">
+        Get the list of all Components
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       APIV1-050
+      </td>
+      <td>
+       <a href="#APIV1-050">
+        Get Node details
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       APIV1-051
+      </td>
+      <td>
+       <a href="#APIV1-051">
+        Get Isolate details
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       APIV1-053
+      </td>
+      <td>
+       <a href="#APIV1-053">
+        Get Component details
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       APIV1-100
+      </td>
+      <td>
+       <a href="#APIV1-100">
+        Get the list of Isolates in one particular Node
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       APIV1-101
+      </td>
+      <td>
+       <a href="#APIV1-101">
+        Get the list of Components in one particular Isolate
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       APIV1-150
+      </td>
+      <td>
+       <a href="#APIV1-150">
+        Kill all nodes
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       APIV1-151
+      </td>
+      <td>
+       <a href="#APIV1-151">
+        Kill node
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       APIV1-152
+      </td>
+      <td>
+       <a href="#APIV1-152">
+        Kill isolate
+       </a>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <h3 id="detail-of-rest-apis">
+    Detail of REST APIs
+   </h3>
+   <p>
+    <a name="APIV1-001">
+    </a>
+   </p>
+   <h4 id="apiv1-001--get-the-list-of-all-nodes">
+    APIV1-001 : GET the list of all Nodes
+   </h4>
+   <ul>
+    <li>
+     URL:
+     <code>
+      http://myhost:port/admin/api/v1/nodes
+     </code>
+    </li>
+    <li>
+     Supported request methods:
+     <code>
+      GET
+     </code>
+    </li>
+    <li>
+     Response format:
+     <code>
+      json
+     </code>
+    </li>
+    <li>
+     Requires authentication?:
+     <code>
+      not required
+     </code>
+    </li>
+    <li>
+     Response:
+    </li>
+   </ul>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       meta
+      </td>
+      <td>
+       Map
+      </td>
+      <td>
+       meta-information about the response
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + code
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Return code
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + count
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Number of results
+      </td>
+     </tr>
+     <tr>
+      <td>
+       nodes
+      </td>
+      <td>
+       Array
+      </td>
+      <td>
+       Array of information about the nodes
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + uid
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Node UID
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + name
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Node Name
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <ul>
+    <li>
+     JSON Response Example :
+    </li>
+   </ul>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="nt">"count"</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="nt">"nodes"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"uid"</span><span class="p">:</span> <span class="s2">"56e5b100-c8a2-4bd8-a818-30edaf9a8fe9"</span><span class="p">,</span>
+            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"central"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">"uid"</span><span class="p">:</span> <span class="s2">"acfd6479-f29f-4bf0-ae4d-acd681e3a531"</span><span class="p">,</span>
+            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"raspberry-pi-1"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span></code></pre>
+   </div>
+   <p>
+    <br/>
+   </p>
+   <p>
+    <a name="APIV1-002">
+    </a>
+   </p>
+   <h4 id="apiv1-002--get-the-list-of-all-isolates">
+    APIV1-002 : GET the list of all Isolates
+   </h4>
+   <ul>
+    <li>
+     URL:
+     <code>
+      http://myhost:port/admin/api/v1/isolates
+     </code>
+    </li>
+    <li>
+     Supported request methods:
+     <code>
+      GET
+     </code>
+    </li>
+    <li>
+     Response format:
+     <code>
+      json
+     </code>
+    </li>
+    <li>
+     Requires authentication?:
+     <code>
+      not required
+     </code>
+    </li>
+    <li>
+     Response:
+    </li>
+   </ul>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       meta
+      </td>
+      <td>
+       Map
+      </td>
+      <td>
+       meta-information about the response
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + code
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Return code
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + lastupdate
+      </td>
+      <td>
+       Float
+      </td>
+      <td>
+       Last update time of the actual isolates list
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + count
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Number of results
+      </td>
+     </tr>
+     <tr>
+      <td>
+       isolates
+      </td>
+      <td>
+       Array
+      </td>
+      <td>
+       Array of information about the isolates
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + uid
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Isolate UID
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + name
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Isolate Name
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + node_uid
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Node UID
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + node_name
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Node Name
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <ul>
+    <li>
+     JSON Response Example :
+    </li>
+   </ul>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="nt">"lastupdate"</span><span class="p">:</span> <span class="mf">1411979225.65</span><span class="p">,</span>
+        <span class="nt">"count"</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="nt">"isolates"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"uid"</span><span class="p">:</span> <span class="s2">"50684926acb4387d0f007ced"</span><span class="p">,</span>
+            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"webadmin-isolate"</span><span class="p">,</span>
+            <span class="nt">"node_uid"</span><span class="p">:</span> <span class="s2">"41110b1d-b510-4e51-9945-a752da04a16d"</span><span class="p">,</span>
+            <span class="nt">"node_name"</span><span class="p">:</span> <span class="s2">"central"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">"uid"</span><span class="p">:</span> <span class="s2">"03ff839a-df24-4bdf-b734-9fac1c886c65"</span><span class="p">,</span>
+            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"spellcheck-isolate"</span><span class="p">,</span>
+            <span class="nt">"node_uid"</span><span class="p">:</span> <span class="s2">"41110b1d-b510-4e51-9945-a752da04a16d"</span><span class="p">,</span>
+            <span class="nt">"node_name"</span><span class="p">:</span> <span class="s2">"central"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span></code></pre>
+   </div>
+   <p>
+    <br/>
+   </p>
+   <p>
+    <a name="APIV1-003">
+    </a>
+   </p>
+   <h4 id="apiv1-003--get-the-list-of-all-components">
+    APIV1-003 : GET the list of all Components
+   </h4>
+   <ul>
+    <li>
+     URL:
+     <code>
+      http://myhost:port/admin/api/v1/components
+     </code>
+    </li>
+    <li>
+     Supported request methods:
+     <code>
+      GET
+     </code>
+    </li>
+    <li>
+     Response format:
+     <code>
+      json
+     </code>
+    </li>
+    <li>
+     Requires authentication?:
+     <code>
+      not required
+     </code>
+    </li>
+    <li>
+     Response:
+    </li>
+   </ul>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       meta
+      </td>
+      <td>
+       Map
+      </td>
+      <td>
+       meta-information about the response
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + code
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Return code
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + count
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Number of results
+      </td>
+     </tr>
+     <tr>
+      <td>
+       components
+      </td>
+      <td>
+       Array
+      </td>
+      <td>
+       Array of information about the components
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + name
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Component name
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + factory
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Component Factory
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + language
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Programming language
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + isolate_uid
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Isolate UID
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + isolate_name
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Isolate Name
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <ul>
+    <li>
+     JSON Response Example :
+    </li>
+   </ul>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="nt">"count"</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="nt">"components"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"spell_check_client"</span><span class="p">,</span>
+            <span class="nt">"factory"</span><span class="p">:</span> <span class="s2">"spell_check_client_factory"</span><span class="p">,</span>
+            <span class="nt">"language"</span><span class="p">:</span> <span class="s2">"python"</span><span class="p">,</span>
+            <span class="nt">"isolate_uid"</span><span class="p">:</span> <span class="s2">"03ff839a-df24-4bdf-b734-9fac1c886c65"</span><span class="p">,</span>
+            <span class="nt">"isolate_name"</span><span class="p">:</span> <span class="s2">"spellcheck-isolate"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"spell_dictionray_FR"</span><span class="p">,</span>
+            <span class="nt">"factory"</span><span class="p">:</span> <span class="s2">"spell_dictionary_FR_factory"</span><span class="p">,</span>
+            <span class="nt">"language"</span><span class="p">:</span> <span class="s2">"python"</span><span class="p">,</span>
+            <span class="nt">"isolate_uid"</span><span class="p">:</span> <span class="s2">"03ff839a-df24-4bdf-b734-9fac1c886c65"</span><span class="p">,</span>
+            <span class="nt">"isolate_name"</span><span class="p">:</span> <span class="s2">"spellcheck-isolate"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span></code></pre>
+   </div>
+   <p>
+    <br/>
+   </p>
+   <p>
+    <a name="APIV1-050">
+    </a>
+   </p>
+   <h4 id="apiv1-050--get-node-detail">
+    APIV1-050 : GET Node detail
+   </h4>
+   <ul>
+    <li>
+     URL:
+     <code>
+      http://myhost:port/admin/api/v1/nodes/56e5b100-c8a2-4bd8-a818-30edaf9a8fe9
+     </code>
+    </li>
+    <li>
+     Supported request methods:
+     <code>
+      GET
+     </code>
+    </li>
+    <li>
+     Response format:
+     <code>
+      json
+     </code>
+    </li>
+    <li>
+     Requires authentication?:
+     <code>
+      not required
+     </code>
+    </li>
+    <li>
+     Response:
+    </li>
+   </ul>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       meta
+      </td>
+      <td>
+       Map
+      </td>
+      <td>
+       meta-information about the response
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + code
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Return code
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + node
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Node UID
+      </td>
+     </tr>
+     <tr>
+      <td>
+       node
+      </td>
+      <td>
+       Map
+      </td>
+      <td>
+       General informations about the wanted Node
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + name
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Node name
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + nbr_isolates
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Number of Isolates
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <ul>
+    <li>
+     JSON Response Example :
+    </li>
+   </ul>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"node"</span><span class="p">:</span> <span class="s2">"41110b1d-b510-4e51-9945-a752da04a16d"</span><span class="p">,</span>
+        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span>
+    <span class="p">},</span>
+    <span class="nt">"node"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"central"</span><span class="p">,</span>
+        <span class="nt">"nbr_isolates"</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre>
+   </div>
+   <p>
+    <br/>
+   </p>
+   <p>
+    <a name="APIV1-051">
+    </a>
+   </p>
+   <h4 id="apiv1-051--get-isolate-detail">
+    APIV1-051 : GET Isolate detail
+   </h4>
+   <ul>
+    <li>
+     URL:
+     <code>
+      http://myhost:port/admin/api/v1/isolates/50684926acb4387d0f007ced
+     </code>
+    </li>
+    <li>
+     Supported request methods:
+     <code>
+      GET
+     </code>
+    </li>
+    <li>
+     Response format:
+     <code>
+      json
+     </code>
+    </li>
+    <li>
+     Requires authentication?:
+     <code>
+      not required
+     </code>
+    </li>
+    <li>
+     Response:
+    </li>
+   </ul>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       meta
+      </td>
+      <td>
+       Map
+      </td>
+      <td>
+       meta-information about the response
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + code
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Return code
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + isolate
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Isolate UID
+      </td>
+     </tr>
+     <tr>
+      <td>
+       isolate
+      </td>
+      <td>
+       Map
+      </td>
+      <td>
+       General informations about the wanted Node
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + name
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Isolate name
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + type
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Type of this isolate:
+       <br/>
+       <ul>
+        <li>
+         cohorte-isolate
+        </li>
+        <li>
+         app-dynamic-isolate
+        </li>
+       </ul>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + nbr_components
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Number of components in this isolate
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + node_uid
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Isolate's Node UID
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + node_name
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Isolate's Node name
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + http_access
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Isolate's HTTP Service access
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + http_port
+      </td>
+      <td>
+       integer
+      </td>
+      <td>
+       Isolate's HTTP Service port
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + shell_port
+      </td>
+      <td>
+       integer
+      </td>
+      <td>
+       Isolate's Remote shell port
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <ul>
+    <li>
+     JSON Response Example :
+    </li>
+   </ul>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"isolate"</span><span class="p">:</span> <span class="s2">"50684926acb4387d0f007ced"</span><span class="p">,</span>
+        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span>
+    <span class="p">},</span>
+    <span class="nt">"isolate"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"webadmin-isolate"</span><span class="p">,</span>
+        <span class="nt">"type"</span><span class="p">:</span> <span class="s2">"cohorte-isolate"</span><span class="p">,</span>
+        <span class="nt">"nbr_components"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="nt">"node_uid"</span><span class="p">:</span> <span class="s2">"41110b1d-b510-4e51-9945-a752da04a16d"</span><span class="p">,</span>
+        <span class="nt">"node_name"</span><span class="p">:</span> <span class="s2">"central"</span><span class="p">,</span>
+        <span class="nt">"http_access"</span> <span class="p">:</span> <span class="s2">"10.130.1.97"</span><span class="p">,</span>
+        <span class="nt">"http_port"</span> <span class="p">:</span> <span class="mi">9500</span><span class="p">,</span>
+        <span class="nt">"shell_port"</span> <span class="p">:</span> <span class="mi">9501</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre>
+   </div>
+   <p>
+    <br/>
+   </p>
+   <p>
+    <a name="APIV1-052">
+    </a>
+   </p>
+   <h4 id="apiv1-052--get-component-detail">
+    APIV1-052 : GET Component detail
+   </h4>
+   <ul>
+    <li>
+     URL:
+     <code>
+      http://myhost:port/admin/api/v1/components/spell_check_client
+     </code>
+    </li>
+    <li>
+     Supported request methods:
+     <code>
+      GET
+     </code>
+    </li>
+    <li>
+     Response format:
+     <code>
+      json
+     </code>
+    </li>
+    <li>
+     Requires authentication?:
+     <code>
+      not required
+     </code>
+    </li>
+    <li>
+     Response:
+    </li>
+   </ul>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       meta
+      </td>
+      <td>
+       Map
+      </td>
+      <td>
+       meta-information about the response
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + code
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Return code
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + component
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Component name
+      </td>
+     </tr>
+     <tr>
+      <td>
+       component
+      </td>
+      <td>
+       Map
+      </td>
+      <td>
+       General informations about the wanted Component
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + factory
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Component Factory name
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + language
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Programming language
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + isolate_uid
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Isolate UID
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + isolate_name
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Isolate name
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + bundle_name
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Bundle name
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + bundle_version
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Bundle version
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + properties
+      </td>
+      <td>
+       Map
+      </td>
+      <td>
+       Component properties
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <ul>
+    <li>
+     JSON Response Example :
+    </li>
+   </ul>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"component"</span><span class="p">:</span> <span class="s2">"spell_check_client"</span><span class="p">,</span>
+        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span>
+    <span class="p">},</span>
+    <span class="nt">"node"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"spell_check_client"</span><span class="p">,</span>
+        <span class="nt">"factory"</span><span class="p">:</span> <span class="s2">"spell_check_client_factory"</span><span class="p">,</span>
+        <span class="nt">"language"</span><span class="p">:</span> <span class="s2">"python"</span><span class="p">,</span>
+        <span class="nt">"isolate_uid"</span><span class="p">:</span> <span class="s2">"03ff839a-df24-4bdf-b734-9fac1c886c65"</span><span class="p">,</span>
+        <span class="nt">"isolate_name"</span><span class="p">:</span> <span class="s2">"spellcheck-isolate"</span>
+        <span class="s2">"bundle_name"</span><span class="p">:</span> <span class="s2">"spellchecker.spell_check"</span>
+        <span class="s2">"bundle_version"</span><span class="p">:</span> <span class="s2">"1.0.0"</span>
+        <span class="s2">"properties"</span><span class="p">:</span> <span class="p">{</span>
+             <span class="nt">"prop1"</span><span class="p">:</span> <span class="s2">"value1"</span><span class="p">,</span>
+             <span class="nt">"prop2"</span><span class="p">:</span> <span class="s2">"value2"</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre>
+   </div>
+   <p>
+    <br/>
+   </p>
+   <p>
+    <a name="APIV1-100">
+    </a>
+   </p>
+   <h4 id="apiv1-100--get-isolates-of-one-particular-node">
+    APIV1-100 : Get Isolates of one particular Node
+   </h4>
+   <ul>
+    <li>
+     URL:
+     <code>
+      http://myhost:port/admin/api/v1/nodes/56e5b100-c8a2-4bd8-a818-30edaf9a8fe9/isolates
+     </code>
+    </li>
+    <li>
+     Supported request methods:
+     <code>
+      GET
+     </code>
+    </li>
+    <li>
+     Response format:
+     <code>
+      json
+     </code>
+    </li>
+    <li>
+     Requires authentication?:
+     <code>
+      not required
+     </code>
+    </li>
+    <li>
+     Response:
+    </li>
+   </ul>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       meta
+      </td>
+      <td>
+       Map
+      </td>
+      <td>
+       meta-information about the response
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + code
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Return code
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + node
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Node name
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + count
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Number of results
+      </td>
+     </tr>
+     <tr>
+      <td>
+       isolates
+      </td>
+      <td>
+       Array
+      </td>
+      <td>
+       Array of isolates of the wanted Node
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + uid
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Isolate UID
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + name
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Isolate name
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <ul>
+    <li>
+     JSON Response Example :
+    </li>
+   </ul>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"node"</span><span class="p">:</span> <span class="s2">"41110b1d-b510-4e51-9945-a752da04a16d"</span><span class="p">,</span>
+        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="nt">"count"</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="nt">"isolates"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"uid"</span><span class="p">:</span> <span class="s2">"50684926acb4387d0f007ced"</span><span class="p">,</span>
+            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"webadmin-isolate"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">"uid"</span><span class="p">:</span> <span class="s2">"03ff839a-df24-4bdf-b734-9fac1c886c65"</span><span class="p">,</span>
+            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"spellcheck-isolate"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span></code></pre>
+   </div>
+   <p>
+    <br/>
+   </p>
+   <p>
+    <a name="APIV1-101">
+    </a>
+   </p>
+   <h4 id="apiv1-101--get-components-of-one-particular-isolate">
+    APIV1-101 : Get Components of one particular Isolate
+   </h4>
+   <ul>
+    <li>
+     URL:
+     <code>
+      http://myhost:port/admin/api/v1/isolates/50684926acb4387d0f007ced/components
+     </code>
+    </li>
+    <li>
+     Supported request methods:
+     <code>
+      GET
+     </code>
+    </li>
+    <li>
+     Response format:
+     <code>
+      json
+     </code>
+    </li>
+    <li>
+     Requires authentication?:
+     <code>
+      not required
+     </code>
+    </li>
+    <li>
+     Response:
+    </li>
+   </ul>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       meta
+      </td>
+      <td>
+       Map
+      </td>
+      <td>
+       meta-information about the response
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + code
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Return code
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + isolate
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Isolate UID
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + count
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Number of results
+      </td>
+     </tr>
+     <tr>
+      <td>
+       components
+      </td>
+      <td>
+       Array
+      </td>
+      <td>
+       Array of components of the wanted Isolate
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + name
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Component name
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + factory
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Component Factory name
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + language
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Component implementation language
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <ul>
+    <li>
+     JSON Response Example :
+    </li>
+   </ul>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"isolate"</span><span class="p">:</span> <span class="s2">"50684926acb4387d0f007ced"</span><span class="p">,</span>
+        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="nt">"count"</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="p">},</span>
+    <span class="nt">"components"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"spell_dictionary_FR"</span><span class="p">,</span>
+            <span class="nt">"factory"</span><span class="p">:</span> <span class="s2">"spell_dictionary_FR_factory"</span><span class="p">,</span>
+            <span class="nt">"language"</span><span class="p">:</span> <span class="s2">"python"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"spell_check"</span><span class="p">,</span>
+            <span class="nt">"factory"</span><span class="p">:</span> <span class="s2">"spell_check_factory"</span><span class="p">,</span>
+            <span class="nt">"language"</span><span class="p">:</span> <span class="s2">"python"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"spell_client"</span><span class="p">,</span>
+            <span class="nt">"factory"</span><span class="p">:</span> <span class="s2">"spell_client_factory"</span><span class="p">,</span>
+            <span class="nt">"language"</span><span class="p">:</span> <span class="s2">"python"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span></code></pre>
+   </div>
+   <p>
+    <a name="APIV1-150">
+    </a>
+   </p>
+   <h4 id="apiv1-150--kill-all-nodes">
+    APIV1-150 : Kill all nodes
+   </h4>
+   <ul>
+    <li>
+     URL:
+     <code>
+      http://myhost:port/admin/api/v1/nodes/kill
+     </code>
+    </li>
+    <li>
+     Supported request methods:
+     <code>
+      GET
+     </code>
+    </li>
+    <li>
+     Response format:
+     <code>
+      json
+     </code>
+    </li>
+    <li>
+     Requires authentication?:
+     <code>
+      not required
+     </code>
+    </li>
+    <li>
+     Response:
+    </li>
+   </ul>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+    </tbody>
+   </table>
+   <ul>
+    <li>
+     JSON Response Example :
+    </li>
+   </ul>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span>
+    <span class="p">},</span>
+    <span class="nt">"status"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">"description"</span><span class="p">:</span> <span class="s2">"All nodes successfully destroyed"</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre>
+   </div>
+   <p>
+    <a name="APIV1-151">
+    </a>
+   </p>
+   <h4 id="apiv1-151--kill-node">
+    APIV1-151 : Kill node
+   </h4>
+   <ul>
+    <li>
+     URL:
+     <code>
+      http://myhost:port/admin/api/v1/nodes/56e5b100-c8a2-4bd8-a818-30edaf9a8fe9/kill
+     </code>
+    </li>
+    <li>
+     Supported request methods:
+     <code>
+      GET
+     </code>
+    </li>
+    <li>
+     Response format:
+     <code>
+      json
+     </code>
+    </li>
+    <li>
+     Requires authentication?:
+     <code>
+      not required
+     </code>
+    </li>
+    <li>
+     Response:
+    </li>
+   </ul>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       meta
+      </td>
+      <td>
+       Map
+      </td>
+      <td>
+       meta-information about the response
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + code
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Return code
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + node
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Node name
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + count
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Number of results
+      </td>
+     </tr>
+     <tr>
+      <td>
+       isolates
+      </td>
+      <td>
+       Array
+      </td>
+      <td>
+       Array of isolates of the wanted Node
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + uid
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Isolate UID
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + name
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Isolate name
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <ul>
+    <li>
+     JSON Response Example :
+    </li>
+   </ul>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"node"</span><span class="p">:</span> <span class="s2">"56e5b100-c8a2-4bd8-a818-30edaf9a8fe9"</span><span class="p">,</span>
+        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span>
+    <span class="p">},</span>
+    <span class="nt">"status"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">"description"</span><span class="p">:</span> <span class="s2">"Node successfully destroyed"</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre>
+   </div>
+   <p>
+    <a name="APIV1-152">
+    </a>
+   </p>
+   <h4 id="apiv1-152--kill-isolate">
+    APIV1-152 : Kill isolate
+   </h4>
+   <ul>
+    <li>
+     URL:
+     <code>
+      http://myhost:port/admin/api/v1/isolates/41110b1d-b510-4e51-9945-a752da04a16d/kill
+     </code>
+    </li>
+    <li>
+     Supported request methods:
+     <code>
+      GET
+     </code>
+    </li>
+    <li>
+     Response format:
+     <code>
+      json
+     </code>
+    </li>
+    <li>
+     Requires authentication?:
+     <code>
+      not required
+     </code>
+    </li>
+    <li>
+     Response:
+    </li>
+   </ul>
+   <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+     <tr>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       meta
+      </td>
+      <td>
+       Map
+      </td>
+      <td>
+       meta-information about the response
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + code
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Return code
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + node
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Node name
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + count
+      </td>
+      <td>
+       Integer
+      </td>
+      <td>
+       Number of results
+      </td>
+     </tr>
+     <tr>
+      <td>
+       isolates
+      </td>
+      <td>
+       Array
+      </td>
+      <td>
+       Array of isolates of the wanted Node
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + uid
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Isolate UID
+      </td>
+     </tr>
+     <tr>
+      <td>
+       + name
+      </td>
+      <td>
+       String
+      </td>
+      <td>
+       Isolate name
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <ul>
+    <li>
+     JSON Response Example :
+    </li>
+   </ul>
+   <div class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"isolate"</span><span class="p">:</span> <span class="s2">"41110b1d-b510-4e51-9945-a752da04a16d"</span><span class="p">,</span>
+        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span>
+    <span class="p">},</span>
+    <span class="nt">"status"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">"description"</span><span class="p">:</span> <span class="s2">"Isolate successfully destroyed"</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre>
+   </div>
+  </div>
+ </body>
+</html>
+
+            </div>
+            <div id="docgen-end"></div>
+            
+            <br/>      
+
+            <br/>
+            <br/>
+
+            <div class="row-fluid">
+                <div class="col-md-6">
+                      
+                </div>
+                <div class="col-md-6">
+                    <div class="pull-right">
+                          
+                    </div>
+                </div>
+            </div>
+
+            <br/>
+            <br/>
+            
+
+
+                
+          </div>
+          <div class="sidebar">
+            <div class="sidebar-inner">
+              
+              <div class="contents">Contents</div>
+              <div id="toc"></div>
+              
+            </div>
+          </div>
+          <div style="clear:both"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="footer">
+	<div class="container">
+    <ul>
+      <li><h5>About</h5></li>
+      <li>COHORTE is a cross-platform runtime for executing and managing robust and reliable distributed Service-oriented Component-based applications.</li>
+    </ul>
+		<ul>
+			<li><h5>Documentation</h5></li>
+			<li><a href="/docs/1.x/">Getting Started</a></li>
+			<li><a href="/docs/1.x/refdoc.html">Reference Guide</a></li>
+		</ul>
+		<ul>
+			<li><h5>Downloads</h5></li>
+			<li><a href="/downloads/">Stable Releases</a></li>
+			<li><a href="/downloads/">Development Releases</a></li>
+      <li><a href="/docs/1.x/setup">How to install?</a></li>
+		</ul>
+		<ul>
+			<li><h5>Community</h5></li>
+			<li><a href="/community/">Community</a></li>
+			<li><a href="http://github.com/isandlatech/">GitHub</a></li>
+		</ul>
+		<ul>
+			<li><h5>COHORTE</h5></li>
+      <li><a href="/docs/1.x/what-is-cohorte">What is Cohorte?</a></li>
+			<li><a href="/news">News</a></li>      
+			<li><a href="/license.html">License</a></li>
+		</ul>
+		</div>
+		
+</div> <!-- footer -->
+<div class="sub-footer">
+   <div class="container"> 
+      <div class="copyright">
+      <a style="float: left; margin-right: 8px;" href="http://isandlatech.com"><img src="/resources/images/isandlatech-logo-sm-carre.png" alt="isandlaTech logo" /></a>
+      <p style="float: left;"><br/>Copyright &copy; 2011-2015<span class="current-year"></span> isandla<i>Tech</i> SAS<br/>3 chemin du vieux chêne. 38240 Meylan, France</p>
+      </div>
+      <div class="cohorte-logo-footer">
+        <span style="font-size:70%; color:#aaa;"><a href="http://isandlatech.com">isandla<i>Tech</i></a> is the principal sponsor of </span><img src="/resources/images/cohorte-logo-footer.png" alt="COHORTE footer logo" />
+      </div>
+    </div> <!-- container -->
+</div>
+
+    <!-- Scripts -->
+    <script>
+    /* Activate the Carousel */
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+
+    /* update anchor location */
+    $(window).on("hashchange", function () {
+        window.scrollTo(window.scrollX, window.scrollY - 100);
+    });
+
+    </script>
+
+    
+    <!-- table of contents JS -->
+    
+    <script src="/resources/js/toc.js" type="text/javascript" ></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+    
+        var toc_exclude = 'h1, h5, h6';
+        var toc_numerate = false
+        
+        toc_exclude = 'h3, h4, h5, h6';
+        
+        
+        toc_numerate = true;
+        
+        
+        $('#toc').toc({exclude: toc_exclude, context: '#toc_magic', autoId: true, numerate: toc_numerate});
+        
+        function moveScroller() {
+          if ($(".sidebar").length == 0)
+            return;
+          var a = function() {
+            var topOfScroll = $(window).scrollTop();
+            var topOfSidebar = $(".sidebar").offset().top;
+            var sidebarInner = $(".sidebar-inner");
+            var bottomOfSidebarInner = $(".sidebar-inner").offset().top + $(".sidebar-inner").outerHeight();
+            var topOfFooter = $(".footer").offset().top - 10;
+            var footerHeight = $(".footer").outerHeight();
+            if (topOfScroll > topOfSidebar) {
+              if (bottomOfSidebarInner > topOfFooter) {
+                sidebarInner.css({position:"fixed",bottom:footerHeight,top:""});
+              } else {
+                sidebarInner.css({position:"fixed",top:"10px",bottom:""});
+              }
+            } else {
+              sidebarInner.css({position:"relative",top:""});
+            }
+          };
+          $(window).scroll(a);a()
+        }
+        moveScroller();
+      })
+    </script>
+    
+    
+
+	<script src="/resources/js/2/cohorte.js" type="text/javascript"></script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-57227753-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+</body>
+
+</html>
+
