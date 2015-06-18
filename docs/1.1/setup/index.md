@@ -15,14 +15,23 @@ There are several ways of installing COHORTE on your system. In the following, w
 
 Depending on your application needs and the target deployment platform, you have the choice between:
 
- * **Python Distribution** 
-   This distribution (runtime) is intended for pur Python applications based on iPOPO service-component model. It works on mainly all operating systems having Python interpreter version > 2.7+.
+<table class="table">
 
- * **Java Distributions**
-   This distribution (runtime) is intended for applications composed of Java (Apache Felix iPOJO) and Python (Pelix iPOPO) service-oriented components (or only one of the two). You should have Python 3.4+ and JRE 1.7+ as requirement to get Cohorte operated correctly. 
-   
-
-Java Distribution is platform dependent (Some internal Cohorte's Python components are platform dependent). You should install the adequate distribution for your operating system in this case. The Python Distribution is platform independent.
+<tr><td><img src="{{ site.baseurl }}/resources/images/python-color.png"/></td>
+<td>  
+<b>Python Distribution</b> 
+<br/><p>This distribution (runtime) is intended for pur Python applications based on iPOPO service-component model.
+It works on mainly all operating systems having Python interpreter version > 2.7+.</p>
+</td></tr>
+<tr><td><img src="{{ site.baseurl }}/resources/images/java-color.png"/></td>
+<td>   
+<b>Python + Java Distribution</b>
+<br/><p>This distribution (runtime) is intended for applications composed of Java (Apache Felix iPOJO) and/or 
+Python (Pelix iPOPO) service-oriented components (or only one of the two). As requirement, you need Python 3.4+ and JRE 1.7+. Notice that when you develop a full Java application, Python is required as the principal Cohorte runtime logic is implemented in Python.
+</p><p>"Python + Java Distribution" is platform dependent (Some internal Cohorte's Python components are platform dependent). You should install the adequate distribution for your operating system in this case. The Python Distribution is platform independent.
+</p> 
+</td></tr>   
+</table>
 
 All the distribution files are listed on the <a href="{{ site.baseurl }}/downloads">download page</a>.
 

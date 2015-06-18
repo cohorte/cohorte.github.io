@@ -52,6 +52,7 @@ title: Documentation  - v1.1
         <li> Shell commands </li>
       </ul>
   </li>
+  <li>  <a href="{{ site.baseurl }}/docs/herald"><b>Herald : Discovery and Transport Framework</b></a></li>
   
   <!--
   <li>  <a href="./components">Components</a> </li>         

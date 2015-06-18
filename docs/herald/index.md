@@ -1,19 +1,21 @@
 ---
 layout: docpage
-title: Herald Framework
-comments: false
+title: Herald - Discovery and Transport Framework
+comments: true
+parent: Documentation
 toc: true
 toc_numerate: true
 toc_exlude: h1, h4, h5, h6
+parent_url: ../1.1
 ---
 
-# Herald Specification v1
+<a name="introduction"/>
 
 ## Introduction
 
-Cohorte platform is based on Herald Framework for the discovery and transport between the different isolates. However, Herald is a completely seperate project which could be used for your own cases.
+Cohorte platform is based on *Herald Framework* for the discovery and transport between the different isolates. However, Herald is a completely seperate project which could be used for your own cases.
 
-Herald abstarct the transport protocols used between peers, and allows each peer to send message to one or more peers by just knowing its UID (or the group name).
+Herald abstarct the transport protocols used between peers (communicating entities), and allows each peer to send message to one or more peers by just knowing its UID (or the group name).
 
 Herald is based on [iPOPO]() python component framework and hence requires [Pelix]() runtime to run. It has also a Java implementation that works on any [OSGi]() platform with [iPOJO]() component model.
 
@@ -21,24 +23,25 @@ This documentation is about `Herald Specification v1`.
 
 This specification is split into this chapters:
 
-* Chapter 1 - Introduction
-* Chapter 2 - Terminology
-* Chapter 3 - Message Format
-* Chapter 4 - Sending Messages
-* Chapter 5 - Receiving Messages
-* Chapter 6 - Transport
-* Chapter 7 - Discovery
-* Chapter 8 - Using Herald
-* Chapter 9 - Implementations
-* Chapter 10 - Extending Herald
+* Chapter 1  - [Introduction](#introduction)
+* Chapter 2  - [Terminology](#terminology)
+* Chapter 3  - [Message Format](#message_format)
+* Chapter 4  - [Sending Messages](#sending_messages)
+* Chapter 5  - [Receiving Messages](#receiving_messages)
+* Chapter 6  - [Transport](#transport)
+* Chapter 7  - [Discovery](#discovery)
+* Chapter 8  - [Using Herald](#using_herald)
+* Chapter 9  - [Implementations](#implementations)
+* Chapter 10 - [Extending Herald](#extending_herald)
 
+<a name="terminology"/>
 
 ## Terminology
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 <thead><tr><th>Term</th><th>Definition</th></tr></thead>
 <tbody><tr><td><b>OSGi</b></td><td>
-Specification for modular and dynamic applications based on service-oriented approach.
+Specification for modular and dynamic applications based on service-oriented approach (see <a href="http://osgi.org">http://osgi.org</a>).
 </td></tr>
 <tr><td><b>Peer</b></td><td>
 Represents one OSGi node (runtime). It has a unique UID (Universal IDentifier) and a symbolic name.
@@ -47,19 +50,19 @@ Represents one OSGi node (runtime). It has a unique UID (Universal IDentifier) a
 A set of Peers regrouped logically in one group. A peer can be associated to several groups.
 </td></tr>
 <tr><td><b>Access</b></td><td>
-Supported protocols for one peer. Two peer should have the same access type to communicate.
+Supported protocols for one peer. Two peers should have the same access type to communicate.
 </td></tr>
 <tr><td><b>Message</b></td><td>
 Object containing the data to be transported and metadata useful for the framework or user needs.
 </td></tr>
 <tr><td><b>Directory</b></td><td>
-Internal storage on each peer that has information about discovered peers.
+Internal storage on each peer that has information about discovered peers and their capabelities.
 </td></tr>
 <tr><td><b>Discovery</b></td><td>
 Operation on which a peer discover other peers of the same application (having same AppID). Their information is stocked on the local Directory.
 </td></tr>
 <tr><td><b>Transport</b></td><td>
-...
+Communication protocol used to transport messages between peers. 
 </td></tr>
 <tr><td><b>AppID</b></td><td>
 An application ID is associated to each peer: only peers with the same application ID can discover each other.
@@ -69,7 +72,7 @@ An application ID is associated to each peer: only peers with the same applicati
 </table>
 
 
-
+<a name="message_format"/>
 
 ## Message Format
 
@@ -77,24 +80,21 @@ Herald Message is a JSON object with the following structure :
 
 {% highlight json %}
 {
-  "herald-version": 1,       # herald specification version
   
-  "headers": {
-     "uid": "",              # the unique universal identifier of the message.
+  "headers": {  
+     "herald-version": 1,    # herald specification version
+     "uid": "",              # the unique universal identifier of the message.     
      "timestamp" : 0,        # the time the message was created.      
      "sender-uid": "",       # the uuid of the peer which emits the message.
-     "send-mode": "",        # the sending mode (fire, post, send)
-     
-     "replies-to": "",       # uid of message that triggeed this one (send mode)
-     "replied": "",          # indicates if the message was already replied
-     "access": ""            # access ID of the transport which received this message
+     "target-peer": "",      # uid of the target peer (fire mode)
+     "target-group": "",     # name of the target group (fire_group mode)    
+     "replies-to": "",       # uid of message that triggeed this one (send mode)          
   },  
   
-  "target" : "",             # peer:<uuid> or group:<name>
   "subject" : "",            # the subject of the message. e.g., toto/titi
   "content" : {},            # the message content
    
-  "extra" : {}               # user provided meta-infos and future features
+  "metadata" : {}            # user provided meta-infos and future features
 }
 {% endhighlight %}
 
@@ -102,133 +102,127 @@ Here is a description and semantic of each of this entries :
 
 <table class="table table-striped table-bordered table-hover table-condensed">
 <thead><tr><th>Entry</th><th>Description</th></tr></thead>
-<tbody><tr><td><b>herald-version</b></td><td>
-Herald Specification version (integer).
-</td></tr>
+<tbody>
 <tr><td><b>headers</b></td><td>
-Each message has a map of standard headers about the message. This headers are set by the framework and not by users. In case of a newly sent message, we have:<br/>
+Each message has a map of standard headers about the message. This headers are set by the framework and not by users. In case of a newly sent message, we have :<br/>
     <ul>
         <li><b>uid:</b> the message unique identifier.</li>
+        <li><b>herald-version:</b> Herald Specification version (integer).</li>
         <li><b>timestamp:</b> the data on which the message was created.</li>
         <li><b>sender-uid:</b> the UID of the sender (peer).</li>
-        <li><b>send-mode:</b> which sending mode was used to send the message? the supported sending modes are: fire, post, and send (see <a href="#">Chapter 4 - Sending Messages</a>)</li>        
+        <li><b>target-peer:</b> the UID of the peer target of this message (Not set if the target is a group)</li>
+        <li><b>target-group:</b> the name of the group target of this message (Not set if the target is a specific peer)</li>
     </ul>
-    In addition, for a response message, we have also this headers :
+    In addition, for a response message, we have also this header :
     <ul>
-        <li><b>replies-to:</b> the UID of the message that triggered this one and which its sender is waiting for a response.</li>
-        <li><b>replied:</b> a boolean indicating if the message was replied by the receiver or not.</li>
-        <li><b>access:</b> Access ID of the transport which received this message</li>
+        <li><b>replies-to:</b> the UID of the message that triggered this one and which its sender (identified by 'sender-uid' header) is waiting for a response.</li>        
     </ul>
     Herald Transports could also add other specific headers that should be different from the standard headers.
 </td></tr>
-<!--
-<tr><td><b>transport-data</b></td><td>
-...
-</td></tr>
--->
-<tr><td><b>target</b></td><td>
-The target of the message. It could be one peer, or a group of peers. In case of one peer target, we should provide its UID after <code>peer:</code> prefix. E.g., <code>peer:cb877370-249e-4a51-bd2b-18cc29df02de</code>. In case of the message is destinated for a group of peers, we should provide the group name after the <code>group:</code> prefix. E.g., <code>group:all</code>.
-</td></tr>
+
 <tr><td><b>subject</b></td><td>
-a String identifying the purpose of the message. It is recommended to use URI (Uniform Resource Identifier) syntax. E.g., <code>"/update/info"</code>. Message receivers can filter which message to take according to their subjects.
+a String identifying the purpose of the message. It is recommended to use URI (Uniform Resource Identifier) syntax. E.g., <code>"/update/info"</code>. Message receivers can filter which messages to take according to their subjects.
 </td></tr>
 <tr><td><b>content</b></td><td>
 any content.
 </td></tr>
-<tr><td><b>extra</b></td><td>
+<tr><td><b>metadata</b></td><td>
 a map of extra informations (user-specific).
 </td></tr>
 
 </tbody>
 </table>
 
-**Python Class**
+<a name="creating_messages"/>
 
-The `Message` class encapsulates Herald JSON message.
-The following snipet shows the constructor's code of this class in Python programming language.
+## Creating Messages
 
-`herald/beans.py` 
+
+<div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#manipulate_message_python" aria-controls="python" role="tab" data-toggle="tab">Python</a></li>
+    <li role="presentation"><a href="#manipulate_message_java" aria-controls="java" role="tab" data-toggle="tab">Java</a></li>    
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="manipulate_message_python">
+
+</p>
+
+  
+<p>The <code>Message</code> class encapsulates Herald JSON message. It is defined in the module <code>herald.beans</code>.</p>
+<p>The following snipet shows the constructor's code of this class in Python programming language.</p>
+
 
 {% highlight python %}
 class Message(object):
     """
     Represents a message to be sent
     """
-    def __init__(self, subject, 
-                       content=None,
-                       target_id=None, 
-                       target_type=None, 
-                       sender_uid=None, 
-                       send_mode=None, 
-                       replies_to=None):
-        
-{% endhighlight %}   
-
-
-Example : 
-
-{% highlight python %}
-msg1 = herald.beans.Message(subject="toto/toti", content="Hello Peer!")
-
-msg2 = herald.beans.Message("koko/koki")
-msg2.set_content("Hello Herald!")    # notice that we can also send a message without content
+    def __init__(self, subject, content=None):
+        # ...
 {% endhighlight %}
 
-Message headers are set by the Message constructor or by the sending service calls. At any way, you should not modify headers manually.
 
+The <code>Message</code>'s constructor automatically initializes basic headers including message uid, its timestamp, and the Herald's specification version.
 
-For each of this headers and base data, the Message class provides properties to quickly retrieve the required (meta)data.
+<p>Example :</p> 
 
 {% highlight python %}
-@property
-def uid(self):
-    """
-    Message UID
-    """
+import herald.beans.Message as Message
 
-@property
-def timestamp(self):
-    """
-    Time stamp of the message
-    """
+# creates a message which has 'toto/toti' as subject and "Hello Peer!" as content
+msg1 = Message("toto/toti", "Hello Peer!")   
 
-@property
-def sender(self):
-    """
-    Sender Peer UID
-    """
-
-@property
-def send_mode(self):
-    """
-    Send mode
-    """
-
-@property
-def replies_to(self):
-    """
-    UID of Peer to be replyed
-    """
-
-@Property
-def target(self):
-    """
-    The target of the message (peer:<uid> or group:<name>)
-    """
-
-@Property
-def target_id(self):
-    """
-    The id of the target of the message (<uid> or <group_name>)
-    """
-
-@Property
-def target_type(self):
-    """
-    The type of the target of the message (peer or group)
-    """
+# creates a message without a content
+msg2 = Message(subject="koko/koki")
+# set the content of the message
+msg2.set_content("Hello Herald!")    
+{% endhighlight %}
 
 
+
+
+    </div>
+    <div role="tabpanel" class="tab-pane" id="manipulate_message_java">
+        
+        Java    
+    </div>    
+  </div>
+
+</div>
+
+
+<hr/>
+
+<a href="manipulating_messages"/>
+
+## Manipulating Messages
+
+Each message has a set of Headers (set by the framework), a subject and a content (set by the user). The content could be of any primitive type or a serializable bean object. In addition, user can add a set of metadata associated to the message's content. All the headers, subject, content, and the metadata are transmitted to the targeted peer. 
+
+The Message class has the following methods to retreive and set those informations.
+
+<div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#create_message_python" aria-controls="python" role="tab" data-toggle="tab">Python</a></li>
+    <li role="presentation"><a href="#create_message_java" aria-controls="java" role="tab" data-toggle="tab">Java</a></li>    
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="create_message_python">
+
+</p>
+
+Basic information methods : 
+
+{% highlight python %}
 @property
 def subject(self):
     """
@@ -240,67 +234,99 @@ def content(self):
     """
     The content of the message
     """
-{% endhighlight %} 
+    
+def set_content(self, content):
+    """
+    Sets content
+    """   
+{% endhighlight %}
 
-For `MessageReceived` objects (which inherits from `Message` class), we have in addition:
+Headers related methods :
 
 {% highlight python %}
 @property
-def access(self):
+def headers(self):
     """
-    Returns the access ID of the transport which received this message
+    Message headers
     """
 
-@property
-def replied(self):
+def add_header(self, key, value):
     """
-    A tag (boolean) indicating if this message was sent back to the original peer 
+    Adds a header
+    """
+    
+def get_header(self, key):
+    """
+    Gets a header value 
+    """
+
+def remove_header(self, key):
+    """
+    Removes a header from the headers list
+    """
+
+{% endhighlight %}   
+ 
+ List of methods allowing a direct access to standard headers :
+ 
+{% highlight python %} 
+@property
+def uid(self):
+    """
+    Message UID
+    """
+
+@property    
+def timestamp(self):
+    """
+    Time stamp of the message
+    """
+{% endhighlight %} 
+
+Message metadata manipulation :
+
+{% highlight python %}
+@property    
+def metadata(self):
+    """
+    All message metadata
+    """
+        
+def add_metadata(self, key, value):
+    """
+    Adds a metadata
+    """
+    
+def get_metadata(self, key):
+    """
+    Gets a metadata
+    """
+    
+def remove_metadata(self, key):
+    """
+    Removes a metadata 
     """
 {% endhighlight %}
 
-Herald Transports can send any Heral Message without any other metadata. All needed information is encapsulated in the Message object. In addition, the Message object can exports its data to three supported formats:
 
 
-{% highlight python %}
-def to_json(self):
-    """
-    Returns a JSON representation of this message
-    """
 
-def to_bson(self):
-    """
-    Returns a Bonary JSON object of this message
-    """
+    </div>
+    <div role="tabpanel" class="tab-pane" id="create_message_java">
+        
+        Java    
+    </div>    
+  </div>
 
-def to_raw(self):
-    """
-    Returns a RAW object of this message. No metadata will be sent, 
-    only the content of the message
-    """
-{% endhighlight %} 
+</div>
+
 
 Herald Transports can take the exported data and send it using protocol specific transport.
-At the other side, Herald Transports can construct a `Message` object from the received RAW, BSON, or JSON data. The `Message` class has three static methods for that:
+At the other side, Herald Transports can construct a `Message` object from the received JSON data (serialization of the `Message` class). 
 
-{% highlight python %}
-@Staticmethod
-def from_json(json_message):
-    """
-    Returns a new Message from the provided json_message
-    """
+<hr/>
 
-@Staticmethod
-def from_bson(bson_message):
-    """
-    Returns a new Message from the provided bson_message (Binary JSON)
-    """
-
-@Staticmethod    
-def trom_raw(raw_message):
-    """
-    Returns a new Message from the provided raw_message
-    """
-{% endhighlight %} 
+<a name="sending_messages"/>
 
 ## Sending Messages
 
@@ -440,9 +466,15 @@ def reply(self, message, content, subject=None):
 
 This method is called to return a reply message to the original peer.
 
+<a name="receiving_messages"/>
+
 ## Receiving Messages
 
+<a name="transport"/>
+
 ## Transport
+
+<a name="discovery"/>
 
 ## Discovery
 
@@ -463,6 +495,8 @@ When a peer L (local) detects another peer D (discovered) :
 * L sends a message to D to finish the discovery synchronization, it has `herald/discovery/step3` as subject.
 
 * D receives this message and notifies Herald about this new discovered peer.  
+
+<a name="using_herald"/>
 
 ## Using Herald
 
@@ -498,6 +532,7 @@ To retrieve information about peers.
 
 To send messages.
 
+<a name="implementations"/>
 
 ## Implementations
 
@@ -521,9 +556,28 @@ In HTTP protocol, Herald uses HTTP Multicast to discover other peers.
 * routing
 * remote services
 
-
+<a name="extending_herald"/>
 
 ## Extending Herald
+
+
+{% highlight python %}
+def to_json(self):
+    """
+    Returns a JSON representation of this message
+    """
+
+def to_bson(self):
+    """
+    Returns a Bonary JSON object of this message
+    """
+
+def to_raw(self):
+    """
+    Returns a RAW object of this message. No metadata will be sent, 
+    only the content of the message
+    """
+{% endhighlight %} 
 
 ### How to implement a new discovery protocol?
 
