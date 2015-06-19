@@ -6,18 +6,18 @@ toc: false
 comments: false
 ---
 
-<!--
-
-## Pre-Release Versions (1.0.0.pre1)
-
-* Mac OS X (64bits): [cohorte-1.0.0-pre1-macosx-distribution.tar.gz](http://repo.isandlatech.com/downloads/cohorte/1.x/cohorte-1.0.0pre1-macosx-distribution.tar.gz) 
-* Linux (x86_64) : [cohorte-1.0.0-pre1-linux-distribution.tar.gz](http://repo.isandlatech.com/downloads/cohorte/1.x/cohorte-1.0.0-pre1-linux-distribution.tar.gz) 
-* Full Python : [cohorte-1.0.0-pre1-python-distribution.tar.gz](http://repo.isandlatech.com/downloads/cohorte/1.x/cohorte-1.0.0-pre1-python-distribution.tar.gz) 
 
 
-* [Source code](https://github.com/isandlaTech/cohorte-platforms/releases/tag/v1.0.0-pre1)
+## Pre-Release Versions (1.1.0.pre1)
 
--->
+* Mac OS X (64bits): [cohorte-1.1.0-pre1-macosx-distribution.tar.gz](http://repo.isandlatech.com/downloads/cohorte/1.1.0-pre/cohorte-1.1.0-pre1-macosx-distribution.tar.gz)
+* Linux (x86_64) : [cohorte-1.1.0-pre1-linux-distribution.tar.gz](http://repo.isandlatech.com/downloads/cohorte/1.1.0-pre/cohorte-1.1.0-pre1-linux-distribution.tar.gz) 
+* Full Python : [cohorte-1.1.0-pre1-python-distribution.tar.gz](http://repo.isandlatech.com/downloads/cohorte/1.1.0-pre/cohorte-1.1.0-pre1-python-distribution.tar.gz) 
+
+* [Changelog](http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.1.0-SNAPSHOT/cohorte-1.1.0-20150618.070704-1-changelog.txt)
+* [Source code](https://github.com/isandlaTech/cohorte-platforms/releases/tag/1.1.0-pre1)
+
+
 
 ## Stable Releases (1.0.0)
 
