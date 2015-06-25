@@ -41,7 +41,7 @@ title: Documentation  - v1.1
       </ul>
   </li>
   <li>  <a href=""><b>Composition Specification</b></a>  </li>
-  <li>  <a href=""><b>Creating and launching Cohorte Nodes</b></a>  </li>
+  <li>  <a href="./creating_starting_nodes"><b>Creating and Starting Cohorte Nodes</b></a>  </li>
   <li>  <a href=""><b>Monitoring and Debuging Cohorte Application</b></a> </li>
   <li>  <a href=""><b>Cohorte scripts and tools</b></a> 
       <ul>
