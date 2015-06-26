@@ -57,7 +57,7 @@ It is the <code>APP_ID</code> which allows the different nodes of your applicati
 </p>
 </div>
 
-### Results
+### Example
 
 {% highlight bash %}
 $ cohorte-create-node --name mynode --composition-name myapp_composition --app-id myapp_id
@@ -197,25 +197,40 @@ We can write the startup configurations in a separate JSON file (see How to use 
 
 We can provide a different node name than the already provided when the node is created (by using `--node` argument). One important option of cohorte nodes is the `--top-composer`. If set, the node will be considered as a **Top Composer** (manages all the distribution of components among the available nodes). Users can also provide customised informations such as the http port to use for the *web-admin* component (see [monitoring chapter]({{ site.baseurl }}/docs/1.1/monitoring)), or the port to use for the remote *shell-admin* component. 
 
-####  Information about the transport protocols to use
 <pre>
   --transport TRANSPORT_MODES
                         Transport mode (http and/or xmpp - seperated by comma)
+</pre>
+
+The `--transport` option allow the user to choose which transport protocol to use between the actual node and the other nodes participating in the same application. You can provide a common seperated list of the supported protocols (`http` and `xmpp` for the moment). Each protocol needs additional configuration options that should be provided seperataly using dedicated options.
+
+HTTP options : 
+
+<pre>
+  --http-ipv HTTP_IPV   HTTP IP version to use (4 or 6)    
+</pre>
+
+XMPP options :
+
+<pre>
   --xmpp-server XMPP_SERVER
                         XMPP server
   --xmpp-port XMPP_PORT
                         XMPP server port
-  --http-ipv HTTP_IPV
-                        HTTP IP version to use (when transport mode is http)
-</pre>
+  --xmpp-user-jid XMPP_JID
+                        XMPP User jid (not yet implemented - annonymous mode
+                        only)
+  --xmpp-user-password XMPP_PASSWORD
+                        XMPP User password
+</pre>    
 
-The `--transport` option allow the use to choose which transport protocol to use between the actual node and the other nodes participating in the same application. You can provide a common seperated list of the supported protocols (`http` and `xmpp` for the moment). Each protocol need additional configuration options that should be provided seperataly using dedicated options (--xmpp-server for instance to mention the XMPP server to use).
+If the XMPP server accepts **`anonymous`** connections, you can not use a specific JID user. However, the server should accept **multi-user chat**. 
 
 ### How to use startup configuration files
 
-To avoid re-typing the same options each time a node is started, or to share the same configuration between several nodes, you can provide a *startup configuration file* which contains such startup configurations. The content of such file is described hereafter. 
+To avoid re-typing the same options each time a node is started, or to share the same configuration between several nodes, you can provide a *startup configuration file* which contains such startup configurations. En complet exemple of such file is given hereafter. 
 
-> run.js
+> conf/run.js
 
 {% highlight json %}
 {	
@@ -223,16 +238,27 @@ To avoid re-typing the same options each time a node is started, or to share the
     "cohorte-version": "1.1.0",
     "node": {		
         "name": "node-rasp",
+        
         "top-composer": true,
+        "composition-file" : "conf/composition.js",
+        "recomposition-delay": 150,
+        "auto-start" : true,
+        
         "http-port": 9001,
-        "shell-port": 9001		
+        "shell-port": 9001,        
+        "interpreter" : "python3",
+                
+        "use-cach" : false        		
     },
-    "transport": ["xmpp"],
+    "transport": ["xmpp", "http"],
     "transport-xmpp": {
         "xmpp-server": "charmanson.isandlatech.com",
         "xmpp-user-jid" : "myjid",
         "xmpp-user-password" : "mypassword",
         "xmpp-port": 5222
+    },
+    "transport-http": {
+        "http-ipv" : 6
     }
 }
 {% endhighlight %}
@@ -270,16 +296,13 @@ The discovery is done using TCP multi-caste feature. This limits the scope of th
 
 ### Using XMPP
 
-You need to start the Top Composer with the following configurations :
+You need to start the Top Composer with the following at least configurations :
 
 {% highlight bash %}
 ./run --app-id myapplication --transport xmpp \
 --xmpp-server server_url \
 --xmpp-port 5222 \
 {% endhighlight %}
-
-The XMPP server should accept **`anonymous`** connections and **`multi-user chat**. 
-
 
 ### Using HTTP/XMPP
 
