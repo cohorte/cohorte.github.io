@@ -24,7 +24,7 @@ title: Documentation  - v1.1
       </ul>
   </li>
   <li>  <a href="./setup"><b>Download and install COHORTE distribution</b></a> </li>
-  <li>  <a href=""><b>Getting Started with Cohorte in 10 minutes</b></a> 
+  <li>  <a href="./getting-started"><b>Getting Started with Cohorte in 10 minutes</b></a> 
       <ul>
         <li>Creating Cohorte Nodes</li>
         <li>Implementing Service-Oriented Components</li>
@@ -40,10 +40,10 @@ title: Documentation  - v1.1
         <li>Apache Felix iPOJO (Java)</li>
       </ul>
   </li>
-  <li>  <a href=""><b>Composition Specification</b></a>  </li>
-  <li>  <a href="./creating_starting_nodes"><b>Creating and Starting Cohorte Nodes</b></a>  </li>
-  <li>  <a href=""><b>Monitoring and Debuging Cohorte Application</b></a> </li>
-  <li>  <a href=""><b>Cohorte scripts and tools</b></a> 
+  <li>  <a href="./compositions"><b>Composition Specification</b></a>  </li>
+  <li>  <a href="./creating-starting-nodes"><b>Creating and Starting Cohorte Nodes</b></a>  </li>
+  <li>  <a href="./monitoring"><b>Monitoring and Debuging Cohorte Application</b></a> </li>
+  <li>  <a href="./tools"><b>Cohorte scripts and tools</b></a> 
       <ul>
         <li> cohorte-version </li>
         <li> cohorte-update  </li>
@@ -83,6 +83,9 @@ title: Documentation  - v1.1
 <p><i>Some resources to get started quickly:</i></p>
 
 <ul>
+ <li> <a href="./getting-started"><b>Getting Started tutorial</b></a>
+    <br/>Getting started with Cohorte in 10 minutes.</li>
+     
  <li> <a href="./tutorials/hello"><b>Hello World Tutorial</b></a>
     <br/>Small Hello World introductory tutorial.</li>
 

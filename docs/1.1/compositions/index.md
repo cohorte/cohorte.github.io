@@ -9,7 +9,7 @@ previous_page: ../components
 next_page: ../startup
 ---
 
-This specification is used to describe the composition of the final application in term of component that should be instantiated in which isolate of which node.
+This specification is used to describe the composition of the final application in term of components that should be instantiated in which isolate of which node.
 
 ## Composition
 
@@ -57,7 +57,7 @@ This specification is used to describe the composition of the final application 
   // Location on a precise isolate
   "isolate" : "aggregator.ui",
   // Location on a precise node
-  "node" : "central"
+  "node" : "central",
   // Initial configuration of the component
   "properties" : {
     "servlet.path" : "/sensors"

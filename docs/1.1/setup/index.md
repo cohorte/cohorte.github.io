@@ -6,7 +6,7 @@ toc: true
 toc_numerate: true
 toc_exlude: h1, h4, h5, h6
 previous_page: ../key-concepts
-next_page: ../components
+next_page: ../getting-started
 ---
 
 There are several ways of installing COHORTE on your system. In the following, we detail the manual installation on different platforms.

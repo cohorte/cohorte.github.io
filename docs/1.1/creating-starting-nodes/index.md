@@ -100,10 +100,10 @@ The generated `conf/run.js` file contain the initial startup arguments. Here is 
     "cohorte-version": "1.1.0",
     "app-id": "myapp_id",
     "node": {
+        "name": "mynode",
         "shell-port": 0,
         "http-port": 0,
         "top-composer": false,
-        "name": "mynode",
         "console": true
     },
     "transport": [
@@ -148,7 +148,7 @@ There are different kind of arguments depending on the use of the actual node.
 #### Mandatory options
 
 <pre>
-  -a APPLICATION_ID, --app-id APP_ID
+  -a APP_ID, --app-id APP_ID
                         Application's ID
 </pre>                      
 
@@ -224,7 +224,7 @@ XMPP options :
                         XMPP User password
 </pre>    
 
-If the XMPP server accepts **`anonymous`** connections, you can not use a specific JID user. However, the server should accept **multi-user chat**. 
+If the XMPP server accepts **`anonymous`** connections, you can connect to it without a JID. However, in any cases, the server should accept **multi-user chat**. 
 
 ### How to use startup configuration files
 
@@ -240,7 +240,7 @@ To avoid re-typing the same options each time a node is started, or to share the
         "name": "node-rasp",
         
         "top-composer": true,
-        "composition-file" : "conf/composition.js",
+        "composition-file" : "composition.js",
         "recomposition-delay": 150,
         "auto-start" : true,
         

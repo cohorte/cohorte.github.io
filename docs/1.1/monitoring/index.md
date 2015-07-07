@@ -5,8 +5,8 @@ parent: Documentation
 toc: true
 toc_numerate: true
 toc_exlude: h1, h4, h5, h6
-previous_page: ../shell
-next_page: ../
+previous_page: ../creating_starting_nodes
+next_page: ../tools
 ---
 
 
