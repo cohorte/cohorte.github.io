@@ -6,7 +6,7 @@ toc: true
 toc_numerate: true
 toc_exlude: h1, h4, h5, h6
 previous_page: ../components
-next_page: ../startup
+next_page: ../creating-starting-nodes
 ---
 
 This specification is used to describe the composition of the final application in term of components that should be instantiated in which isolate of which node.
