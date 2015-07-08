@@ -36,8 +36,11 @@ $ cohorte-version
 
 In this getting started tutorial, we will create a simple application consisting of two components deployed on two different nodes.
 
-We have one component A providing a Temperature Service and another component B consuming this service to show the current temperature on a Web page.   
+We have one component `Sensor` providing a `Temperature Service` and another component `Viewer` consuming this service to show the current temperature on a Web page.   
 
+![img0](getting-started-img0.png)
+
+In Cohorte, developers concentrate on the architecture of the application, not deployment constraints. Here we have a simple service-oriented application composed of two components which will be deployed on different (distributed) nodes. Developers have not to worry about this details. 
 
 ## Creating Cohorte Nodes
 
@@ -71,13 +74,13 @@ On `node1/conf` directory, update `composition.js` to provide the composition of
         "name": "myapp-composition",
         "components": [
             {
-                "factory" : "org.example.temperature.Viewer",
-                "name"    : "TemperatureViewer",
+                "name"    : "Viewer",
+                "factory" : "org.example.temperature.Viewer",                
                 "node"    : "node1"
             },
             {
-                "factory" : "org.example.temperature.Sensor",
-                "name"    : "TemperatureSensor",
+                "name"    : "Sensor",
+                "factory" : "org.example.temperature.Sensor",                
                 "node"    : "node2"
             }
         ]
@@ -85,7 +88,7 @@ On `node1/conf` directory, update `composition.js` to provide the composition of
 } 
 {% endhighlight %}
 
-We will have two component instances named `TemperatureViewer` and `TemperatureSensor` located on `node1` and `node2` respectively. 
+We will have two component instances named `Viewer` and `Sensor` located on `node1` and `node2` respectively. 
 Each component insance will be created using a **Factory** (or **Component Factory**), which is no more than a simple Classes providing and consuming services.
  
 ## Implementing Service-Oriented Components
@@ -112,7 +115,7 @@ import random
 class Sensor(object):
 		
     def get_temperature(self):
-         return randrange(0, 50)
+        return randrange(0, 50)
 {% endhighlight %}
 
 This component implements `TemperatureService` service which has one method `get_temperature()` that returns, for simplicity, a random number between 0 and 50. 
@@ -134,7 +137,7 @@ class Viewer(object):
         path = None
 		
     def do_GET(self, request, response):
-        temp = sensor.get_temperature()
+        temp = self.sensor.get_temperature()
         result = "<H3>Actual Temperature : {0}</h3>".format(temp)
         response.send_content(200, result, "text/html")
 {% endhighlight %}
@@ -204,3 +207,11 @@ On each node, we have the desired component instances that runs on python **Isol
 * Click on `node1-python-auto01` to get detailed information. Figure out *HTTP-PORT* property to get its concret http port on which the HTTP service is accessible.
 
 ![img3](getting-started-img3.png)
+
+* Open a new browser and type the following address : `http://localhost:51212` where `51212` is the actual Http Port of the container (isolat) of the `Viewer` component instance.
+
+![img4](getting-started-img4.png)
+
+* Refresh the webpage to see different values returned by the `TemperatureService` implemented by `Sensor` component and consumed by `Viewer` component.
+
+
