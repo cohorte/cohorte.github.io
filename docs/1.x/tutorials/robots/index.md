@@ -11,7 +11,7 @@ previous_page: ../hello
 next_page: ../temper
 ---
 
-The objective of this demonstration is to show you how using Cohorte in your project increase the time-to-market intervals by focusing on business logic to implement, not distributed systems problems.
+The objective of this demonstration is to show you how using Cohorte in your project decrease the time-to-market intervals by focusing on business logic to implement, not distributed systems problems.
 
 We demonstrate this quality in a simple simulated robotic project.
 
