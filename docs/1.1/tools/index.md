@@ -6,7 +6,7 @@ toc: true
 toc_numerate: true
 toc_exclude: h1, h3, h4, h5, h6
 previous_page: ../monitoring
-next_page: ../../../herald
+next_page: ../../herald
 ---
 
 Ensure that Cohorte is properly installed and $COHORTE_HOME environment variable is set.

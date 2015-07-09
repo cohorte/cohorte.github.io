@@ -34,7 +34,7 @@ title: Documentation  - v1.1
       </ul>
   </li>
 
-  <li>  <a href=""><b>Supported Service-Oriented Component models</b></a> 
+  <li>  <a href="./components"><b>Supported Service-Oriented Component models</b></a> 
       <ul>
         <li>Pelix iPOPO (Python)</li>
         <li>Apache Felix iPOJO (Java)</li>

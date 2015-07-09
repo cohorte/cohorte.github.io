@@ -6,7 +6,7 @@ toc: true
 toc_numerate: true
 toc_exclude: h1, h3, h4, h5, h6
 previous_page: ../applications
-next_page: ../shell
+next_page: ../monitoring
 ---
 
 COHORTE system is composed of several Nodes. Only one node is specified to be Top Composer. It manages the components distribution among the available participating nodes.

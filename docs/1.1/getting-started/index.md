@@ -38,7 +38,9 @@ In this getting started tutorial, we will create a simple application consisting
 
 We have one component `Sensor` providing a `Temperature Service` and another component `Viewer` consuming this service to show the current temperature on a Web page.   
 
-![img0](getting-started-img0.png)
+<p style="text-align:center">
+<img src="getting-started-img0.png"/>
+</p>
 
 In Cohorte, developers concentrate on the architecture of the application, not deployment constraints. Here we have a simple service-oriented application composed of two components which will be deployed on different (distributed) nodes. Developers have not to worry about this details. 
 
