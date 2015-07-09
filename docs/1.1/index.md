@@ -86,7 +86,7 @@ title: Documentation  - v1.1
  <li> <a href="./getting-started"><b>Getting Started tutorial</b></a>
     <br/>Getting started with Cohorte in 10 minutes.</li>
      
- <li> <a href="./tutorials/hello"><b>Hello World Tutorial</b></a>
+ <li> <a href="./tutorials/hello"><b>Hello Components Tutorial</b></a>
     <br/>Small Hello World introductory tutorial.</li>
 
  <li> <a href="./tutorials/robots"><b>Robots Tutorial</b></a>

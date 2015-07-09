@@ -44,16 +44,18 @@ If you are already familiar with one of the two frameworks, all whats you have t
 
 The following picture shows a component requiring and providing services.
 
-![Component](components-img-2.png)
+<p style="text-align:center;">
+  <img src="components-img-2.png"/>
+</p>
 
 
 ## Supported SOCMs
 
-In this section, we will provide a brief introduction to the supported Service Oriented Components Models in COHORTE.
+In this section, we will provide a brief introduction to the supported Service Oriented Component Models in COHORTE.
 
 ### OSGi / Apache Felix iPOJO
 
-Java
+iPOJO is a component-based service-oriented framework that works on OSGi platforms. Components in iPOJO are simple Java classes décorated with annotations to provide, require or define callbacks when the stat of the component change. 
 
 <table class="table table-striped table-condensed">
 <tr><th>Apache Felix iPOJO (Java) </th></tr>
@@ -104,9 +106,13 @@ public class Aggregator implements ITemperature, IController {
 
 {% endhighlight %}
 
+For more information about iPOJO, feel free to visite the [official web site here](http://felix.apache.org/documentation/subprojects/apache-felix-ipojo.html).
+
 ### Pelix / iPOPO 
 
-Python
+iPOPO is a python implementation, iPOJO like service-oriented component-based framework. It adds the missing modularity for Python projects. 
+
+iPOPO run on Pelix runtime (which is an implementation of part of OSGi specification on Python). iPOPO components uses decorators simular to those found on iPOJO, and could consume services implemented in Java using iPOJO component-model (using Cohorte's Remote Services).  
 
 <table class="table table-striped table-condensed">
 <tr><th>Pelix iPOPO (Python) </th></tr>
@@ -136,9 +142,12 @@ class Aggregator(object):
 </table>
 
 
-Interoperability between Java and Python implementation?
-
-* We should add `java:/` prefix to required services in Python.
+<div class="note">
+<span class="note-title">Note</span>
+<p class="note-content">
+For interoperability between Java and Python components, we should add <code>java:/</code> prefix to the required services on Python components.
+</p>
+</div>
 
 ### C# support
 

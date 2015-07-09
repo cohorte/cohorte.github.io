@@ -11,6 +11,8 @@ next_page: ../creating-starting-nodes
 
 This specification is used to describe the composition of the final application in term of components that should be instantiated in which isolate of which node.
 
+A `composition.js` file which describes the composition of the application is located on the `conf` directory of the *Top Composer* node. The Top Composer dispatchs this specification to other nodes of the application.    
+
 ## Composition
 
 {% highlight json %}

@@ -216,4 +216,8 @@ On each node, we have the desired component instances that runs on python **Isol
 
 * Refresh the webpage to see different values returned by the `TemperatureService` implemented by `Sensor` component and consumed by `Viewer` component.
 
+## Tutorial material
 
+Download this tutorial material from here
+
+<a id="download_getting_started_tuto" href="http://repo.isandlatech.com/downloads/cohorte/1.1.0/getting-started.zip" class="btn btn-success">Download Getting Started Tutorial</a>

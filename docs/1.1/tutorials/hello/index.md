@@ -1,6 +1,6 @@
 ---
 layout: docpage
-title: Hello World Tutorial
+title: Hello Components Tutorial
 comments: true
 parent: documentation
 parent_url: ../../
@@ -37,7 +37,7 @@ The remainder of this tutorial is organized in four steps :
 
 ## Creating a simple application (one node)
 
- In this first step of the tutorial, we will instantiate the components `HelloComponents` (**HC**), `HelloEnglish` (**EN**), `HelloFrench` (**FR**), and `HelloSpanish` (**ES**). In addition, we want to seperate between **HC** component and other components providing HELLO SERVICE (which can contain third-party code as any they implement the service). COHORTE supports this separation by using **Isolates**. Isolates are a seperate process with all the needed runtime infrastructure allowing the execution of the managed components.
+ In this first step of the tutorial, we will instantiate the components `HelloComponents` (**HC**), `HelloEnglish` (**EN**), `HelloFrench` (**FR**), and `HelloSpanish` (**ES**). We want to seperate between **HC** component and other components providing HELLO SERVICE (which can contain third-party non controlled code). COHORTE supports this separation by using **Isolates**. Isolates are a seperate process with all the needed runtime infrastructure allowing the execution of the managed components.
 
  The following picture depicts the desired resilient architecture. If one of the components providing the HELLO SERVICE fails, there will be no impact on **HC** component! As they are deployed on two seperate containers or isolates (*web* and *components-1*). 
 
@@ -56,7 +56,7 @@ This command will create a new directory named `node1` containing an executable 
 
  * Download the first bundle of this tutorial containing the implementation of the specified components in Python.
  
- <a id="download_hello_demo_python_snapshot" href="http://repo.isandlatech.com/maven/releases/org/cohorte/demos/hello/1.0.0/hello-1.0.0-python-distribution.zip" class="btn btn-success">Download Hello Python Bundle</a>
+ <a id="download_hello_demo_python_snapshot" href="http://repo.isandlatech.com/downloads/cohorte/1.1.0/hello-python.zip" class="btn btn-success">Download Hello Python Bundle</a>
  
  * Extract the downloaded zip file and put the extracted `hello` directory in `node1/repo`. 
 
@@ -105,26 +105,26 @@ In order to have this deployment plan corresponding to the resilient architectur
 
 Change your working directory to `node1` and type : 
  <pre>
-$ ./<b>run</b> --app-id <span style="color:green">myapp</span> --top-composer <span style="color:green">true</span> --http-port <span style="color:green">8080</span>
+$ ./<b>run</b> --app-id <span style="color:green">step1</span> --top-composer <span style="color:green">true</span> --http-port <span style="color:green">8080</span>
 </pre>
 
-The `--app-id` argument is required for each COHORTE node. If you have more than one node (as we will see further), all the nodes should be started with the same application's identifier. The `--top-composer` option is set to true which means that this node is executed as a Top Composer. The Top Composer is responsable for calculating the distribution of the application components (using `conf/composition.js`) and ordering the different nodes and by then isolates to instantiate components in the right place.
+The `--app-id` argument is required for each COHORTE node. If you have more than one node (as we will see further), all the nodes should be started with the same APP ID. The `--top-composer` option is set to true which means that this node is started as a Top Composer. The Top Composer is responsable for calculating the distribution of the application components (using `conf/composition.js`) and ordering the different nodes and by then isolates to instantiate components in the right place.
 
 ### Testing our Hello Components application
 
-* Open a web browser and enter this url : `http://localhost:8080/webadmin`
+* Open a web browser and enter this url : [`http://localhost:8080/webadmin`](http://localhost:8080/webadmin)
 
-* This will open the administration dashbord of the Cohorte system. It contains the list of all the nodes/isolates/components of the application.
+* This will open the administration dashboard of the Cohorte system. It contains the list of all the nodes/isolates/components of the application.
   You notice that we have one Node (called **node1**), two Isolates (**components-1** and **web**) containing the list of components as specified in the `conf/composition.js` file.
 
 ![Created node](hello-img-4.png)
  
-* Click on the **web** isolate the copy the *HTTP SERVICE PORT* property value. 
+* Click on the **web** isolate and copy the *HTTP SERVICE PORT* property value. 
 
 ![Created node](hello-img-5.png)
 
 
-Notice that you can also retrieve the http port of the **web** isolate from the terminal you have used to launch the node. Type the `http` command to have this information.
+Notice that you can also retrieve the http port of the **web** isolate from the terminal you have used to launch the node. Type `http` command on the terminal to have this information.
 
 <pre>
 $ <b>http</b>
@@ -144,7 +144,20 @@ $ <b>http</b>
 
 ![Created node](hello-img-6.png)
 
-To stop COHORTE (all running nodes), type `shutdown` command on the terminal, or click on `Stop all nodes` on *Web Admin*.
+It's time to play with yout distributed Cohorte application :)
+
+If you did not succeed to construct your first node, you can download it from here.
+
+ <a id="download_hello_step1" href="http://repo.isandlatech.com/downloads/cohorte/1.1.0/hello-step1.zip" class="btn btn-success">Download Step 1 Node</a>
+
+<div class="note">
+<span class="note-title">Note</span>
+<p class="note-content">
+To stop COHORTE (all running nodes), type <code>shutdown</code> command on the terminal, or click on <code>Stop all nodes</code> on <i>Web Admin</i>. 
+</p>
+</div>
+
+
 
 <hr/>
 
@@ -152,13 +165,13 @@ To stop COHORTE (all running nodes), type `shutdown` command on the terminal, or
 
 ## Distributing the application (two nodes)
 
-In this second step, we will distribute our components among two nodes (which can be physically distributed on a local network area - or via Internet using an XMPP server).
+In this second step, we will distribute our components among two nodes (which can be physically located on a local network area - or on Internet).
 
-In this step, we will add a new instance of C_component that should be deployed on a second node (C_component implementation code is already provided on the downloaded Hello Python Bundle). 
+We move the **ES** Component to this new second node. 
 
- Here is the new depoyment configuration (composition) for this case. 
+Here is the new depoyment configuration (composition) for this case. 
 
-![Step 2](getting-started-img-2.png)
+![img7](hello-img-7.png)
 
 ### Preparing the second execution node
 
@@ -185,27 +198,30 @@ Ensure to have stopped the previous execution and update the `composition.js` fi
 
 {% highlight json %}
 {
-	"name" : "hello-world",
-	"root" : {
-		"name" : "hello-world-composition",
-		"components" : [ 
+	"name": "hello-app",
+	"root": {
+		"name": "hello-app-composition",
+		"components": [
 			{
-				"name" : "Hello_Components",
+				"name"    : "HC",
 				"factory" : "hello_components_factory",
-				"isolate" : "web"
+				"isolate" : "web",
+				"node"    : "node1"
 			}, {
-				"name" : "A_component",
-				"factory" : "component_a_factory",
-				"isolate" : "components1"
+				"name"    : "EN",
+				"factory" : "hello_english_factory",
+				"isolate" : "components-1",
+				"node"    : "node1"
 			}, {
-				"name" : "B_component",
-				"factory" : "component_b_factory",
-				"isolate" : "components1"
+				"name"    : "FR",
+				"factory" : "hello_french_factory",
+				"isolate" : "components-1",
+				"node"    : "node1"
 			}, {
-				"name" : "C_component",
-				"factory" : "component_c_factory",
-				"isolate" : "components2",
-				"node" : "node2"
+				"name"    : "ES",
+				"factory" : "hello_spanish_factory",
+				"isolate" : "components-2",
+				"node"    : "node2"
 			}
 		]
 	}
@@ -215,7 +231,7 @@ Ensure to have stopped the previous execution and update the `composition.js` fi
 <div class="note">
 <span class="note-title">Note</span>
 <p class="note-content">
-The C_component is specified to be in another isolate (named "components2") rather than "components1" isolate containing the first components. In the actual version of COHORTE you can not have two different isolates with the same name in two different nodes!
+<b>ES</b> component is specified to be in another isolate (named "components-2") rather than "components-1" isolate containing the first components. In the actual version of COHORTE you can not have two different isolates with the same name in two different nodes!
 </p>
 </div>
 
@@ -224,68 +240,78 @@ The C_component is specified to be in another isolate (named "components2") rath
 ### Starting the nodes
 
 <pre>
-node1$ ./<b>run</b> --app-id <span style="color:green">my_hello_app</span> --top-composer true
+node1$ ./<b>run</b> --app-id <span style="color:green">step2</span> --top-composer true
 </pre>
 
-You can test this first part of the application as your `hello_components` component is instantiated in this node (*web isolates*). Follow the same steps as in the first part of this tutorial to find the http port and to launch the web interface. You notice that there is only two components A and B. This is because C component is specified to be instantiated on `node2` which is not yet started.
+You can test this first part of the application as your **HC** component is instantiated in this node (on *web isolate*). Follow the same steps as in the first part of this tutorial to find the http port and to launch the web interface. You notice that there is only two components **FR** and **EN**. This is because **ES** component is specified to be instantiated on `node2` which is not yet started.
 
 In a separate terminal, start `node2` as follow :
 
 <pre>
-node2$ ./<b>run</b> --app-id <span style="color:green">my_hello_app</span>
+node2$ ./<b>run</b> --app-id <span style="color:green">step2</span>
 </pre>
 
-Open the web interface as explained in the first step. You will notice that the C component is detected and used by the HC component even if it was deployed in a separate remote node.
+Refresh the webpage provided by **HC** Component. You will notice that **ES** component is detected and used by the **HC** component even if it was deployed in a separate remote node.
 
-Try also to stop the second node `node2` (type `quit` on it terminal window). Refresh the web interface, you will notice the departure of `C_component`.
+Try also to stop the second node `node2` (type `quit` on its terminal window, or using *Web Admin* interface by clicking on the node's name, and then `Stop` button). Refresh the web interface, you will notice the departure of **ES** component.
 
 
 ![img8](hello-img-8.png)
+
+
+If you did not succeed to complete the second step, you can download it from here.
+
+ <a id="download_hello_step2" href="http://repo.isandlatech.com/downloads/cohorte/1.1.0/hello-step2.zip" class="btn btn-success">Download Step 2 Nodes</a>
 
 <hr/>
 
 ## <a name="step3">Using heterogeneous components (Java and Python)
 
-All the components used until now are implemented in Python. We will extend our application by introducing a new component that implements the HELLO SERVICE in Java (`D_component). 
+All the components used until now are implemented in Python. We will extend our application by introducing a new component that implements the HELLO SERVICE in Java (HelloArabic - **AR**). 
+
+![img9](hello-img-9.png)
 
  * Stop the running nodes of the previous step (use `shutdown` command - or stop node seperatly using `quit`command on each one).
- * Donwload the bundle (jar file) containing the implementation code of the D component.
+ * Donwload the bundle (jar file) containing the implementation code of the **AR** component.
 
-<a id="download_hello_demo_java_snapshot" href="http://repo.isandlatech.com/maven/releases/org/cohorte/demos/hello/1.0.0/hello-1.0.0.jar" class="btn btn-success">Download Hello Java Bundle</a>
+<a id="download_hello_demo_java_snapshot" href="http://repo.isandlatech.com/downloads/cohorte/1.1.0/hello-java.jar" class="btn btn-success">Download Hello Java Bundle</a>
 
 <br/>
 
- * Put the downloaded file `hello-1.0.0.jar` into `node2/repo` directory. 
- * Update the `composition.js` file located on `node1/conf` to add this new `D_component`. It should be instantiated on `node2`.
+ * Put the downloaded file `hello-java.jar` into `node2/repo` directory. 
+ * Update the `composition.js` file located on `node1/conf` to add this new **AR**. It should be instantiated on `node2` within an isolate named `components-3`.
 
 {% highlight json %}
 {
-	"name" : "hello-world",
-	"root" : {
-		"name" : "hello-world-composition",
-		"components" : [ 
+	"name": "hello-app",
+	"root": {
+		"name": "hello-app-composition",
+		"components": [
 			{
-				"name" : "Hello_Components",
+				"name"    : "HC",
 				"factory" : "hello_components_factory",
-				"isolate" : "web"
+				"isolate" : "web",
+				"node"    : "node1"
 			}, {
-				"name" : "A_component",
-				"factory" : "component_a_factory",
-				"isolate" : "components1"
+				"name"    : "EN",
+				"factory" : "hello_english_factory",
+				"isolate" : "components-1",
+				"node"    : "node1"
 			}, {
-				"name" : "B_component",
-				"factory" : "component_b_factory",
-				"isolate" : "components1"
+				"name"    : "FR",
+				"factory" : "hello_french_factory",
+				"isolate" : "components-1",
+				"node"    : "node1"
 			}, {
-				"name" : "C_component",
-				"factory" : "component_c_factory",
-				"isolate" : "components2",
-				"node" : "node2"
+				"name"    : "ES",
+				"factory" : "hello_spanish_factory",
+				"isolate" : "components-2",
+				"node"    : "node2"
 			}, {
-				"name" : "D_component",
-				"factory" : "component_d_factory",
-				"isolate" : "components3",
-				"node" : "node2"
+				"name"    : "AR",
+				"factory" : "hello_arabic_factory",
+				"isolate" : "components-3",
+				"node"    : "node2"
 			}
 		]
 	}
@@ -294,80 +320,82 @@ All the components used until now are implemented in Python. We will extend our 
 
 ### Starting the nodes
 
-Start the first node with one more argument `--web-admin` in order to visualize the global application's architecture using the *Web Admin* utility.
+Start the first node with one more argument `--interpreter` set to Python 3 interpreter command.
 
 <pre>
-node1$ ./<b>run</b> --app-id <span style="color:green">my_hello_app</span> --top-composer true <span style="color:red">--web-admin 9000 --interpreter python3</span>
+node1$ ./<b>run</b> --app-id <span style="color:green">step3</span> --top-composer true <span style="color:red"> --interpreter python3</span>
 </pre>
+
+This is because Java isolates needs Python 3 to work property (internal Cohorte's dependency).
 
 Start the second node as done before :
 
 <pre>
-node2$ ./<b>run</b> --app-id <span style="color:green">my_hello_app</span> <span style="color:red">--interpreter python3</span>
+node2$ ./<b>run</b> --app-id <span style="color:green">step3</span> <span style="color:red">--interpreter python3</span>
 </pre>
 
-Ensure to have Python 3.4 installed on your system. If Python 2 is also installed in the same machine, you should specify `python3` as interpreter when starting COHORTE nodes.
 
-### Monitoring the application
+<div class="note">
+<span class="note-title">Note</span>
+<p class="note-content">
+Ensure to have Python 3.4 installed on your system. If Python 2 is also installed in the same machine, you should specify <code>python3</code> as interpreter when starting COHORTE nodes.
+</p>
+</div>
 
-Type `http` command in `node1`'s terminal and get the *http* port of the *web* isolate. Then test your application in web browser as done before. You will get something like that :
+You will notice that **AR** component is used by **HC** component like other Python component! 
 
-![final result](getting-started-img-6.png)
 
-In order to see the runtime architecture of your application, open a new tab in your browser and hit the following address : `http://localhost:9000/admin`
 
-The *Web Admin* utility is opened. You notice the following architecture (Global View tab): 
+If you did not succeed to complete this third step, you can download it from here.
 
-<img src="getting-started-img-7.png" class="img-responsive" alt="web admin">
-
-This correspond to this deployment plan :
-
-![Step 2](getting-started-img-4.png)
-
-As you notice, C and D components should be deployed on two sperate isolates (*components2* and *components3*) as they are implemented in two different languages.
+ <a id="download_hello_step3" href="http://repo.isandlatech.com/downloads/cohorte/1.1.0/hello-step3.zip" class="btn btn-success">Download Step 3 Nodes</a>
 
 
 <hr/>
 
 ## <a name="step4"> crash-test!
 
-We introduce a new component **E_component** which has a faulty `say_hello` method implementation. 
+We introduce a new component **Ghost** which has a faulty `say_hello` method implementation. 
+
+Cohorte manages the dynamic isolation of components on different isolates. If one component fails and brokes down the runtime container, Cohorte sperates all the components to different dynamically created isolates. 
 
 **Composition file** :
 
-We should note force the components to be in predefined isolates if we are not sure about their code quality. Indeed, in the composition specification, only the *Hello_Components* component is affected to a predefined isolate *web*. This also allows providing isolate configurations (like the HTTP Service port used by its components).
+We should force one component to be in a specific isolat only if we are sure that is safe. Otherwise, we should not provide a specific isolate name in the composition specification and let Cohorte manages all the components and isolats on your behalf. In our case, the only considered safe component is **HC**.
+
+For test purposes, we put **Ghost** component on node1.
 
 {% highlight json %}
 {
-	"name" : "hello-world",
-	"root" : {
-		"name" : "hello-world-composition",
-		"components" : [ 
+	"name": "hello-app",
+	"root": {
+		"name": "hello-app-composition",
+		"components": [
 			{
-				"name" : "Hello_Components",
+				"name"    : "HC",
 				"factory" : "hello_components_factory",
-				"node" : "node1",				
-				"isolate": "web"
+				"isolate" : "web",
+				"node"    : "node1"
 			}, {
-				"name" : "A_component",
-				"factory" : "component_a_factory",
-				"node" : "node1"
+				"name"    : "EN",
+				"factory" : "hello_english_factory",				
+				"node"    : "node1"
 			}, {
-				"name" : "B_component",
-				"factory" : "component_b_factory",
-				"node" : "node1"
+				"name"    : "FR",
+				"factory" : "hello_french_factory",
+				"node"    : "node1"
 			}, {
-				"name" : "E_component",
-				"factory" : "component_e_factory",
-				"node" : "node1"
+				"name"    : "ES",
+				"factory" : "hello_spanish_factory",
+				"node"    : "node2"
 			}, {
-				"name" : "C_component",
-				"factory" : "component_c_factory",				
-				"node" : "node2"
+				"name"    : "AR",
+				"factory" : "hello_arabic_factory",
+				"node"    : "node2"
 			}, {
-				"name" : "D_component",
-				"factory" : "component_d_factory",
-				"node" : "node2"
+				"name"    : "Ghost",
+				"factory" : "hello_ghost_factory",
+				"node"    : "node1"
 			}
 		]
 	}
@@ -376,25 +404,40 @@ We should note force the components to be in predefined isolates if we are not s
 
 **Initial runtime composition** :
 
-![crash1](getting-started-img-8.png)
+![img10](hello-img-10.png)
 
-**After the first crash** :
+Cohorte putted all the components of `node1` on one isolate *web*. Initialy it considers that all of them are safe.
+
+On `node2` it creates two isolates as we have to different component runtimes (Java and Python).
+
+
+To causes a crash :
+
+* Open the **HC** webpage and click on the **Ghost** component's *say_hello* link.
+
+**First crash** :
 
 Node2 is not affected, it is not showed hereafter.
 
-![crash1](getting-started-img-9.png)
+as first solution, Cohorte puts **HC** component on its seperate defined isolate *web*. The other components are moved to a newly created isolate. Cohorte tries always to have the minimum number of isolates at one time.
 
-Open a new browser tab and access to the Hello_Components web page (you can retrieve the http port on which listen the web servlet using the shell command `http` or using the Web Admin (by clicking on the isolate's name in the dashboard page). 
+![img11](hello-img-11.png)
 
-**After the second crash** :
 
-![crash1](getting-started-img-10.png)
+**After a second crash** :
 
-The component **E_component** source of problems is isolated from other stable components.
+Notice that the initial *web* isolate was crashed, we have now a new *web* isolate with the same name (you can check its UID). Open again the webpage of **HC** component, and click again on the **Ghost** component.
 
-**Note:**
+You have now this new composition : 
 
-We can fixe the *web* isolate configuration to not have a different HTTP port each time the *web* isolate is created. To do that, add the following configuration file (`web.js`) to your `node1/conf`directory.
+![img12](hello-img-12.png)
+
+The component **Ghost** source of problems is isolated from other safe components.
+
+<div class="note">
+<span class="note-title">Note</span>
+<p class="note-content">
+We can fixe the *web* isolate configuration to not have a different HTTP port each time the *web* isolate is created. To do that, add the following configuration file (<code>web.js</code>) to your <code>node1/conf</code> directory.
 
 `web.js`
 
@@ -411,6 +454,16 @@ We can fixe the *web* isolate configuration to not have a different HTTP port ea
 	} ]
 }
 {% endhighlight %}
+
+
+</p>
+</div>
+
+
+
+The nodes of this last step 4 are available here : 
+
+ <a id="download_hello_step4" href="http://repo.isandlatech.com/downloads/cohorte/1.1.0/hello-step4.zip" class="btn btn-success">Download Step 4 Nodes</a>
 
 <!--
 <script>
