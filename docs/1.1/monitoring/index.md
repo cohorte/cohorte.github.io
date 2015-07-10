@@ -14,6 +14,10 @@ In this document, we detail the ADMIN RESTful API v1 of COHORTE platform as well
 
 ## Web Admin
 
+You can access to the web admin using the Http Port provided at the startup of the node Top Composer (using `--http-port` option).
+
+`http://<host>:<http_port>/webadmin`
+
 ![SpellChecker Application](cohorte-webadmin.png)
 
 ## Admin REST API v1

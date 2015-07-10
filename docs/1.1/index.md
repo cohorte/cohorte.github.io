@@ -23,16 +23,7 @@ title: Documentation  - v1.1
         <li>Composers</li>
       </ul>
   </li>
-  <li>  <a href="./setup"><b>Download and install COHORTE distribution</b></a> </li>
-  <li>  <a href="./getting-started"><b>Getting Started with Cohorte in 10 minutes</b></a> 
-      <ul>
-        <li>Creating Cohorte Nodes</li>
-        <li>Implementing Service-Oriented Components</li>
-        <li>Writting the Composition specification</li>
-        <li>Starting the Nodes</li>
-        <li>Monitoring the different Isolates</li>
-      </ul>
-  </li>
+  <li>  <a href="./setup"><b>Download and install COHORTE distribution</b></a> </li>  
 
   <li>  <a href="./components"><b>Supported Service-Oriented Component models</b></a> 
       <ul>
@@ -83,8 +74,15 @@ title: Documentation  - v1.1
 <p><i>Some resources to get started quickly:</i></p>
 
 <ul>
- <li> <a href="./getting-started"><b>Getting Started tutorial</b></a>
-    <br/>Getting started with Cohorte in 10 minutes.</li>
+ <li>  <a href="./tutorials/getting-started"><b>Getting Started with Cohorte in 10 minutes</b></a> 
+      <ul>
+        <li>Creating Cohorte Nodes</li>
+        <li>Implementing Service-Oriented Components</li>
+        <li>Writting the Composition specification</li>
+        <li>Starting the Nodes</li>
+        <li>Monitoring the different Isolates</li>
+      </ul>
+  </li>
      
  <li> <a href="./tutorials/hello"><b>Hello Components Tutorial</b></a>
     <br/>Small Hello World introductory tutorial.</li>

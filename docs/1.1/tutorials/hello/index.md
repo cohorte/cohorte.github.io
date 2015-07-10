@@ -7,7 +7,7 @@ parent_url: ../../
 toc: true
 toc_exclude:  h3, h4, h5
 toc_numerate: true
-previous_page: ../../
+previous_page: ../getting-started
 next_page: ../robots
 ---
 

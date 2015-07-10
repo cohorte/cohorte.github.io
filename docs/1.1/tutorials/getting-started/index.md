@@ -2,11 +2,12 @@
 layout: docpage
 title: Getting Started with Cohorte in 10 minutes
 parent: Documentation
+comments: true
 toc: true
 toc_numerate: true
 toc_exclude: h1, h3, h4, h5, h6
-previous_page: ../setup
-next_page: ../components
+previous_page: ../
+next_page: ../hello
 ---
 
 This page presents how to use Cohorte to construct a distributed component-based service-oriented application. 
