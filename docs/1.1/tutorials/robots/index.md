@@ -29,15 +29,13 @@ The purpose of this demo is to develop a simple robotics application where one o
 
 ![application](robots-img-1.png)
 
-<a id="download_robots_snapshot" href="#" class="btn btn-success">Download Robots Nodes</a>
-
-<div class="note">
-<span class="note-title">Note</span>
-<p class="note-content">This chapter is not yet completely written.</p>
-</div>
 
 
-<< VIDEO >>
+
+You can download Robots nodes from here :
+
+<a id="download_hello_step2" href="http://isandlatech.com/repo/downloads/cohorte/1.1.0/robots.zip" class="btn btn-success">Download Robots Nodes</a>
+
 
 <script>
     function loadLatestSnapshots() {
