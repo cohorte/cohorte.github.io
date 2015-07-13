@@ -1,38 +1,38 @@
 {
   "cohorte-linux-distribution": {
-    "changelog": "",
+    "changelog": "http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.0/cohorte-1.1.0-changelog.txt",
     "files": {
-      "tar.gz": "http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-linux-distribution.tar.gz"
+      "tar.gz": "http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.0/cohorte-1.1.0-linux-distribution.tar.gz"
     },
     "stage": "release",
-    "timestamp": "20150420-094900",
-    "version": "1.0.0"
+    "timestamp": "20150713-152608",
+    "version": "1.1.0"
   },
   "cohorte-macosx-distribution": {
-    "changelog": "",
+    "changelog": "http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.0/cohorte-1.1.0-changelog.txt",
     "files": {
-      "tar.gz": "http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-macosx-distribution.tar.gz"
+      "tar.gz": "http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.0/cohorte-1.1.0-macosx-distribution.tar.gz"
     },
     "stage": "release",
-    "timestamp": "20150420-094900",
-    "version": "1.0.0"
+    "timestamp": "20150713-152831",
+    "version": "1.1.0"
   },
   "cohorte-python-distribution": {
-    "changelog": "",
+    "changelog": "http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.0/cohorte-1.1.0-changelog.txt",
     "files": {
-      "tar.gz": "http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-python-distribution.tar.gz"
+      "tar.gz": "http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.0/cohorte-1.1.0-python-distribution.tar.gz"
     },
     "stage": "release",
-    "timestamp": "20150420-094900",
-    "version": "1.0.0"
+    "timestamp": "20150713-152355",
+    "version": "1.1.0"
   },
   "cohorte-windows-distribution": {
-    "changelog": "",
+    "changelog": "http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.0/cohorte-1.1.0-changelog.txt",
     "files": {
-      "tar.gz": "http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-windows-distribution.tar.gz"
+      "tar.gz": "http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.0/cohorte-1.1.0-windows-distribution.tar.gz"
     },
     "stage": "release",
-    "timestamp": "20150420-094900",
-    "version": "1.0.0"
+    "timestamp": "20150713-153102",
+    "version": "1.1.0"
   }
 }
