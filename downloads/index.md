@@ -81,6 +81,7 @@ You found detailed installation instructions on [this page of the reference guid
             frame += "<li><a href='" + data1["cohorte-linux-distribution"]["files"]["tar.gz"] + "'>cohorte-linux-distribution (" + data1["cohorte-linux-distribution"]["version"] +"-"+data1["cohorte-linux-distribution"]["timestamp"] + ")</a></li>"
             frame += "<li><a href='" + data1["cohorte-macosx-distribution"]["files"]["tar.gz"] + "'>cohorte-macosx-distribution (" + data1["cohorte-macosx-distribution"]["version"] +"-"+data1["cohorte-macosx-distribution"]["timestamp"] + ")</a></li>"
             frame += "<li><a href='" + data1["cohorte-python-distribution"]["files"]["tar.gz"] + "'>cohorte-python-distribution (" + data1["cohorte-python-distribution"]["version"] +"-"+data1["cohorte-python-distribution"]["timestamp"] + ")</a></li>"
+            frame += "<li><a href='" + data1["cohorte-windows-distribution"]["files"]["tar.gz"] + "'>cohorte-windows-distribution (" + data1["cohorte-windows-distribution"]["version"] +"-"+data1["cohorte-windows-distribution"]["timestamp"] + ")</a></li>"
             	
 	          frame += "</ul>";
             $('#download_night_builds').html(frame);
