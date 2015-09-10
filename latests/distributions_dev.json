@@ -1,38 +1,38 @@
 {
   "cohorte-linux-distribution": {
-    "changelog": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.1.1-SNAPSHOT/cohorte-1.1.1-20150909.230201-100-changelog.txt",
+    "changelog": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.1.1-SNAPSHOT/cohorte-1.1.1-20150910.230212-104-changelog.txt",
     "files": {
-      "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.1.1-SNAPSHOT/cohorte-1.1.1-20150909.225738-98-linux-distribution.tar.gz"
+      "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.1.1-SNAPSHOT/cohorte-1.1.1-20150910.225741-102-linux-distribution.tar.gz"
     },
     "stage": "dev",
-    "timestamp": "20150910-005714",
+    "timestamp": "20150911-005717",
     "version": "1.1.1"
   },
   "cohorte-macosx-distribution": {
-    "changelog": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.1.1-SNAPSHOT/cohorte-1.1.1-20150909.230201-100-changelog.txt",
+    "changelog": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.1.1-SNAPSHOT/cohorte-1.1.1-20150910.230212-104-changelog.txt",
     "files": {
-      "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.1.1-SNAPSHOT/cohorte-1.1.1-20150909.230000-99-macosx-distribution.tar.gz"
+      "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.1.1-SNAPSHOT/cohorte-1.1.1-20150910.230006-103-macosx-distribution.tar.gz"
     },
     "stage": "dev",
-    "timestamp": "20150910-005936",
+    "timestamp": "20150911-005943",
     "version": "1.1.1"
   },
   "cohorte-python-distribution": {
-    "changelog": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.1.1-SNAPSHOT/cohorte-1.1.1-20150909.230201-100-changelog.txt",
+    "changelog": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.1.1-SNAPSHOT/cohorte-1.1.1-20150910.230212-104-changelog.txt",
     "files": {
-      "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.1.1-SNAPSHOT/cohorte-1.1.1-20150909.225536-97-python-distribution.tar.gz"
+      "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.1.1-SNAPSHOT/cohorte-1.1.1-20150910.225536-101-python-distribution.tar.gz"
     },
     "stage": "dev",
-    "timestamp": "20150910-005513",
+    "timestamp": "20150911-005513",
     "version": "1.1.1"
   },
   "cohorte-windows-distribution": {
-    "changelog": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.1.1-SNAPSHOT/cohorte-1.1.1-20150909.230201-100-changelog.txt",
+    "changelog": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.1.1-SNAPSHOT/cohorte-1.1.1-20150910.230212-104-changelog.txt",
     "files": {
-      "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.1.1-SNAPSHOT/cohorte-1.1.1-20150909.230201-100-windows-distribution.tar.gz"
+      "tar.gz": "http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.1.1-SNAPSHOT/cohorte-1.1.1-20150910.230212-104-windows-distribution.tar.gz"
     },
     "stage": "dev",
-    "timestamp": "20150910-010138",
+    "timestamp": "20150911-010148",
     "version": "1.1.1"
   }
 }
