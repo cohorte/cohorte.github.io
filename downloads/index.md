@@ -20,18 +20,18 @@ comments: false
 
 -->
 
-## Stable Releases (1.1.1) 
-Released on 14/12/2015
+## Stable Releases (1.1.2) 
+Released on 13/04/2016
 
 <div class="menu-choices">
     <a style="left: -10%;" class="menu-choice menu-choice-python"
-      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.1/cohorte-1.1.1-python-distribution.tar.gz" data-toggle="tooltip" data-placement="bottom" title="Cohorte Distribution for full Python distributed component-based applications. It can be used in any operating system having Python 2.7+ or 3.2+ installed.">Python (2.7+ 3.2+)</a>
+      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.2/cohorte-1.1.2-python-distribution.tar.gz" data-toggle="tooltip" data-placement="bottom" title="Cohorte Distribution for full Python distributed component-based applications. It can be used in any operating system having Python 2.7+ or 3.2+ installed.">Python (2.7+ 3.2+)</a>
     <a style="left: 19%;" class="menu-choice menu-choice-windows"
-      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.1/cohorte-1.1.1-windows-distribution.tar.gz" data-toggle="tooltip" data-placement="bottom" title="Cohorte Distribution for Windows 64 bits (XP, Vista, 8, 2008 Server, 2012 server). It requires Java JRE 1.7+ and Python 3.4+">Windows (64 bits)</a>
+      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.2/cohorte-1.1.2-windows-distribution.tar.gz" data-toggle="tooltip" data-placement="bottom" title="Cohorte Distribution for Windows 64 bits (XP, Vista, 8, 2008 Server, 2012 server). It requires Java JRE 1.7+ and Python 3.4+">Windows (64 bits)</a>
     <a style="left: 48%;" class="menu-choice menu-choice-linux"
-      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.1/cohorte-1.1.1-linux-distribution.tar.gz" data-toggle="tooltip" data-placement="bottom" title="Cohorte Distribution for Linux-based Operating Systems. It requires Java JRE 1.7+ and Python 3.4+">Linux (x86_64)</a>
+      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.2/cohorte-1.1.2-linux-distribution.tar.gz" data-toggle="tooltip" data-placement="bottom" title="Cohorte Distribution for Linux-based Operating Systems. It requires Java JRE 1.7+ and Python 3.4+">Linux (x86_64)</a>
     <a style="left: 77%;" class="menu-choice menu-choice-macosx"
-      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.1/cohorte-1.1.1-macosx-distribution.tar.gz" data-toggle="tooltip" data-placement="bottom" title="Cohorte Distribution for Mac OS X Operating System. It requires Java JRE 1.7+ and Python 3.4+">Mac OS X</a>    
+      href="http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.2/cohorte-1.1.2-macosx-distribution.tar.gz" data-toggle="tooltip" data-placement="bottom" title="Cohorte Distribution for Mac OS X Operating System. It requires Java JRE 1.7+ and Python 3.4+">Mac OS X</a>    
 </div>
 
 <div id="download_releases">
@@ -39,7 +39,7 @@ Released on 14/12/2015
 
 You found detailed installation instructions on [this page of the reference guide](../docs/1.1/setup).
 
-[Changelog file of this release version](http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.0/cohorte-1.1.0-changelog.txt).
+[Changelog file of this release version](http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.2/cohorte-1.1.2-changelog.txt).
 
 
 ## Nightly Builds
