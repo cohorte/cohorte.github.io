@@ -401,7 +401,7 @@ Whereas Python components are implemented using
       downloads page
      </a>
      . E.g., for Linux OS you download
-     <code>
+     <code class="highlighter-rouge">
       cohorte-1.0.0-linux-distribution.tar.gz
      </code>
      .
@@ -413,41 +413,41 @@ Whereas Python components are implemented using
    <ol>
     <li>
      Extract the distribution archive, i.e.
-     <code>
+     <code class="highlighter-rouge">
       cohorte-1.0.0-linux-distribution.tar.gz
      </code>
      to the directory you wish to install COHORTE. These instructions assume you chose
-     <code>
+     <code class="highlighter-rouge">
       /opt/isandlatech/cohorte
      </code>
      . The subdirectory
-     <code>
+     <code class="highlighter-rouge">
       cohorte-1.0.0
      </code>
      will be created from the archive.
     </li>
     <li>
      Go to the
-     <code>
+     <code class="highlighter-rouge">
       cohorte-1.0.0
      </code>
      directory and launch
-     <code>
+     <code class="highlighter-rouge">
       setup.sh
      </code>
      command. This will export
-     <code>
+     <code class="highlighter-rouge">
       COHORTE_HOME
      </code>
      environment variable (and add it to your home directory’s
-     <code>
+     <code class="highlighter-rouge">
       .bashrc
      </code>
      file).
     </li>
     <li>
      Ensure to have the access rights to
-     <code>
+     <code class="highlighter-rouge">
       $COHORTE_HOME
      </code>
      directory (e.g., `sudo chgrp -R your_login cohorte-1.0.0; chown -R your_login cohorte-1.0.0).
@@ -470,51 +470,51 @@ Whereas Python components are implemented using
     </li>
     <li>
      Set
-     <code>
+     <code class="highlighter-rouge">
       PYTHON_HOME
      </code>
      environment variable to target your installed Python distribution.
     </li>
     <li>
      Set
-     <code>
+     <code class="highlighter-rouge">
       PYTHON_INTERPRETER=%PYTHON_HOME%\python.exe
      </code>
      environment variable to target your python interpreter executable.
     </li>
     <li>
      Unzip the distribution archive to the directory you wish to install COHORTE. These instructions assume you chose
-     <code>
+     <code class="highlighter-rouge">
       C:\Program Files\Cohorte
      </code>
      . The subdirectory
-     <code>
+     <code class="highlighter-rouge">
       cohorte-1.0.0
      </code>
      will be created from the archive.
     </li>
     <li>
      Add the
-     <code>
+     <code class="highlighter-rouge">
       COHORTE_HOME
      </code>
      environment variable by opening up the system properties (WinKey + Pause), selecting the “Advanced” tab, and the “Environment Variables” button, then adding the
-     <code>
+     <code class="highlighter-rouge">
       COHORTE_HOME
      </code>
      variable in the user variables with the value
-     <code>
+     <code class="highlighter-rouge">
       C:\Program Files\Cohorte\cohorte-1.0.0\home
      </code>
      . Be sure to omit any quotation marks around the path even if it contains spaces.
     </li>
     <li>
      Add
-     <code>
+     <code class="highlighter-rouge">
       %COHORTE_HOME%\bin
      </code>
      to the system’s
-     <code>
+     <code class="highlighter-rouge">
       PATH
      </code>
      environment variable.
@@ -585,7 +585,7 @@ Java and Python Implementations
    </ul>
    <p>
     If you are already familiar with one of the two frameworks, all whats you have to do in order to get your components managed by COHORTE is to not instantiate them (using
-    <code>
+    <code class="highlighter-rouge">
      @Instantiate
     </code>
     annotation or its XML equivalent). COHORTE will instantiate them automatically. To have benefits of Remote Services feature, your services should use primitive types instead of complex user-specific types. Next, you need to write a small description of your application components using the format explained hereafter.
@@ -657,20 +657,20 @@ Java and Python Implementations
      </tr>
      <tr>
       <td>
-       <div class="highlight">
+       <figure class="highlight">
         <pre><code class="language-java" data-lang="java"><span class="nd">@Component</span><span class="o">(</span><span class="s">"AggregatorFactory"</span><span class="o">)</span>
 <span class="nd">@Provides</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Aggregator</span> <span class="kd">implements</span> <span class="n">ITemperature</span> <span class="o">{</span>
   <span class="nd">@Requires</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ISensor</span><span class="o">&gt;</span> <span class="n">sensors</span><span class="o">;</span>
   <span class="nd">@Requires</span> <span class="n">IStore</span> <span class="n">store</span><span class="o">;</span>
 
-  <span class="nd">@Validate</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span>
-  <span class="cm">/* Do something to regulate </span>
-<span class="cm">  temperature depending on room's </span>
-<span class="cm">  internal temperature. */</span>
+  <span class="nd">@Validate</span> <span class="kd">public</span> <span class="kt">void</span> <span class="n">start</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span>
+  <span class="cm">/* Do something to regulate 
+  temperature depending on room's 
+  internal temperature. */</span>
   <span class="o">}</span>
 <span class="o">}</span></code></pre>
-       </div>
+       </figure>
       </td>
      </tr>
     </tbody>
@@ -690,7 +690,7 @@ Java and Python Implementations
      </tr>
      <tr>
       <td>
-       <div class="highlight">
+       <figure class="highlight">
         <pre><code class="language-python" data-lang="python"><span class="nd">@Component</span><span class="p">(</span><span class="s">"AggregatorFactory"</span><span class="p">)</span>
 <span class="nd">@Provides</span><span class="p">(</span><span class="s">"java:/Itemperature"</span><span class="p">)</span>
 <span class="nd">@Requires</span><span class="p">(</span><span class="s">"sensors"</span><span class="p">,</span> <span class="s">"java:/ISensor"</span><span class="p">,</span> <span class="n">aggregate</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -702,13 +702,13 @@ Java and Python Implementations
 
   <span class="nd">@Validate</span> 
   <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
-    <span class="sd">"""</span>
-<span class="sd">    Do something useful to regulate </span>
-<span class="sd">    temperature depending on room's</span>
-<span class="sd">    internal temperature.</span>
-<span class="sd">    """</span>
+    <span class="s">"""
+    Do something useful to regulate 
+    temperature depending on room's
+    internal temperature.
+    """</span>
     <span class="k">pass</span></code></pre>
-       </div>
+       </figure>
       </td>
      </tr>
     </tbody>
@@ -719,7 +719,7 @@ Java and Python Implementations
    <ul>
     <li>
      We should add
-     <code>
+     <code class="highlighter-rouge">
       java:/
      </code>
      prefix to required services in Python.
@@ -751,152 +751,152 @@ Java and Python Implementations
    <h2 id="composition">
     Composition
    </h2>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="err">//</span> <span class="err">Composition's</span> <span class="err">name</span>
-  <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"composition-name"</span><span class="p">,</span>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Composition's</span><span class="w"> </span><span class="err">name</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"composition-name"</span><span class="p">,</span><span class="w">
  
-  <span class="err">//</span> <span class="err">Top</span> <span class="err">composite</span>
-  <span class="nt">"root"</span><span class="p">:</span> <span class="p">{</span> <span class="err">/*</span> <span class="err">see</span> <span class="err">'composite'</span> <span class="err">*/</span> <span class="p">}</span>
-<span class="p">}</span></code></pre>
-   </div>
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Top</span><span class="w"> </span><span class="err">composite</span><span class="w">
+  </span><span class="nt">"root"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">/*</span><span class="w"> </span><span class="err">see</span><span class="w"> </span><span class="err">'composite'</span><span class="w"> </span><span class="err">*/</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
    <h2 id="composite">
     Composite
    </h2>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="err">//</span> <span class="err">Name</span> <span class="err">of</span> <span class="err">composite</span>
-  <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"composite1"</span><span class="p">,</span>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Name</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">composite</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"composite1"</span><span class="p">,</span><span class="w">
  
-  <span class="err">//</span> <span class="err">List</span> <span class="err">of</span> <span class="err">components</span>
-  <span class="nt">"components"</span> <span class="p">:</span> <span class="p">[</span> <span class="err">/*</span> <span class="err">see</span> <span class="err">'components'</span> <span class="err">*/</span> <span class="p">],</span>
+  </span><span class="err">//</span><span class="w"> </span><span class="err">List</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">components</span><span class="w">
+  </span><span class="nt">"components"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">/*</span><span class="w"> </span><span class="err">see</span><span class="w"> </span><span class="err">'components'</span><span class="w"> </span><span class="err">*/</span><span class="w"> </span><span class="p">],</span><span class="w">
  
-  <span class="err">//</span> <span class="err">List</span> <span class="err">of</span> <span class="err">sub-composites</span>
-  <span class="nt">"composites"</span> <span class="p">:</span> <span class="p">[</span>
-     <span class="p">{</span>
-       <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"subcomposite"</span><span class="p">,</span>
-       <span class="nt">"components"</span> <span class="p">:</span> <span class="p">[</span> <span class="err">/*</span> <span class="err">...</span> <span class="err">*/</span> <span class="p">]</span>
-       <span class="err">//</span> <span class="err">this</span> <span class="err">composite</span> <span class="err">hasn't</span> <span class="err">sub-composites.</span>
-     <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span></code></pre>
-   </div>
+  </span><span class="err">//</span><span class="w"> </span><span class="err">List</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">sub-composites</span><span class="w">
+  </span><span class="nt">"composites"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+       </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subcomposite"</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"components"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">/*</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="err">*/</span><span class="w"> </span><span class="p">]</span><span class="w">
+       </span><span class="err">//</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">composite</span><span class="w"> </span><span class="err">hasn't</span><span class="w"> </span><span class="err">sub-composites.</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
    <h2 id="components">
     Components
    </h2>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="err">//</span> <span class="err">Name</span> <span class="err">of</span> <span class="err">the</span> <span class="err">component</span>
-  <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"aggregator-UI"</span><span class="p">,</span>
-  <span class="err">//</span> <span class="err">Name</span> <span class="err">of</span> <span class="err">its</span> <span class="err">Component</span> <span class="err">Factory</span>
-  <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"demo-sensor-aggregator-ui-factory"</span><span class="p">,</span>
-  <span class="err">//</span> <span class="err">Indication</span> <span class="err">on</span> <span class="err">the</span> <span class="err">implementation</span> <span class="err">language</span>
-  <span class="nt">"language"</span> <span class="p">:</span> <span class="s2">"python"</span><span class="p">,</span>
-  <span class="err">//</span> <span class="err">Location</span> <span class="err">on</span> <span class="err">a</span> <span class="err">precise</span> <span class="err">isolate</span>
-  <span class="nt">"isolate"</span> <span class="p">:</span> <span class="s2">"aggregator.ui"</span><span class="p">,</span>
-  <span class="err">//</span> <span class="err">Location</span> <span class="err">on</span> <span class="err">a</span> <span class="err">precise</span> <span class="err">node</span>
-  <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"central"</span>
-  <span class="err">//</span> <span class="err">Initial</span> <span class="err">configuration</span> <span class="err">of</span> <span class="err">the</span> <span class="err">component</span>
-  <span class="s2">"properties"</span> <span class="p">:</span> <span class="p">{</span>
-    <span class="nt">"servlet.path"</span> <span class="p">:</span> <span class="s2">"/sensors"</span>
-  <span class="p">},</span>
-  <span class="err">//</span> <span class="err">Wiring</span> <span class="err">with</span> <span class="err">another</span> <span class="err">component</span> <span class="err">named</span> <span class="err">'aggregtor'</span> 
-  <span class="err">//</span> <span class="err">which</span> <span class="err">can</span> <span class="err">be</span> <span class="err">found</span> <span class="err">in</span> <span class="err">any</span> <span class="err">composite</span> <span class="err">of</span> <span class="err">this</span> <span class="err">composition</span>
-  <span class="nt">"wires"</span> <span class="p">:</span> <span class="p">{</span>
-    <span class="nt">"_aggregator"</span> <span class="p">:</span> <span class="s2">"aggregator"</span>
-  <span class="p">},</span>
-  <span class="nt">"filters"</span> <span class="p">:</span> <span class="p">{</span>
-    <span class="nt">"_handler"</span><span class="p">:</span> <span class="s2">"(ready=1)"</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Name</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">component</span><span class="w">
+  </span><span class="nt">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"aggregator-UI"</span><span class="p">,</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Name</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">its</span><span class="w"> </span><span class="err">Component</span><span class="w"> </span><span class="err">Factory</span><span class="w">
+  </span><span class="nt">"factory"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"demo-sensor-aggregator-ui-factory"</span><span class="p">,</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Indication</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">implementation</span><span class="w"> </span><span class="err">language</span><span class="w">
+  </span><span class="nt">"language"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"python"</span><span class="p">,</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Location</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">precise</span><span class="w"> </span><span class="err">isolate</span><span class="w">
+  </span><span class="nt">"isolate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"aggregator.ui"</span><span class="p">,</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Location</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">precise</span><span class="w"> </span><span class="err">node</span><span class="w">
+  </span><span class="nt">"node"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"central"</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Initial</span><span class="w"> </span><span class="err">configuration</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">component</span><span class="w">
+  </span><span class="s2">"properties"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"servlet.path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"/sensors"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Wiring</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">another</span><span class="w"> </span><span class="err">component</span><span class="w"> </span><span class="err">named</span><span class="w"> </span><span class="err">'aggregtor'</span><span class="w"> 
+  </span><span class="err">//</span><span class="w"> </span><span class="err">which</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">found</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">any</span><span class="w"> </span><span class="err">composite</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">composition</span><span class="w">
+  </span><span class="nt">"wires"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"_aggregator"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"aggregator"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"filters"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"_handler"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(ready=1)"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
    <h2 id="import-files">
     import-files
    </h2>
    <p>
-    <code>
+    <code class="highlighter-rouge">
      base.js
     </code>
    </p>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">"root"</span><span class="p">:</span> <span class="s2">"root"</span><span class="p">,</span>
-  <span class="nt">"imported"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">"top-value"</span><span class="p">:</span> <span class="s2">"top"</span><span class="p">,</span>
-    <span class="nt">"answer"</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span>
-    <span class="err">//</span> <span class="err">Import</span> <span class="err">from</span> <span class="err">another</span> <span class="err">file</span>
-    <span class="nt">"import-files"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"imported.js"</span><span class="p">]</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"root"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"imported"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"top-value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"top"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"answer"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Import</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">another</span><span class="w"> </span><span class="err">file</span><span class="w">
+    </span><span class="nt">"import-files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"imported.js"</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
    <p>
-    <code>
+    <code class="highlighter-rouge">
      imported.js
     </code>
    </p>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="err">//</span> <span class="err">New</span> <span class="err">property</span>
-  <span class="nt">"hello"</span><span class="p">:</span> <span class="s2">"World"</span><span class="p">,</span>
-  <span class="err">//</span> <span class="err">This</span> <span class="err">value</span> <span class="err">will</span> <span class="err">be</span> <span class="err">overloaded</span> <span class="err">by</span> <span class="err">the</span> <span class="err">high</span> <span class="err">level</span> <span class="err">property's</span> <span class="err">value</span>
-  <span class="nt">"answer"</span><span class="p">:</span> <span class="mi">51</span>
-<span class="p">}</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">New</span><span class="w"> </span><span class="err">property</span><span class="w">
+  </span><span class="nt">"hello"</span><span class="p">:</span><span class="w"> </span><span class="s2">"World"</span><span class="p">,</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">This</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">overloaded</span><span class="w"> </span><span class="err">by</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">high</span><span class="w"> </span><span class="err">level</span><span class="w"> </span><span class="err">property's</span><span class="w"> </span><span class="err">value</span><span class="w">
+  </span><span class="nt">"answer"</span><span class="p">:</span><span class="w"> </span><span class="mi">51</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
    <p>
     Obtained result :
    </p>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">"root"</span><span class="p">:</span> <span class="s2">"root"</span><span class="p">,</span>
-  <span class="nt">"imported"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="err">//</span> <span class="err">Non</span> <span class="err">modified</span> <span class="err">value</span>
-    <span class="nt">"top-value"</span><span class="p">:</span> <span class="s2">"top"</span><span class="p">,</span>
-    <span class="err">//</span> <span class="err">Conserved</span> <span class="err">value</span>
-    <span class="nt">"answer"</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span>
-    <span class="err">//</span> <span class="err">New</span> <span class="err">property</span>
-    <span class="nt">"hello"</span><span class="p">:</span> <span class="s2">"world"</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"root"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"imported"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Non</span><span class="w"> </span><span class="err">modified</span><span class="w"> </span><span class="err">value</span><span class="w">
+    </span><span class="nt">"top-value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"top"</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Conserved</span><span class="w"> </span><span class="err">value</span><span class="w">
+    </span><span class="nt">"answer"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">New</span><span class="w"> </span><span class="err">property</span><span class="w">
+    </span><span class="nt">"hello"</span><span class="p">:</span><span class="w"> </span><span class="s2">"world"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
    <h2 id="complete-example">
     Complete example
    </h2>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"hello-world"</span><span class="p">,</span>
-  <span class="nt">"root"</span> <span class="p">:</span> <span class="p">{</span>
-    <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"hello-worldd-composition"</span><span class="p">,</span>
-    <span class="nt">"components"</span> <span class="p">:</span> <span class="p">[</span> 
-      <span class="p">{</span>
-        <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"Hello_Components"</span><span class="p">,</span>
-        <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"hello_components_factory"</span><span class="p">,</span>
-        <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"node1"</span><span class="p">,</span>
-        <span class="nt">"isolate"</span><span class="p">:</span> <span class="s2">"web"</span>
-      <span class="p">},</span> <span class="p">{</span>
-        <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"A_component"</span><span class="p">,</span>
-        <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"component_a_factory"</span><span class="p">,</span>
-        <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"node1"</span>
-      <span class="p">},</span> <span class="p">{</span>
-        <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"B_component"</span><span class="p">,</span>
-        <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"component_b_factory"</span><span class="p">,</span>
-        <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"node1"</span>
-      <span class="p">},</span> <span class="p">{</span>
-        <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"E_component"</span><span class="p">,</span>
-        <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"component_e_factory"</span><span class="p">,</span>
-        <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"node1"</span>
-      <span class="p">},</span> <span class="p">{</span>
-        <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"C_component"</span><span class="p">,</span>
-        <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"component_c_factory"</span><span class="p">,</span>        
-        <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"node2"</span>
-      <span class="p">},</span> <span class="p">{</span>
-        <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"D_component"</span><span class="p">,</span>
-        <span class="nt">"factory"</span> <span class="p">:</span> <span class="s2">"component_d_factory"</span><span class="p">,</span>
-        <span class="nt">"node"</span> <span class="p">:</span> <span class="s2">"node2"</span>
-      <span class="p">}</span>
-    <span class="p">]</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"hello-world"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"root"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"hello-worldd-composition"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"components"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello_Components"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"factory"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"hello_components_factory"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"node"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"node1"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"isolate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web"</span><span class="w">
+      </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"A_component"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"factory"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"component_a_factory"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"node"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"node1"</span><span class="w">
+      </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"B_component"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"factory"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"component_b_factory"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"node"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"node1"</span><span class="w">
+      </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"E_component"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"factory"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"component_e_factory"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"node"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"node1"</span><span class="w">
+      </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"C_component"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"factory"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"component_c_factory"</span><span class="p">,</span><span class="w">        
+        </span><span class="nt">"node"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"node2"</span><span class="w">
+      </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"D_component"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"factory"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"component_d_factory"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"node"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"node2"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
   </div>
  </body>
 </html><h1>Startup scripts</h1>
@@ -916,7 +916,7 @@ Java and Python Implementations
    </h2>
    <p>
     To create COHORTE node, you have to use the provided
-    <code>
+    <code class="highlighter-rouge">
      cohorte-create-node
     </code>
     command.
@@ -936,9 +936,9 @@ Java and Python Implementations
    <h3 id="usage">
     Usage
    </h3>
-   <div class="highlight">
-    <pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./cohorte-create-node <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-n NODE_NAME<span class="o">]</span> <span class="o">[</span>-a APP_NAME<span class="o">]</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>./cohorte-create-node <span class="o">[</span>-h] <span class="o">[</span>-n NODE_NAME] <span class="o">[</span>-a APP_NAME]</code></pre>
+   </figure>
    <h3 id="options">
     Options
    </h3>
@@ -967,7 +967,7 @@ Java and Python Implementations
       node_name
      </em>
      correspond to the provided name by the user using the
-     <code>
+     <code class="highlighter-rouge">
       --name
      </code>
      option.
@@ -989,7 +989,7 @@ Java and Python Implementations
       conf
      </em>
      is a directory containing configuration files. Only one configuration file is created initially (composition.js), other files are generated by
-     <code>
+     <code class="highlighter-rouge">
       run
      </code>
      script in this location.
@@ -997,7 +997,7 @@ Java and Python Implementations
    </ul>
    <p>
     Here is the content of the generated
-    <code>
+    <code class="highlighter-rouge">
      conf/composition.js
     </code>
     file. You should add component descriptions on the indicated zone (see
@@ -1006,17 +1006,17 @@ Java and Python Implementations
     </a>
     ).
    </p>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span> 
-  <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"default-application"</span><span class="p">,</span>
-  <span class="nt">"root"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"default-application-composition"</span><span class="p">,</span>
-    <span class="nt">"components"</span><span class="p">:</span> <span class="p">[</span>
-      <span class="err">/*</span> <span class="err">your</span> <span class="err">component</span> <span class="err">descriptions</span> <span class="err">here</span> <span class="err">*/</span>
-    <span class="p">]</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w"> 
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-application"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"root"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-application-composition"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"components"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="err">/*</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">component</span><span class="w"> </span><span class="err">descriptions</span><span class="w"> </span><span class="err">here</span><span class="w"> </span><span class="err">*/</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
    <p>
     Only the node started as Top Composer (see next section) should have this configuration file completed. Other nodes started as simple nodes will ignore this file.
    </p>
@@ -1033,11 +1033,11 @@ Java and Python Implementations
    </h2>
    <p>
     To start a COHORTE node, you have to use the generated
-    <code>
+    <code class="highlighter-rouge">
      run
     </code>
     command (this command calls
-    <code>
+    <code class="highlighter-rouge">
      cohorte-start-node
     </code>
     internal command).
@@ -1045,20 +1045,20 @@ Java and Python Implementations
    <h3 id="usage-1">
     Usage
    </h3>
-   <div class="highlight">
-    <pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./run <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-a APPLICATION_ID<span class="o">]</span>
-        <span class="o">[</span>--use-config CONFIG_FILE<span class="o">]</span> <span class="o">[</span>--update-config<span class="o">]</span>
-        <span class="o">[</span>--show-config<span class="o">]</span> <span class="o">[</span>-b BASE_ABSOLUTE_PATH<span class="o">]</span>
-        <span class="o">[</span>-n NODE_NAME<span class="o">]</span> <span class="o">[</span>--top-composer IS_TOP_COMPOSER<span class="o">]</span>
-        <span class="o">[</span>--composition-file COMPOSITION_FILE<span class="o">]</span>
-        <span class="o">[</span>--auto-start AUTO_START<span class="o">]</span>
-        <span class="o">[</span>--web-admin WEB_ADMIN_PORT<span class="o">]</span>
-        <span class="o">[</span>--shell-admin SHELL_ADMIN_PORT<span class="o">]</span>
-        <span class="o">[</span>--transport TRANSPORT_MODES<span class="o">]</span>
-        <span class="o">[</span>--xmpp-server XMPP_SERVER<span class="o">]</span>
-        <span class="o">[</span>--xmpp-port XMPP_PORT<span class="o">]</span>
-        <span class="o">[</span>--http-ipv HTTP_IPV<span class="o">]</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>./run <span class="o">[</span>-h] <span class="o">[</span>-a APPLICATION_ID]
+        <span class="o">[</span>--use-config CONFIG_FILE] <span class="o">[</span>--update-config]
+        <span class="o">[</span>--show-config] <span class="o">[</span>-b BASE_ABSOLUTE_PATH]
+        <span class="o">[</span>-n NODE_NAME] <span class="o">[</span>--top-composer IS_TOP_COMPOSER]
+        <span class="o">[</span>--composition-file COMPOSITION_FILE]
+        <span class="o">[</span>--auto-start AUTO_START]
+        <span class="o">[</span>--web-admin WEB_ADMIN_PORT]
+        <span class="o">[</span>--shell-admin SHELL_ADMIN_PORT]
+        <span class="o">[</span>--transport TRANSPORT_MODES]
+        <span class="o">[</span>--xmpp-server XMPP_SERVER]
+        <span class="o">[</span>--xmpp-port XMPP_PORT]
+        <span class="o">[</span>--http-ipv HTTP_IPV]</code></pre>
+   </figure>
    <h3 id="options-1">
     Options
    </h3>
@@ -1073,7 +1073,7 @@ Java and Python Implementations
 </pre>
    <p>
     All the nodes participating for a given application should have the same
-    <code>
+    <code class="highlighter-rouge">
      APPLICATION_ID
     </code>
     .
@@ -1112,7 +1112,7 @@ Java and Python Implementations
 </pre>
    <p>
     We can provide a different node name than the already provided when the node is created (by using –node option). One important option of cohorte nodes is the
-    <code>
+    <code class="highlighter-rouge">
      --top-composer
     </code>
     . If set, the node will be considered as a
@@ -1143,15 +1143,15 @@ Java and Python Implementations
 </pre>
    <p>
     The
-    <code>
+    <code class="highlighter-rouge">
      --transport
     </code>
     option allow the use to choose which transport protocol to use between the actual node and the other nodes participating in the same application. You can provide a common seperated list of the supported protocols (
-    <code>
+    <code class="highlighter-rouge">
      http
     </code>
     and
-    <code>
+    <code class="highlighter-rouge">
      xmpp
     </code>
     for the moment). Each protocol need additional configuration options that should be provided seperataly using dedicated options (–xmpp-server for instance to mention the XMPP server to use).
@@ -1171,31 +1171,31 @@ Java and Python Implementations
      run.js
     </p>
    </blockquote>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>	
-	<span class="nt">"application-id"</span><span class="p">:</span> <span class="s2">"ABCDEF"</span><span class="p">,</span>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">	
+	</span><span class="nt">"application-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABCDEF"</span><span class="p">,</span><span class="w">
 
-	<span class="nt">"node"</span><span class="p">:</span> <span class="p">{</span>		
-		<span class="nt">"name"</span><span class="p">:</span> <span class="s2">"node-rasp"</span><span class="p">,</span>
-		<span class="nt">"top-composer"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-		<span class="nt">"web-admin"</span><span class="p">:</span> <span class="mi">9001</span><span class="p">,</span>
-		<span class="nt">"shell-admin"</span><span class="p">:</span> <span class="mi">9001</span>		
-	<span class="p">},</span>
-	<span class="nt">"transport"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"xmpp"</span><span class="p">],</span>
-	<span class="nt">"transport-xmpp"</span><span class="p">:</span> <span class="p">{</span>
-		<span class="nt">"xmpp-server"</span><span class="p">:</span> <span class="s2">"charmanson.isandlatech.com"</span><span class="p">,</span>
-		<span class="nt">"xmpp-port"</span><span class="p">:</span> <span class="mi">5222</span>
-	<span class="p">}</span>
-<span class="p">}</span></code></pre>
-   </div>
+	</span><span class="nt">"node"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">		
+		</span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node-rasp"</span><span class="p">,</span><span class="w">
+		</span><span class="nt">"top-composer"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+		</span><span class="nt">"web-admin"</span><span class="p">:</span><span class="w"> </span><span class="mi">9001</span><span class="p">,</span><span class="w">
+		</span><span class="nt">"shell-admin"</span><span class="p">:</span><span class="w"> </span><span class="mi">9001</span><span class="w">		
+	</span><span class="p">},</span><span class="w">
+	</span><span class="nt">"transport"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"xmpp"</span><span class="p">],</span><span class="w">
+	</span><span class="nt">"transport-xmpp"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="nt">"xmpp-server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"charmanson.isandlatech.com"</span><span class="p">,</span><span class="w">
+		</span><span class="nt">"xmpp-port"</span><span class="p">:</span><span class="w"> </span><span class="mi">5222</span><span class="w">
+	</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
    <ul>
     <li>
      To show the content of the startup configuration file :
     </li>
    </ul>
-   <div class="highlight">
-    <pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./run --show-config</code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>./run --show-config </code></pre>
+   </figure>
    <ul>
     <li>
      To use other configuration file than the default
@@ -1205,17 +1205,17 @@ Java and Python Implementations
      file :
     </li>
    </ul>
-   <div class="highlight">
-    <pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./run --use-config other_run_conf.js</code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>./run --use-config other_run_conf.js</code></pre>
+   </figure>
    <ul>
     <li>
      Update the startup configuration using command options (–some-configuration should be replaced with a supported options list):
     </li>
    </ul>
-   <div class="highlight">
-    <pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./run --update-config --some-configurations</code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>./run --update-config --some-configurations </code></pre>
+   </figure>
    <p>
     This will update all the provided options within the startup configuration file (run.js).
    </p>
@@ -1225,9 +1225,9 @@ Java and Python Implementations
    <h3 id="using-http">
     Using HTTP
    </h3>
-   <div class="highlight">
-    <pre><code class="language-bash" data-lang="bash">./run --app-id myapplication --transport http</code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-bash" data-lang="bash">./run --app-id myapplication --transport http </code></pre>
+   </figure>
    <p>
     The discovery is done using TCP multi-caste feature. This limits the scope of the discovered COHORET nodes to only available at a local network area LAN. To deploy you COHORTE nodes at the Internet level, you should use XMPP mode.
    </p>
@@ -1237,15 +1237,15 @@ Java and Python Implementations
    <p>
     You need to start the Top Composer with the following configurations :
    </p>
-   <div class="highlight">
+   <figure class="highlight">
     <pre><code class="language-bash" data-lang="bash">./run --app-id myapplication --transport xmpp <span class="se">\</span>
 --xmpp-server server_url <span class="se">\</span>
---xmpp-port <span class="m">5222</span> <span class="se">\</span></code></pre>
-   </div>
+--xmpp-port 5222 <span class="se">\</span></code></pre>
+   </figure>
    <p>
     The XMPP server should accept
     <strong>
-     <code>
+     <code class="highlighter-rouge">
       anonymous
      </code>
     </strong>
@@ -2077,25 +2077,25 @@ Java and Python Implementations
    <ul>
     <li>
      URL:
-     <code>
+     <code class="highlighter-rouge">
       http://myhost:port/admin/api/v1/nodes
      </code>
     </li>
     <li>
      Supported request methods:
-     <code>
+     <code class="highlighter-rouge">
       GET
      </code>
     </li>
     <li>
      Response format:
-     <code>
+     <code class="highlighter-rouge">
       json
      </code>
     </li>
     <li>
      Requires authentication?:
-     <code>
+     <code class="highlighter-rouge">
       not required
      </code>
     </li>
@@ -2191,24 +2191,24 @@ Java and Python Implementations
      JSON Response Example :
     </li>
    </ul>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
-        <span class="nt">"count"</span><span class="p">:</span> <span class="mi">2</span>
-    <span class="p">},</span>
-    <span class="nt">"nodes"</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">"uid"</span><span class="p">:</span> <span class="s2">"56e5b100-c8a2-4bd8-a818-30edaf9a8fe9"</span><span class="p">,</span>
-            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"central"</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">"uid"</span><span class="p">:</span> <span class="s2">"acfd6479-f29f-4bf0-ae4d-acd681e3a531"</span><span class="p">,</span>
-            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"raspberry-pi-1"</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"nodes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56e5b100-c8a2-4bd8-a818-30edaf9a8fe9"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"central"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acfd6479-f29f-4bf0-ae4d-acd681e3a531"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"raspberry-pi-1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
    <p>
     <br/>
    </p>
@@ -2222,25 +2222,25 @@ Java and Python Implementations
    <ul>
     <li>
      URL:
-     <code>
+     <code class="highlighter-rouge">
       http://myhost:port/admin/api/v1/isolates
      </code>
     </li>
     <li>
      Supported request methods:
-     <code>
+     <code class="highlighter-rouge">
       GET
      </code>
     </li>
     <li>
      Response format:
-     <code>
+     <code class="highlighter-rouge">
       json
      </code>
     </li>
     <li>
      Requires authentication?:
-     <code>
+     <code class="highlighter-rouge">
       not required
      </code>
     </li>
@@ -2369,29 +2369,29 @@ Java and Python Implementations
      JSON Response Example :
     </li>
    </ul>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
-        <span class="nt">"lastupdate"</span><span class="p">:</span> <span class="mf">1411979225.65</span><span class="p">,</span>
-        <span class="nt">"count"</span><span class="p">:</span> <span class="mi">2</span>
-    <span class="p">},</span>
-    <span class="nt">"isolates"</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">"uid"</span><span class="p">:</span> <span class="s2">"50684926acb4387d0f007ced"</span><span class="p">,</span>
-            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"webadmin-isolate"</span><span class="p">,</span>
-            <span class="nt">"node_uid"</span><span class="p">:</span> <span class="s2">"41110b1d-b510-4e51-9945-a752da04a16d"</span><span class="p">,</span>
-            <span class="nt">"node_name"</span><span class="p">:</span> <span class="s2">"central"</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">"uid"</span><span class="p">:</span> <span class="s2">"03ff839a-df24-4bdf-b734-9fac1c886c65"</span><span class="p">,</span>
-            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"spellcheck-isolate"</span><span class="p">,</span>
-            <span class="nt">"node_uid"</span><span class="p">:</span> <span class="s2">"41110b1d-b510-4e51-9945-a752da04a16d"</span><span class="p">,</span>
-            <span class="nt">"node_name"</span><span class="p">:</span> <span class="s2">"central"</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lastupdate"</span><span class="p">:</span><span class="w"> </span><span class="mf">1411979225.65</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"isolates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50684926acb4387d0f007ced"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webadmin-isolate"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"node_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"41110b1d-b510-4e51-9945-a752da04a16d"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"node_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"central"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"03ff839a-df24-4bdf-b734-9fac1c886c65"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spellcheck-isolate"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"node_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"41110b1d-b510-4e51-9945-a752da04a16d"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"node_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"central"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
    <p>
     <br/>
    </p>
@@ -2405,25 +2405,25 @@ Java and Python Implementations
    <ul>
     <li>
      URL:
-     <code>
+     <code class="highlighter-rouge">
       http://myhost:port/admin/api/v1/components
      </code>
     </li>
     <li>
      Supported request methods:
-     <code>
+     <code class="highlighter-rouge">
       GET
      </code>
     </li>
     <li>
      Response format:
-     <code>
+     <code class="highlighter-rouge">
       json
      </code>
     </li>
     <li>
      Requires authentication?:
-     <code>
+     <code class="highlighter-rouge">
       not required
      </code>
     </li>
@@ -2552,30 +2552,30 @@ Java and Python Implementations
      JSON Response Example :
     </li>
    </ul>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
-        <span class="nt">"count"</span><span class="p">:</span> <span class="mi">2</span>
-    <span class="p">},</span>
-    <span class="nt">"components"</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"spell_check_client"</span><span class="p">,</span>
-            <span class="nt">"factory"</span><span class="p">:</span> <span class="s2">"spell_check_client_factory"</span><span class="p">,</span>
-            <span class="nt">"language"</span><span class="p">:</span> <span class="s2">"python"</span><span class="p">,</span>
-            <span class="nt">"isolate_uid"</span><span class="p">:</span> <span class="s2">"03ff839a-df24-4bdf-b734-9fac1c886c65"</span><span class="p">,</span>
-            <span class="nt">"isolate_name"</span><span class="p">:</span> <span class="s2">"spellcheck-isolate"</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"spell_dictionray_FR"</span><span class="p">,</span>
-            <span class="nt">"factory"</span><span class="p">:</span> <span class="s2">"spell_dictionary_FR_factory"</span><span class="p">,</span>
-            <span class="nt">"language"</span><span class="p">:</span> <span class="s2">"python"</span><span class="p">,</span>
-            <span class="nt">"isolate_uid"</span><span class="p">:</span> <span class="s2">"03ff839a-df24-4bdf-b734-9fac1c886c65"</span><span class="p">,</span>
-            <span class="nt">"isolate_name"</span><span class="p">:</span> <span class="s2">"spellcheck-isolate"</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"components"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spell_check_client"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"factory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spell_check_client_factory"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"python"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"isolate_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"03ff839a-df24-4bdf-b734-9fac1c886c65"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"isolate_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spellcheck-isolate"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spell_dictionray_FR"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"factory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spell_dictionary_FR_factory"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"python"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"isolate_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"03ff839a-df24-4bdf-b734-9fac1c886c65"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"isolate_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spellcheck-isolate"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
    <p>
     <br/>
    </p>
@@ -2589,25 +2589,25 @@ Java and Python Implementations
    <ul>
     <li>
      URL:
-     <code>
+     <code class="highlighter-rouge">
       http://myhost:port/admin/api/v1/nodes/56e5b100-c8a2-4bd8-a818-30edaf9a8fe9
      </code>
     </li>
     <li>
      Supported request methods:
-     <code>
+     <code class="highlighter-rouge">
       GET
      </code>
     </li>
     <li>
      Response format:
-     <code>
+     <code class="highlighter-rouge">
       json
      </code>
     </li>
     <li>
      Requires authentication?:
-     <code>
+     <code class="highlighter-rouge">
       not required
      </code>
     </li>
@@ -2703,18 +2703,18 @@ Java and Python Implementations
      JSON Response Example :
     </li>
    </ul>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"node"</span><span class="p">:</span> <span class="s2">"41110b1d-b510-4e51-9945-a752da04a16d"</span><span class="p">,</span>
-        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span>
-    <span class="p">},</span>
-    <span class="nt">"node"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"central"</span><span class="p">,</span>
-        <span class="nt">"nbr_isolates"</span><span class="p">:</span> <span class="mi">3</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"node"</span><span class="p">:</span><span class="w"> </span><span class="s2">"41110b1d-b510-4e51-9945-a752da04a16d"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"node"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"central"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"nbr_isolates"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
    <p>
     <br/>
    </p>
@@ -2728,25 +2728,25 @@ Java and Python Implementations
    <ul>
     <li>
      URL:
-     <code>
+     <code class="highlighter-rouge">
       http://myhost:port/admin/api/v1/isolates/50684926acb4387d0f007ced
      </code>
     </li>
     <li>
      Supported request methods:
-     <code>
+     <code class="highlighter-rouge">
       GET
      </code>
     </li>
     <li>
      Response format:
-     <code>
+     <code class="highlighter-rouge">
       json
      </code>
     </li>
     <li>
      Requires authentication?:
-     <code>
+     <code class="highlighter-rouge">
       not required
      </code>
     </li>
@@ -2917,24 +2917,24 @@ Java and Python Implementations
      JSON Response Example :
     </li>
    </ul>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"isolate"</span><span class="p">:</span> <span class="s2">"50684926acb4387d0f007ced"</span><span class="p">,</span>
-        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span>
-    <span class="p">},</span>
-    <span class="nt">"isolate"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"webadmin-isolate"</span><span class="p">,</span>
-        <span class="nt">"type"</span><span class="p">:</span> <span class="s2">"cohorte-isolate"</span><span class="p">,</span>
-        <span class="nt">"nbr_components"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-        <span class="nt">"node_uid"</span><span class="p">:</span> <span class="s2">"41110b1d-b510-4e51-9945-a752da04a16d"</span><span class="p">,</span>
-        <span class="nt">"node_name"</span><span class="p">:</span> <span class="s2">"central"</span><span class="p">,</span>
-        <span class="nt">"http_access"</span> <span class="p">:</span> <span class="s2">"10.130.1.97"</span><span class="p">,</span>
-        <span class="nt">"http_port"</span> <span class="p">:</span> <span class="mi">9500</span><span class="p">,</span>
-        <span class="nt">"shell_port"</span> <span class="p">:</span> <span class="mi">9501</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"isolate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50684926acb4387d0f007ced"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"isolate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webadmin-isolate"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cohorte-isolate"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"nbr_components"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"node_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"41110b1d-b510-4e51-9945-a752da04a16d"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"node_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"central"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"http_access"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"10.130.1.97"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"http_port"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">9500</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"shell_port"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">9501</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
    <p>
     <br/>
    </p>
@@ -2948,25 +2948,25 @@ Java and Python Implementations
    <ul>
     <li>
      URL:
-     <code>
+     <code class="highlighter-rouge">
       http://myhost:port/admin/api/v1/components/spell_check_client
      </code>
     </li>
     <li>
      Supported request methods:
-     <code>
+     <code class="highlighter-rouge">
       GET
      </code>
     </li>
     <li>
      Response format:
-     <code>
+     <code class="highlighter-rouge">
       json
      </code>
     </li>
     <li>
      Requires authentication?:
-     <code>
+     <code class="highlighter-rouge">
       not required
      </code>
     </li>
@@ -3117,27 +3117,27 @@ Java and Python Implementations
      JSON Response Example :
     </li>
    </ul>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"component"</span><span class="p">:</span> <span class="s2">"spell_check_client"</span><span class="p">,</span>
-        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span>
-    <span class="p">},</span>
-    <span class="nt">"node"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"spell_check_client"</span><span class="p">,</span>
-        <span class="nt">"factory"</span><span class="p">:</span> <span class="s2">"spell_check_client_factory"</span><span class="p">,</span>
-        <span class="nt">"language"</span><span class="p">:</span> <span class="s2">"python"</span><span class="p">,</span>
-        <span class="nt">"isolate_uid"</span><span class="p">:</span> <span class="s2">"03ff839a-df24-4bdf-b734-9fac1c886c65"</span><span class="p">,</span>
-        <span class="nt">"isolate_name"</span><span class="p">:</span> <span class="s2">"spellcheck-isolate"</span>
-        <span class="s2">"bundle_name"</span><span class="p">:</span> <span class="s2">"spellchecker.spell_check"</span>
-        <span class="s2">"bundle_version"</span><span class="p">:</span> <span class="s2">"1.0.0"</span>
-        <span class="s2">"properties"</span><span class="p">:</span> <span class="p">{</span>
-             <span class="nt">"prop1"</span><span class="p">:</span> <span class="s2">"value1"</span><span class="p">,</span>
-             <span class="nt">"prop2"</span><span class="p">:</span> <span class="s2">"value2"</span><span class="p">,</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"component"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spell_check_client"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"node"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spell_check_client"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"factory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spell_check_client_factory"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"python"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"isolate_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"03ff839a-df24-4bdf-b734-9fac1c886c65"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"isolate_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spellcheck-isolate"</span><span class="w">
+        </span><span class="s2">"bundle_name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"spellchecker.spell_check"</span><span class="w">
+        </span><span class="s2">"bundle_version"</span><span class="err">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="w">
+        </span><span class="s2">"properties"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+             </span><span class="nt">"prop1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value1"</span><span class="p">,</span><span class="w">
+             </span><span class="nt">"prop2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value2"</span><span class="p">,</span><span class="w">
+        </span><span class="err">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
    <p>
     <br/>
    </p>
@@ -3151,25 +3151,25 @@ Java and Python Implementations
    <ul>
     <li>
      URL:
-     <code>
+     <code class="highlighter-rouge">
       http://myhost:port/admin/api/v1/nodes/56e5b100-c8a2-4bd8-a818-30edaf9a8fe9/isolates
      </code>
     </li>
     <li>
      Supported request methods:
-     <code>
+     <code class="highlighter-rouge">
       GET
      </code>
     </li>
     <li>
      Response format:
-     <code>
+     <code class="highlighter-rouge">
       json
      </code>
     </li>
     <li>
      Requires authentication?:
-     <code>
+     <code class="highlighter-rouge">
       not required
      </code>
     </li>
@@ -3276,25 +3276,25 @@ Java and Python Implementations
      JSON Response Example :
     </li>
    </ul>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"node"</span><span class="p">:</span> <span class="s2">"41110b1d-b510-4e51-9945-a752da04a16d"</span><span class="p">,</span>
-        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
-        <span class="nt">"count"</span><span class="p">:</span> <span class="mi">2</span>
-    <span class="p">},</span>
-    <span class="nt">"isolates"</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">"uid"</span><span class="p">:</span> <span class="s2">"50684926acb4387d0f007ced"</span><span class="p">,</span>
-            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"webadmin-isolate"</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">"uid"</span><span class="p">:</span> <span class="s2">"03ff839a-df24-4bdf-b734-9fac1c886c65"</span><span class="p">,</span>
-            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"spellcheck-isolate"</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"node"</span><span class="p">:</span><span class="w"> </span><span class="s2">"41110b1d-b510-4e51-9945-a752da04a16d"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"isolates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50684926acb4387d0f007ced"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webadmin-isolate"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"03ff839a-df24-4bdf-b734-9fac1c886c65"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spellcheck-isolate"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
    <p>
     <br/>
    </p>
@@ -3308,25 +3308,25 @@ Java and Python Implementations
    <ul>
     <li>
      URL:
-     <code>
+     <code class="highlighter-rouge">
       http://myhost:port/admin/api/v1/isolates/50684926acb4387d0f007ced/components
      </code>
     </li>
     <li>
      Supported request methods:
-     <code>
+     <code class="highlighter-rouge">
       GET
      </code>
     </li>
     <li>
      Response format:
-     <code>
+     <code class="highlighter-rouge">
       json
      </code>
     </li>
     <li>
      Requires authentication?:
-     <code>
+     <code class="highlighter-rouge">
       not required
      </code>
     </li>
@@ -3444,32 +3444,32 @@ Java and Python Implementations
      JSON Response Example :
     </li>
    </ul>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"isolate"</span><span class="p">:</span> <span class="s2">"50684926acb4387d0f007ced"</span><span class="p">,</span>
-        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
-        <span class="nt">"count"</span><span class="p">:</span> <span class="mi">3</span>
-    <span class="p">},</span>
-    <span class="nt">"components"</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"spell_dictionary_FR"</span><span class="p">,</span>
-            <span class="nt">"factory"</span><span class="p">:</span> <span class="s2">"spell_dictionary_FR_factory"</span><span class="p">,</span>
-            <span class="nt">"language"</span><span class="p">:</span> <span class="s2">"python"</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"spell_check"</span><span class="p">,</span>
-            <span class="nt">"factory"</span><span class="p">:</span> <span class="s2">"spell_check_factory"</span><span class="p">,</span>
-            <span class="nt">"language"</span><span class="p">:</span> <span class="s2">"python"</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"spell_client"</span><span class="p">,</span>
-            <span class="nt">"factory"</span><span class="p">:</span> <span class="s2">"spell_client_factory"</span><span class="p">,</span>
-            <span class="nt">"language"</span><span class="p">:</span> <span class="s2">"python"</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"isolate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50684926acb4387d0f007ced"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"components"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spell_dictionary_FR"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"factory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spell_dictionary_FR_factory"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"python"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spell_check"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"factory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spell_check_factory"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"python"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spell_client"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"factory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spell_client_factory"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"python"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
    <p>
     <a name="APIV1-150">
     </a>
@@ -3480,25 +3480,25 @@ Java and Python Implementations
    <ul>
     <li>
      URL:
-     <code>
+     <code class="highlighter-rouge">
       http://myhost:port/admin/api/v1/nodes/kill
      </code>
     </li>
     <li>
      Supported request methods:
-     <code>
+     <code class="highlighter-rouge">
       GET
      </code>
     </li>
     <li>
      Response format:
-     <code>
+     <code class="highlighter-rouge">
       json
      </code>
     </li>
     <li>
      Requires authentication?:
-     <code>
+     <code class="highlighter-rouge">
       not required
      </code>
     </li>
@@ -3528,17 +3528,17 @@ Java and Python Implementations
      JSON Response Example :
     </li>
    </ul>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span>
-    <span class="p">},</span>
-    <span class="nt">"status"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="nt">"description"</span><span class="p">:</span> <span class="s2">"All nodes successfully destroyed"</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All nodes successfully destroyed"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
    <p>
     <a name="APIV1-151">
     </a>
@@ -3549,25 +3549,25 @@ Java and Python Implementations
    <ul>
     <li>
      URL:
-     <code>
+     <code class="highlighter-rouge">
       http://myhost:port/admin/api/v1/nodes/56e5b100-c8a2-4bd8-a818-30edaf9a8fe9/kill
      </code>
     </li>
     <li>
      Supported request methods:
-     <code>
+     <code class="highlighter-rouge">
       GET
      </code>
     </li>
     <li>
      Response format:
-     <code>
+     <code class="highlighter-rouge">
       json
      </code>
     </li>
     <li>
      Requires authentication?:
-     <code>
+     <code class="highlighter-rouge">
       not required
      </code>
     </li>
@@ -3674,18 +3674,18 @@ Java and Python Implementations
      JSON Response Example :
     </li>
    </ul>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"node"</span><span class="p">:</span> <span class="s2">"56e5b100-c8a2-4bd8-a818-30edaf9a8fe9"</span><span class="p">,</span>
-        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span>
-    <span class="p">},</span>
-    <span class="nt">"status"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="nt">"description"</span><span class="p">:</span> <span class="s2">"Node successfully destroyed"</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"node"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56e5b100-c8a2-4bd8-a818-30edaf9a8fe9"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Node successfully destroyed"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
    <p>
     <a name="APIV1-152">
     </a>
@@ -3696,25 +3696,25 @@ Java and Python Implementations
    <ul>
     <li>
      URL:
-     <code>
+     <code class="highlighter-rouge">
       http://myhost:port/admin/api/v1/isolates/41110b1d-b510-4e51-9945-a752da04a16d/kill
      </code>
     </li>
     <li>
      Supported request methods:
-     <code>
+     <code class="highlighter-rouge">
       GET
      </code>
     </li>
     <li>
      Response format:
-     <code>
+     <code class="highlighter-rouge">
       json
      </code>
     </li>
     <li>
      Requires authentication?:
-     <code>
+     <code class="highlighter-rouge">
       not required
      </code>
     </li>
@@ -3821,18 +3821,18 @@ Java and Python Implementations
      JSON Response Example :
     </li>
    </ul>
-   <div class="highlight">
-    <pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"isolate"</span><span class="p">:</span> <span class="s2">"41110b1d-b510-4e51-9945-a752da04a16d"</span><span class="p">,</span>
-        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span>
-    <span class="p">},</span>
-    <span class="nt">"status"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="nt">"description"</span><span class="p">:</span> <span class="s2">"Isolate successfully destroyed"</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre>
-   </div>
+   <figure class="highlight">
+    <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"isolate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"41110b1d-b510-4e51-9945-a752da04a16d"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Isolate successfully destroyed"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre>
+   </figure>
   </div>
  </body>
 </html>
