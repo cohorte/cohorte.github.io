@@ -5,7 +5,7 @@
       "tar.gz": "http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.2/cohorte-1.1.2-linux-distribution.tar.gz"
     },
     "stage": "release",
-    "timestamp": "20160414-121552",
+    "timestamp": "20160420-005958",
     "version": "1.1.2"
   },
   "cohorte-macosx-distribution": {
@@ -14,7 +14,7 @@
       "tar.gz": "http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.2/cohorte-1.1.2-macosx-distribution.tar.gz"
     },
     "stage": "release",
-    "timestamp": "20160414-122117",
+    "timestamp": "20160420-010209",
     "version": "1.1.2"
   },
   "cohorte-python-distribution": {
@@ -23,7 +23,7 @@
       "tar.gz": "http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.2/cohorte-1.1.2-python-distribution.tar.gz"
     },
     "stage": "release",
-    "timestamp": "20160414-121330",
+    "timestamp": "20160420-005823",
     "version": "1.1.2"
   },
   "cohorte-windows-distribution": {
@@ -32,7 +32,7 @@
       "tar.gz": "http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.1.2/cohorte-1.1.2-windows-distribution.tar.gz"
     },
     "stage": "release",
-    "timestamp": "20160414-122517",
+    "timestamp": "20160420-010434",
     "version": "1.1.2"
   }
 }
