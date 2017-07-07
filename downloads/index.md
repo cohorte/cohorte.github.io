@@ -21,7 +21,7 @@ comments: false
 -->
 
 ## Stable Releases (1.2.1) 
-Released on 06/07/2017
+Released on 07/07/2017
 
 <div class="menu-choices">
     <a style="left: -10%;" class="menu-choice menu-choice-python"
