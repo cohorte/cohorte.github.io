@@ -20,20 +20,20 @@ comments: false
 
 -->
 
-## Stable Releases (1.2.0) 
-Released on 10/10/2016
+## Stable Releases (1.2.1) 
+Released on 06/07/2017
 
 <div class="menu-choices">
     <a style="left: -10%;" class="menu-choice menu-choice-python"
-      href="http://forge.cohorte-technologies.com:6080/repository/cohorte-releases/org/cohorte/platforms/cohorte/1.2.0/cohorte-1.2.0-python-distribution.tar.gz" data-toggle="tooltip" data-placement="bottom" title="Cohorte Distribution for full Python distributed component-based applications. It can be used in any operating system having Python 2.7+ or 3.2+ installed.">Python (2.7+ 3.2+)</a>
+      href="https://nrm.cohorte.tech/repository/cohorte-releases/org/cohorte/platforms/cohorte/1.2.1/cohorte-1.2.1-python-distribution.tar.gz" data-toggle="tooltip" data-placement="bottom" title="Cohorte Distribution for full Python distributed component-based applications. It can be used in any operating system having Python 2.7+ or 3.2+ installed.">Python (2.7+ 3.2+)</a>
     <a style="left: 19%;" class="menu-choice menu-choice-java"
-      href="http://forge.cohorte-technologies.com:6080/repository/cohorte-releases/org/cohorte/platforms/cohorte/1.2.0/cohorte-1.2.0-full-distribution.tar.gz" data-toggle="tooltip" data-placement="bottom" title="Cohorte Distribution for Java and Python distributed component-based applications. It requires Java JRE 1.7+ and Python 3.4+ (64 bits)">Java & Python</a>           
+      href="https://nrm.cohorte.tech/repository/cohorte-releases/org/cohorte/platforms/cohorte/1.2.1/cohorte-1.2.1-full-distribution.tar.gz" data-toggle="tooltip" data-placement="bottom" title="Cohorte Distribution for Java and Python distributed component-based applications. It requires Java JRE 1.7+ and Python 3.4+ (64 bits)">Java & Python</a>           
 </div>
 
 <div id="download_releases">
 </div>
 
-[CHANGELOG file of this release version](http://forge.cohorte-technologies.com:6080/repository/cohorte-releases/org/cohorte/platforms/cohorte/1.2.0/cohorte-1.2.0-changelog.txt).
+[CHANGELOG file of this release version](https://nrm.cohorte.tech/repository/cohorte-releases/org/cohorte/platforms/cohorte/1.2.1/cohorte-1.2.1-changelog.txt).
 
 You found detailed installation instructions on [this page of the reference guide](../docs/1.1/setup).
 
